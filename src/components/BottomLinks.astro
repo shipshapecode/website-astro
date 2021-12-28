@@ -1,0 +1,49 @@
+---
+export interface Props {
+	previousLink: string;
+  previousLinkText: string;
+	nextLink: string;
+	nextLinkText: string;
+}
+
+const { previousLink, previousLinkText, nextLink, nextLinkText } = Astro.props;
+---
+
+<div
+  class="
+    border-t-2 border-blue-light border-solid
+    flex flex-wrap
+    mt-24
+    w-full
+  "
+>
+  <a
+    class="
+      border-r-2 border-blue-light border-solid
+      flex-1
+      font-bold
+      p-4
+      lg:p-12
+      w-1/2
+      hover:bg-blue-light
+    "
+    href={previousLink}
+  >
+    <span class="text-navy text-sm lg:text-xl"> Previous </span>
+
+    <h3 class="text-xl lg:text-4xl">
+      {previousLinkText}
+    </h3>
+  </a>
+
+  <a
+    class="flex-1 font-bold p-4 lg:p-12 w-1/2 hover:bg-blue-light"
+    href={nextLink}
+  >
+    <span class="text-navy text-sm lg:text-xl">Next Up</span>
+
+    <h3 class="text-xl lg:text-4xl">
+      {nextLinkText}
+    </h3>
+  </a>
+</div>

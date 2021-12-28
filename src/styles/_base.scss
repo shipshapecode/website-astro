@@ -1,0 +1,169 @@
+// Shevy
+
+$shevy: (
+  base-font-scale: (
+    3.5,
+    2.5,
+    2,
+    1.5,
+    1.25,
+    1
+  ),
+  base-font-size: 18px,
+  base-line-height: 1.667,
+  proximity: true // proximity-factor: 0.5
+);
+
+@include headings;
+@include body;
+@include content;
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  @apply text-red no-underline;
+  transition-duration: 0.25s;
+  transition-property: background-color, color, fill;
+
+  &:active,
+  &:visited {
+    @apply text-red;
+  }
+
+  &:hover {
+    @apply text-navy;
+  }
+}
+
+html,
+body {
+  @apply m-0 p-0 overflow-x-hidden w-full;
+}
+
+body {
+  @apply bg-white text-grey-light;
+  font-family: 'Pier Sans', sans-serif;
+  font-weight: lighter;
+}
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   @apply heading;
+// }
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    @apply leading-tight text-5xl;
+  }
+}
+
+.fill-white {
+  path {
+    fill: var(--white);
+  }
+}
+
+.hero {
+  padding: 0 2rem;
+}
+
+// .learn-more {
+//   @apply font-bold text-navy;
+
+//   svg {
+//     fill: var(--navy);
+//     margin-left: 0.25rem;
+//     transition-duration: 0.25s;
+//     transition-property: margin-left;
+//   }
+
+//   &:active,
+//   &:visited {
+//     @apply text-navy;
+//   }
+
+//   &:hover {
+//     @apply cursor-pointer text-red;
+
+//     svg {
+//       fill: var(--red);
+//       margin-left: 0.75rem;
+//     }
+//   }
+// }
+
+.section {
+  padding: 5rem 2rem;
+}
+
+.section-content {
+  @apply max-w-8xl w-full;
+}
+
+// .blob {
+//   position: relative;
+
+//   &::before {
+//     background-image: url(/svgs/contact-blob.svg);
+//     background-position: center top;
+//     background-repeat: no-repeat;
+//     background-size: 2072px;
+//     top: -250px;
+//     content: '';
+//     height: 1200px;
+//     position: absolute;
+//     width: 100%;
+//     z-index: 0;
+//   }
+
+//   // @media only screen and (max-width: 1024px) {
+//   //   &::before {
+//   //     background-size: cover;
+//   //     width: 500vw;
+//   //   }
+//   // }
+// }
+
+.waves {
+  position: relative;
+
+  &::after {
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 2560px;
+    bottom: -95px;
+    content: '';
+    height: 160px;
+    position: absolute;
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 2560px) {
+    &::after {
+      background-size: 101vw;
+      height: 300px;
+    }
+  }
+}
+
+.blue-waves {
+  &::after {
+    background-image: url(/svgs/waves.svg);
+  }
+}
+
+.white-waves {
+  &::after {
+    background-image: url(/svgs/white-waves.svg);
+  }
+}

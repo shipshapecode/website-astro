@@ -1,0 +1,16 @@
+{
+  "name": "@example/blog-multiple-authors",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^0.22.1",
+    "sass": "^1.45.1",
+    "tailwindcss": "^3.0.7"
+  }
+}

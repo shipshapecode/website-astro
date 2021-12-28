@@ -1,0 +1,36 @@
+---
+// Component Imports
+import MainHead from '../components/MainHead.astro';
+import Nav from '../components/Nav.astro';
+
+interface MarkdownFrontmatter {
+	date: number;
+	image: string;
+	author: string;
+}
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'Don’s Blog';
+let description = 'An example blog on Astro';
+let canonicalURL = Astro.request.canonicalURL;
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="en">
+	<head>
+		<title>{title}</title>
+		<MainHead {title} {description} {canonicalURL} />
+	</head>
+
+	<body>
+		<Nav {title} />
+
+		<main class="wrapper">
+		</main>
+	</body>
+</html>
