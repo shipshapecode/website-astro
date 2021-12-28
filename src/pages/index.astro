@@ -2,6 +2,7 @@
 // Component Imports
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
+import HeroBlock from '../components/HeroBlock.astro';
 
 interface MarkdownFrontmatter {
 	date: number;
@@ -30,7 +31,29 @@ let canonicalURL = Astro.request.canonicalURL;
 	<body>
 		<Nav {title} />
 
-		<main class="wrapper">
+		<main>
+			<div class="relative">
+        <HeroBlock class="bg-blue-light home">
+          <div slot="content">
+            <h1 class="leading-none">Our software consultants make waves</h1>
+
+            <div class="flex justify-center mt-3 w-full lg:justify-start lg:mt-8">
+              <a href="/contact/" class="btn btn-red w-full lg:w-auto">
+                Come on board
+              </a>
+            </div>
+          </div>
+
+          <div slot="icon">
+            <img
+              alt="Ship Shape octopus mascot, with a pencil in its tentacle, is working hard on Ember, Next.js and Nuxt apps."
+              class="h-auto max-w-3xl w-full"
+              format="webp"
+              src="/images/hero-images/landing.png"
+            />
+          </div>
+        </HeroBlock>
+		  </div>
 		</main>
 	</body>
 </html>
