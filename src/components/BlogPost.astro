@@ -1,0 +1,38 @@
+---
+import AuthorRow from './AuthorRow.astro';
+import BottomLinks from './BottomLinks.astro';
+import authorData from '../data/authors.json';
+
+export interface Props {
+  canonicalURL: string;
+  post: any;
+}
+const { canonicalURL, post } = Astro.props;
+const author = authorData[post.author];
+---
+<article itemscope itemtype="http://schema.org/BlogPosting">
+  <link itemprop="mainEntityOfPage" href={canonicalURL} />
+  <link itemprop="publisher" href="shipshapeorg" />
+  <link itemprop="image" href="shipshapelogo" />
+
+  <div class="section flex flex-wrap justify-center">
+    <div class="max-w-3xl w-full">
+      <h1 class="blog-post-title font-semibold" itemprop="headline">
+        { post.title }
+      </h1>
+
+		  <AuthorRow date={post.date} id={author.id} image={author.image} name={author.name} />
+
+      <div class="post-content">
+        <slot/>
+      </div>
+
+      <BottomLinks
+        nextLink="`/blog/${post.nextSlug}/`"
+        nextLinkText={post.nextTitle}
+        previousLink="`/blog/${post.previousSlug}/`"
+        previousLinkText={post.previousTitle}
+      />
+    </div>
+  </div>
+</article>

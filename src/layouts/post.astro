@@ -1,8 +1,7 @@
 ---
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
-import BottomLinks from '../components/BottomLinks.astro';
-import authorData from '../data/authors.json';
+import BlogPost from '../components/BlogPost.astro';
 
 const { content } = Astro.props;
 let canonicalURL = Astro.request.canonicalURL;
@@ -63,20 +62,7 @@ let canonicalURL = Astro.request.canonicalURL;
 		<Nav />
 
 		<main class="wrapper">
-			<h2 class="title">{content.title}</h2>
-			<p class="description">{content.description}</p>
-			<img class="img" src={content.image} alt="" />
-			<article class="article">
-				<slot />
-			</article>
+			<BlogPost canonicalURL={canonicalURL} post={content} >
 		</main>
-
-		<footer>
-			 <BottomLinks
-          nextLink="`/blog/${content.nextSlug}/`"
-          nextLinkText={content.nextTitle}
-          previousLink="`/blog/${content.previousSlug}/`"
-          previousLinkText={content.previousTitle}
-        /></footer>
 	</body>
 </html>
