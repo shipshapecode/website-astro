@@ -2,43 +2,43 @@
   "BrianSipple": {
     "name": "Brian Sipple",
     "id": "BrianSipple",
-    "image": "/images/blog/authors/brian.jpg",
+    "image": "/img/blog/authors/brian.jpg",
     "location": "Manhattan, NY"
   },
   "chuckcarpenter": {
     "name": "Chuck Carpenter",
     "id": "chuckcarpenter",
-    "image": "/images/blog/authors/chuck.jpg",
+    "image": "/img/blog/authors/chuck.jpg",
     "location": "Phoenix, AZ"
   },
   "jaredgalanis": {
     "name": "Jared Galanis",
     "id": "jaredgalanis",
-    "image": "/images/blog/authors/jared.jpg",
+    "image": "/img/blog/authors/jared.jpg",
     "location": "Baltimore, MD"
   },
   "JessicaJustice": {
     "name": "Jessica Justice",
     "id": "JessicaJustice",
-    "image": "/images/blog/authors/jessica.jpg",
+    "image": "/img/blog/authors/jessica.jpg",
     "location": "Denver, CO"
   },
   "r0bc4ry": {
     "name": "Rob Cary",
     "id": "r0bc4ry",
-    "image": "/images/blog/authors/rob.jpg",
+    "image": "/img/blog/authors/rob.jpg",
     "location": "Alexandria, VA"
   },
   "rwwagner90": {
     "name": "Robbie Wagner",
     "id": "rwwagner90",
-    "image": "/images/blog/authors/robbie.jpg",
+    "image": "/img/blog/authors/robbie.jpg",
     "location": "Middleburg, VA"
   },
   "wcanavan": {
     "name": "Welch Canavan",
     "id": "wcanavan",
-    "image": "/images/blog/authors/welch.jpg",
+    "image": "/img/blog/authors/welch.jpg",
     "location": "Portland, OR"
   }
 }

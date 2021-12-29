@@ -1,0 +1,15 @@
+.client-logo {
+  @apply flex justify-center items-center p-6 w-1/2;
+}
+
+@screen md {
+  .client-logo {
+    @apply p-8;
+  }
+}
+
+@screen xl {
+  .client-logo {
+    @apply flex-1 p-8 w-auto;
+  }
+}

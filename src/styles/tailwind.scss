@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+
+@import "./tailwind/components/blog-tag.css";
+@import "./tailwind/components/buttons.css";
+@import "./tailwind/components/clients.css";
+@import "./tailwind/components/headings.css";
+@import "./tailwind/components/nav-menu.css";
+
+@tailwind utilities;

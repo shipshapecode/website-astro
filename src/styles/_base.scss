@@ -52,14 +52,14 @@ body {
   font-weight: lighter;
 }
 
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//   @apply heading;
-// }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply heading;
+}
 
 @media only screen and (max-width: 600px) {
   h1 {
@@ -77,30 +77,30 @@ body {
   padding: 0 2rem;
 }
 
-// .learn-more {
-//   @apply font-bold text-navy;
+.learn-more {
+  @apply font-bold text-navy;
 
-//   svg {
-//     fill: var(--navy);
-//     margin-left: 0.25rem;
-//     transition-duration: 0.25s;
-//     transition-property: margin-left;
-//   }
+  svg {
+    fill: var(--navy);
+    margin-left: 0.25rem;
+    transition-duration: 0.25s;
+    transition-property: margin-left;
+  }
 
-//   &:active,
-//   &:visited {
-//     @apply text-navy;
-//   }
+  &:active,
+  &:visited {
+    @apply text-navy;
+  }
 
-//   &:hover {
-//     @apply cursor-pointer text-red;
+  &:hover {
+    @apply cursor-pointer text-red;
 
-//     svg {
-//       fill: var(--red);
-//       margin-left: 0.75rem;
-//     }
-//   }
-// }
+    svg {
+      fill: var(--red);
+      margin-left: 0.75rem;
+    }
+  }
+}
 
 .section {
   padding: 5rem 2rem;
@@ -110,29 +110,29 @@ body {
   @apply max-w-8xl w-full;
 }
 
-// .blob {
-//   position: relative;
+.blob {
+  position: relative;
 
-//   &::before {
-//     background-image: url(/svgs/contact-blob.svg);
-//     background-position: center top;
-//     background-repeat: no-repeat;
-//     background-size: 2072px;
-//     top: -250px;
-//     content: '';
-//     height: 1200px;
-//     position: absolute;
-//     width: 100%;
-//     z-index: 0;
-//   }
+  &::before {
+    background-image: url(/svgs/contact-blob.svg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 2072px;
+    top: -250px;
+    content: '';
+    height: 1200px;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+  }
 
-//   // @media only screen and (max-width: 1024px) {
-//   //   &::before {
-//   //     background-size: cover;
-//   //     width: 500vw;
-//   //   }
-//   // }
-// }
+  // @media only screen and (max-width: 1024px) {
+  //   &::before {
+  //     background-size: cover;
+  //     width: 500vw;
+  //   }
+  // }
+}
 
 .waves {
   position: relative;

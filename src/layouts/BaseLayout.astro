@@ -1,0 +1,37 @@
+---
+import MainHead from '../components/MainHead.astro';
+import NavMenu from '../components/NavMenu.astro'
+
+export interface Props {
+  description: string;
+	title: string;
+}
+
+const { description, title } = Astro.props;
+
+
+let canonicalURL = Astro.request.canonicalURL;
+// TODO: add back dynamic classes
+---
+
+<html lang="en">
+	<head>
+		<title>{title}</title>
+		<MainHead {title} {description} {canonicalURL} />
+	</head>
+<div
+  itemscope
+  itemtype="https://schema.org/Organization"
+  itemid="shipshapeorg"
+>
+  <meta itemprop="legalName" content="Ship Shape Consulting LLC" />
+
+  <NavMenu/>
+
+  <main>
+    <slot/>
+  </main>
+
+  <!-- <WaveFooter/> -->
+</div>
+</html>  

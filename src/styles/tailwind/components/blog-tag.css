@@ -1,0 +1,12 @@
+.blog-tag {
+  @apply bg-blue-light inline-block leading-loose my-2 px-4 rounded text-grey-light;
+}
+
+.blog-tag:active,
+.blog-tag:visited {
+  @apply text-grey-light;
+}
+
+.blog-tag:hover {
+  @apply bg-navy text-white;
+}
