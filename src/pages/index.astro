@@ -1,7 +1,11 @@
 ---
 // Component Imports
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BigNames from '../components/BigNames.astro';
+import BuildTheFuture from '../components/BuildTheFuture.astro';
 import HeroBlock from '../components/HeroBlock.astro';
+import WeKnowTheRopes from '../components/WeKnowTheRopes.astro';
+import WhyUsGrid from '../components/WhyUsGrid.astro';
 
 interface MarkdownFrontmatter {
 	date: number;
@@ -35,5 +39,15 @@ let description = 'Test';
         />
       </div>
     </HeroBlock>
+
+    <div class="relative z-10">
+      <BuildTheFuture />
+
+      <WeKnowTheRopes />
+
+      <BigNames />
+
+      <WhyUsGrid />
+    </div>
   </div>
 </BaseLayout>

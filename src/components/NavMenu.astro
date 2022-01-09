@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon'
+
 // TODO: add back dynamic classes
 ---
 <nav class="bg-transparent flex justify-center w-full">
@@ -51,7 +53,8 @@
         class="flex items-center px-3 py-2 text-grey hover:text-navy text-xl"
         onclick="toggleNavMenu(true)"
       >
-        Open
+        
+        <Icon class="hamburger-menu" name="menu" />
       </button>
     </div>
 
@@ -63,7 +66,7 @@
             class="cursor-pointer"
             onclick="toggleNavMenu(false)"
           >
-            Close
+            <Icon class="h-10 m-2 p-2 w-10" name="close" />
           </button>
         </div>
 
@@ -127,3 +130,14 @@ function toggleNavMenu(open) {
   }
 }
 </script>
+
+<style lang="scss">
+.hamburger-menu {
+  height: 36px;
+  width: 36px;
+}
+
+.logo {
+  word-spacing: -5px;
+}
+</style>
