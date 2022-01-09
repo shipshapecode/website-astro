@@ -1,6 +1,7 @@
 ---
 import MainHead from '../components/MainHead.astro';
 import NavMenu from '../components/NavMenu.astro'
+import WaveFooter from '../components/WaveFooter.astro'
 
 export interface Props {
   description: string;
@@ -32,6 +33,6 @@ let canonicalURL = Astro.request.canonicalURL;
     <slot/>
   </main>
 
-  <!-- <WaveFooter/> -->
+  <WaveFooter />
 </div>
 </html>  

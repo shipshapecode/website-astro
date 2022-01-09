@@ -1,0 +1,234 @@
+---
+import { Icon } from 'astro-icon';
+---
+<footer class="wave text-base">
+  <div class="footer-bottom flex flex-wrap w-full justify-center">
+    <div class="max-w-8xl p-8 w-full">
+      <div class="flex justify-center lg:justify-start w-full">
+        <Icon class="footer-logo h-20 w-20" name="logo" />
+      </div>
+
+      <nav
+        class="grid grid-cols-2 max-w-5xl pt-12 pb-12 w-full lg:grid-cols-4"
+      >
+        <div class="p-8 lg:p-4">
+          <h4 class="text-white text-xl md:text-2xl lg:text-3xl">Services</h4>
+
+          <a
+            href="/services/app-development/"
+            class="block leading-6 py-2 lg:py-1"
+          >
+            App Development
+          </a>
+
+          <a
+            href="/services/mentoring/"
+            class="block leading-6 py-2 lg:py-1"
+          >
+            Mentoring
+          </a>
+
+          <a
+            href="/services/open-source/"
+            class="block leading-6 py-2 lg:py-1"
+          >
+            Open Source
+          </a>
+        </div>
+
+        <div class="p-8 lg:p-4">
+          <h4 class="text-white text-xl md:text-2xl lg:text-3xl">
+            Specialties
+          </h4>
+
+          <a
+            href="/services/app-tours/"
+            class="block leading-6 py-2 lg:py-1"
+          >
+            App Tours
+          </a>
+
+          <a
+            href="/services/next-consulting/"
+            class="block leading-6 py-2 lg:py-1"
+          >
+            Next.js Consulting
+          </a>
+
+          <a
+            href="/services/ember-consulting/"
+            class="block leading-6 py-2 lg:py-1"
+          >
+            Ember Consulting
+          </a>
+
+          <a
+            href="/services/nuxt-consulting/"
+            class="block leading-6 py-2 lg:py-1"
+          >
+            Nuxt.js Consulting
+          </a>
+        </div>
+
+        <div class="p-8 lg:p-4">
+          <h4 class="text-white text-xl md:text-2xl lg:text-3xl">Company</h4>
+
+          <a href="/about/" class="block leading-6 py-2 lg:py-1">
+            About
+          </a>
+
+          <a href="/work/" class="block leading-6 py-2 lg:py-1">
+            Work
+          </a>
+
+          <a href="/blog/" class="block leading-6 py-2 lg:py-1">
+            Blog
+          </a>
+
+          <a
+            href="/whiskey-web-and-whatnot-podcast/"
+            class="block leading-6 py-2 lg:py-1"
+          >
+            Podcast
+          </a>
+        </div>
+
+        <div class="p-8 w-full lg:p-4">
+          <h4 class="text-white text-xl md:text-2xl lg:text-3xl">Connect</h4>
+
+          <a href="/contact/" class="block leading-6 py-2 lg:py-1">
+            Contact
+          </a>
+
+          <a
+            href="https://github.com/shipshapecode"
+            class="block leading-6 py-2 lg:py-1"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://twitter.com/shipshapecode"
+            class="block leading-6 py-2 lg:py-1"
+          >
+            Twitter
+          </a>
+
+          <a
+            href="https://www.linkedin.com/company/ship-shape/"
+            class="block leading-6 py-2 lg:py-1"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </nav>
+
+      <div
+        class="
+          flex flex-wrap
+          items-center
+          justify-center
+          w-full
+          lg:justify-start
+        "
+      >
+        <div class="flex justify-center w-full lg:justify-start">
+          <div class="social-links flex items-center pl-2 pr-2 justify-start">
+            <a
+              aria-label="GitHub"
+              class="p-2"
+              href="https://github.com/shipshapecode"
+            >
+              <div class="github-logo">
+                <Icon name="github" />
+              </div>
+            </a>
+            <a
+              aria-label="Twitter"
+              class="p-2"
+              href="https://twitter.com/shipshapecode"
+            >
+              <div class="twitter-logo">
+                <Icon name="twitter" />
+              </div>
+            </a>
+            <a
+              aria-label="LinkedIn"
+              class="p-2"
+              href="https://www.linkedin.com/company/ship-shape/"
+            >
+              <div class="linkedin-logo">
+                <Icon name="linkedin" />
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap p-4 text-white">
+          Copyright © 2021 Ship Shape Consulting LLC. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style lang="scss" global>
+.wave {
+  @apply bg-navy pt-24;
+
+  .footer-logo {
+    path {
+      fill: var(--white);
+      stroke: var(--white);
+      stroke-width: 1.25rem;
+    }
+  }
+
+  .footer-bottom {
+    a {
+      @apply font-bold text-white;
+
+      &:hover {
+        @apply text-red-light;
+      }
+    }
+
+    .social-links {
+      svg {
+        path {
+          fill: var(--white);
+          transition-duration: 0.25s;
+          transition-property: fill;
+        }
+
+        &:hover {
+          path {
+            fill: var(--red-light);
+          }
+        }
+      }
+    }
+  }
+
+  .github-logo {
+    svg {
+      height: 22px;
+      width: 23px;
+    }
+  }
+
+  .linkedin-logo {
+    svg {
+      height: 20px;
+      width: 19px;
+    }
+  }
+
+  .twitter-logo {
+    svg {
+      height: 19px;
+      width: 23px;
+    }
+  }
+}
+</style>
