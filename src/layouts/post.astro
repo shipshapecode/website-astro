@@ -1,68 +1,13 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import Nav from '../components/Nav.astro';
+import BaseLayout from './BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 
 const { content } = Astro.props;
-let canonicalURL = Astro.request.canonicalURL;
+let canonicalURL = Astro.canonicalURL;
 ---
 
-<html lang={content.lang || 'en'}>
-	<head>
-		<title>{content.title}</title>
-		<MainHead title={content.title} description={content.description} image={content.image} {canonicalURL} />
-		<style lang="scss">
-			.title {
-				margin-top: 4rem;
-				margin-bottom: 4rem;
-				font-size: 3em;
-				letter-spacing: -0.04em;
-				text-align: center;
-			}
-
-			.description {
-				margin-bottom: 4rem;
-				font-size: 1.4em;
-				font-weight: 400;
-				text-align: justify;
-				text-transform: uppercase;
-			}
-
-			.img {
-				display: block;
-				width: 100%;
-				height: auto;
-			}
-
-			.article {
-				margin-top: 4rem;
-				margin-bottom: 6rem;
-
-				:global(p) {
-					font-size: 1.3em;
-					line-height: 2;
-					margin-top: 2em;
-					margin-bottom: 2em;
-				}
-			}
-
-			.posts {
-				text-transform: uppercase;
-			}
-
-			.footer {
-				margin-top: 6rem;
-				padding-bottom: 6rem;
-				text-align: center;
-			}
-		</style>
-	</head>
-
-	<body>
-		<Nav />
-
-		<main class="wrapper">
-			<BlogPost canonicalURL={canonicalURL} post={content} >
-		</main>
-	</body>
-</html>
+<BaseLayout {content.description} {content.title}>
+  <BlogPost {canonicalURL} post={content}>
+    <slot />
+  </BlogPost>
+</BaseLayout>

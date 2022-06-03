@@ -11,6 +11,12 @@
     "image": "/img/blog/authors/chuck.jpg",
     "location": "Phoenix, AZ"
   },
+  "hannakim": {
+    "name": "Hanna Kim",
+    "id": "hannakim",
+    "image": "/img/blog/authors/hanna.jpg",
+    "location": "Bend, OR"
+  },
   "jaredgalanis": {
     "name": "Jared Galanis",
     "id": "jaredgalanis",

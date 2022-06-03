@@ -9,10 +9,12 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^0.22.1",
-    "astro-icon": "^0.5.3",
-    "prettier-plugin-astro": "^0.0.11",
-    "sass": "^1.45.1",
-    "tailwindcss": "^3.0.7"
+    "astro": "^1.0.0-beta.40",
+    "astro-icon": "^0.7.1",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "prettier-plugin-astro": "^0.0.12",
+    "sass": "^1.52.2",
+    "tailwindcss": "^3.0.24"
   }
 }

@@ -16,16 +16,16 @@ interface MarkdownFrontmatter {
 // All variables are available to use in the HTML template below.
 let title = 'Blog';
 let description = 'Test Blog';
-let canonicalURL = Astro.request.canonicalURL;
+let canonicalURL = Astro.canonicalURL;
 
 // Data Fetching: List all Markdown posts in the repo.
-let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./post/*.md');
-allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+let allPosts = await Astro.glob<MarkdownFrontmatter>('./post/*.md');
+allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 let firstPage = allPosts.slice(0, 2);
 ---
 
 <BaseLayout description={description} title={title}>
-  {allPosts.map((post) => <PostPreview post={post} author={authorData[post.author]} />)}
+  {allPosts.map((post) => <PostPreview post={post} author={authorData[post.frontmatter.author]} />)}
 </BaseLayout>
 
 <!-- <footer>
