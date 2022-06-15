@@ -36,14 +36,14 @@ thought process, when you want to develop a new feature.
 ## `app` vs `ember_debug` and Version Support
 
 The `master` branch of Ember Inspector only supports Ember apps running 2.8+. 
-There is a [separate branch](https://github.com/emberjs/ember-inspector/tree/ember-0.0.0-2.7.0) for Ember &lt; &eq; 2.7.
+There is a [separate branch](https://github.com/emberjs/ember-inspector/tree/ember-0.0.0-2.7.0) for Ember &lt;= 2.7.
 The older branch is, typically, not updated, and all new work is done in the master branch. However, something to note is,
 only the `ember_debug` folder needs to maintain compatibility with these versions, as it runs in your app, but the inspector itself,
 which lives in the `app` directory, runs the version of Ember which we specify, so it only needs to support the version we pull in,
 in package.json.
 
 When Ember Inspector starts up, it will run some logic in the [startup-wrapper](https://github.com/emberjs/ember-inspector/blob/master/ember_debug/vendor/startup-wrapper.js)
-which will check which version of Ember your app is on. If you are on Ember &lt; &eq; 2.7, it will swap out the entire codebase for the one in
+which will check which version of Ember your app is on. If you are on Ember &lt;= 2.7, it will swap out the entire codebase for the one in
 the 2.7 compatible branch. This allows us to remain compatible with all Ember versions, while also adding nice improvements to the `master`
 branch.
 

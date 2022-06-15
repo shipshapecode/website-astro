@@ -1,5 +1,6 @@
 ---
 // TODO: add back dynamic classes
+import { Img } from 'astro-imagetools/components';
 ---
 
 <nav class="bg-transparent flex justify-center w-full">
@@ -25,14 +26,19 @@
           itemtype="https://schema.org/ImageObject"
           itemid="shipshapelogo"
         >
-          <img
+          <Img
             alt="Ship Shape Logo"
-            class="h-[50px] w-auto"
-            itemprop="url"
-            height="100px"
+            attributes={{
+              img: {
+                class: '!h-[50px] w-auto',
+                itemprop: 'url',
+              }
+            }}
+            height={100}
             format="webp"
+            placeholder="none"
             src="/img/logo.png"
-            width="100px"
+            width={100}
           />
           <meta itemprop="height" content="128" />
           <meta itemprop="width" content="128" />
