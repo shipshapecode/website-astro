@@ -1,11 +1,14 @@
 ---
 import { Img } from 'astro-imagetools/components';
-  
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroBlock from '../../components/HeroBlock.astro';
 import LatestInsights from '../../components/LatestInsights.astro';
 import ServicesBlurbs from '../../components/ServicesBlurbs.astro';
 import SingleQuote from '../../components/SingleQuote.astro';
+
+import { getLatestPodcast } from '../../utils/insights';
+import { enigmaTestimonial as testimonial } from '../../testimonials/index.js';
 
 let description = 'Hi';
 let title = 'Hi';
@@ -15,6 +18,17 @@ const textSection = [
   { src: '/img/hero-images/build.png', width: 1312, height: 932 },
   { src: '/img/hero-images/open-source.png', width: 1312, height: 960 }
 ];
+
+const latestPodcastEpisode = await getLatestPodcast();
+
+const allPosts = await Astro.glob<MarkdownFrontmatter>('../post/*.md');
+const sortedPosts = allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+);
+
+const latestBlogPost = sortedPosts[0].frontmatter;
 ---
 
 <BaseLayout description={description} title={title}>
@@ -37,7 +51,7 @@ const textSection = [
         <Img
           attributes={{
             img: {
-              class:"h-auto m-auto max-w-2xl w-full"
+              class: 'h-auto m-auto max-w-2xl w-full'
             }
           }}
           height={1020}
@@ -47,7 +61,7 @@ const textSection = [
           width={1344}
           alt=""
         />
-        </div>
+      </div>
     </HeroBlock>
 
     <section class="section bg-white flex flex-wrap justify-center !pt-32">
@@ -83,7 +97,7 @@ const textSection = [
                   <Img
                     attributes={{
                       img: {
-                        class:"h-auto m-auto max-w-2xl w-full"
+                        class: 'h-auto m-auto max-w-2xl w-full'
                       }
                     }}
                     alt=""
@@ -112,15 +126,10 @@ const textSection = [
                 <div class="order-last lg:order-none">
                   <div>
                     Our software engineers specialize in
-                    <a href="/services/ember-consulting/"
-                      >Ember.js</a
-                    >,
-                    <a href="/services/nuxt-consulting/"
-                      >Nuxt.js</a
-                    >,
-                    <a href="/services/next-consulting/"
-                      >Next.js</a
-                    >, and emerging technologies like
+                    <a href="/services/ember-consulting/">Ember.js</a>,
+                    <a href="/services/nuxt-consulting/">Nuxt.js</a>,
+                    <a href="/services/next-consulting/">Next.js</a>, and
+                    emerging technologies like
                     <a href="/services/serverless-consulting/"
                       >serverless frameworks</a
                     >
@@ -139,7 +148,7 @@ const textSection = [
                   <Img
                     attributes={{
                       img: {
-                        class:"h-auto m-auto max-w-2xl w-full"
+                        class: 'h-auto m-auto max-w-2xl w-full'
                       }
                     }}
                     alt=""
@@ -168,9 +177,9 @@ const textSection = [
                 <div class="order-last">
                   <div>
                     From the future of fintech, to
-                    <a href="/work/enigma">cybersecurity</a>, and
-                    more, we help a wide variety of industries level-up their
-                    products and their people.
+                    <a href="/work/enigma">cybersecurity</a>, and more, we help
+                    a wide variety of industries level-up their products and
+                    their people.
                   </div>
                 </div>
 
@@ -178,7 +187,7 @@ const textSection = [
                   <Img
                     attributes={{
                       img: {
-                        class:"h-auto m-auto max-w-2xl w-full"
+                        class: 'h-auto m-auto max-w-2xl w-full'
                       }
                     }}
                     alt=""
@@ -198,11 +207,11 @@ const textSection = [
 
     <ServicesBlurbs />
 
-    <SingleQuote class-string="lg:pt-32" :testimonial="testimonial" />
+    <SingleQuote class-string="lg:pt-32" testimonial={testimonial} />
 
     <LatestInsights
-      :latest-blog-post="latestBlogPost"
-      :latest-podcast-episode="latestPodcastEpisode"
+      latestBlogPost={latestBlogPost}
+      latestPodcastEpisode={latestPodcastEpisode}
     />
 
     <div
@@ -238,10 +247,7 @@ const textSection = [
                       lg:justify-start lg:mt-8
                     "
                   >
-                    <a
-                      class="btn btn-red w-full lg:w-auto"
-                      href="/contact/"
-                    >
+                    <a class="btn btn-red w-full lg:w-auto" href="/contact/">
                       Contact us
                     </a>
                   </div>
@@ -252,7 +258,7 @@ const textSection = [
               <Img
                 attributes={{
                   img: {
-                    class:"h-auto m-auto max-w-2xl w-full"
+                    class: 'h-auto m-auto max-w-2xl w-full'
                   }
                 }}
                 alt=""

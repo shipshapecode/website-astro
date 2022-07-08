@@ -6,8 +6,8 @@ const { content } = Astro.props;
 let canonicalURL = Astro.canonicalURL;
 ---
 
-<BaseLayout {content.description} {content.title}>
-  <BlogPost {canonicalURL} post={content}>
+<BaseLayout description={content.description} title={content.title}>
+  <BlogPost canonicalURL={canonicalURL} post={content}>
     <slot />
   </BlogPost>
 </BaseLayout>

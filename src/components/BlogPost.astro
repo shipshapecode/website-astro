@@ -4,7 +4,7 @@ import BottomLinks from './BottomLinks.astro';
 import authorData from '../data/authors.json';
 
 export interface Props {
-  canonicalURL: string;
+  canonicalURL: URL;
   post: any;
 }
 const { canonicalURL, post } = Astro.props;

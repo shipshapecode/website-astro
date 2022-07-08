@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon';
+
+const year = new Date().getFullYear();
 ---
 <footer class="wave text-base">
   <div class="footer-bottom flex flex-wrap w-full justify-center">
@@ -165,7 +167,7 @@ import { Icon } from 'astro-icon';
         </div>
 
         <div class="flex flex-wrap p-4 text-white">
-          Copyright © 2021 Ship Shape Consulting LLC. All rights reserved.
+          Copyright © {year} Ship Shape Consulting LLC. All rights reserved.
         </div>
       </div>
     </div>

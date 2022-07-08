@@ -48,8 +48,8 @@ const { page } = Astro.props;
   <head>
     <title>{title}</title>
     <MainHead
-      {title}
-      {description}
+      title={title}
+      description={description}
       image={page.data[0].image}
       canonicalURL={canonicalURL.toString()}
       prev={page.url.prev}
@@ -74,7 +74,7 @@ const { page } = Astro.props;
   </head>
 
   <body>
-    <Nav {title} />
+    <Nav title={title} />
 
     <main class="wrapper">
       <h2 class="title">All Posts</h2>

@@ -13,6 +13,7 @@
     "astro-icon": "^0.7.1",
     "astro-imagetools": "^0.6.10",
     "autoprefixer": "^10.4.7",
+    "lodash.truncate": "^4.4.2",
     "postcss": "^8.4.14",
     "prettier-plugin-astro": "^0.1.1",
     "sass": "^1.52.3",
