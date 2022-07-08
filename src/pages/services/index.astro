@@ -1,0 +1,271 @@
+---
+import { Img } from 'astro-imagetools/components';
+  
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroBlock from '../../components/HeroBlock.astro';
+import LatestInsights from '../../components/LatestInsights.astro';
+import ServicesBlurbs from '../../components/ServicesBlurbs.astro';
+import SingleQuote from '../../components/SingleQuote.astro';
+
+let description = 'Hi';
+let title = 'Hi';
+
+const textSection = [
+  { src: '/img/hero-images/design.png', width: 1312, height: 1034 },
+  { src: '/img/hero-images/build.png', width: 1312, height: 932 },
+  { src: '/img/hero-images/open-source.png', width: 1312, height: 960 }
+];
+---
+
+<BaseLayout description={description} title={title}>
+  <article>
+    <HeroBlock heroClasses="services waves blue-waves bg-blue-light !pb-20">
+      <div slot="content">
+        <h1 itemprop="name" class="leading-tight text-4xl lg:text-6xl">
+          Software consultants who build it right the first time, every time
+        </h1>
+        <div>
+          <div class="flex justify-center mt-3 w-full lg:justify-start lg:mt-8">
+            <a class="btn btn-red w-full lg:w-auto" href="/contact/">
+              Work with us
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div slot="icon">
+        <Img
+          attributes={{
+            img: {
+              class:"h-auto m-auto max-w-2xl w-full"
+            }
+          }}
+          height={1020}
+          format="webp"
+          placeholder="none"
+          src="/img/hero-images/services.png"
+          width={1344}
+          alt=""
+        />
+        </div>
+    </HeroBlock>
+
+    <section class="section bg-white flex flex-wrap justify-center !pt-32">
+      <div>
+        <h2 class="pt-12 mb-0 text-4xl lg:text-5xl" data-aos="fade-down">
+          High impact, low ego
+        </h2>
+
+        <div class="section">
+          <div class="section-content divide-[#D8E3E8] divide-y-2">
+            <section
+              class="flex flex-wrap justify-center py-12"
+              data-aos="fade-right"
+            >
+              <div
+                class="
+                  gap-8
+                  grid grid-cols-1
+                  items-center
+                  lg:gap-48 lg:grid-cols-2
+                "
+              >
+                <div class="order-last">
+                  <div>
+                    Sailing the open seas to a new destination requires a sturdy
+                    vessel and a competent crew. Ship Shape’s app development
+                    company is full of top-tier engineers who tackle your
+                    toughest technical challenges every step of the way.
+                  </div>
+                </div>
+
+                <div>
+                  <Img
+                    attributes={{
+                      img: {
+                        class:"h-auto m-auto max-w-2xl w-full"
+                      }
+                    }}
+                    alt=""
+                    format="webp"
+                    height={textSection[0].height}
+                    placeholder="none"
+                    src={textSection[0].src}
+                    width={textSection[0].width}
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="flex flex-wrap justify-center py-12"
+              data-aos="fade-left"
+            >
+              <div
+                class="
+                  gap-8
+                  grid grid-cols-1
+                  items-center
+                  lg:gap-48 lg:grid-cols-2
+                "
+              >
+                <div class="order-last lg:order-none">
+                  <div>
+                    Our software engineers specialize in
+                    <a href="/services/ember-consulting/"
+                      >Ember.js</a
+                    >,
+                    <a href="/services/nuxt-consulting/"
+                      >Nuxt.js</a
+                    >,
+                    <a href="/services/next-consulting/"
+                      >Next.js</a
+                    >, and emerging technologies like
+                    <a href="/services/serverless-consulting/"
+                      >serverless frameworks</a
+                    >
+                    and
+                    <a href="/services/cloud-native-consulting/"
+                      >cloud native applications</a
+                    >. We combine our high IQ in these technologies with a high
+                    EQ to ensure your experience with us is just as good as the
+                    final product. Plus, we upskill your team as we work
+                    together so they can sustain and improve your products long
+                    after our engagement ends.
+                  </div>
+                </div>
+
+                <div>
+                  <Img
+                    attributes={{
+                      img: {
+                        class:"h-auto m-auto max-w-2xl w-full"
+                      }
+                    }}
+                    alt=""
+                    format="webp"
+                    height={textSection[1].height}
+                    placeholder="none"
+                    src={textSection[1].src}
+                    width={textSection[1].width}
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="flex flex-wrap justify-center py-12"
+              data-aos="fade-right"
+            >
+              <div
+                class="
+                  gap-8
+                  grid grid-cols-1
+                  items-center
+                  lg:gap-48 lg:grid-cols-2
+                "
+              >
+                <div class="order-last">
+                  <div>
+                    From the future of fintech, to
+                    <a href="/work/enigma">cybersecurity</a>, and
+                    more, we help a wide variety of industries level-up their
+                    products and their people.
+                  </div>
+                </div>
+
+                <div>
+                  <Img
+                    attributes={{
+                      img: {
+                        class:"h-auto m-auto max-w-2xl w-full"
+                      }
+                    }}
+                    alt=""
+                    format="webp"
+                    height={textSection[2].height}
+                    placeholder="none"
+                    src={textSection[2].src}
+                    width={textSection[2].width}
+                  />
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ServicesBlurbs />
+
+    <SingleQuote class-string="lg:pt-32" :testimonial="testimonial" />
+
+    <LatestInsights
+      :latest-blog-post="latestBlogPost"
+      :latest-podcast-episode="latestPodcastEpisode"
+    />
+
+    <div
+      class="
+        waves
+        blue-waves
+        section
+        bg-blue-light
+        flex flex-wrap
+        justify-center
+      "
+    >
+      <div class="section-content py-20">
+        <section class="flex flex-wrap justify-center" data-aos="fade">
+          <div
+            class="gap-8 grid grid-cols-1 items-center lg:gap-48 lg:grid-cols-2"
+          >
+            <div class="order-last lg:order-none">
+              <h2 class="text-4xl lg:text-5xl">Ready to set sail?</h2>
+
+              <div>
+                <div>
+                  <p>
+                    Reach out to tell us more about your goals and chat about
+                    how our app development company can help you get there.
+                  </p>
+                  <div
+                    class="
+                      flex
+                      justify-center
+                      mt-3
+                      w-full
+                      lg:justify-start lg:mt-8
+                    "
+                  >
+                    <a
+                      class="btn btn-red w-full lg:w-auto"
+                      href="/contact/"
+                    >
+                      Contact us
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Img
+                attributes={{
+                  img: {
+                    class:"h-auto m-auto max-w-2xl w-full"
+                  }
+                }}
+                alt=""
+                format="webp"
+                height={988}
+                placeholder="none"
+                src="/img/hero-images/ember-consulting.png"
+                width={1248}
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
