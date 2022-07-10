@@ -1,7 +1,49 @@
 ---
+import truncate from 'lodash.truncate';
+
 import MediaCard from './MediaCard.astro';
 
-const { latestBlogPost, latestPodcastEpisode } = Astro.props;
+interface MarkdownFrontmatter {
+  date: number;
+  image: string;
+  author: string;
+}
+
+async function getLatestBlogPost() {
+  const allPosts = await Astro.glob<MarkdownFrontmatter>('../pages/post/*.md');
+  const sortedPosts = allPosts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  );
+
+  return sortedPosts[0].frontmatter;
+}
+
+async function getLatestPodcast() {
+  try {
+    const response = await fetch(
+      'https://player.megaphone.fm/playlist/PODRYL5396410253/'
+    );
+    const podcastData = await response.json();
+    const latestPodcastEpisode = podcastData?.episodes[0];
+
+    const podcastDescription = truncate(
+      latestPodcastEpisode?.summary?.replace(/(<([^>]+)>)/gi, ''),
+      {
+        length: 260,
+        separator: /,?\.* +/
+      }
+    );
+
+    latestPodcastEpisode.description = podcastDescription;
+
+    return latestPodcastEpisode;
+  } catch {}
+}
+
+const latestBlogPost = await getLatestBlogPost();
+const latestPodcastEpisode = await getLatestPodcast();
 
 const podcastImg = {
   src: '/img/hero-images/www.png'
@@ -9,28 +51,28 @@ const podcastImg = {
 ---
 
 <section
-  class="section flex flex-wrap justify-center bg-white"
-  data-aos="fade-down"
+  class='section flex flex-wrap justify-center bg-white'
+  data-aos='fade-down'
 >
-  <div class="section-content flex flex-col divide-y-2 divide-[#D8E3E8]">
+  <div class='section-content flex flex-col divide-y-2 divide-[#D8E3E8]'>
     <header
-      class="
+      class='
       pb-12
       lg:flex lg:flex-row lg:place-content-between lg:items-center
-    "
+    '
     >
-      <h2 class="text-4xl lg:text-5xl">Check out the latest insights</h2>
-      <a class="btn btn-red w-full lg:w-1/5" href="/blog/"> Read on </a>
+      <h2 class='text-4xl lg:text-5xl'>Check out the latest insights</h2>
+      <a class='btn btn-red w-full lg:w-1/5' href='/blog/'> Read on</a>
     </header>
     <div>
       <MediaCard
-        media-type="podcast"
+        media-type='podcast'
         imgSrc={podcastImg.src}
         details={latestPodcastEpisode}
-        data-aos="fade-up"
+        data-aos='fade-up'
       />
 
-      <MediaCard details={latestBlogPost} data-aos="fade-up" />
+      <MediaCard details={latestBlogPost} data-aos='fade-up' />
     </div>
   </div>
 </section>

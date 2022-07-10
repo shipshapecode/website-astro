@@ -7,7 +7,6 @@ import LatestInsights from '../../components/LatestInsights.astro';
 import ServicesBlurbs from '../../components/ServicesBlurbs.astro';
 import SingleQuote from '../../components/SingleQuote.astro';
 
-import { getLatestPodcast } from '../../utils/insights';
 import { enigmaTestimonial as testimonial } from '../../testimonials/index.js';
 
 let description = 'Hi';
@@ -18,36 +17,25 @@ const textSection = [
   { src: '/img/hero-images/build.png', width: 1312, height: 932 },
   { src: '/img/hero-images/open-source.png', width: 1312, height: 960 }
 ];
-
-const latestPodcastEpisode = await getLatestPodcast();
-
-const allPosts = await Astro.glob<MarkdownFrontmatter>('../post/*.md');
-const sortedPosts = allPosts.sort(
-  (a, b) =>
-    new Date(b.frontmatter.date).valueOf() -
-    new Date(a.frontmatter.date).valueOf()
-);
-
-const latestBlogPost = sortedPosts[0].frontmatter;
 ---
 
 <BaseLayout description={description} title={title}>
   <article>
-    <HeroBlock heroClasses="services waves blue-waves bg-blue-light !pb-20">
-      <div slot="content">
-        <h1 itemprop="name" class="leading-tight text-4xl lg:text-6xl">
+    <HeroBlock heroClasses='services waves blue-waves bg-blue-light !pb-20'>
+      <div slot='content'>
+        <h1 itemprop='name' class='leading-tight text-4xl lg:text-6xl'>
           Software consultants who build it right the first time, every time
         </h1>
         <div>
-          <div class="flex justify-center mt-3 w-full lg:justify-start lg:mt-8">
-            <a class="btn btn-red w-full lg:w-auto" href="/contact/">
+          <div class='flex justify-center mt-3 w-full lg:justify-start lg:mt-8'>
+            <a class='btn btn-red w-full lg:w-auto' href='/contact/'>
               Work with us
             </a>
           </div>
         </div>
       </div>
 
-      <div slot="icon">
+      <div slot='icon'>
         <Img
           attributes={{
             img: {
@@ -55,36 +43,36 @@ const latestBlogPost = sortedPosts[0].frontmatter;
             }
           }}
           height={1020}
-          format="webp"
-          placeholder="none"
-          src="/img/hero-images/services.png"
+          format='webp'
+          placeholder='none'
+          src='/img/hero-images/services.png'
           width={1344}
-          alt=""
+          alt=''
         />
       </div>
     </HeroBlock>
 
-    <section class="section bg-white flex flex-wrap justify-center !pt-32">
+    <section class='section bg-white flex flex-wrap justify-center !pt-32'>
       <div>
-        <h2 class="pt-12 mb-0 text-4xl lg:text-5xl" data-aos="fade-down">
+        <h2 class='pt-12 mb-0 text-4xl lg:text-5xl' data-aos='fade-down'>
           High impact, low ego
         </h2>
 
-        <div class="section">
-          <div class="section-content divide-[#D8E3E8] divide-y-2">
+        <div class='section'>
+          <div class='section-content divide-[#D8E3E8] divide-y-2'>
             <section
-              class="flex flex-wrap justify-center py-12"
-              data-aos="fade-right"
+              class='flex flex-wrap justify-center py-12'
+              data-aos='fade-right'
             >
               <div
-                class="
+                class='
                   gap-8
                   grid grid-cols-1
                   items-center
                   lg:gap-48 lg:grid-cols-2
-                "
+                '
               >
-                <div class="order-last">
+                <div class='order-last'>
                   <div>
                     Sailing the open seas to a new destination requires a sturdy
                     vessel and a competent crew. Ship Shape’s app development
@@ -100,10 +88,10 @@ const latestBlogPost = sortedPosts[0].frontmatter;
                         class: 'h-auto m-auto max-w-2xl w-full'
                       }
                     }}
-                    alt=""
-                    format="webp"
+                    alt=''
+                    format='webp'
                     height={textSection[0].height}
-                    placeholder="none"
+                    placeholder='none'
                     src={textSection[0].src}
                     width={textSection[0].width}
                   />
@@ -112,33 +100,33 @@ const latestBlogPost = sortedPosts[0].frontmatter;
             </section>
 
             <section
-              class="flex flex-wrap justify-center py-12"
-              data-aos="fade-left"
+              class='flex flex-wrap justify-center py-12'
+              data-aos='fade-left'
             >
               <div
-                class="
+                class='
                   gap-8
                   grid grid-cols-1
                   items-center
                   lg:gap-48 lg:grid-cols-2
-                "
+                '
               >
-                <div class="order-last lg:order-none">
+                <div class='order-last lg:order-none'>
                   <div>
                     Our software engineers specialize in
-                    <a href="/services/ember-consulting/">Ember.js</a>,
-                    <a href="/services/nuxt-consulting/">Nuxt.js</a>,
-                    <a href="/services/next-consulting/">Next.js</a>, and
+                    <a href='/services/ember-consulting/'>Ember.js</a>,
+                    <a href='/services/nuxt-consulting/'>Nuxt.js</a>,
+                    <a href='/services/next-consulting/'>Next.js</a>, and
                     emerging technologies like
-                    <a href="/services/serverless-consulting/"
-                      >serverless frameworks</a
-                    >
+                    <a href='/services/serverless-consulting/'
+                      >serverless frameworks
+                    </a>
                     and
-                    <a href="/services/cloud-native-consulting/"
-                      >cloud native applications</a
-                    >. We combine our high IQ in these technologies with a high
-                    EQ to ensure your experience with us is just as good as the
-                    final product. Plus, we upskill your team as we work
+                    <a href='/services/cloud-native-consulting/'
+                      >cloud native applications
+                    </a>. We combine our high IQ in these technologies with a
+                    high EQ to ensure your experience with us is just as good as
+                    the final product. Plus, we upskill your team as we work
                     together so they can sustain and improve your products long
                     after our engagement ends.
                   </div>
@@ -151,10 +139,10 @@ const latestBlogPost = sortedPosts[0].frontmatter;
                         class: 'h-auto m-auto max-w-2xl w-full'
                       }
                     }}
-                    alt=""
-                    format="webp"
+                    alt=''
+                    format='webp'
                     height={textSection[1].height}
-                    placeholder="none"
+                    placeholder='none'
                     src={textSection[1].src}
                     width={textSection[1].width}
                   />
@@ -163,21 +151,21 @@ const latestBlogPost = sortedPosts[0].frontmatter;
             </section>
 
             <section
-              class="flex flex-wrap justify-center py-12"
-              data-aos="fade-right"
+              class='flex flex-wrap justify-center py-12'
+              data-aos='fade-right'
             >
               <div
-                class="
+                class='
                   gap-8
                   grid grid-cols-1
                   items-center
                   lg:gap-48 lg:grid-cols-2
-                "
+                '
               >
-                <div class="order-last">
+                <div class='order-last'>
                   <div>
                     From the future of fintech, to
-                    <a href="/work/enigma">cybersecurity</a>, and more, we help
+                    <a href='/work/enigma'>cybersecurity</a>, and more, we help
                     a wide variety of industries level-up their products and
                     their people.
                   </div>
@@ -190,10 +178,10 @@ const latestBlogPost = sortedPosts[0].frontmatter;
                         class: 'h-auto m-auto max-w-2xl w-full'
                       }
                     }}
-                    alt=""
-                    format="webp"
+                    alt=''
+                    format='webp'
                     height={textSection[2].height}
-                    placeholder="none"
+                    placeholder='none'
                     src={textSection[2].src}
                     width={textSection[2].width}
                   />
@@ -207,30 +195,27 @@ const latestBlogPost = sortedPosts[0].frontmatter;
 
     <ServicesBlurbs />
 
-    <SingleQuote class-string="lg:pt-32" testimonial={testimonial} />
+    <SingleQuote class-string='lg:pt-32' testimonial={testimonial} />
 
-    <LatestInsights
-      latestBlogPost={latestBlogPost}
-      latestPodcastEpisode={latestPodcastEpisode}
-    />
+    <LatestInsights />
 
     <div
-      class="
+      class='
         waves
         blue-waves
         section
         bg-blue-light
         flex flex-wrap
         justify-center
-      "
+      '
     >
-      <div class="section-content py-20">
-        <section class="flex flex-wrap justify-center" data-aos="fade">
+      <div class='section-content py-20'>
+        <section class='flex flex-wrap justify-center' data-aos='fade'>
           <div
-            class="gap-8 grid grid-cols-1 items-center lg:gap-48 lg:grid-cols-2"
+            class='gap-8 grid grid-cols-1 items-center lg:gap-48 lg:grid-cols-2'
           >
-            <div class="order-last lg:order-none">
-              <h2 class="text-4xl lg:text-5xl">Ready to set sail?</h2>
+            <div class='order-last lg:order-none'>
+              <h2 class='text-4xl lg:text-5xl'>Ready to set sail?</h2>
 
               <div>
                 <div>
@@ -239,15 +224,15 @@ const latestBlogPost = sortedPosts[0].frontmatter;
                     how our app development company can help you get there.
                   </p>
                   <div
-                    class="
+                    class='
                       flex
                       justify-center
                       mt-3
                       w-full
                       lg:justify-start lg:mt-8
-                    "
+                    '
                   >
-                    <a class="btn btn-red w-full lg:w-auto" href="/contact/">
+                    <a class='btn btn-red w-full lg:w-auto' href='/contact/'>
                       Contact us
                     </a>
                   </div>
@@ -261,11 +246,11 @@ const latestBlogPost = sortedPosts[0].frontmatter;
                     class: 'h-auto m-auto max-w-2xl w-full'
                   }
                 }}
-                alt=""
-                format="webp"
+                alt=''
+                format='webp'
                 height={988}
-                placeholder="none"
-                src="/img/hero-images/ember-consulting.png"
+                placeholder='none'
+                src='/img/hero-images/ember-consulting.png'
                 width={1248}
               />
             </div>

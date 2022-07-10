@@ -5,9 +5,9 @@ import { formatDateWithDots } from '../utils/date';
 
 export interface Props {
   details: { date: string; pubDate: string; title: string };
-  imgHeight: number;
-  imgSrc: string;
-  imgWidth: number;
+  imgHeight?: number;
+  imgSrc?: string;
+  imgWidth?: number;
 }
 
 const { details, imgHeight, imgWidth, imgSrc, mediaType } = Astro.props;

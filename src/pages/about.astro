@@ -1,70 +1,440 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import Nav from '../components/Nav.astro';
+import { Icon } from 'astro-icon';
+import { Img } from 'astro-imagetools/components';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BenefitsList from '../components/BenefitsList.astro';
+import HeroBlock from '../components/HeroBlock.astro';
+import LatestInsights from '../components/LatestInsights.astro';
+
+const benefits = [
+  {
+    imgSrc: '/svgs/icons/client.svg',
+    description: 'Strategic Nuxt.js partners'
+  },
+  {
+    imgSrc: '/svgs/icons/staff.svg',
+    description: 'Active GitHub contributors'
+  },
+  {
+    imgSrc: '/svgs/icons/fun.svg',
+    description: 'Local tech meetup hosts'
+  },
+  {
+    imgSrc: '/svgs/icons/pwa.svg',
+    description: 'Whiskey, Web & Whatnot podcasters'
+  }
+];
+
+const mgmt = [
+  {
+    name: 'Robbie Wagner',
+    title: 'CEO',
+    imgSrc: '/img/blog/authors/robbie.jpg',
+    twitter: 'https://twitter.com/rwwagner90',
+    linkedin: 'https://www.linkedin.com/in/robertwilliamwagner/',
+    github: 'https://github.com/rwwagner90',
+    blurb:
+      'Since 2012, Robbie has been using Ember to craft bespoke web applications for companies large and small. He founded Ship Shape in 2017 to provide Ember Consulting for clients and has since ventured into Nuxt and Astro as well. He is a huge Tailwind fanboy and believes it solves CSS once and for all.'
+  },
+  {
+    name: 'Chuck Carpenter',
+    title: 'COO',
+    imgSrc: '/img/blog/authors/chuck.jpg',
+    twitter: 'https://twitter.com/charleswthe3rd',
+    linkedin: 'https://www.linkedin.com/in/chuckcarpenter/',
+    github: 'https://github.com/chuckcarpenter',
+    blurb:
+      'Chuck leads teams to deliver high quality, nimble, reliable, and valuable products in order to create demand and increase their user base. He sometimes makes stuff in Javascript, Serverless, and GraphQL.'
+  }
+];
+
+const team = [
+  {
+    name: 'Rob Cary',
+    title: 'Senior Software Engineer',
+    imgSrc: '/img/blog/authors/rob.jpg',
+    twitter: 'https://twitter.com/r0bc4ry',
+    linkedin: 'https://www.linkedin.com/in/r0bc4ry/',
+    github: 'https://github.com/r0bc4ry'
+  },
+  {
+    name: 'Jared Galanis',
+    title: 'Senior Software Engineer',
+    imgSrc: '/img/blog/authors/jared.jpg',
+    twitter: 'https://twitter.com/jaredgalanis',
+    linkedin: 'https://www.linkedin.com/in/jaredgalanis/',
+    github: 'https://github.com/jaredgalanis'
+  },
+  {
+    name: 'Hanna Kim',
+    title: 'Software Engineer',
+    imgSrc: '/img/blog/authors/hanna.jpg',
+    twitter: '',
+    linkedin: 'https://www.linkedin.com/in/kimhanna/',
+    github: 'https://github.com/hannakim91'
+  },
+  {
+    name: 'Marika Shanahan',
+    title: 'Software Engineer',
+    imgSrc: '/img/blog/authors/marika.jpg',
+    twitter: '',
+    linkedin: 'https://www.linkedin.com/in/marika-shanahan/',
+    github: 'https://github.com/monshan'
+  }
+];
 
 let title = 'About';
 let description = 'About page of an example blog on Astro';
 let canonicalURL = Astro.canonicalURL;
 ---
 
-<html lang="en">
-	<head>
-		<MainHead {title} {description} {canonicalURL} />
-		<style lang="scss">
-			.text {
-				padding-bottom: 6rem;
+<BaseLayout description={description} title={title}>
+  <article>
+    <HeroBlock heroClasses='about bg-blue-light'>
+      <div slot='icon'>
+        <Img
+          attributes={{
+            img: {
+              class: 'mt-8'
+            }
+          }}
+          alt='Ship Shape employee group photo'
+          format='webp'
+          loading='lazy'
+          src='/img/about/group.png'
+        />
+      </div>
+      <div slot='content'>
+        <div class='m-auto max-w-lg'>
+          <h1 class='leading-tight text-5xl text-navy'>
+            Meet the crew on board our full-stack software development agency
+          </h1>
+        </div>
+      </div>
+    </HeroBlock>
 
-				p {
-					font-size: 1.2em;
-					line-height: 2;
-					margin-top: 2em;
-					margin-bottom: 2em;
-				}
-			}
+    <section class='section bg-white flex flex-wrap justify-center'>
+      <div class='section-content'>
+        <h2
+          class='py-6 text-4xl lg:flex lg:justify-center lg:py-12'
+          data-aos='fade-up'
+        >
+          Ship Shape /ˈSHipˌSHāp / adj. “To be in first-class order”
+        </h2>
+        <div
+          class='grid grid-cols-1 items-center gap-20 lg:grid-cols-2 lg:gap-32'
+          data-aos='fade-left'
+          data-aos-delay='200'
+        >
+          <div class='lg:order-last'>
+            <p>
+              Our name describes exactly what our full-stack software
+              development agency does: creates first-class products with
+              first-class talent.
+            </p>
 
-			.hero {
-				display: block;
-				height: 16rem;
-				overflow: hidden;
-				margin: 4rem 0;
+            <p>
+              Whether we’re crafting a greenfield solution with new technologies
+              or elevating an existing experience with the latest best
+              practices, we love collaborating with teams to solve old problems
+              in new ways and help each other grow in the process.
+            </p>
+          </div>
 
-				&-img {
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
-				}
-			}
+          <Img
+            alt=''
+            format='webp'
+            height={1278}
+            src='/img/about/ship-shape-sign.png'
+            width={1278}
+            loading='lazy'
+          />
+        </div>
+      </div>
+    </section>
 
-			.title {
-				font-size: 3em;
-				letter-spacing: -0.04em;
-				margin-top: 2rem;
-				margin-bottom: 0;
-				text-align: center;
-			}
-		</style>
-	</head>
-	<body>
-		<Nav {title} />
+    <!-- <FunFacts /> -->
 
-		<main class="wrapper">
-			<h2 class="title">{title}</h2>
-			<div class="hero">
-				<img class="hero-img" src="/images/chapter-01.jpg" alt="" />
-			</div>
-			<div class="text">
-				<p>
-					The book cover and spine above and the images which follow were not part of the original Ormsby translation—they are taken from the 1880 edition of J. W. Clark,
-					illustrated by Gustave Doré. Clark in his edition states that, “The English text of ‘Don Quixote’ adopted in this edition is that of Jarvis, with occasional corrections
-					from Motteaux.”
-				</p>
-				<p>
-					See in the introduction below John Ormsby’s critique of both the Jarvis and Motteaux translations. It has been elected in the present Project Gutenberg edition to attach
-					the famous engravings of Gustave Doré to the Ormsby translation instead of the Jarvis/Motteaux. The detail of many of the Doré engravings can be fully appreciated only by
-					utilizing the “Full Size” button to expand them to their original dimensions. Ormsby in his Preface has criticized the fanciful nature of Doré’s illustrations; others
-					feel these woodcuts and steel engravings well match Quixote’s dreams.
-				</p>
-			</div>
-		</main>
-	</body>
-</html>
+    <section class='waves blue-waves bg-blue-light section flex justify-center'>
+      <div class='section-content flex flex-wrap justify-center'>
+        <!-- replace with TwoColumnSection -->
+        <div class='lg:flex lg:py-20' data-aos='fade-down'>
+          <Img
+            attributes={{
+              img: {
+                class: 'h-auto m-auto max-w-2xl w-full pb-12 lg:order-last'
+              }
+            }}
+            format='webp'
+            height={772}
+            placeholder='none'
+            src='/img/hero-images/mentoring.png'
+            width={1312}
+            alt=''
+          />
+          <div class='pb-20 lg:self-center'>
+            <h2>Get to know the crew</h2>
+            <p>
+              Our clients can confirm: Ship Shape’s software development agency
+              is made of the best developers in the business. We blend of IQ +
+              EQ, ensuring you get talented engineers who are easy to work with
+              and blend seamlessly with your team.
+            </p>
+          </div>
+        </div>
+
+        <section class='w-full'>
+          <div class='space-y-12'>
+            <!-- two lists - employee and mgmt -->
+            <ul>
+              {mgmt.map((employee, index) => (
+                <li>
+                  <div
+                    class="
+									flex flex-col
+									gap-y-8
+									lg:flex-row lg:items-center lg:gap-x-24 lg:pb-28
+								"
+                    data-aos="flip-up"
+                  >
+                    <div class="space-y-8">
+                      <h3 class="mb-3">{employee.name}</h3>
+                      <p class="font-bold text-2xl text-navy">
+                        {employee.title}
+                      </p>
+
+                      <p>{employee.blurb ? employee.blurb : null}</p>
+                      <ul class="flex space-x-8">
+                        <li>
+                          <a href={employee.github} class="github-logo">
+                            <span class="sr-only">GitHub</span>
+                            <Icon aria-hidden="true" name="github" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href={employee.linkedin} class="linkedin-logo">
+                            <span class="sr-only">LinkedIn</span>
+                            <Icon aria-hidden="true" name="linkedin" />
+                          </a>
+                        </li>
+                        {employee.twitter ? (
+                          <li>
+                            <a href={employee.twitter} class="twitter-logo">
+                              <span class="sr-only">Twitter</span>
+                              <Icon aria-hidden="true" name="twitter" />
+                            </a>
+                          </li>
+                        ) : null}
+                      </ul>
+                    </div>
+                    <Img
+                      attributes={{
+                        img: {
+                          class: `filter h-auto grayscale object-cover order-first shadow-lg rounded-lg w-full lg:w-88 ${
+                            index % 2 !== 0 ? 'lg:order-last' : null
+                          }`
+                        }
+                      }}
+                      format="webp"
+                      height={734}
+                      placeholder="none"
+                      src={employee.imgSrc}
+                      alt=""
+                      width={734}
+                    />
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <ul
+              class='
+							space-y-24
+							lg:space-y-0
+							lg:grid
+							lg:grid-cols-2
+							lg:gap-x-8
+							lg:gap-y-28
+							lg:pb-24
+						'
+            >
+              {team.map((employee, index) => (
+                <li>
+                  <div
+                    class="gap-y-8 grid lg:grid-cols-2 lg:gap-x-8"
+                    data-aos="flip-up"
+                  >
+                    <div class="self-center">
+                      <div class="text-lg font-medium">
+                        <h3 class="mb-3">{employee.name}</h3>
+                        <p class="text-grey font-medium text-2xl">
+                          {employee.title}
+                        </p>
+                      </div>
+
+                      <ul class="flex mb-0 space-x-8">
+                        <li class="mb-0">
+                          <a href={employee.github} class="github-logo">
+                            <span class="sr-only">GitHub</span>
+                            <Icon aria-hidden="true" name="github" />
+                          </a>
+                        </li>
+                        <li class="mb-0">
+                          <a href={employee.linkedin} class="linkedin-logo">
+                            <span class="sr-only">LinkedIn</span>
+                            <Icon aria-hidden="true" name="linkedin" />
+                          </a>
+                        </li>
+                        {employee.twitter ? (
+                          <li class="mb-0">
+                            <a href={employee.twitter} class="twitter-logo">
+                              <span class="sr-only">Twitter</span>
+                              <Icon aria-hidden="true" name="twitter" />
+                            </a>
+                          </li>
+                        ) : null}
+                      </ul>
+                    </div>
+
+                    <div class="aspect-h-10 aspect-w-10 order-first">
+                      <Img
+                        attributes={{
+                          img: {
+                            class:
+                              'filter grayscale object-cover shadow-lg rounded-lg'
+                          }
+                        }}
+                        format="webp"
+                        placeholder="none"
+                        src={employee.imgSrc}
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+        <!-- create a LatestInsights component since this is being used in 2 pages now  -->
+      </div>
+    </section>
+
+    <!-- replace with insights component -->
+    <div class='section flex flex-wrap justify-center bg-white'>
+      <div class='section-content flex flex-col divide-y-2 divide-[#D8E3E8]'>
+        <div
+          class='
+					py-24
+					lg:flex lg:flex-row lg:place-content-between lg:items-center
+				'
+          data-aos='fade-down'
+        >
+          <div>
+            <h2>Tap into our knowledge base</h2>
+            <p>
+              Check out the latest insights from across our app development
+              company.
+            </p>
+          </div>
+          <a
+            class='flex place-content-center btn btn-red w-full lg:w-1/5'
+            href='/blog/'
+          >
+            Get more insights
+          </a>
+        </div>
+
+        <LatestInsights />
+      </div>
+    </div>
+
+    <section class='section bg-navy flex justify-center lg:py-40'>
+      <div class='section-content flex flex-col justify-center'>
+        <div
+          class='pb-24 lg:flex lg:flex-row lg:items-center lg:gap-x-32'
+          data-aos='fade-down'
+        >
+          <div class='text-white'>
+            <h2 class='text-white'>Giving back</h2>
+            <p>
+              The people within our app development company do this work for
+              passion, not just a paycheck. Here’s how we’re contributing to the
+              community and pushing the software space forward.
+            </p>
+          </div>
+          <a
+            class='flex place-content-center btn btn-red w-full lg:w-1/5'
+            href='/blog/'
+          >
+            Get more contributions
+          </a>
+        </div>
+        <BenefitsList benefits={benefits} />
+      </div>
+    </section>
+
+    <div
+      class='
+			waves
+			blue-waves
+			section
+			bg-blue-light
+			flex flex-wrap
+			justify-center
+		'
+    >
+      <div class='section-content py-20'>
+        <section class='flex flex-wrap justify-center' data-aos='fade'>
+          <div
+            class='gap-8 grid grid-cols-1 items-center lg:gap-48 lg:grid-cols-2'
+          >
+            <div class='order-last lg:order-none'>
+              <h2 class='text-4xl lg:text-5xl'>
+                Want to chart your course to software success?
+              </h2>
+
+              <div>
+                <div>
+                  <p>
+                    Reach out to tell us more about your goals and chat about
+                    how we can help you get there.
+                  </p>
+                  <div
+                    class='
+										flex
+										justify-center
+										mt-3
+										w-full
+										lg:justify-start lg:mt-8
+									'
+                  >
+                    <a class='btn btn-red w-full lg:w-auto' href='/contact/'>
+                      Contact us
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Img
+                alt=''
+                attributes={{
+                  img: {
+                    class: 'h-auto m-auto max-w-2xl w-full'
+                  }
+                }}
+                format='webp'
+                height={988}
+                placeholder='none'
+                src='/img/hero-images/ember-consulting.png'
+                width={1248}
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
