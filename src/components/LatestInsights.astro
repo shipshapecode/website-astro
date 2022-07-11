@@ -20,6 +20,8 @@ async function getLatestBlogPost() {
   return sortedPosts[0].frontmatter;
 }
 
+let apiCallTries = 5;
+
 async function getLatestPodcast() {
   try {
     const response = await fetch(
@@ -39,7 +41,17 @@ async function getLatestPodcast() {
     latestPodcastEpisode.description = podcastDescription;
 
     return latestPodcastEpisode;
-  } catch {}
+  } catch (error) {
+    if (apiCallTries <= 0) {
+      throw error;
+    }
+
+    apiCallTries--;
+
+    setTimeout(function () {
+      return getLatestPodcast();
+    }, 5000);
+  }
 }
 
 const latestBlogPost = await getLatestBlogPost();
