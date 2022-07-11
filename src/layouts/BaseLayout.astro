@@ -1,38 +1,45 @@
 ---
 import MainHead from '../components/MainHead.astro';
-import NavMenu from '../components/NavMenu.astro'
-import WaveFooter from '../components/WaveFooter.astro'
+import NavMenu from '../components/NavMenu.astro';
+import WaveFooter from '../components/WaveFooter.astro';
 
 export interface Props {
   description: string;
-	title: string;
+  title: string;
 }
 
 const { description, title } = Astro.props;
-
 
 let canonicalURL = Astro.canonicalURL;
 // TODO: add back dynamic classes
 ---
 
-<html lang="en">
-	<head>
-		<title>{title}</title>
-		<MainHead {title} {description} {canonicalURL} />
-	</head>
-<div
-  itemscope
-  itemtype="https://schema.org/Organization"
-  itemid="shipshapeorg"
->
-  <meta itemprop="legalName" content="Ship Shape Consulting LLC" />
+<html lang='en'>
+  <head>
+    <title>{title}</title>
+    <MainHead {title} {description} {canonicalURL} />
+  </head>
 
-  <NavMenu/>
+  <body>
+    <div
+      itemscope
+      itemtype='https://schema.org/Organization'
+      itemid='shipshapeorg'
+    >
+      <meta itemprop='legalName' content='Ship Shape Consulting LLC' />
 
-  <main>
-    <slot/>
-  </main>
+      <NavMenu />
 
-  <WaveFooter />
-</div>
-</html>  
+      <main>
+        <slot></slot>
+      </main>
+
+      <WaveFooter />
+    </div>
+
+    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script is:inline>
+      AOS.init();
+    </script>
+  </body>
+</html>

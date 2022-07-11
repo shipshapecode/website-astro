@@ -1,44 +1,59 @@
 ---
-import "../styles/global.scss";
+import '../styles/global.scss';
 
 export interface Props {
-	title: string;
-	description: string;
-	image?: string;
-	type?: string;
-	next?: string;
-	prev?: string;
-	canonicalURL?: string | URL;
+  title: string;
+  description: string;
+  image?: string;
+  type?: string;
+  next?: string;
+  prev?: string;
+  canonicalURL?: string | URL;
 }
 
-const { title, description, image, type, next, prev, canonicalURL } = Astro.props as Props;
+const { title, description, image, type, next, prev, canonicalURL } =
+  Astro.props as Props;
 ---
 
 <!-- Common -->
-<meta charset="UTF-8" />
+<meta charset='UTF-8' />
 <title>{title}</title>
-<meta name="description" content={description} />
+<meta name='description' content={description} />
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 <!-- Sitemap -->
-<link rel="sitemap" href="/sitemap.xml" />
+<link rel='sitemap' href='/sitemap.xml' />
 <!-- RSS -->
-<link rel="alternate" type="application/rss+xml" href="/feed/posts.xml" />
+<link rel='alternate' type='application/rss+xml' href='/feed/posts.xml' />
 
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel='icon' type='image/x-icon' href='/favicon.ico' />
 
 <!-- SEO -->
-<link rel="canonical" href={canonicalURL} />
-{next && <link rel="next" aria-label="Previous Page" href={new URL(next, canonicalURL).href}>}
-{prev && <link rel="prev" aria-label="Next Page" href={new URL(prev, canonicalURL).href}>}
+<link rel='canonical' href={canonicalURL} />
+{next && (
+  <link
+    rel="next"
+    aria-label="Previous Page"
+    href={new URL(next, canonicalURL).href}
+  />
+)}
+{prev && (
+  <link
+    rel="prev"
+    aria-label="Next Page"
+    href={new URL(prev, canonicalURL).href}
+  />
+)}
 
 <!-- OpenGraph -->
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-{image && (<meta property="og:image" content={new URL(image, canonicalURL)}>)}
+<meta property='og:title' content={title} />
+<meta property='og:description' content={description} />
+{image && <meta property="og:image" content={new URL(image, canonicalURL)} />}
 
 <!-- Twitter -->
-<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
-<meta name="twitter:site" content="@astro" />
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
-{image && (<meta name="twitter:image" content={image}>)}
+<meta name='twitter:card' content={image ? 'summary_large_image' : 'summary'} />
+<meta name='twitter:site' content='@shipshapecode' />
+<meta name='twitter:title' content={title} />
+<meta name='twitter:description' content={description} />
+{image && <meta name="twitter:image" content={image} />}
