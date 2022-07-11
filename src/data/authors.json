@@ -29,6 +29,12 @@
     "image": "/img/blog/authors/jessica.jpg",
     "location": "Denver, CO"
   },
+  "marikashanahan": {
+    "name": "Marika Shanahan",
+    "id": "marikashanahan",
+    "image": "/img/blog/authors/marika.jpg",
+    "location": "San Diego, CA"
+  },
   "r0bc4ry": {
     "name": "Rob Cary",
     "id": "r0bc4ry",
