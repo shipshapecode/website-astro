@@ -3,6 +3,7 @@ import { astroImageTools } from 'astro-imagetools';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://shipshape.io/',
   vite: {
     plugins: [
       {

@@ -10,7 +10,7 @@ export interface Props {
 
 const { description, title } = Astro.props;
 
-let canonicalURL = Astro.canonicalURL;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // TODO: add back dynamic classes
 ---
 

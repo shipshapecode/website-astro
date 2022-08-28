@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 
 const { content } = Astro.props;
-let canonicalURL = Astro.canonicalURL;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <BaseLayout description={content.description} title={content.title}>
