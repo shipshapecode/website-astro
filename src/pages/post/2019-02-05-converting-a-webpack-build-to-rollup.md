@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: rwwagner90
+authorId: rwwagner90
 categories: 
   - app tour
   - rollup

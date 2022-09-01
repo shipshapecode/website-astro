@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: rwwagner90
+authorId: rwwagner90
 categories: 
   - electron
   - javascript
@@ -83,7 +82,7 @@ rm -fr *.p12
 
 You'll want to create a step in your actions something like this:
 
-```yaml
+```yml
 - name: Add MacOS certs
   if: matrix.os == 'macos-latest' && startsWith(github.ref, 'refs/tags/')
   run: chmod +x add-osx-cert.sh && ./add-osx-cert.sh
@@ -133,7 +132,7 @@ but these settings will vary depending on your app. The `entitlements.plist` tha
 
 **entitlements.plist**
 
-```xml
+```plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -175,7 +174,7 @@ We will also need to add the password for the cert as a `WINDOWS_PFX_PASSWORD` G
 
 We'll then add a step to our GitHub actions of the following:
 
-```yaml
+```yml
 - name: Add Windows certificate
         if: matrix.os == 'windows-latest' && startsWith(github.ref, 'refs/tags/')
         id: write_file
@@ -215,7 +214,7 @@ adding all the certs, signing, and building the project.
 It will only run tests unless a new tag is pushed. When a new tag is pushed, it will
 build on MacOS, Windows, and Ubuntu, and push all of those release assets to GitHub.
 
-```yaml
+```yml
 name: Package and Release
 
 on:

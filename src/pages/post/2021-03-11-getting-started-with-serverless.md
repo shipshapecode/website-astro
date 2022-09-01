@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: chuckcarpenter
+authorId: chuckcarpenter
 categories:
   - graphql
   - javascript
@@ -84,7 +83,7 @@ yarn add serverless serverless-offline serverless-bundle -D
 
 We then just add the config for the plugins to `serverless.yml` at the root:
 
-```yaml
+```yml
 plugins:
   - serverless-bundle
   - serverless-offline

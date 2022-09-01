@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: rwwagner90
+authorId: rwwagner90
 categories: 
   - testing
 date: '2019-10-27'

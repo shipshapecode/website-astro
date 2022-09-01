@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: hannakim
+authorId: hannakim
 categories:
   - javascript
   - react

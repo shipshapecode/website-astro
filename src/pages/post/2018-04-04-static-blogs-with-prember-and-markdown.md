@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: rwwagner90
+authorId: rwwagner90
 categories: 
   - ember.js
   - fastboot
@@ -133,8 +132,8 @@ I also supply titles, authors, and any other data that makes sense. For example 
 
 ```md
 ---
-author: Robert Wagner
-author: rwwagner90
+authorId: Robert Wagner
+authorId: rwwagner90
 date: 2018-04-04
 slug: static-blogs-with-prember-and-markdown
 tags: ember, fastboot, static, prember, prerender, blog, ghost, markdown

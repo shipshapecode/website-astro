@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: rwwagner90
+authorId: rwwagner90
 categories: 
   - javascript
 date: '2020-08-18'

@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: r0bc4ry
+authorId: r0bc4ry
 categories:
   - javascript
   - react

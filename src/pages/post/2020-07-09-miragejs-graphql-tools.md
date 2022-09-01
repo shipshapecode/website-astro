@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: chuckcarpenter
+authorId: chuckcarpenter
 categories: 
   - miragejs
   - graphql

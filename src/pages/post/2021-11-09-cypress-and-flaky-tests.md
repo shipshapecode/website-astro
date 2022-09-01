@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: JessicaJustice
+authorId: JessicaJustice
 categories:
   - cypress
   - end-to-end testing

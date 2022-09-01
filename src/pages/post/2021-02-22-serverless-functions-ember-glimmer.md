@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: jaredgalanis
+authorId: jaredgalanis
 categories:
   - ember.js
   - glimmer

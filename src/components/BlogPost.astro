@@ -1,14 +1,13 @@
 ---
 import AuthorRow from './AuthorRow.astro';
 import BottomLinks from './BottomLinks.astro';
-import authorData from '../data/authors.json';
 
 export interface Props {
   canonicalURL: URL;
   post: any;
 }
 const { canonicalURL, post } = Astro.props;
-const author = authorData[post.author];
+const { author } = post;
 ---
 <article itemscope itemtype="http://schema.org/BlogPosting">
   <link itemprop="mainEntityOfPage" href={canonicalURL} />

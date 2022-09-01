@@ -32,7 +32,7 @@ const description = 'An example blog on Astro';
 const posts = allPosts
   .filter((post) => post.frontmatter.author === params.author)
   .sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
-const author = authorData[posts[0].frontmatter.author];
+const author = posts[0].frontmatter.author;
 ---
 
 <html lang='en'>

@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: JessicaJustice
+authorId: JessicaJustice
 categories:
   - next.js
   - react
@@ -107,7 +106,7 @@ Another helpful addition Next.js offers is that of file-based page [routing](htt
 - Any file named `index` is recognized by Next.js to indicate the root of the pages directory, or a sub-directory if located in a sub-folder nested within the pages directory.
 - Next.js allows for both static and dynamic routes. Static routes are explicitly defined by developers, while a dynamic route is defined using brackets, the content of which acts as a placeholder for a dynamic URL segment.
 
-<img width="970" alt="Screen Shot 2022-02-02 at 10 47 56 PM" src="https://user-images.githubusercontent.com/73088654/152288317-7641a935-fda4-470f-a088-31f4c4513c50.png"/>
+<img width="970" alt="Screen Shot 2022-02-02 at 10 47 56 PM" src="https://user-images.githubusercontent.com/73088654/152288317-7641a935-fda4-470f-a088-31f4c4513c50.png">
 
 `The file tree above displays a dynamic nested route with a single nested index page, and a static nested route with nested dynamic and static pages.`
 

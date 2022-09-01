@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: BrianSipple
+authorId: BrianSipple
 categories: 
   - app tour
   - shepherd.js

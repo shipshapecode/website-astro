@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/post.astro
-author: rwwagner90
+authorId: rwwagner90
 categories: 
   - ember.js
   - ember-meta
@@ -97,8 +96,8 @@ The values in my `.md` files look something like this:
 
 ```md
 ---
-author: Robert Wagner
-author: rwwagner90
+authorId: Robert Wagner
+authorId: rwwagner90
 categories: 
   - ember
   - ember.js
@@ -143,7 +142,7 @@ export default Route.extend(PostMetaMixin, {
       content: '<h1>Ember Inspector - The Journey so Far</h1> <p>This is a post body!</p>',
       attributes: {
         author: 'Robert Wagner',
-        author: 'rwwagner90',
+        authorId: 'rwwagner90',
         categories: ['ember', 'ember.js', 'ember inspector'],
         date: '2018-04-09',
         slug: 'ember-inspector-the-journey-so-far',
