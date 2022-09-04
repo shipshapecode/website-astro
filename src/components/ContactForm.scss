@@ -1,0 +1,20 @@
+.bot-field {
+  display: none;
+}
+
+.contact-form {
+  .error {
+    @apply border-red;
+  }
+
+  .error-message p {
+    @apply bg-red p-4 rounded-md text-center text-white;
+  }
+}
+
+.flash__wrapper,
+.flash__message {
+  flex: 1 0 auto;
+  margin: 0 !important;
+  text-align: center;
+}

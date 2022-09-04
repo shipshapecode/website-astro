@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import { astroImageTools } from 'astro-imagetools';
+import solid from '@astrojs/solid-js';
 import { addAuthorRemarkPlugin } from './add-author-remark-plugin.mjs';
 
 // https://astro.build/config
@@ -24,12 +25,8 @@ export default defineConfig({
     integrations: true
   },
 
-  integrations: [astroImageTools],
+  integrations: [astroImageTools, solid()],
   markdown: {
-    remarkPlugins: [
-      'remark-gfm',
-      'remark-smartypants',
-      addAuthorRemarkPlugin
-    ]
+    remarkPlugins: ['remark-gfm', 'remark-smartypants', addAuthorRemarkPlugin]
   }
 });

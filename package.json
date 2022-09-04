@@ -8,7 +8,11 @@
     "build": "astro build",
     "preview": "astro preview"
   },
+  "dependencies": {
+    "solid-js": "^1.5.4"
+  },
   "devDependencies": {
+    "@astrojs/solid-js": "^1.1.0",
     "astro": "1.0.1",
     "astro-icon": "^0.7.3",
     "astro-imagetools": "^0.6.10",
