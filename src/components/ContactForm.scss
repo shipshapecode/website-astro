@@ -3,12 +3,12 @@
 }
 
 .contact-form {
-  .error {
-    @apply border-red;
+  .error-input {
+    box-shadow: 0px 0px 2px 1px var(--red);
   }
 
-  .error-message p {
-    @apply bg-red p-4 rounded-md text-center text-white;
+  .error-message {
+    @apply text-red text-sm;
   }
 }
 

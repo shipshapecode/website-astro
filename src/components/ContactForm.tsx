@@ -1,4 +1,6 @@
 import type { Component } from 'solid-js';
+import { createStore } from 'solid-js/store';
+import { useForm } from '../utils/validation.jsx';
 import './ContactForm.scss';
 
 export const ContactForm: Component = () => {
@@ -21,7 +23,7 @@ export const ContactForm: Component = () => {
       eventLabel: 'contact-form-submitted'
     });
   }
-  
+
   function _errorMessage() {
     this.flashError('Something went wrong :(. Please refresh and try again.');
   }
@@ -41,7 +43,11 @@ export const ContactForm: Component = () => {
     }
   };
 
-  const errors = [];
+  const { validate, formSubmit, errors } = useForm({
+    errorClass: 'error-input'
+  });
+
+  const ErrorMessage = (props) => <span class="error-message">{props.error}</span>;
 
   return (
     <div class="relative w-full">
@@ -72,11 +78,11 @@ export const ContactForm: Component = () => {
             <div class="lg:col-span-2">
               <input type="hidden" name="form-name" value="contact-us" />
               <fieldset>
-                <div class="error-message">
+                {/* <div class="error-message">
                   {errors.map((error) => (
                     <p>{error}</p>
                   ))}
-                </div>
+                </div> */}
 
                 <div class="bot-field">
                   <label>
@@ -94,13 +100,15 @@ export const ContactForm: Component = () => {
               <div class="mt-1">
                 <input
                   id="name"
-                  v-validate
                   type="text"
                   name="name"
                   required
                   class="block w-full shadow-sm sm:text-sm focus:outline-none focus:ring-navy-card-light focus:border-navy-card-light border-grey-light rounded-md"
+                  use:validate
                 />
               </div>
+
+              {errors.name && <ErrorMessage error={errors.name} />}
             </div>
 
             <div>
@@ -115,8 +123,11 @@ export const ContactForm: Component = () => {
                   required
                   autocomplete="email"
                   class="block w-full shadow-sm sm:text-sm focus:outline-none focus:ring-navy-card-light focus:border-navy-card-light border-grey-light rounded-md"
+                  use:validate
                 />
               </div>
+
+              {errors.email && <ErrorMessage error={errors.email} />}
             </div>
 
             <div>
@@ -165,11 +176,15 @@ export const ContactForm: Component = () => {
                   required
                   rows={4}
                   class="block w-full shadow-sm sm:text-sm focus:ring-navy-card-light focus:border-navy-card-light border-grey-light rounded-md"
+                  use:validate
                 ></textarea>
               </div>
+
+              {errors.description && <ErrorMessage error={errors.description} />}
             </div>
 
             <input
+              disabled={Object.keys(errors).length}
               type="submit"
               value="Send Message"
               class="btn btn-red cursor-pointer inline-flex justify-center border border-transparent transition-colors font-medium rounded-md focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"

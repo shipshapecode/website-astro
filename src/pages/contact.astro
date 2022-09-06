@@ -14,7 +14,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   >
     <div class="section-content flex flex-wrap justify-center">
       <div class="flex w-full flex-wrap items-center justify-center">
-        <ContactForm />
+        <ContactForm client:only="solid" />
       </div>
     </div>
   </div>

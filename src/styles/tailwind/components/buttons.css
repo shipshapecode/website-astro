@@ -4,30 +4,30 @@
 }
 
 .btn-red {
-  @apply bg-red text-white;
+  @apply !bg-red !text-white;
 }
 
 .btn-white {
-  @apply bg-white text-navy;
+  @apply !bg-white !text-navy;
 }
 
 .btn-white:active,
 .btn-white:visited {
-  @apply text-navy;
+  @apply !text-navy;
 }
 
 .btn-red:active {
-  @apply text-white;
+  @apply !text-white;
 }
 
 .btn-red:visited {
-  @apply text-white;
+  @apply !text-white;
 }
 
 .btn-white:hover {
-  @apply bg-blue-light text-navy;
+  @apply !bg-blue-light !text-navy;
 }
 
 .btn-red:hover {
-  @apply bg-red-light text-white;
+  @apply !bg-red-light !text-white;
 }
