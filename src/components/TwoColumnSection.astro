@@ -1,4 +1,53 @@
 ---
+import { Img } from 'astro-imagetools/components';
+
+export interface Props {
+  classString: string;
+  image: {
+    height: number;
+    src: string;
+    width: number;
+  };
+  header: string;
+  isFlipped: boolean;
+}
+
+const { classString, image, header, isFlipped } = Astro.props as Props;
 ---
 
-<h2>Two Column Section</h2>
+<section
+  class={`section flex flex-wrap justify-center ${classString}`}
+  data-aos="fade-up"
+>
+  <div
+    class="section-content gap-8 grid grid-cols-1 items-center lg:gap-32 lg:grid-cols-2"
+  >
+    <div class={`order-last ${!isFlipped ? 'lg:order-none' : ''}`}>
+      <h2
+        v-if="header"
+        class="text-4xl"
+        data-aos={isFlipped ? 'fade-left' : 'fade-right'}
+      >
+        {header}
+      </h2>
+      <div data-aos={isFlipped ? 'fade-left' : 'fade-right'}>
+        <slot name="content" />
+      </div>
+    </div>
+    <div data-aos="fade-up">
+      <Img
+        attributes={{
+          img: {
+            class: 'h-auto m-auto max-w-2xl w-full'
+          }
+        }}
+        format="webp"
+        height={image.height}
+        placeholder="none"
+        src={image.src}
+        alt=""
+        width={image.width}
+      />
+    </div>
+  </div>
+</section>
