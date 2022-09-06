@@ -14,24 +14,33 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // TODO: add back dynamic classes
 ---
 
-<html lang='en'>
+<html lang="en">
   <head>
     <title>{title}</title>
-    <MainHead {title} {description} {canonicalURL} />
+    <MainHead
+      title={title}
+      description={description}
+      canonicalURL={canonicalURL}
+    />
   </head>
 
   <body>
     <div
       itemscope
-      itemtype='https://schema.org/Organization'
-      itemid='shipshapeorg'
+      itemtype="https://schema.org/Organization"
+      itemid="shipshapeorg"
+      class={canonicalURL?.pathname === '/' ||
+      canonicalURL?.pathname === '/about/' ||
+      canonicalURL?.pathname === '/services/'
+        ? 'bg-blue-light'
+        : ''}
     >
-      <meta itemprop='legalName' content='Ship Shape Consulting LLC' />
+      <meta itemprop="legalName" content="Ship Shape Consulting LLC" />
 
       <NavMenu />
 
       <main>
-        <slot></slot>
+        <slot />
       </main>
 
       <WaveFooter />

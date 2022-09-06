@@ -33,3 +33,19 @@ const { posts } = Astro.props;
     </div>
   ))}
 </div>
+
+<style lang="scss">
+  .blog-post {
+    .blog-tag {
+      a {
+        transition-duration: 0.25s;
+        transition-property: background-color, color, fill;
+      }
+    }
+  
+    .title {
+      @apply text-navy;
+      font-size: 2rem;
+    }
+  }
+  </style>
