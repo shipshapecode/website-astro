@@ -91,44 +91,42 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <BaseLayout description={description} title={title}>
   <article>
-    <HeroBlock heroClasses='about bg-blue-light'>
-      <div slot='icon'>
-        <Img
-          attributes={{
-            img: {
-              class: 'mt-8'
-            }
-          }}
-          alt='Ship Shape employee group photo'
-          format='webp'
-          loading='lazy'
-          src='/img/about/group.png'
-        />
-      </div>
-      <div slot='content'>
-        <div class='m-auto max-w-lg'>
-          <h1 class='leading-tight text-5xl text-navy'>
-            Meet the crew on board our full-stack software development agency
-          </h1>
-        </div>
+    <HeroBlock heroClasses="about bg-blue-light">
+      <Img
+        attributes={{
+          img: {
+            class: 'mt-8'
+          }
+        }}
+        alt="Ship Shape employee group photo"
+        format="webp"
+        loading="lazy"
+        src="/img/about/group.png"
+        slot="icon"
+      />
+
+      <div class="m-auto max-w-lg" slot="content">
+        <h1 class="leading-tight text-5xl text-navy">
+          Meet the crew on board our full-stack software development agency
+        </h1>
       </div>
     </HeroBlock>
 
-    <section class='section bg-white flex flex-wrap justify-center'>
-      <div class='section-content'>
+    <section class="section bg-white flex flex-wrap justify-center">
+      <div class="section-content">
         <h2
-          class='py-6 text-4xl lg:flex lg:justify-center lg:py-12'
-          data-aos='fade-up'
+          class="py-6 text-4xl lg:flex lg:justify-center lg:py-12"
+          data-aos="fade-up"
         >
           Ship Shape /ˈSHipˌSHāp / adj. “To be in first-class order”
         </h2>
         <div
-          class='grid grid-cols-1 items-center gap-20 lg:grid-cols-2 lg:gap-32'
-          data-aos='fade-left'
-          data-aos-delay='200'
+          class="grid grid-cols-1 items-center gap-20 lg:grid-cols-2 lg:gap-32"
+          data-aos="fade-left"
+          data-aos-delay="200"
         >
-          <div class='lg:order-last'>
-            <p>
+          <div class="lg:order-last">
+            <p class="mb-6">
               Our name describes exactly what our full-stack software
               development agency does: creates first-class products with
               first-class talent.
@@ -143,12 +141,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           </div>
 
           <Img
-            alt=''
-            format='webp'
+            alt=""
+            format="webp"
             height={1278}
-            src='/img/about/ship-shape-sign.png'
+            src="/img/about/ship-shape-sign.png"
             width={1278}
-            loading='lazy'
+            loading="lazy"
           />
         </div>
       </div>
@@ -156,25 +154,25 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <!-- <FunFacts /> -->
 
-    <section class='waves blue-waves bg-blue-light section flex justify-center'>
-      <div class='section-content flex flex-wrap justify-center'>
+    <section class="waves blue-waves bg-blue-light section flex justify-center">
+      <div class="section-content flex flex-wrap justify-center">
         <!-- replace with TwoColumnSection -->
-        <div class='lg:flex lg:py-20' data-aos='fade-down'>
+        <div class="lg:flex lg:py-20" data-aos="fade-down">
           <Img
             attributes={{
               img: {
                 class: 'h-auto m-auto max-w-2xl w-full pb-12 lg:order-last'
               }
             }}
-            format='webp'
+            format="webp"
             height={772}
-            placeholder='none'
-            src='/img/hero-images/mentoring.png'
+            placeholder="none"
+            src="/img/hero-images/mentoring.png"
             width={1312}
-            alt=''
+            alt=""
           />
-          <div class='pb-20 lg:self-center'>
-            <h2>Get to know the crew</h2>
+          <div class="pb-20 lg:self-center">
+            <h2 class="text-5xl">Get to know the crew</h2>
             <p>
               Our clients can confirm: Ship Shape’s software development agency
               is made of the best developers in the business. We blend of IQ +
@@ -184,136 +182,132 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           </div>
         </div>
 
-        <section class='w-full'>
-          <div class='space-y-12'>
+        <section class="w-full">
+          <div class="space-y-12">
             <!-- two lists - employee and mgmt -->
             <ul>
-              {mgmt.map((employee, index) => (
-                <li>
-                  <div
-                    class="
-									flex flex-col
-									gap-y-8
-									lg:flex-row lg:items-center lg:gap-x-24 lg:pb-28
-								"
-                    data-aos="flip-up"
-                  >
-                    <div class="space-y-8">
-                      <h3 class="mb-3">{employee.name}</h3>
-                      <p class="font-bold text-2xl text-navy">
-                        {employee.title}
-                      </p>
-
-                      <p>{employee.blurb ? employee.blurb : null}</p>
-                      <ul class="flex space-x-8">
-                        <li>
-                          <a href={employee.github} class="github-logo">
-                            <span class="sr-only">GitHub</span>
-                            <Icon aria-hidden="true" name="github" />
-                          </a>
-                        </li>
-                        <li>
-                          <a href={employee.linkedin} class="linkedin-logo">
-                            <span class="sr-only">LinkedIn</span>
-                            <Icon aria-hidden="true" name="linkedin" />
-                          </a>
-                        </li>
-                        {employee.twitter ? (
-                          <li>
-                            <a href={employee.twitter} class="twitter-logo">
-                              <span class="sr-only">Twitter</span>
-                              <Icon aria-hidden="true" name="twitter" />
-                            </a>
-                          </li>
-                        ) : null}
-                      </ul>
-                    </div>
-                    <Img
-                      attributes={{
-                        img: {
-                          class: `filter h-auto grayscale object-cover order-first shadow-lg rounded-lg w-full lg:w-88 ${
-                            index % 2 !== 0 ? 'lg:order-last' : null
-                          }`
-                        }
-                      }}
-                      format="webp"
-                      height={734}
-                      placeholder="none"
-                      src={employee.imgSrc}
-                      alt=""
-                      width={734}
-                    />
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            <ul
-              class='
-							space-y-24
-							lg:space-y-0
-							lg:grid
-							lg:grid-cols-2
-							lg:gap-x-8
-							lg:gap-y-28
-							lg:pb-24
-						'
-            >
-              {team.map((employee, index) => (
-                <li>
-                  <div
-                    class="gap-y-8 grid lg:grid-cols-2 lg:gap-x-8"
-                    data-aos="flip-up"
-                  >
-                    <div class="self-center">
-                      <div class="text-lg font-medium">
+              {
+                mgmt.map((employee, index) => (
+                  <li>
+                    <div
+                      class="
+									      flex flex-col
+									      gap-y-8
+									      lg:flex-row lg:items-center lg:gap-x-24 lg:pb-28
+								      "
+                      data-aos="flip-up"
+                    >
+                      <div class="space-y-8">
                         <h3 class="mb-3">{employee.name}</h3>
-                        <p class="text-grey font-medium text-2xl">
+                        <p class="font-bold text-2xl text-navy">
                           {employee.title}
                         </p>
-                      </div>
 
-                      <ul class="flex mb-0 space-x-8">
-                        <li class="mb-0">
-                          <a href={employee.github} class="github-logo">
-                            <span class="sr-only">GitHub</span>
-                            <Icon aria-hidden="true" name="github" />
-                          </a>
-                        </li>
-                        <li class="mb-0">
-                          <a href={employee.linkedin} class="linkedin-logo">
-                            <span class="sr-only">LinkedIn</span>
-                            <Icon aria-hidden="true" name="linkedin" />
-                          </a>
-                        </li>
-                        {employee.twitter ? (
-                          <li class="mb-0">
-                            <a href={employee.twitter} class="twitter-logo">
-                              <span class="sr-only">Twitter</span>
-                              <Icon aria-hidden="true" name="twitter" />
+                        <p>{employee.blurb ? employee.blurb : null}</p>
+                        <ul class="flex space-x-8">
+                          <li>
+                            <a href={employee.github} class="github-logo">
+                              <span class="sr-only">GitHub</span>
+                              <Icon aria-hidden="true" name="github" />
                             </a>
                           </li>
-                        ) : null}
-                      </ul>
-                    </div>
-
-                    <div class="aspect-h-10 aspect-w-10 order-first">
+                          <li>
+                            <a href={employee.linkedin} class="linkedin-logo">
+                              <span class="sr-only">LinkedIn</span>
+                              <Icon aria-hidden="true" name="linkedin" />
+                            </a>
+                          </li>
+                          {employee.twitter ? (
+                            <li>
+                              <a href={employee.twitter} class="twitter-logo">
+                                <span class="sr-only">Twitter</span>
+                                <Icon aria-hidden="true" name="twitter" />
+                              </a>
+                            </li>
+                          ) : null}
+                        </ul>
+                      </div>
                       <Img
                         attributes={{
                           img: {
-                            class:
-                              'filter grayscale object-cover shadow-lg rounded-lg'
+                            class: `aspect-square filter h-auto grayscale object-cover order-first shadow-lg rounded-lg w-full lg:w-88 ${
+                              index % 2 !== 0 ? 'lg:order-last' : null
+                            }`
                           }
                         }}
                         format="webp"
+                        height={734}
                         placeholder="none"
                         src={employee.imgSrc}
                         alt=""
+                        width={734}
                       />
                     </div>
-                  </div>
-                </li>
-              ))}
+                  </li>
+                ))
+              }
+            </ul>
+
+            <ul
+              class="space-y-24 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-28 lg:pb-24"
+            >
+              {
+                team.map((employee, index) => (
+                  <li>
+                    <div
+                      class="gap-y-8 grid lg:grid-cols-2 lg:gap-x-8"
+                      data-aos="flip-up"
+                    >
+                      <div class="self-center">
+                        <div class="text-lg font-medium">
+                          <h3 class="mb-3">{employee.name}</h3>
+                          <p class="text-grey font-medium text-2xl">
+                            {employee.title}
+                          </p>
+                        </div>
+
+                        <ul class="flex mb-0 space-x-8">
+                          <li class="mb-0">
+                            <a href={employee.github} class="github-logo">
+                              <span class="sr-only">GitHub</span>
+                              <Icon aria-hidden="true" name="github" />
+                            </a>
+                          </li>
+                          <li class="mb-0">
+                            <a href={employee.linkedin} class="linkedin-logo">
+                              <span class="sr-only">LinkedIn</span>
+                              <Icon aria-hidden="true" name="linkedin" />
+                            </a>
+                          </li>
+                          {employee.twitter ? (
+                            <li class="mb-0">
+                              <a href={employee.twitter} class="twitter-logo">
+                                <span class="sr-only">Twitter</span>
+                                <Icon aria-hidden="true" name="twitter" />
+                              </a>
+                            </li>
+                          ) : null}
+                        </ul>
+                      </div>
+
+                      <div class="order-first">
+                        <Img
+                          attributes={{
+                            img: {
+                              class:
+                                'aspect-square filter grayscale object-cover shadow-lg rounded-lg'
+                            }
+                          }}
+                          format="webp"
+                          placeholder="none"
+                          src={employee.imgSrc}
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </li>
+                ))
+              }
             </ul>
           </div>
         </section>
@@ -322,14 +316,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </section>
 
     <!-- replace with insights component -->
-    <div class='section flex flex-wrap justify-center bg-white'>
-      <div class='section-content flex flex-col divide-y-2 divide-[#D8E3E8]'>
+    <div class="section flex flex-wrap justify-center bg-white">
+      <div class="section-content flex flex-col divide-y-2 divide-[#D8E3E8]">
         <div
-          class='
-					py-24
-					lg:flex lg:flex-row lg:place-content-between lg:items-center
-				'
-          data-aos='fade-down'
+          class="py-24 lg:flex lg:flex-row lg:place-content-between lg:items-center"
+          data-aos="fade-down"
         >
           <div>
             <h2>Tap into our knowledge base</h2>
@@ -339,8 +330,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             </p>
           </div>
           <a
-            class='flex place-content-center btn btn-red w-full lg:w-1/5'
-            href='/blog/'
+            class="flex place-content-center btn btn-red w-full lg:w-1/5"
+            href="/blog/"
           >
             Get more insights
           </a>
@@ -350,14 +341,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </div>
     </div>
 
-    <section class='section bg-navy flex justify-center lg:py-40'>
-      <div class='section-content flex flex-col justify-center'>
+    <section class="section bg-navy flex justify-center lg:py-40">
+      <div class="section-content flex flex-col justify-center">
         <div
-          class='pb-24 lg:flex lg:flex-row lg:items-center lg:gap-x-32'
-          data-aos='fade-down'
+          class="pb-24 lg:flex lg:flex-row lg:items-center lg:gap-x-32"
+          data-aos="fade-down"
         >
-          <div class='text-white'>
-            <h2 class='text-white'>Giving back</h2>
+          <div class="text-white">
+            <h2 class="text-white">Giving back</h2>
             <p>
               The people within our app development company do this work for
               passion, not just a paycheck. Here’s how we’re contributing to the
@@ -365,8 +356,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             </p>
           </div>
           <a
-            class='flex place-content-center btn btn-red w-full lg:w-1/5'
-            href='/blog/'
+            class="flex place-content-center btn btn-red w-full lg:w-1/5"
+            href="/blog/"
           >
             Get more contributions
           </a>
@@ -376,22 +367,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </section>
 
     <div
-      class='
-			waves
-			blue-waves
-			section
-			bg-blue-light
-			flex flex-wrap
-			justify-center
-		'
+      class="waves blue-waves section bg-blue-light flex flex-wrap justify-center"
     >
-      <div class='section-content py-20'>
-        <section class='flex flex-wrap justify-center' data-aos='fade'>
+      <div class="section-content py-20">
+        <section class="flex flex-wrap justify-center" data-aos="fade">
           <div
-            class='gap-8 grid grid-cols-1 items-center lg:gap-48 lg:grid-cols-2'
+            class="gap-8 grid grid-cols-1 items-center lg:gap-48 lg:grid-cols-2"
           >
-            <div class='order-last lg:order-none'>
-              <h2 class='text-4xl lg:text-5xl'>
+            <div class="order-last lg:order-none">
+              <h2 class="text-4xl lg:text-5xl">
                 Want to chart your course to software success?
               </h2>
 
@@ -402,15 +386,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
                     how we can help you get there.
                   </p>
                   <div
-                    class='
-										flex
-										justify-center
-										mt-3
-										w-full
-										lg:justify-start lg:mt-8
-									'
+                    class="flex justify-center mt-3 w-full lg:justify-start lg:mt-8"
                   >
-                    <a class='btn btn-red w-full lg:w-auto' href='/contact/'>
+                    <a class="btn btn-red w-full lg:w-auto" href="/contact/">
                       Contact us
                     </a>
                   </div>
@@ -419,16 +397,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             </div>
             <div>
               <Img
-                alt=''
+                alt=""
                 attributes={{
                   img: {
                     class: 'h-auto m-auto max-w-2xl w-full'
                   }
                 }}
-                format='webp'
+                format="webp"
                 height={988}
-                placeholder='none'
-                src='/img/hero-images/ember-consulting.png'
+                placeholder="none"
+                src="/img/hero-images/ember-consulting.png"
                 width={1248}
               />
             </div>

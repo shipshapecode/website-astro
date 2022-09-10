@@ -13,31 +13,30 @@ const description =
 ---
 
 <BaseLayout description={description} title={title}>
-  <div class='relative'>
-    <HeroBlock heroClasses='bg-blue-light home'>
-      <div slot='content'>
-        <h1 class='mb-6 leading-none text-5xl lg:text-6xl'>
+  <div class="relative">
+    <HeroBlock heroClasses="bg-blue-light home">
+      <div slot="content">
+        <h1 class="leading-none text-5xl lg:text-6xl">
           Our software consultants make waves
         </h1>
 
-        <div class='flex justify-center mt-3 w-full lg:justify-start lg:mt-8'>
-          <a href='/contact/' class='btn btn-red w-full lg:w-auto'>
+        <div class="flex justify-center mt-8 w-full lg:justify-start lg:mt-12">
+          <a href="/contact/" class="btn btn-red w-full lg:w-auto">
             Come on board
           </a>
         </div>
       </div>
 
-      <div slot='icon'>
-        <img
-          alt='Ship Shape octopus mascot, with a pencil in its tentacle, is working hard on Ember, Next.js and Nuxt apps.'
-          class='h-auto max-w-3xl w-full'
-          format='webp'
-          src='/img/hero-images/landing.png'
-        />
-      </div>
+      <img
+        alt="Ship Shape octopus mascot, with a pencil in its tentacle, is working hard on Ember, Next.js and Nuxt apps."
+        class="h-auto max-w-3xl w-full"
+        format="webp"
+        src="/img/hero-images/landing.png"
+        slot="icon"
+      />
     </HeroBlock>
 
-    <div class='relative z-10'>
+    <div class="relative z-10">
       <BuildTheFuture />
 
       <WeKnowTheRopes />
