@@ -1,9 +1,7 @@
 ---
 import MainHead from '../../components/MainHead.astro';
-import Nav from '../../components/Nav.astro';
 import PostPreview from '../../components/PostPreview.astro';
 import Pagination from '../../components/Pagination.astro';
-import authorData from '../../data/authors.json';
 
 export async function getStaticPaths() {
   const allPosts = await Astro.glob<MarkdownFrontmatter>('../post/*.md');
@@ -80,8 +78,6 @@ const author = posts[0].frontmatter.author;
   </head>
 
   <body>
-    <Nav title={title} />
-
     <main class='wrapper'>
       <h2 class='title'>
         <div class='avatar'>

@@ -1,6 +1,5 @@
 ---
 import MainHead from '../../components/MainHead.astro';
-import Nav from '../../components/Nav.astro';
 import PostPreview from '../../components/PostPreview.astro';
 import Pagination from '../../components/Pagination.astro';
 // import authorData from '../../data/authors.json';
@@ -74,8 +73,6 @@ const { page } = Astro.props;
   </head>
 
   <body>
-    <Nav title={title} />
-
     <main class="wrapper">
       <h2 class="title">All Posts</h2>
       <small class="count"
