@@ -3,15 +3,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPostMenu from '../../components/BlogPostMenu.astro';
 import Pagination from '../../components/Pagination.astro';
 
-
 interface MarkdownFrontmatter {
   date: number;
   image: string;
   author: any;
 }
 
-let title = 'Blog';
-let description = 'Test Blog';
+const title = 'Blog';
+const description =
+  'Read our blog to stay ahead of trends in Ember.js, JavaScript, and everything in between.';
 
 // Data Fetching: List all Markdown posts in the repo.
 let allPosts = await Astro.glob<MarkdownFrontmatter>('../post/*.md');
@@ -23,7 +23,7 @@ allPosts = allPosts.sort(
 ---
 
 <BaseLayout description={description} title={title}>
-	<div class="blog-posts section flex flex-wrap justify-center">
+  <div class="blog-posts section flex flex-wrap justify-center">
     <div class="section-content">
       <div class="flex items-center">
         <h1 class="font-semibold">Ship Shape Insights</h1>
@@ -42,10 +42,10 @@ allPosts = allPosts.sort(
         Our thoughtful ramblings about Ember.js, Nuxt.js, JavaScript, life,
         liberty and the pursuit of happiness.
       </p>
-      
-			<BlogPostMenu posts={allPosts} />
-		</div>
-	</div>
+
+      <BlogPostMenu posts={allPosts} />
+    </div>
+  </div>
 </BaseLayout>
 
 <!-- <footer>

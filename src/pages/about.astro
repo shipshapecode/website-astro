@@ -84,8 +84,9 @@ const team = [
   }
 ];
 
-let title = 'About';
-let description = 'About page of an example blog on Astro';
+const title = 'About Our Software Development Agency';
+const description =
+  'Meet Ship Shape, a full-stack software development agency with senior-level engineers who specialize in JavaScript frameworks, serverless architecture, & more.';
 ---
 
 <BaseLayout description={description} title={title}>
@@ -231,7 +232,8 @@ let description = 'About page of an example blog on Astro';
                           img: {
                             class: `aspect-square filter h-auto grayscale object-cover order-first shadow-lg rounded-lg w-full lg:w-88 ${
                               index % 2 !== 0 ? 'lg:order-last' : null
-                            }`
+                            }`,
+                            style: 'overflow: unset;'
                           }
                         }}
                         format="webp"

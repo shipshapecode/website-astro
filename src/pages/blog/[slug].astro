@@ -1,4 +1,5 @@
 ---
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPost from '../../components/BlogPost.astro';
 interface MarkdownFrontmatter {
   date: number;
@@ -9,6 +10,7 @@ interface MarkdownFrontmatter {
 }
 
 const { post } = Astro.props;
+const { description, title } = post;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 export async function getStaticPaths() {
@@ -22,4 +24,6 @@ export async function getStaticPaths() {
 }
 ---
 
-<BlogPost canonicalURL={canonicalURL} post={post} />
+<BaseLayout description={description} title={title}>
+  <BlogPost canonicalURL={canonicalURL} post={post} />
+</BaseLayout>
