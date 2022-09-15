@@ -7,7 +7,7 @@ export interface Props {
   post: any;
 }
 const { canonicalURL, post } = Astro.props;
-const { author } = post;
+const { author } = post.frontmatter;
 ---
 <article itemscope itemtype="http://schema.org/BlogPosting">
   <link itemprop="mainEntityOfPage" href={canonicalURL} />
@@ -17,13 +17,13 @@ const { author } = post;
   <div class="section flex flex-wrap justify-center">
     <div class="max-w-3xl w-full">
       <h1 class="blog-post-title font-semibold" itemprop="headline">
-        { post.title }
+        { post.frontmatter.title }
       </h1>
 
-		  <AuthorRow date={post.date} id={author.id} image={author.image} name={author.name} />
+		  <AuthorRow date={post.frontmatter.date} id={author.id} image={author.image} name={author.name} />
 
       <div class="post-content">
-        <slot/>
+        <!-- {post.content} -->
       </div>
 
       <BottomLinks

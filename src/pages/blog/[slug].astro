@@ -1,0 +1,25 @@
+---
+import BlogPost from '../../components/BlogPost.astro';
+interface MarkdownFrontmatter {
+  date: number;
+  image: string;
+  author: any;
+  slug: string;
+  title: string;
+}
+
+const { post } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob<MarkdownFrontmatter>('../post/*.md');
+  return allPosts.map((post) => ({
+    params: {
+      slug: post.frontmatter.slug
+    },
+    props: { post }
+  }));
+}
+---
+
+<BlogPost canonicalURL={canonicalURL} post={post} />

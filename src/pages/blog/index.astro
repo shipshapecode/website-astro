@@ -1,7 +1,7 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import BlogPostMenu from '../components/BlogPostMenu.astro';
-import Pagination from '../components/Pagination.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPostMenu from '../../components/BlogPostMenu.astro';
+import Pagination from '../../components/Pagination.astro';
 
 
 interface MarkdownFrontmatter {
@@ -12,16 +12,14 @@ interface MarkdownFrontmatter {
 
 let title = 'Blog';
 let description = 'Test Blog';
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // Data Fetching: List all Markdown posts in the repo.
-let allPosts = await Astro.glob<MarkdownFrontmatter>('./post/*.md');
+let allPosts = await Astro.glob<MarkdownFrontmatter>('../post/*.md');
 allPosts = allPosts.sort(
   (a, b) =>
     new Date(b.frontmatter.date).valueOf() -
     new Date(a.frontmatter.date).valueOf()
 );
-let firstPage = allPosts.slice(0, 2);
 ---
 
 <BaseLayout description={description} title={title}>

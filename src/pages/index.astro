@@ -4,12 +4,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BigNames from '../components/BigNames.astro';
 import BuildTheFuture from '../components/BuildTheFuture.astro';
 import HeroBlock from '../components/HeroBlock.astro';
+import RecentBlogPosts from '../components/RecentBlogPosts.astro';
 import WeKnowTheRopes from '../components/WeKnowTheRopes.astro';
 import WhyUsGrid from '../components/WhyUsGrid.astro';
+
+interface MarkdownFrontmatter {
+  date: number;
+  image: string;
+  author: any;
+}
 
 const title = 'Top-Tier, Full-Stack Software Consultants';
 const description =
   "Ship Shape's app development company offers a top-tier team of on-shore, full-stack software consultants who can't wait to build or improve your product.";
+
+let posts = await Astro.glob<MarkdownFrontmatter>('./post/*.md');
+posts = posts
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  )
+  .slice(0, 3);
 ---
 
 <BaseLayout description={description} title={title}>
@@ -44,6 +60,8 @@ const description =
       <BigNames />
 
       <WhyUsGrid />
+
+      <RecentBlogPosts posts={posts} />
     </div>
   </div>
 </BaseLayout>
