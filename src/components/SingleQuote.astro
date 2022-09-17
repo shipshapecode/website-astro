@@ -1,4 +1,7 @@
 ---
+import { Icon } from 'astro-icon';
+import { Img } from 'astro-imagetools/components';
+
 export interface Props {
   classString: string;
   testimonial: {
@@ -23,19 +26,9 @@ const { classString, testimonial } = Astro.props as Props;
         src={testimonial.svgSrc}
       />
 
-      <img
-        class="
-        absolute
-        h-auto
-        mt-[2.75rem]
-        top-0
-        transform
-        translate-y-6
-        w-10
-        z-0
-        xl:mt-12 xl:w-16 xl:translate-y-0
-      "
-        src="/svgs/quotes.svg"
+      <Icon
+        class="absolute h-auto mt-[2.75rem] top-0 transform translate-y-6 w-10 z-0 xl:mt-12 xl:w-16 xl:translate-y-0"
+        name="quotes"
       />
 
       <blockquote class="flex-grow p-4 relative z-10 xl:p-8">
@@ -43,15 +36,20 @@ const { classString, testimonial } = Astro.props as Props;
       </blockquote>
 
       <figcaption class="flex items-center px-4 xl:px-6">
-        <img
-          class="border-2 border-white h-16 mr-4 rounded-full w-16"
-          format="webp"
-          height="256"
-          loading="lazy"
-          width="256"
+        <Img
           alt={`Headshot of ${testimonial.name}`}
+          attributes={{
+            img: {
+              class: 'border-2 border-white h-16 mr-4 rounded-full w-16'
+            }
+          }}
+          format="webp"
+          height={256}
+          loading="lazy"
+          width={256}
           src={`/img/${testimonial.imgSrc}.jpg`}
         />
+
         <div class="text-white">
           <p class="mb-0 font-bold text-xl">{testimonial.name}</p>
           <p class="m-0">{testimonial.title}</p>

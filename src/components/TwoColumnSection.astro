@@ -2,14 +2,14 @@
 import { Img } from 'astro-imagetools/components';
 
 export interface Props {
-  classString: string;
+  classString?: string;
   image: {
     height: number;
     src: string;
     width: number;
   };
   header: string;
-  isFlipped: boolean;
+  isFlipped?: boolean;
 }
 
 const { classString, image, header, isFlipped } = Astro.props as Props;

@@ -1,17 +1,18 @@
 ---
+import { Icon } from 'astro-icon';
 import ServiceCard from './ServiceCard.astro';
 import TwoColumnSection from './TwoColumnSection.astro';
 
 const headerImage = {
   src: '/img/services/specialties.png',
-  height: '775',
-  width: '1248'
+  height: 775,
+  width: 1248
 };
 
 const services = [
   {
     logoClasses: 'w-20 pb-6 lg:w-32 lg:pb-12',
-    logoSrc: '/svgs/technologies/ember.svg',
+    logoName: 'ember',
     description:
       "One of the best frameworks for fast, reliable builds, especially complex apps and dashboards. Ember's opinionated structure lends well to efficiency and organization.",
     learnMoreLink: '/services/ember-consulting/',
@@ -19,7 +20,7 @@ const services = [
   },
   {
     logoClasses: 'w-24 pb-6 lg:w-40 lg:pt-5 lg:pb-12',
-    logoSrc: '/svgs/technologies/nuxt.svg',
+    logoName: 'nuxt',
     description:
       'A performant framework used to create flexible, universal Vue.js web apps, thanks to its simple routing and out-of-the-box optimizations.',
     learnMoreLink: '/services/nuxt-consulting/',
@@ -27,7 +28,7 @@ const services = [
   },
   {
     logoClasses: 'w-20 pb-6 lg:w-32 lg:pb-12',
-    logoSrc: '/svgs/technologies/next.svg',
+    logoName: 'next',
     description:
       'A nimble React framework for production with lots of magic built in, from server-side rendering for enhanced SEO to internationalization features.',
     learnMoreLink: '/services/next-consulting/',
@@ -35,7 +36,7 @@ const services = [
   },
   {
     logoClasses: 'w-36 pb-8 lg:w-52 lg:pt-5 lg:pb-20',
-    logoSrc: '/svgs/technologies/tailwind.svg',
+    logoName: 'tailwind',
     description:
       'Match mocks from designers with ease, and automagically remove all unused CSS with this convenient framework.',
     learnMoreLink: '/services/tailwind-consulting/',
@@ -43,7 +44,7 @@ const services = [
   },
   {
     logoClasses: 'w-36 pb-8 lg:w-52 lg:pt-5 lg:pb-20',
-    logoSrc: '/svgs/technologies/serverless.svg',
+    logoName: 'serverless',
     description:
       'Only pay for the computing you need, scale quickly, and reduce maintenance with serverless applications. We’ll show you how.',
     learnMoreLink: '/services/serverless-consulting/',
@@ -51,7 +52,7 @@ const services = [
   },
   {
     logoClasses: 'w-36 pb-8 lg:w-52 lg:pt-5 lg:pb-20',
-    logoSrc: '/svgs/technologies/cncf.svg',
+    logoName: 'cncf',
     description:
       'Say goodbye to being locked into vendors, and deliver well-tested, secure products faster with this platform-agnostic methodology.',
     learnMoreLink: '/services/cloud-native-consulting/',
@@ -65,49 +66,44 @@ const services = [
     <TwoColumnSection
       image={headerImage}
       header="Our fleet of specialties"
-      class-string="lg-header"
+      classString="lg-header"
     >
-      <div slot="content">
+      <Fragment slot="content">
         Our senior-level software consultants ensure your applications are
         optimized for today and ready for the future.
-      </div>
+      </Fragment>
     </TwoColumnSection>
 
     <section class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-      {services.map(service =>  
-      <ServiceCard
-        learnMoreLink={service.learnMoreLink}
-        caseStudyLink={service.caseStudyLink}
-      >
-        <div slot="header">
-          <!-- 
-          <inline-svg
-            class="h-auto nested-svg"
-            :class="service.logoClasses"
-            :src="service.logoSrc"
-          />
-        -->
-        </div>
-        <div slot="description">
-          {service.description}
-        </div>
-      </ServiceCard>
-      )}
-     
+      {
+        services.map((service) => (
+          <ServiceCard
+            learnMoreLink={service.learnMoreLink}
+            caseStudyLink={service.caseStudyLink}
+          >
+            <Fragment slot="header">
+              <Icon
+                class={`h-auto nested-svg ${service.logoClasses}`}
+                name={`technologies/${service.logoName}`}
+              />
+            </Fragment>
+            <Fragment slot="description">{service.description}</Fragment>
+          </ServiceCard>
+        ))
+      }
     </section>
   </div>
 </section>
 
-
-<style lang="scss">
+<style lang="scss" is:global>
   .nested-svg g,
   .nested-svg path {
-    fill: #1b3b5d;
+    fill: #1b3b5d !important;
   }
-  
+
   .lg-header {
     h2 {
       @apply lg:text-5xl;
     }
   }
-  </style>
+</style>

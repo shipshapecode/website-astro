@@ -1,0 +1,67 @@
+---
+import { Icon } from 'astro-icon';
+import { Img } from 'astro-imagetools/components';
+
+export interface Props {
+  testimonials: {
+    imgSrc: string;
+    name: string;
+    quote: string;
+    svgSrc: string;
+    title: string;
+  }[];
+}
+
+const { testimonials } = Astro.props;
+---
+
+<div
+  class="bg-white flex flex-wrap justify-center px-8 lg:py-16"
+  data-aos="fade"
+>
+  <div
+    class="section-content bg-navy grid grid-cols-1 gap-y-10 mb-16 p-4 rounded-md lg:mb-20 xl:grid-cols-2 xl:py-20"
+  >
+    {
+      testimonials.map((testimonial) => (
+        <figure class="flex flex-col p-4 relative text-white xl:px-16 xl:py-0">
+          <img
+            alt=""
+            class="h-8 max-w-full mb-3 self-start w-auto"
+            src={testimonial.svgSrc}
+          />
+
+          <Icon
+            class="absolute h-auto mt-[2.75rem] top-0 transform translate-y-6 w-10 z-0 xl:mt-12 xl:w-16 xl:translate-y-0"
+            name="quotes"
+          />
+
+          <blockquote class="flex-grow p-4 relative z-10 xl:p-8">
+            {testimonial.quote}
+          </blockquote>
+
+          <figcaption class="flex items-center px-4 xl:px-6">
+            <Img
+              alt={`Headshot of ${testimonial.name}`}
+              attributes={{
+                img: {
+                  class: 'border-2 border-white h-16 mr-4 rounded-full w-16'
+                }
+              }}
+              format="webp"
+              height={256}
+              loading="lazy"
+              width={256}
+              src={`/img/${testimonial.imgSrc}.jpg`}
+            />
+
+            <div class="text-white">
+              <h5 class="mb-1 text-white text-xl">{testimonial.name}</h5>
+              <p class="m-0">{testimonial.title}</p>
+            </div>
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+</div>

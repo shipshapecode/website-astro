@@ -1,12 +1,15 @@
 ---
-// Component Imports
+import { Img } from 'astro-imagetools/components';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BigNames from '../components/BigNames.astro';
 import BuildTheFuture from '../components/BuildTheFuture.astro';
+import DoubleQuotes from '../components/DoubleQuotes.astro';
 import HeroBlock from '../components/HeroBlock.astro';
 import RecentBlogPosts from '../components/RecentBlogPosts.astro';
 import WeKnowTheRopes from '../components/WeKnowTheRopes.astro';
 import WhyUsGrid from '../components/WhyUsGrid.astro';
+
+import { sephoraTestimonial, expelTestimonial } from '../testimonials/index.js';
 
 interface MarkdownFrontmatter {
   date: number;
@@ -17,6 +20,8 @@ interface MarkdownFrontmatter {
 const title = 'Top-Tier, Full-Stack Software Consultants';
 const description =
   "Ship Shape's app development company offers a top-tier team of on-shore, full-stack software consultants who can't wait to build or improve your product.";
+
+const testimonials = [sephoraTestimonial, expelTestimonial];
 
 let posts = await Astro.glob<MarkdownFrontmatter>('./post/*.md');
 posts = posts
@@ -43,12 +48,17 @@ posts = posts
         </div>
       </div>
 
-      <img
+      <Img
         alt="Ship Shape octopus mascot, with a pencil in its tentacle, is working hard on Ember, Next.js and Nuxt apps."
-        class="h-auto max-w-3xl w-full"
+        attributes={{
+          img: {
+            class: 'h-auto max-w-3xl w-full'
+          }
+        }}
         format="webp"
-        src="/img/hero-images/landing.png"
+        placeholder="none"
         slot="icon"
+        src="/img/hero-images/landing.png"
       />
     </HeroBlock>
 
@@ -60,6 +70,8 @@ posts = posts
       <BigNames />
 
       <WhyUsGrid />
+
+      <DoubleQuotes testimonials={testimonials} />
 
       <RecentBlogPosts posts={posts} />
     </div>
