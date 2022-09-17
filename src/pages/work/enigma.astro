@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BottomLinks from '../../components/BottomLinks.astro';
+import SingleQuote from '../../components/SingleQuote.astro';
+
+import { enigmaTestimonial as testimonial } from '../../testimonials/index.js';
 
 const title = 'Enigma Next.js Assesment Platform';
 const description =
@@ -191,13 +194,13 @@ const description =
         </p>
       </div>
 
-      <!-- <SingleQuote :testimonial="testimonial" /> -->
+      <SingleQuote testimonial={testimonial} />
 
       <BottomLinks
-        next-link="/work/netflix/"
-        next-link-text="Netflix"
-        previous-link="/work/acquia/"
-        previous-link-text="Acquia"
+        nextLink="/work/netflix/"
+        nextLinkText="Netflix"
+        previousLink="/work/acquia/"
+        previousLinkText="Acquia"
       />
     </div>
   </div>
