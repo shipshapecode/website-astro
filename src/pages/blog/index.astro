@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPostMenu from '../../components/BlogPostMenu.astro';
 import Pagination from '../../components/Pagination.astro';
@@ -26,19 +27,19 @@ allPosts = allPosts.sort(
   <div class="blog-posts section flex flex-wrap justify-center">
     <div class="section-content">
       <div class="flex items-center">
-        <h1 class="font-semibold">Ship Shape Insights</h1>
+        <h1 class="font-semibold text-5xl lg:text-6xl">Ship Shape Insights</h1>
 
         <a
-          class="-mt-3 p-12"
+          class="p-12"
           href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fshipshape.io%2Ffeed.xml"
           target="_blank"
           rel="noopener"
         >
-          <inline-svg src="/svgs/rss.svg" />
+          <Icon class="h-6 mt-4 w-6" name="rss" />
         </a>
       </div>
 
-      <p>
+      <p class="mb-4">
         Our thoughtful ramblings about Ember.js, Nuxt.js, JavaScript, life,
         liberty and the pursuit of happiness.
       </p>
