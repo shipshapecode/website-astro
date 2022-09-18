@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import { astroImageTools } from 'astro-imagetools';
 import solid from '@astrojs/solid-js';
 import { addAuthorRemarkPlugin } from './add-author-remark-plugin.mjs';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,12 +21,10 @@ export default defineConfig({
       external: ['svgo']
     }
   },
-
   experimental: {
     integrations: true
   },
-
-  integrations: [astroImageTools, solid()],
+  integrations: [astroImageTools, solid(), sitemap()],
   markdown: {
     remarkPlugins: ['remark-gfm', 'remark-smartypants', addAuthorRemarkPlugin]
   }

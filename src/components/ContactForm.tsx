@@ -1,53 +1,36 @@
 import type { Component } from 'solid-js';
-import { createStore } from 'solid-js/store';
+import toast, { Toaster } from 'solid-toast';
 import { useForm } from '../utils/validation.jsx';
 import './ContactForm.scss';
 
 export const ContactForm: Component = () => {
-  /**
-   * Util function to encode data for netify forms
-   * @param data
-   * @private
-   */
-  function _encode(data): string {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-      )
-      .join('&');
-  }
-
   function _successMessage() {
-    this.flashSuccess("Thanks for contacting us! We'll be in touch shortly.");
-    this.$ga.event({
-      eventLabel: 'contact-form-submitted'
-    });
+    toast.success("Thanks for contacting us! We'll be in touch shortly.");
   }
 
   function _errorMessage() {
-    this.flashError('Something went wrong :(. Please refresh and try again.');
+    toast.error('Something went wrong :(. Please refresh and try again.');
   }
 
-  const sendContactRequest = async function () {
-    if (this.formValid) {
-      const token = await this.$recaptcha.execute('submit');
+  const sendContactRequest = async function (form) {
+    const formData = new FormData(form);
 
-      const data = { 'g-recaptcha-response': token, ...this.$data };
-      return fetch('https://shipshape.io/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: _encode({ 'form-name': 'contact-us', ...data })
-      })
-        .then(_successMessage.bind(this))
-        .catch(_errorMessage.bind(this));
-    }
+    return fetch('https://shipshape.io/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(_successMessage)
+      .catch(_errorMessage);
   };
 
   const { validate, formSubmit, errors } = useForm({
     errorClass: 'error-input'
   });
 
-  const ErrorMessage = (props) => <span class="error-message">{props.error}</span>;
+  const ErrorMessage = (props) => (
+    <span class="error-message">{props.error}</span>
+  );
 
   return (
     <div class="relative w-full">
@@ -78,12 +61,6 @@ export const ContactForm: Component = () => {
             <div class="lg:col-span-2">
               <input type="hidden" name="form-name" value="contact-us" />
               <fieldset>
-                {/* <div class="error-message">
-                  {errors.map((error) => (
-                    <p>{error}</p>
-                  ))}
-                </div> */}
-
                 <div class="bot-field">
                   <label>
                     Don’t fill this out if you're human:
@@ -99,12 +76,12 @@ export const ContactForm: Component = () => {
               </label>
               <div class="mt-1">
                 <input
+                  class="block w-full shadow-sm sm:text-sm focus:outline-none focus:ring-navy-card-light focus:border-navy-card-light border-grey-light rounded-md"
                   id="name"
                   type="text"
                   name="name"
                   required
-                  class="block w-full shadow-sm sm:text-sm focus:outline-none focus:ring-navy-card-light focus:border-navy-card-light border-grey-light rounded-md"
-                  use:validate
+                  use:validate={[]}
                 />
               </div>
 
@@ -117,13 +94,13 @@ export const ContactForm: Component = () => {
               </label>
               <div class="mt-1">
                 <input
+                  autocomplete="email"
+                  class="block w-full shadow-sm sm:text-sm focus:outline-none focus:ring-navy-card-light focus:border-navy-card-light border-grey-light rounded-md"
                   id="email"
                   type="email"
                   name="email"
                   required
-                  autocomplete="email"
-                  class="block w-full shadow-sm sm:text-sm focus:outline-none focus:ring-navy-card-light focus:border-navy-card-light border-grey-light rounded-md"
-                  use:validate
+                  use:validate={[]}
                 />
               </div>
 
@@ -171,16 +148,18 @@ export const ContactForm: Component = () => {
               </div>
               <div class="mt-1">
                 <textarea
+                  class="block w-full shadow-sm sm:text-sm focus:ring-navy-card-light focus:border-navy-card-light border-grey-light rounded-md"
                   id="description"
                   name="description"
                   required
                   rows={4}
-                  class="block w-full shadow-sm sm:text-sm focus:ring-navy-card-light focus:border-navy-card-light border-grey-light rounded-md"
-                  use:validate
+                  use:validate={[]}
                 ></textarea>
               </div>
 
-              {errors.description && <ErrorMessage error={errors.description} />}
+              {errors.description && (
+                <ErrorMessage error={errors.description} />
+              )}
             </div>
 
             <input
@@ -189,16 +168,14 @@ export const ContactForm: Component = () => {
               value="Send Message"
               class="btn btn-red cursor-pointer inline-flex justify-center border border-transparent transition-colors font-medium rounded-md focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
             />
-
-            <div class="text-xs">
-              This site is protected by reCAPTCHA and the Google
-              <a href="https://policies.google.com/privacy">Privacy Policy</a>
-              and
-              <a href="https://policies.google.com/terms">Terms of Service</a>
-              apply.
-            </div>
           </form>
-          <flash-message class="flex flex-grow mt-8" />
+
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              duration: 5000
+            }}
+          />
         </div>
       </div>
     </div>
