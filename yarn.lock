@@ -95,6 +95,15 @@
   dependencies:
     babel-preset-solid "^1.4.2"
 
+"@astrojs/tailwind@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/tailwind/-/tailwind-2.0.1.tgz#f7c7d1ca28b5cd831934c1410c142ac16f10efda"
+  integrity sha512-fvruoVEvx0zQsVY2AVRrhvH25zp6xTF8Wb1Lu43KXLoxU7fHIB1fcTTRP+Qhd4f5EvuTmuPKaKwHmbrv8mTV9A==
+  dependencies:
+    "@proload/core" "^0.3.2"
+    autoprefixer "^10.4.7"
+    postcss "^8.4.14"
+
 "@astrojs/telemetry@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@astrojs/telemetry/-/telemetry-1.0.0.tgz#425171610daa66702fe7b117b6dab82ed6bdf8db"
@@ -1081,6 +1090,18 @@ autoprefixer@^10.4.10:
   version "10.4.10"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.10.tgz#a1d8891d1516155eb13a772b1289efdc61de14ef"
   integrity sha512-nMaiDARyp1e74c8IeAXkr+BmFKa8By4Zak7tyaNPF09Iu39WFpNXOWrVirmXjKr+5cOyERwvtbMOLYz6iBJYgQ==
+  dependencies:
+    browserslist "^4.21.3"
+    caniuse-lite "^1.0.30001399"
+    fraction.js "^4.2.0"
+    normalize-range "^0.1.2"
+    picocolors "^1.0.0"
+    postcss-value-parser "^4.2.0"
+
+autoprefixer@^10.4.7:
+  version "10.4.11"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.11.tgz#835136aff1d9cd43640151e0d2dba00f8eac7c1c"
+  integrity sha512-5lHp6DgRodxlBLSkzHOTcufWFflH1ewfy2hvFQyjrblBFlP/0Yh4O/Wrg4ow8WRlN3AAUFFLAQwX8hTptzqVHg==
   dependencies:
     browserslist "^4.21.3"
     caniuse-lite "^1.0.30001399"
