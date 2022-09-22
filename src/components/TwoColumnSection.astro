@@ -25,7 +25,7 @@ const { classString, image, header, isFlipped } = Astro.props as Props;
     <div class={`order-last ${!isFlipped ? 'lg:order-none' : ''}`}>
       <h2
         v-if="header"
-        class="text-4xl"
+        class="text-4xl mb-6"
         data-aos={isFlipped ? 'fade-left' : 'fade-right'}
       >
         {header}
