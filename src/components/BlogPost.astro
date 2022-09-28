@@ -10,6 +10,7 @@ const { canonicalURL, post } = Astro.props;
 const { Content } = post;
 const { author } = post.frontmatter;
 ---
+
 <article itemscope itemtype="http://schema.org/BlogPosting">
   <link itemprop="mainEntityOfPage" href={canonicalURL} />
   <link itemprop="publisher" href="shipshapeorg" />
@@ -18,13 +19,18 @@ const { author } = post.frontmatter;
   <div class="section flex flex-wrap justify-center">
     <div class="max-w-3xl w-full">
       <h1 class="blog-post-title font-semibold" itemprop="headline">
-        { post.frontmatter.title }
+        {post.frontmatter.title}
       </h1>
 
-		  <AuthorRow date={post.frontmatter.date} id={author.id} image={author.image} name={author.name} />
+      <AuthorRow
+        date={post.frontmatter.date}
+        id={author.id}
+        image={author.image}
+        name={author.name}
+      />
 
-      <div class="post-content">
-        <Content/>
+      <div class="post-content prose lg:prose-lg">
+        <Content />
       </div>
 
       <BottomLinks
@@ -36,3 +42,9 @@ const { author } = post.frontmatter;
     </div>
   </div>
 </article>
+
+<style lang="scss" is:global>
+  .astro-code {
+    @apply p-4;
+  }
+</style>

@@ -1,8 +1,6 @@
 // tailwind.config.cjs
 module.exports = {
-  content: [
-    './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}',
-  ],
+  content: ['./src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
       colors: {
@@ -50,7 +48,18 @@ module.exports = {
       },
       stroke: (theme) => ({
         white: theme('colors.white')
-      })
+      }),
+      typography: {
+        DEFAULT: {
+          css: {
+            'code::before': { content: '' },
+            'code::after': { content: '' },
+            code: {
+              'background-color': 'var(--blue-light)'
+            }
+          }
+        }
+      }
     }
   },
   variants: {
@@ -60,9 +69,7 @@ module.exports = {
       opacity: ['disabled']
     }
   },
-  plugins: [
-    require('@tailwindcss/forms')
-  ],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
   corePlugins: {
     container: false
   }
