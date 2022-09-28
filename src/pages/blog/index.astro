@@ -3,19 +3,14 @@ import { Icon } from 'astro-icon';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPostMenu from '../../components/BlogPostMenu.astro';
 import Pagination from '../../components/Pagination.astro';
-
-interface MarkdownFrontmatter {
-  date: number;
-  image: string;
-  author: any;
-}
+import { MarkdownFrontmatter } from '../index.astro';
 
 const title = 'Blog';
 const description =
   'Read our blog to stay ahead of trends in Ember.js, JavaScript, and everything in between.';
 
 // Data Fetching: List all Markdown posts in the repo.
-let allPosts = await Astro.glob<MarkdownFrontmatter>('../post/*.md');
+let allPosts = await Astro.glob<MarkdownFrontmatter>('/data/posts/*.md');
 allPosts = allPosts.sort(
   (a, b) =>
     new Date(b.frontmatter.date).valueOf() -

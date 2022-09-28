@@ -6,9 +6,10 @@ import WaveFooter from '../components/WaveFooter.astro';
 export interface Props {
   description: string;
   title: string;
+  tags?: string[];
 }
 
-const { description, title } = Astro.props;
+const { description, tags, title } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // TODO: add back dynamic classes
@@ -18,9 +19,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <head>
     <title>{title}</title>
     <MainHead
-      title={title}
-      description={description}
       canonicalURL={canonicalURL}
+      description={description}
+      tags={tags}
+      title={title}
     />
 
     <script

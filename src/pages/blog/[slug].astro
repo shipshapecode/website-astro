@@ -1,20 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPost from '../../components/BlogPost.astro';
-interface MarkdownFrontmatter {
-  date: number;
-  image: string;
-  author: any;
-  slug: string;
-  title: string;
-}
+import { MarkdownFrontmatter } from '../index.astro';
 
 const { post } = Astro.props;
 const { description, title } = post;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob<MarkdownFrontmatter>('../post/*.md');
+  const allPosts = await Astro.glob<MarkdownFrontmatter>('/data/posts/*.md');
   return allPosts.map((post) => ({
     params: {
       slug: post.frontmatter.slug
@@ -24,6 +18,10 @@ export async function getStaticPaths() {
 }
 ---
 
-<BaseLayout description={description} title={title}>
+<BaseLayout
+  description={description}
+  tags={post.frontmatter.categories}
+  title={title}
+>
   <BlogPost canonicalURL={canonicalURL} post={post} />
 </BaseLayout>

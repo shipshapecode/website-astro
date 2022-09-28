@@ -1,4 +1,6 @@
 ---
+import { formatDate } from '../utils/date';
+
 export interface Props {
 	date: string;
   id: string;
@@ -8,9 +10,6 @@ export interface Props {
 
 const { date, id, image, name } = Astro.props;
 
-function formatDate(date) {
-	return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove everything after YYYY
-}
 ---
 
  <div class="flex">
@@ -33,7 +32,7 @@ function formatDate(date) {
       <div class="pl-2 pb-2">
         By
 
-        <a href={`/authors/${id}`} itemprop="name">
+        <a href={`/blog/authors/${id}`} itemprop="name">
           {name}
         </a>
 

@@ -11,10 +11,18 @@ import WhyUsGrid from '../components/WhyUsGrid.astro';
 
 import { sephoraTestimonial, expelTestimonial } from '../testimonials/index.js';
 
-interface MarkdownFrontmatter {
+export interface Author {
+  name: string;
+}
+
+export interface MarkdownFrontmatter {
+  author: Author;
+  authorId: string;
+  categories: string[];
   date: number;
   image: string;
-  author: any;
+  slug: string;
+  title: string;
 }
 
 const title = 'Top-Tier, Full-Stack Software Consultants';
@@ -23,7 +31,7 @@ const description =
 
 const testimonials = [sephoraTestimonial, expelTestimonial];
 
-let posts = await Astro.glob<MarkdownFrontmatter>('./post/*.md');
+let posts = await Astro.glob<MarkdownFrontmatter>('/data/posts/*.md');
 posts = posts
   .sort(
     (a, b) =>

@@ -1,24 +1,29 @@
 ---
 import '../styles/global.scss';
+import { Author } from '../pages/index.astro';
 
 export interface Props {
   title: string;
-  description: string;
-  image?: string;
-  type?: string;
-  next?: string;
-  prev?: string;
+  author?: Author;
   canonicalURL?: string | URL;
+  description: string;
+  date?: string;
+  image?: string;
+  tags?: string[],
+  type?: string;
 }
 
-const { title, description, image, type, next, prev, canonicalURL } =
+const { author, canonicalURL, date, description, image, tags, title, type } =
   Astro.props as Props;
+
+  const keywords = 'test';
 ---
 
 <!-- Common -->
 <meta charset='UTF-8' />
 <title>{title}</title>
 <meta name='description' content={description} />
+<meta name="referrer" content="unsafe-url">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 <!-- Sitemap -->
@@ -31,29 +36,38 @@ const { title, description, image, type, next, prev, canonicalURL } =
 
 <!-- SEO -->
 <link rel='canonical' href={canonicalURL} />
-{next && (
-  <link
-    rel="next"
-    aria-label="Previous Page"
-    href={new URL(next, canonicalURL).href}
-  />
-)}
-{prev && (
-  <link
-    rel="prev"
-    aria-label="Next Page"
-    href={new URL(prev, canonicalURL).href}
-  />
-)}
 
 <!-- OpenGraph -->
+<meta property="og:site_name" content="https://shipshape.io/">
+<meta property="og:url" content={canonicalURL}/>
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
-{image && <meta property="og:image" content={new URL(image, canonicalURL)} />}
+{type && <meta property="og:type" content={type}/>}
+{image && 
+  <meta property="og:image" content={new URL(image, canonicalURL)} /> 
+  <meta property="og:image:type" content="image/png"/> 
+  <meta property="og:image:width" content="256"/> <meta property="og:image:height" content="256"/>
+}
 
 <!-- Twitter -->
-<meta name='twitter:card' content={image ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:creator" content="@shipshapecode"/>
+<meta name='twitter:description' content={description} />
 <meta name='twitter:site' content='@shipshapecode' />
 <meta name='twitter:title' content={title} />
-<meta name='twitter:description' content={description} />
+<meta name="twitter:url" content={canonicalURL}/>
 {image && <meta name="twitter:image" content={image} />}
+{author &&
+  <meta name="twitter:label1" content="Written by"/>
+  <meta name="twitter:data1" content={author.name}/>
+}
+
+{keywords && 
+  <meta name="twitter:label2" content="Filed under"/>
+  <meta name="twitter:data2" content={keywords}/>
+}
+
+<!-- Article -->
+{date && <meta property="article:published_time" content={date}/>}
+
+{tags && tags.map(tag => <meta property="article:tag" content={tag}/>)}

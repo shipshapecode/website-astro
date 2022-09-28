@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BlogPostMenu from '../../../components/BlogPostMenu.astro';
+import authorData from '../../../../data/authors.mjs';
+import { MarkdownFrontmatter } from '../../index.astro';
+
+const { author, posts } = Astro.props;
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob<MarkdownFrontmatter>('/data/posts/*.md');
+  return Object.keys(authorData).map((authorId) => {
+    const posts = allPosts.filter(
+      (post) => post.frontmatter.authorId === authorId
+    );
+    const author = authorData[authorId];
+    return {
+      params: {
+        authorId
+      },
+      props: { author, posts }
+    };
+  });
+}
+
+const title = `Posts by ${author.name} - Blog`;
+const description = `See the ${posts?.length ?? 0} blog posts ${
+  author.name
+} has written for Ship Shape.`;
+---
+
+<BaseLayout description={description} title={title}>
+  <div class="blog-posts section flex flex-wrap justify-center">
+    <div class="section-content">
+      <div class="flex items-center">
+        <h1 class="font-semibold">
+          {author.name}
+        </h1>
+      </div>
+
+      <BlogPostMenu posts={posts} />
+    </div>
+  </div>
+</BaseLayout>
