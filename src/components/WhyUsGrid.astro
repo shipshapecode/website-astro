@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
+import { Img } from 'astro-imagetools/components';
 
 const traits = [
   {
@@ -34,6 +35,7 @@ const traits = [
   }
 ];
 ---
+
 <div class="section flex flex-wrap justify-center bg-white">
   <div
     class="section-content relative mb-10 pb-96 pt-8 lg:mb-0 lg:pb-0 lg:pt-0"
@@ -54,56 +56,47 @@ const traits = [
         </div>
 
         <div
-          class="
-            absolute
-            bottom-0
-            text-center
-            w-full
-            lg:bottom-auto lg:relative
-          "
+          class="absolute bottom-0 text-center w-full lg:bottom-auto lg:relative"
         >
-          <img
+          <Img
             alt="Ship Shape octopus mascot in an innertube"
-            class="m-auto w-full max-w-xxs h-auto"
+            attributes={{
+              img: {
+                class: 'm-auto w-full !max-w-xxs h-auto'
+              }
+            }}
             format="webp"
             loading="lazy"
+            placeholder="none"
             src="/img/innertube.png"
           />
 
-          <nuxt-link
+          <a
             class="btn btn-red inline-block mt-6 w-full lg:w-auto"
-            to="/about/"
+            href="/about/"
           >
             Meet Our Crew
-          </nuxt-link>
+          </a>
         </div>
       </div>
 
       <div
-        class="
-          grid grid-cols-1
-          gap-x-12
-          p-10
-          bg-blue-light
-          rounded
-          lg:col-span-2 lg:grid-cols-2
-          xl:px-16
-        "
+        class="grid grid-cols-1 gap-x-12 p-10 bg-blue-light rounded lg:col-span-2 lg:grid-cols-2 xl:px-16"
       >
-        {traits.map((trait, index) => (
-          <div
-            class="relative p-4 lg:p-10"
-            data-aos="flip-down"
-            data-aos-delay={index * 200}
-          >
-            <Icon class="absolute -ml-8 mt-2 w-4 h-4" name="check" />
+        {
+          traits.map((trait, index) => (
+            <div
+              class="relative p-4 lg:p-10"
+              data-aos="flip-down"
+              data-aos-delay={index * 200}
+            >
+              <Icon class="absolute -ml-8 mt-2 w-4 h-4" name="check" />
 
-            <h5>{trait.title}</h5>
-          <p>
-            {trait.description}
-          </p>
-          </div>
-        ))}  
+              <h5>{trait.title}</h5>
+              <p>{trait.description}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
