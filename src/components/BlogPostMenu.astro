@@ -1,5 +1,5 @@
 ---
-import { formatDate } from '../utils/date';
+import { formatDateWithDots } from '../utils/date';
 
 export interface Props {
   posts: any;
@@ -17,7 +17,7 @@ const { posts } = Astro.props;
 
       <div class="attribution">
         By {post.frontmatter.author.name}
-        {formatDate(post.frontmatter.date)}
+        {formatDateWithDots(post.frontmatter.date)}
       </div>
 
       <div class="tags pb-4 pt-4">
@@ -26,7 +26,7 @@ const { posts } = Astro.props;
             href={`/blog/categories/${tag.replace(/ |\./g, '-')}/`}
             class="blog-tag mr-2"
           >
-            {tag}
+            #{tag}
           </a>
         ))}
       </div>
@@ -36,13 +36,6 @@ const { posts } = Astro.props;
 
 <style lang="scss">
   .blog-post {
-    .blog-tag {
-      a {
-        transition-duration: 0.25s;
-        transition-property: background-color, color, fill;
-      }
-    }
-  
     .title {
       @apply text-navy;
       font-size: 2rem;

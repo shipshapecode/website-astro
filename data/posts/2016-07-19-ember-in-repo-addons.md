@@ -3,6 +3,7 @@ authorId: rwwagner90
 categories: 
   - ember.js
 date: '2016-07-19'
+image: blog-post-3.jpg
 slug: ember-in-repo-addons
 title: Ember In-Repo Addons
 ---

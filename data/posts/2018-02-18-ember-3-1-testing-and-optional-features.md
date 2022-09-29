@@ -3,6 +3,7 @@ authorId: rwwagner90
 categories: 
   - ember.js
 date: '2018-02-18'
+image: blog-post-9.jpg
 slug: ember-3-1-testing-and-optional-features
 title: Updating to Ember 3.1 and Enabling Optional Features
 ---

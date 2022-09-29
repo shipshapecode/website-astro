@@ -4,6 +4,7 @@ categories:
   - ember.js
   - testing
 date: '2017-11-29'
+image: blog-post-7.jpg
 slug: using-components-in-ember-mixin-unit-tests
 title: Using Components in Ember Mixin Unit Tests
 ---

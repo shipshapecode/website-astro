@@ -7,6 +7,7 @@ categories:
   - prember
   - static
 date: '2018-04-04'
+image: blog-post-10.jpg
 slug: static-blogs-with-prember-and-markdown
 title: Static Blogs with Prember and Markdown
 ---

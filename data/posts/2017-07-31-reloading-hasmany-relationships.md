@@ -4,6 +4,7 @@ categories:
   - ember.js
   - ember-data
 date: '2017-07-31'
+image: blog-post-5.jpg
 slug: reloading-hasmany-relationships
 title: Reloading hasMany relationships
 ---

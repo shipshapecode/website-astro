@@ -1,50 +1,66 @@
 ---
-import { formatDate } from '../utils/date';
+import { Img } from 'astro-imagetools/components';
+import { formatDateWithDots } from '../utils/date';
 
 export interface Props {
-	date: string;
+  categories: string[];
+  date: string;
   id: string;
-	image: string;
-	name: string;
+  image: string;
+  name: string;
 }
 
-const { date, id, image, name } = Astro.props;
-
+const { categories, date, id, image, name } = Astro.props;
 ---
 
- <div class="flex">
-    <div
-      class="flex items-center pb-8"
-      itemprop="author"
-      itemscope
-      itemtype="http://schema.org/Person"
-    >
-      <div class="w-12">
-        <img
-          class="h-auto rounded-full w-full"
-          format="webp"
-          src={image}
-          alt="Author image"
-          itemprop="image"
-        />
-      </div>
-
-      <div class="pl-2 pb-2">
-        By
-
-        <a href={`/blog/authors/${id}`} itemprop="name">
-          {name}
-        </a>
-
-        |
-      </div>
+<div class="grid grid-cols-1 lg:grid-cols-2">
+  <div
+    class="flex items-center pb-8"
+    itemprop="author"
+    itemscope
+    itemtype="http://schema.org/Person"
+  >
+    <div class="w-14">
+      <Img
+        alt="Author image"
+        attributes={{
+          img: {
+            class: 'h-auto rounded-full w-full'
+          }
+        }}
+        itemprop="image"
+        format="webp"
+        height={120}
+        placeholder="none"
+        src={image}
+        width={120}
+      />
     </div>
 
-    <div class="flex items-center pb-8">
-      <div class="pl-2 pb-2">
-        <time datetime={date} itemprop="datePublished dateModified">
-          {formatDate(date)}
-        </time>
-      </div>
+    <div class="pl-2 pb-2">
+      By
+
+      <a href={`/blog/authors/${id}`} itemprop="name">
+        {name}
+      </a>
+
+      on
+
+      <time datetime={date} itemprop="datePublished dateModified">
+        {formatDateWithDots(date)}
+      </time>
     </div>
   </div>
+  <div class="lg:text-right">
+    {
+      categories?.map((tag) => (
+        <a
+          href={`/blog/categories/${tag.replace(/ |\./g, '-')}/`}
+          class="blog-tag mr-2"
+        >
+          #{tag}
+        </a>
+      ))
+    }
+  </div>
+</div>

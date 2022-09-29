@@ -5,6 +5,7 @@ categories:
   - ember addons
   - testing
 date: '2018-02-13'
+image: blog-post-8.jpg
 slug: testing-ember-addons-in-an-app
 title: Testing Ember Addons in a Real App Using ember-cli-addon-tests
 ---

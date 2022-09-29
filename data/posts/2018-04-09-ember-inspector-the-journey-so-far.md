@@ -4,6 +4,7 @@ categories:
   - ember.js
   - ember inspector
 date: '2018-04-09'
+image: blog-post-11.jpg
 slug: ember-inspector-the-journey-so-far
 title: Ember Inspector - The Journey so Far
 ---

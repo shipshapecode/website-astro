@@ -3,6 +3,7 @@ authorId: rwwagner90
 categories:
   - ember.js
 date: '2017-04-29'
+image: blog-post-4.jpg
 slug: aiming-for-targets-with-ember
 title: Aiming for Targets with Ember
 ---

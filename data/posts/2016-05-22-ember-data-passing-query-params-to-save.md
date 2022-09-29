@@ -4,6 +4,7 @@ categories:
   - ember.js
   - ember-data
 date: '2016-05-22'
+image: blog-post-1.jpg
 slug: ember-data-passing-query-params-to-save
 title: Ember Data | Passing query params to .save()
 ---

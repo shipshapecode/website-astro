@@ -7,6 +7,7 @@ categories:
   - static
   - service workers
 date: '2018-04-27'
+image: blog-post-13.jpg
 slug: offline-first-prember-and-service-workers
 title: Offline First Prember Apps with Service Workers
 ---

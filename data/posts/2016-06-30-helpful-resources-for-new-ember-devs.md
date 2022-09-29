@@ -3,6 +3,7 @@ authorId: rwwagner90
 categories: 
   - ember.js
 date: '2016-06-30'
+image: blog-post-2.jpg
 slug: helpful-resources-for-new-ember-devs
 title: Helpful Resources for New Ember Devs
 ---

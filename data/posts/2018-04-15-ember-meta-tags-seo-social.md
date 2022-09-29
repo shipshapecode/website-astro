@@ -8,6 +8,7 @@ categories:
   - opengraph
   - prember
 date: '2018-04-15'
+image: blog-post-12.jpg
 slug: ember-meta-tags-seo-social
 title: Ember Meta - Adding Meta Tags to Your Blog
 ---
