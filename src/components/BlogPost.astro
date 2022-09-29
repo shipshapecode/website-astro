@@ -6,8 +6,10 @@ import BottomLinks from './BottomLinks.astro';
 export interface Props {
   canonicalURL: URL;
   post: any;
+  nextPost: any;
+  previousPost: any;
 }
-const { canonicalURL, post } = Astro.props;
+const { canonicalURL, post, nextPost, previousPost } = Astro.props;
 const { Content } = post;
 const { author } = post.frontmatter;
 ---
@@ -53,10 +55,10 @@ const { author } = post.frontmatter;
       </div>
 
       <BottomLinks
-        nextLink="`/blog/${post.nextSlug}/`"
-        nextLinkText={post.nextTitle}
-        previousLink="`/blog/${post.previousSlug}/`"
-        previousLinkText={post.previousTitle}
+        nextLink={`/blog/${nextPost.frontmatter.slug}/`}
+        nextLinkText={nextPost.frontmatter.title}
+        previousLink={`/blog/${previousPost.frontmatter.slug}/`}
+        previousLinkText={previousPost.frontmatter.title}
       />
     </div>
   </div>

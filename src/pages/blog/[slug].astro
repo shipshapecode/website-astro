@@ -3,18 +3,46 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPost from '../../components/BlogPost.astro';
 import { MarkdownFrontmatter } from '../index.astro';
 
-const { post } = Astro.props;
+const { post, nextPost, previousPost } = Astro.props;
 const { description, title } = post;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob<MarkdownFrontmatter>('/data/posts/*.md');
-  return allPosts.map((post) => ({
-    params: {
-      slug: post.frontmatter.slug
-    },
-    props: { post }
-  }));
+  function _getNextPrev(allPosts, currentIndex) {
+    let previousPost, nextPost;
+
+    if (currentIndex > 0) {
+      previousPost = allPosts[currentIndex - 1];
+    } else {
+      previousPost = allPosts.at(-1);
+    }
+
+    if (currentIndex < allPosts.length - 1) {
+      nextPost = allPosts[currentIndex + 1];
+    } else {
+      nextPost = allPosts[0];
+    }
+
+    return { nextPost, previousPost };
+  }
+
+  let allPosts = await Astro.glob<MarkdownFrontmatter>('/data/posts/*.md');
+  allPosts = allPosts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  );
+
+  return allPosts.map((post, index) => {
+    const { nextPost, previousPost } = _getNextPrev(allPosts, index);
+
+    return {
+      params: {
+        slug: post.frontmatter.slug
+      },
+      props: { post, nextPost, previousPost }
+    };
+  });
 }
 ---
 
@@ -23,5 +51,10 @@ export async function getStaticPaths() {
   tags={post.frontmatter.categories}
   title={title}
 >
-  <BlogPost canonicalURL={canonicalURL} post={post} />
+  <BlogPost
+    canonicalURL={canonicalURL}
+    nextPost={nextPost}
+    post={post}
+    previousPost={previousPost}
+  />
 </BaseLayout>
