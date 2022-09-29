@@ -1,5 +1,5 @@
 ---
-import { Img } from 'astro-imagetools/components';
+// import { Img } from 'astro-imagetools/components';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AllAboutSpecialty from '../../components/AllAboutSpecialty.astro';
@@ -68,15 +68,14 @@ const description =
         </h1>
 
         <div class="flex justify-center mt-3 w-full lg:justify-start lg:mt-8">
-          <nuxt-link class="btn btn-red w-full lg:w-auto" to="/contact/">
+          <a class="btn btn-red w-full lg:w-auto" href="/contact/">
             Let's get started
-          </nuxt-link>
+          </a>
         </div>
       </div>
       <div slot="icon">
-        <Img
+        <img
           class="h-auto m-auto max-w-2xl w-full"
-          format="webp"
           height="1058"
           src="/img/hero-images/ember-consulting.png"
           width="1344"
@@ -92,13 +91,10 @@ const description =
       <div slot="unboxed-text">
         <p>
           For these reasons, we often recommend it for
-          <nuxt-link
-            class="hover:brightness-125 hover:text-red"
-            to="/work/expel"
-          >
+          <a class="hover:brightness-125 hover:text-red" href="/work/expel">
             enterprise app development
-          </nuxt-link>, in-depth apps and dashboards, responsive web
-          applications, and other projects for large firms.
+          </a>, in-depth apps and dashboards, responsive web applications, and
+          other projects for large firms.
         </p>
 
         <p>
@@ -108,7 +104,7 @@ const description =
           development to team training.
         </p>
       </div>
-      <div #boxed-text>
+      <div slot="boxed-text">
         Ember.js is an open-source JavaScript web framework. We love its strong
         opinions, which help engineers work faster and keep their work
         organized.
