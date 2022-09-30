@@ -12,12 +12,12 @@ export const ShepherdTabs: Component = () => {
       <nav>
         <ul class="block lg:inline-flex">
           <li class={`w-full ${activeTab() === 0 ? 'tab-current' : ''}`}>
-            <a onClick={() => updateTab(0)}>
+            <a role="tab" onClick={() => updateTab(0)}>
               <span>{'Accessibility'}</span>
             </a>
           </li>
           <li class={`w-full ${activeTab() === 1 ? 'tab-current' : ''}`}>
-            <a onClick={() => updateTab(1)}>
+            <a role="tab" onClick={() => updateTab(1)}>
               <span>{'Highly Customizable'}</span>
             </a>
           </li>
