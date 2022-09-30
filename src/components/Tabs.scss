@@ -1,34 +1,4 @@
----
-const { tabs } = Astro.props;
-// const selectTab = (selectedTab) => {
-//       this.tabs.forEach((tab) => {
-//         tab.isActive = tab.name === selectedTab.name;
-//       });
-//     }
----
-
-<div class="tabs">
-  <nav>
-    <ul class="block lg:inline-flex">
-      {
-        tabs.map((tab) => (
-          <li class={`w-full ${'tab-current' ? tab.isActive : ''}`}>
-            <a role="tab" onclick="selectTab(tab)">
-              <span>{tab.name}</span>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
-
-  <div class="content-wrap">
-    <slot />
-  </div>
-</div>
-
-<style lang="scss">
-  .tabs {
+.tabs {
     transition-duration: 0.25s;
     transition-property: background-color, box-shadow, color, fill;
 
@@ -90,4 +60,3 @@ const { tabs } = Astro.props;
       }
     }
   }
-</style>

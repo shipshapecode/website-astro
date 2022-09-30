@@ -1,40 +1,11 @@
 ---
-import Tabs from './Tabs.astro';
+import { ShepherdTabs } from './ShepherdTabs';
 ---
 
 <div class="section flex flex-wrap justify-center">
   <div class="section-content">
     <h2>Why use Shepherd?</h2>
 
-    <Tabs tabs={['Accessibility', 'Highly Customizable', 'Framework Ready']}>
-      <div class="max-w-3xl">
-        <section data-name="Accessibility">
-          <p>
-            Shepherd has full keyboard navigation support, focus trapping, and
-            a11y compliance via aria attributes. This ensures that everyone,
-            regardless of abilities, is able to have a great user experience
-            when they interact with your product.
-          </p>
-        </section>
-
-        <section data-name="Highly Customizable">
-          <p>
-            Shepherd's styles are kept minimal, allowing you to easily customize
-            the look and feel, but still give you enough to drop in and be ready
-            to go quickly. This allows you to have a highly stylized, custom
-            site tour experience to match your brand.
-          </p>
-        </section>
-
-        <section data-name="Framework Ready">
-          <p>
-            Shepherd is ready to drop into your application using React, Ember,
-            Angular, Vue.js, ES Modules, or plain Javascript! Integration with
-            any app is a breeze with Shepherd, and your developers will
-            appreciate the breadth of options for quickly spinning it up.
-          </p>
-        </section>
-      </div>
-    </Tabs>
+    <ShepherdTabs />
   </div>
 </div>
