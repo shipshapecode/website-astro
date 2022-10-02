@@ -3,6 +3,7 @@ import { astroImageTools } from 'astro-imagetools';
 import solid from '@astrojs/solid-js';
 import tailwind from "@astrojs/tailwind";
 import { addAuthorRemarkPlugin } from './add-author-remark-plugin.mjs';
+import { addDescriptionRemarkPlugin } from './add-description-remark-plugin.mjs';
 import sitemap from '@astrojs/sitemap';
 
 
@@ -37,7 +38,7 @@ export default defineConfig({
     })
   ],
   markdown: {
-    remarkPlugins: ['remark-gfm', 'remark-smartypants', addAuthorRemarkPlugin],
+    remarkPlugins: ['remark-gfm', 'remark-smartypants', addAuthorRemarkPlugin, addDescriptionRemarkPlugin],
     shikiConfig: {
       theme: 'nord'
     }

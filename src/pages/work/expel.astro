@@ -1,11 +1,13 @@
 ---
+import { Icon } from 'astro-icon';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BottomLinks from '../../components/BottomLinks.astro';
 
 const title = 'Expel Ember.js Enterprise App Development';
 const description =
-      "See how Ship Shape's enterprise app development team helped Expel create a new, fast Ember.js app that centralizes NIST score tracking.";
+  "See how Ship Shape's enterprise app development team helped Expel create a new, fast Ember.js app that centralizes NIST score tracking.";
 ---
+
 <BaseLayout description={description} title={title}>
   <div class="section flex flex-wrap justify-center">
     <div class="max-w-5xl w-full">
@@ -27,25 +29,15 @@ const description =
       </div>
 
       <div
-        class="
-          bg-expel-green
-          flex flex-wrap
-          h-64
-          md:h-140
-          justify-center
-          items-center
-        "
+        class="bg-expel-green flex flex-wrap h-64 md:h-140 justify-center items-center"
       >
         <div class="w-1/2">
-          <img
-            class="fill-white h-auto w-full"
-            src="/svgs/clients/expel.svg"
-          />
+          <Icon class="fill-white h-auto w-full" name="clients/expel" />
         </div>
       </div>
 
       <div class="p-4 lg:p-12">
-        <h2 class="text-3xl lg:text-5xl mb-6">Challenge</h2>
+        <h2 class="text-3xl mb-6">Challenge</h2>
 
         <p>
           Expel sought to give its customers an easier way to enter and track
@@ -70,16 +62,16 @@ const description =
       </div>
 
       <div class="p-4 lg:p-12">
-        <h2 class="text-3xl lg:text-5xl mb-6">Solution</h2>
+        <h2 class="text-3xl mb-6">Solution</h2>
 
         <p>
           The most important feature for customers would be the ability to see
           at a glance which NIST categories they’re doing well in, and which
           require more attention. To achieve this, we created a custom chart and
           progress bars per category. We heavily leveraged
-          <a href="https://www.chartjs.org/">Chart.js</a> and the radar chart
-          type it provides, and pushed it outside of the confines of its typical
-          API to create an entirely new type of chart.
+          <a href="https://www.chartjs.org/">Chart.js</a> and the radar chart type
+          it provides, and pushed it outside of the confines of its typical API to
+          create an entirely new type of chart.
         </p>
 
         <p>
@@ -124,7 +116,7 @@ const description =
       </div>
 
       <div class="p-4 lg:p-12">
-        <h2 class="text-3xl lg:text-5xl mb-6">Outcome</h2>
+        <h2 class="text-3xl mb-6">Outcome</h2>
 
         <p>
           Customers can now easily enter and monitor their NIST scores right in

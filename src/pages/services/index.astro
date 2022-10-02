@@ -28,7 +28,9 @@ const textSection = [
         </h1>
 
         <div>
-          <div class="flex justify-center mt-8 w-full lg:justify-start lg:mt-12">
+          <div
+            class="flex justify-center mt-8 w-full lg:justify-start lg:mt-12"
+          >
             <a class="btn btn-red w-full lg:w-auto" href="/contact/">
               Work with us
             </a>
@@ -182,7 +184,14 @@ const textSection = [
 
     <SingleQuote classString="lg:pt-32" testimonial={testimonial} />
 
-    <LatestInsights />
+    <LatestInsights>
+      <header
+        class="pb-12 lg:flex lg:flex-row lg:place-content-between lg:items-center"
+      >
+        <h2 class="text-4xl lg:text-5xl">Check out the latest insights</h2>
+        <a class="btn btn-red w-full lg:w-1/5" href="/blog/"> Read on</a>
+      </header>
+    </LatestInsights>
 
     <div
       class="waves blue-waves section bg-blue-light flex flex-wrap justify-center"

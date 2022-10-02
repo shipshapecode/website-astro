@@ -1,10 +1,17 @@
 ---
 import { Icon } from 'astro-icon';
+import { Img } from 'astro-imagetools/components';
 
 import { formatDateWithDots } from '../utils/date';
 
 export interface Props {
-  details: { date: string; pubDate: string; title: string };
+  details: {
+    date: string;
+    description: string;
+    pubDate: string;
+    title: string;
+  };
+  mediaType: string;
   imgHeight?: number;
   imgSrc?: string;
   imgWidth?: number;
@@ -14,15 +21,22 @@ const { details, imgHeight, imgWidth, imgSrc, mediaType } = Astro.props;
 ---
 
 <section>
-  <h3 class="capitalize m-0 pb-12 pt-24">Latest {mediaType}</h3>
+  <h3 class="capitalize m-0 py-12 text-4xl">Latest {mediaType}</h3>
+
   <article class="flex flex-col mb-12 lg:flex-row lg:items-center">
-    <img
-      class="h-auto max-w-sm mb-7 rounded-md w-full lg:mb-0 lg:mr-7 lg:w-64"
-      format="webp"
-      src={imgSrc}
-      height={imgHeight}
-      width={imgWidth}
+    <Img
       alt=""
+      attributes={{
+        img: {
+          class:
+            'h-auto max-w-sm mb-7 rounded-md w-full lg:mb-0 lg:mr-7 lg:w-64'
+        }
+      }}
+      format="webp"
+      height={imgHeight}
+      placeholder="none"
+      src={imgSrc}
+      width={imgWidth}
     />
 
     <div class="flex-grow">
@@ -40,13 +54,7 @@ const { details, imgHeight, imgWidth, imgSrc, mediaType } = Astro.props;
     </div>
 
     <a
-      class="
-        learn-more
-        mt-12
-        self-start
-        whitespace-nowrap
-        lg:ml-24 lg:self-end
-      "
+      class="learn-more mt-12 self-start whitespace-nowrap lg:ml-24 lg:self-end"
       href={mediaType === 'podcast'
         ? 'https://www.whiskeywebandwhatnot.fm/'
         : `/blog/${details?.slug}/`}

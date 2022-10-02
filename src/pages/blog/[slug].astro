@@ -4,7 +4,7 @@ import BlogPost from '../../components/BlogPost.astro';
 import { MarkdownFrontmatter } from '../index.astro';
 
 const { post, nextPost, previousPost } = Astro.props;
-const { description, title } = post;
+const { description, title } = post.frontmatter;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 export async function getStaticPaths() {

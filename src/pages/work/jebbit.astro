@@ -1,11 +1,13 @@
 ---
+import { Icon } from 'astro-icon';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BottomLinks from '../../components/BottomLinks.astro';
 
 const title = 'Jebbit Ember.js Enterprise App Development';
 const description =
-      "See how Ship Shape's enterprise app development team helped Jebbit make their Ember.js app faster, easier to use, and future-ready.";
+  "See how Ship Shape's enterprise app development team helped Jebbit make their Ember.js app faster, easier to use, and future-ready.";
 ---
+
 <BaseLayout description={description} title={title}>
   <div class="section flex flex-wrap justify-center">
     <div class="max-w-5xl w-full">
@@ -24,25 +26,15 @@ const description =
       </div>
 
       <div
-        class="
-          bg-jebbit-green
-          flex flex-wrap
-          h-64
-          md:h-140
-          justify-center
-          items-center
-        "
+        class="bg-jebbit-green flex flex-wrap h-64 md:h-140 justify-center items-center"
       >
         <div class="w-1/2">
-          <img
-            class="fill-white h-auto w-full"
-            src="/svgs/clients/jebbit.svg"
-          />
+          <Icon class="fill-white h-auto w-full" name="clients/jebbit" />
         </div>
       </div>
 
       <div class="p-4 lg:p-12">
-        <h2 class="text-3xl lg:text-5xl mb-6">Challenge</h2>
+        <h2 class="text-3xl mb-6">Challenge</h2>
 
         <p>
           Jebbit had several years of user feedback and data on the difficulty
@@ -75,7 +67,7 @@ const description =
       </div>
 
       <div class="p-4 lg:p-12">
-        <h2 class="text-3xl lg:text-5xl mb-6">Solution</h2>
+        <h2 class="text-3xl mb-6">Solution</h2>
 
         <p>
           The Ship Shape team began by creating a flexible grid layout to
@@ -118,7 +110,7 @@ const description =
       </div>
 
       <div class="p-4 lg:p-12">
-        <h2 class="text-3xl lg:text-5xl mb-6">Outcome</h2>
+        <h2 class="text-3xl mb-6">Outcome</h2>
 
         <p>
           The application has been streamlined with defaults, and we now handle

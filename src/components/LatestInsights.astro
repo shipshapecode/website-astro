@@ -13,7 +13,9 @@ async function getLatestBlogPost() {
       new Date(a.frontmatter.date).valueOf()
   );
 
-  return sortedPosts[0].frontmatter;
+  const { frontmatter } = sortedPosts[0];
+
+  return frontmatter;
 }
 
 let apiCallTries = 5;
@@ -63,21 +65,22 @@ const podcastImg = {
   data-aos="fade-down"
 >
   <div class="section-content flex flex-col divide-y-2 divide-[#D8E3E8]">
-    <header
-      class="pb-12 lg:flex lg:flex-row lg:place-content-between lg:items-center"
-    >
-      <h2 class="text-4xl lg:text-5xl">Check out the latest insights</h2>
-      <a class="btn btn-red w-full lg:w-1/5" href="/blog/"> Read on</a>
-    </header>
+    <slot />
+
     <div>
       <MediaCard
-        media-type="podcast"
+        mediaType="podcast"
         imgSrc={podcastImg.src}
         details={latestPodcastEpisode}
         data-aos="fade-up"
       />
 
-      <MediaCard details={latestBlogPost} data-aos="fade-up" />
+      <MediaCard
+        details={latestBlogPost}
+        imgSrc="/img/about/desk.jpg"
+        mediaType="blog post"
+        data-aos="fade-up"
+      />
     </div>
   </div>
 </section>

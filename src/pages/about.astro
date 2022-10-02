@@ -53,7 +53,7 @@ const mgmt = [
 const team = [
   {
     name: 'Rob Cary',
-    title: 'Senior Software Engineer',
+    title: 'Lead Engineer',
     imgSrc: '/img/blog/authors/rob.jpg',
     twitter: 'https://twitter.com/r0bc4ry',
     linkedin: 'https://www.linkedin.com/in/r0bc4ry/',
@@ -66,6 +66,14 @@ const team = [
     twitter: 'https://twitter.com/jaredgalanis',
     linkedin: 'https://www.linkedin.com/in/jaredgalanis/',
     github: 'https://github.com/jaredgalanis'
+  },
+  {
+    name: 'Nicholas Romero',
+    title: 'Senior Software Engineer',
+    imgSrc: '/img/blog/authors/nic.jpg',
+    twitter: 'https://twitter.com/ncrmro',
+    linkedin: 'https://www.linkedin.com/in/ncrmro/',
+    github: 'https://github.com/ncrmro'
   },
   {
     name: 'Hanna Kim',
@@ -82,6 +90,22 @@ const team = [
     twitter: '',
     linkedin: 'https://www.linkedin.com/in/marika-shanahan/',
     github: 'https://github.com/monshan'
+  },
+  {
+    name: 'Krista Williams',
+    title: 'Software Engineer',
+    imgSrc: '/img/blog/authors/krista.jpg',
+    twitter: '',
+    linkedin: 'https://www.linkedin.com/in/kristaawilliams/',
+    github: 'https://github.com/Rystakei'
+  },
+  {
+    name: 'Eli Nicholson',
+    title: 'Software Engineer',
+    imgSrc: '/img/blog/authors/eli.jpg',
+    twitter: 'https://twitter.com/Eli__Nicholson',
+    linkedin: 'https://www.linkedin.com/in/eli-nicholson/',
+    github: 'https://github.com/EmNicholson93'
   }
 ];
 
@@ -153,7 +177,7 @@ const description =
       </div>
     </section>
 
-    <FunFacts /> 
+    <FunFacts />
 
     <section class="waves blue-waves bg-blue-light section flex justify-center">
       <div class="section-content flex flex-wrap justify-center">
@@ -173,7 +197,7 @@ const description =
             alt=""
           />
           <div class="pb-20 lg:self-center">
-            <h2 class="text-5xl">Get to know the crew</h2>
+            <h2 class="mb-6 text-5xl">Get to know the crew</h2>
             <p>
               Our clients can confirm: Ship Shape’s software development agency
               is made of the best developers in the business. We blend of IQ +
@@ -199,7 +223,7 @@ const description =
                       data-aos="flip-up"
                     >
                       <div class="space-y-8">
-                        <h3 class="mb-3">{employee.name}</h3>
+                        <h3 class="mb-3 text-4xl">{employee.name}</h3>
                         <p class="font-bold text-2xl text-navy">
                           {employee.title}
                         </p>
@@ -262,7 +286,7 @@ const description =
                     >
                       <div class="self-center">
                         <div class="text-lg font-medium">
-                          <h3 class="mb-3">{employee.name}</h3>
+                          <h3 class="mb-3 text-4xl">{employee.name}</h3>
                           <p class="text-grey font-medium text-2xl">
                             {employee.title}
                           </p>
@@ -313,7 +337,6 @@ const description =
             </ul>
           </div>
         </section>
-        <!-- create a LatestInsights component since this is being used in 2 pages now  -->
       </div>
     </section>
 
@@ -325,7 +348,7 @@ const description =
           data-aos="fade-down"
         >
           <div>
-            <h2>Tap into our knowledge base</h2>
+            <h2 class="mb-6 text-5xl">Tap into our knowledge base</h2>
             <p>
               Check out the latest insights from across our app development
               company.
@@ -339,7 +362,7 @@ const description =
           </a>
         </div>
 
-        <LatestInsights />
+        <LatestInsights hideHeader={true} />
       </div>
     </div>
 
@@ -418,3 +441,45 @@ const description =
     </div>
   </article>
 </BaseLayout>
+
+<style lang="scss" is:global>
+  .github-logo,
+  .linkedin-logo,
+  .twitter-logo {
+    svg {
+      path {
+        @apply transition-colors;
+        fill: var(--navy-light);
+      }
+    }
+
+    &:hover {
+      svg {
+        path {
+          fill: var(--red-light);
+        }
+      }
+    }
+  }
+
+  .github-logo {
+    svg {
+      height: 22px;
+      width: 23px;
+    }
+  }
+
+  .linkedin-logo {
+    svg {
+      height: 20px;
+      width: 19px;
+    }
+  }
+
+  .twitter-logo {
+    svg {
+      height: 19px;
+      width: 23px;
+    }
+  }
+</style>
