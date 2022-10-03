@@ -1,6 +1,4 @@
 ---
-import { Img } from 'astro-imagetools/components';
-
 interface Props {
   caseStudies: CaseStudy[];
   specialty: string;
@@ -79,7 +77,7 @@ const { specialty, caseStudies }: Props = Astro.props;
                 `}
                 >
                   <div class="bg-white rounded-t-md w-full">
-                    <Img
+                    <img
                       class="object-cover object-top h-full max-w-full rounded-t-md w-full"
                       src={study.imgSrc}
                       alt={study.imgAlt}
