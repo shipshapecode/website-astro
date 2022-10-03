@@ -1,0 +1,136 @@
+---
+// import { Img } from 'astro-imagetools/components';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AllAboutSpecialty from '../../components/AllAboutSpecialty.astro';
+import CommunityInvolvement from '../../components/CommunityInvolvment.astro';
+import HeroBlock from '../../components/HeroBlock.astro';
+import SingleQuote from '../../components/SingleQuote.astro';
+import SpecialtyInAction from '../../components/SpecialtyInAction.astro';
+import TwoColumnSection from '../../components/TwoColumnSection.astro';
+import WaveMoreLinks from '../../components/WaveMoreLinks.astro';
+
+import { expelTestimonial as testimonial } from '../../testimonials/index.js';
+
+const caseStudies = [
+  {
+    imgAlt:
+      'An overview of NIST scores, broken down by category and visualized in a radar graph.',
+    imgSrc: '/img/work/expel/nist-overview.png',
+    logoSrc: '/svgs/clients/expel.svg',
+    text: 'Centralized NIST score tracking and improved performance with a modernized app',
+    linkName: 'expel'
+  },
+  {
+    imgAlt: '',
+    imgSrc: '/svgs/data-graphic.svg',
+    logoSrc: '/svgs/clients/netflix.svg',
+    text: 'Increased efficiency and data granularity with enhanced finance tools',
+    linkName: 'netflix'
+  },
+  {
+    imgAlt: 'Jebbit Experience Builder Legacy',
+    imgSrc: '/img/work/jebbit/jebbit-case-study-screenshot.png',
+    logoSrc: '/svgs/clients/jebbit.svg',
+    text: 'Improved the user experience to support all customers and close a major new client',
+    linkName: 'jebbit'
+  }
+];
+
+const marketing = {
+  src: '/img/hero-images/mentoring.png',
+  height: 792,
+  width: 1312
+};
+
+const specialtyBenefits = [
+  { imgSrc: '/svgs/icons/modular.svg', description: 'Clear Organization' },
+  {
+    imgSrc: '/svgs/icons/chart.svg',
+    description: 'Scalable UI architecture'
+  },
+  { imgSrc: '/svgs/icons/retainer.svg', description: 'Simple updates' },
+  { imgSrc: '/svgs/icons/sail.svg', description: 'Commitment to stability' }
+];
+
+const title = 'Ember.js Enterprise App Development';
+const description =
+  "Learn how Ship Shape's top-tier enterprise app development experts can help your team build fast, reliable Ember.js applications.";
+---
+
+<BaseLayout description={description} title={title}>
+  <article itemscope itemtype="http://schema.org/Service">
+    <HeroBlock hero-classes="ember-consulting waves ember-waves !pb-48 !pt-20">
+      <div slot="content">
+        <h1 itemprop="name" class="text-5xl leading-tight">
+          Build fast, reliable apps with expert Ember.js development,
+          consulting, and training
+        </h1>
+
+        <div class="flex justify-center mt-3 w-full lg:justify-start lg:mt-8">
+          <a class="btn btn-red w-full lg:w-auto" href="/contact/">
+            Let's get started
+          </a>
+        </div>
+      </div>
+      <div slot="icon">
+        <img
+          class="h-auto m-auto max-w-2xl w-full"
+          height="1058"
+          src="/img/hero-images/ember-consulting.png"
+          width="1344"
+          alt=""
+        />
+      </div>
+    </HeroBlock>
+
+    <AllAboutSpecialty benefits={specialtyBenefits} flipParagraphs>
+      <div slot="h2">All about Ember.js</div>
+      <div slot="h3">Ember is great for large companies because of its:</div>
+
+      <div slot="unboxed-text">
+        <p>
+          For these reasons, we often recommend it for
+          <a class="hover:brightness-125 hover:text-red" href="/work/expel">
+            enterprise app development
+          </a>, in-depth apps and dashboards, responsive web applications, and
+          other projects for large firms.
+        </p>
+
+        <p>
+          If your team is working on an Ember.js app or considering a greenfield
+          project where this framework could be a good fit, turn to our top-tier
+          Ember experts for a full range of support, from consulting to
+          development to team training.
+        </p>
+      </div>
+      <div slot="boxed-text">
+        Ember.js is an open-source JavaScript web framework. We love its strong
+        opinions, which help engineers work faster and keep their work
+        organized.
+      </div>
+    </AllAboutSpecialty>
+
+    <SpecialtyInAction caseStudies={caseStudies} specialty="Ember.js" />
+
+    <TwoColumnSection
+      class-string="mt-20"
+      header="We’ll never leave you high and dry"
+      image={marketing}
+      isFlipped={true}
+    >
+      <template #content
+        >Ship Shape is committed to leaving every engineering team we work with
+        better than we found it. Not only do we build robust, reliable software,
+        but we also train your staff along the way to understand, maintain, and
+        improve your product after our engagement ends.
+      </template>
+    </TwoColumnSection>
+
+    <SingleQuote classString="lg:pt-32" testimonial={testimonial} />
+
+    <CommunityInvolvement />
+
+    <WaveMoreLinks class="md:px-20" />
+  </article>
+</BaseLayout>

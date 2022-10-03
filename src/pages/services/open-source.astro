@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroBlock from '../../components/HeroBlock.astro';
+import PortfolioContainer from '../../components/PortfolioContainer.astro';
+
+const title = 'Open Source Software';
+const description =
+  'We build and support countless open source projects. ' +
+  'Discover why Ship Shape loves open source development.';
+---
+
+<BaseLayout description={description} title={title}>
+  <div>
+    <HeroBlock hero-classes="open-source">
+      <div slot="content">
+        <h1>Our Open Source Community</h1>
+        <p>
+          We believe code should be accessible to all. Ship Shape's open source
+          projects enable us to play an active role in the day-to-day lives of
+          developers.
+        </p>
+        <div>
+          <a href="/contact/" class="btn btn-red"> Join our community</a>
+        </div>
+      </div>
+
+      <div slot="icon">
+        <img
+          class="h-auto m-auto max-w-2xl w-full"
+          height="984"
+          src="/img/hero-images/open-source.png"
+          width="1344"
+        />
+      </div>
+    </HeroBlock>
+
+    <PortfolioContainer />
+
+    <div class="section bg-blue-light flex flex-wrap justify-center">
+      <div class="section-content">
+        <h2>Sponsored Open Source</h2>
+
+        <p class="max-w-5xl">
+          From addons to custom Ember data adapters, our projects propel our
+          community forward. Ship Shape's open source contributions have been
+          downloaded millions of times by developers worldwide. Paid work
+          enables people from different walks of life to make meaningful
+          contributions. Interested in sponsoring or partnering with Ship Shape?
+          Contact us today.
+        </p>
+
+        <a class="learn-more" href="/contact/">
+          Contact us
+          <img class="h-4 inline w-4" src="/svgs/angle-right.svg" />
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
