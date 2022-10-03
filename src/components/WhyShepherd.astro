@@ -1,11 +1,38 @@
 ---
-import { ShepherdTabs } from './ShepherdTabs';
+import './Tabs.scss';
 ---
 
 <div class="section flex flex-wrap justify-center">
   <div class="section-content">
     <h2>Why use Shepherd?</h2>
 
-    <ShepherdTabs />
+    <section class="tabs max-w-3xl">
+      <input type="radio" id="tab1" name="tabs" checked />
+      <label for="tab1" role="tab" tabindex="0">Accessibility</label>
+      <p class="tab-content">
+        Shepherd has full keyboard navigation support, focus trapping, and a11y
+        compliance via aria attributes. This ensures that everyone, regardless
+        of abilities, is able to have a great user experience when they interact
+        with your product.
+      </p>
+
+      <input type="radio" id="tab2" name="tabs" />
+      <label for="tab2" role="tab" tabindex="1">Highly Customizable</label>
+      <p class="tab-content">
+        Shepherd's styles are kept minimal, allowing you to easily customize the
+        look and feel, but still give you enough to drop in and be ready to go
+        quickly. This allows you to have a highly stylized, custom site tour
+        experience to match your brand.
+      </p>
+
+      <input type="radio" id="tab3" name="tabs" />
+      <label for="tab3" role="tab" tabindex="2">Framework Ready</label>
+      <p class="tab-content">
+        Shepherd is ready to drop into your application using React, Ember,
+        Angular, Vue.js, ES Modules, or plain Javascript! Integration with any
+        app is a breeze with Shepherd, and your developers will appreciate the
+        breadth of options for quickly spinning it up.
+      </p>
+    </section>
   </div>
 </div>
