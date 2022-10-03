@@ -4,7 +4,6 @@ categories:
   - ember.js
   - ember-data
 date: '2018-08-07'
-image: blog-post-14.jpg
 slug: ad-hoc-relationships-with-ember-data
 title: Ad Hoc Relationships with Ember Data
 ---

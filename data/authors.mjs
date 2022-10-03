@@ -35,6 +35,12 @@ export default {
     image: '/img/blog/authors/marika.jpg',
     location: 'San Diego, CA'
   },
+  nromero: {
+    name: 'Nicholas Romero',
+    id: 'nromero',
+    image: '/img/blog/authors/nic.jpg',
+    location: 'Houston, TX'
+  },
   r0bc4ry: {
     name: 'Rob Cary',
     id: 'r0bc4ry',
