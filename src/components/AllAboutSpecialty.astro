@@ -6,7 +6,7 @@ const { benefits, flipParagraphs } = Astro.props;
 
 <section class="section bg-navy flex flex-wrap justify-center">
   <div class="section-content">
-    <h2 class="text-white text-4xl" data-aos="fade-up">
+    <h2 class="text-white text-4xl mb-6" data-aos="fade-up">
       <slot name="h2" />
     </h2>
     <section
@@ -25,18 +25,18 @@ const { benefits, flipParagraphs } = Astro.props;
           ? 'xl:grid xl:col-span-5 order-last pt-12 xl:pt-0'
           : 'grid'}
       >
-        <p class="text-white mb-0 lg:content-center lg:place-self-center">
+        <div class="text-white mb-0 lg:content-center lg:place-self-center">
           <slot name="unboxed-text" />
-        </p>
+        </div>
       </div>
       <div
         class={`bg-blue-light flex items-center p-12 rounded-md text-navy ${
           flipParagraphs ? 'xl:col-span-3' : null
         }`}
       >
-        <p class="mb-0">
+        <div class="mb-0">
           <slot name="boxed-text" />
-        </p>
+        </div>
       </div>
     </section>
 
