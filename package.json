@@ -17,6 +17,7 @@
     "@astrojs/solid-js": "^1.1.0",
     "@astrojs/tailwind": "^2.0.2",
     "@babel/core": "^7.19.3",
+    "@playwright/test": "^1.26.1",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.7",
     "astro": "^1.4.3",
