@@ -92,16 +92,16 @@ const config: PlaywrightTestConfig = {
     //     channel: 'chrome',
     //   },
     // },
-  ]
+  ],
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
   // outputDir: 'test-results/',
 
   /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'yarn dev',
-  //   port: 3000
-  // }
+  webServer: {
+    command: 'yarn preview',
+    port: 3000
+  }
 };
 
 export default config;
