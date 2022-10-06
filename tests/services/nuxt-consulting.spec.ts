@@ -6,4 +6,10 @@ test('meta is correct', async ({ page }) => {
   await expect(page).toHaveTitle(
     'Nuxt.js Software Consultants & Developers | Ship Shape'
   );
+
+  const description = page.locator('meta[name="description"]');
+  await expect(description).toHaveAttribute(
+    'content',
+    "Working to improve or create a Nuxt app? Ship Shape's first-class engineers build fast, lightweight Nuxt.js applications while training your team too."
+  );
 });
