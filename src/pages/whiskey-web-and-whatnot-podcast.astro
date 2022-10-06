@@ -17,6 +17,7 @@ const description =
           Join Ship Shape's CEO Robbie, and COO Chuck as they discuss whiskey,
           web development, and a wide range of whatnot.
         </p>
+
         <div class="flex flex-wrap">
           <a href="https://open.spotify.com/show/19jiuHAqzeKnkleQUpZxDf">
             <img
@@ -34,11 +35,15 @@ const description =
 
       <div slot="icon">
         <Img
-          class="h-auto m-auto max-w-2xl my-4 rounded-lg w-full"
+          attributes={{
+            img: {
+              class: 'h-auto m-auto max-w-2xl my-4 rounded-lg w-full'
+            }
+          }}
           format="webp"
-          height="1344"
+          height={1344}
           src="/img/hero-images/www.png"
-          width="1344"
+          width={1344}
           alt="Whiskey, Web, and Whatnot podcast logo"
         />
       </div>
