@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "pretest": "yarn build",
+    "test": "playwright test"
   },
   "dependencies": {
     "solid-js": "^1.5.7",
@@ -26,6 +28,7 @@
     "autoprefixer": "^10.4.10",
     "gray-matter": "^4.0.3",
     "lodash.truncate": "^4.4.2",
+    "playwright": "^1.26.1",
     "postcss": "^8.4.17",
     "prettier-plugin-astro": "^0.5.5",
     "sass": "^1.54.9",
