@@ -1,4 +1,4 @@
 # http://www.robotstxt.org
-Sitemap: https://shipshape.io/sitemap.xml
+Sitemap: https://shipshape.io/sitemap-index.xml
 User-agent: *
 Disallow:
