@@ -6,4 +6,10 @@ test('meta is correct', async ({ page }) => {
   await expect(page).toHaveTitle(
     'Ember.js Enterprise App Development | Ship Shape'
   );
+
+  const description = page.locator('meta[name="description"]');
+  await expect(description).toHaveAttribute(
+    'content',
+    "Learn how Ship Shape's top-tier enterprise app development experts can help your team build fast, reliable Ember.js applications."
+  );
 });

@@ -1102,10 +1102,10 @@ astro-imagetools@^0.6.11:
   optionalDependencies:
     imagetools-core "3.0.2"
 
-astro@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-1.4.3.tgz#13b8710673ec2ede0c6739486ba796ccff0c1c3a"
-  integrity sha512-5MhBoBn/MsDF8uzfr0ZwaMqzcWzmLnTcpxWHlNGQiEy92PqnwaE6mZ16JO/swv5EoABUGtm6yC6cMo4JZU2scg==
+astro@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-1.4.4.tgz#c64ee6087c0ebf27c24c38a57d2f4f43fd1263f5"
+  integrity sha512-vxuHJ8C/3/NDau6EDUvi83JFDBK5Ylmo6VGAsUkdnutpGw77I4NoapoN56ANmU54ucYiu+x0apEPQvesY6GZiQ==
   dependencies:
     "@astrojs/compiler" "^0.25.0"
     "@astrojs/language-server" "^0.26.2"
