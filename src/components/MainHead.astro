@@ -16,12 +16,12 @@ export interface Props {
 const { author, canonicalURL, date, description, image, tags, title, type } =
   Astro.props as Props;
 
-  const keywords = 'test';
+const keywords = tags?.join(', ');
 ---
 
 <!-- Common -->
 <meta charset='UTF-8' />
-<title>{title}</title>
+<title>{title} | Ship Shape</title>
 <meta name='description' content={description} />
 <meta name="referrer" content="unsafe-url">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -38,7 +38,7 @@ const { author, canonicalURL, date, description, image, tags, title, type } =
 <link rel='canonical' href={canonicalURL} />
 
 <!-- OpenGraph -->
-<meta property="og:site_name" content="https://shipshape.io/">
+<meta property="og:site_name" content="Ship Shape">
 <meta property="og:url" content={canonicalURL}/>
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
