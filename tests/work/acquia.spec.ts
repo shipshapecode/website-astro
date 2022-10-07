@@ -1,21 +1,21 @@
 import { test, expect } from '@playwright/test';
 
 test('meta is correct', async ({ page }) => {
-  await page.goto('/services/nuxt-consulting/');
+  await page.goto('/work/acquia/');
 
   await expect(page).toHaveTitle(
-    'Nuxt.js Software Consultants & Developers | Ship Shape'
+    "Acquia Ember.js Enterprise App Development | Ship Shape"
   );
 
   const canonicalLink = page.locator('link[rel="canonical"]');
   await expect(canonicalLink).toHaveAttribute(
     'href',
-    'https://shipshape.io/services/nuxt-consulting/'
+    'https://shipshape.io/work/acquia/'
   );
 
   const description = page.locator('meta[name="description"]');
   await expect(description).toHaveAttribute(
     'content',
-    "Working to improve or create a Nuxt app? Ship Shape's first-class engineers build fast, lightweight Nuxt.js applications while training your team too."
+    "See how Ship Shape's enterprise app development team helped Acquia improve the user experience on its Ember.js app and raise renewal rates to nearly 100%."
   );
 });

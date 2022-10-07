@@ -1,21 +1,21 @@
 import { test, expect } from '@playwright/test';
 
 test('meta is correct', async ({ page }) => {
-  await page.goto('/services/nuxt-consulting/');
+  await page.goto('/services/tailwind-consulting/');
 
   await expect(page).toHaveTitle(
-    'Nuxt.js Software Consultants & Developers | Ship Shape'
+    'Tailwind CSS & Tailwind UI Experts | Ship Shape'
   );
 
   const canonicalLink = page.locator('link[rel="canonical"]');
   await expect(canonicalLink).toHaveAttribute(
     'href',
-    'https://shipshape.io/services/nuxt-consulting/'
+    'https://shipshape.io/services/tailwind-consulting/'
   );
 
   const description = page.locator('meta[name="description"]');
   await expect(description).toHaveAttribute(
     'content',
-    "Working to improve or create a Nuxt app? Ship Shape's first-class engineers build fast, lightweight Nuxt.js applications while training your team too."
+    "Tailwind CSS makes it easy to build a site without using any custom CSS. Learn how Ship Shape's team of Tailwind UI experts can help tailor your app quickly."
   );
 });

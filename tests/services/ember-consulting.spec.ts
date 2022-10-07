@@ -7,6 +7,12 @@ test('meta is correct', async ({ page }) => {
     'Ember.js Enterprise App Development | Ship Shape'
   );
 
+  const canonicalLink = page.locator('link[rel="canonical"]');
+  await expect(canonicalLink).toHaveAttribute(
+    'href',
+    'https://shipshape.io/services/ember-consulting/'
+  );
+
   const description = page.locator('meta[name="description"]');
   await expect(description).toHaveAttribute(
     'content',
