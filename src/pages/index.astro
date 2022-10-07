@@ -12,6 +12,8 @@ import WhyUsGrid from '../components/WhyUsGrid.astro';
 import { sephoraTestimonial, expelTestimonial } from '../testimonials/index.js';
 
 export interface Author {
+  id: string;
+  image: string;
   name: string;
 }
 
@@ -19,7 +21,7 @@ export interface MarkdownFrontmatter {
   author: Author;
   authorId: string;
   categories: string[];
-  date: number;
+  date: string;
   image: string;
   slug: string;
   title: string;

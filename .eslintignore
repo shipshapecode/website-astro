@@ -1,1 +1,5 @@
 dist/
+
+# TODO: figure out why prettier is messed up for these files
+src/components/MainHead.astro
+src/layouts/BaseLayout.astro

@@ -29,11 +29,18 @@ const description =
       </Fragment>
 
       <Fragment slot="icon">
-        <img
-          class="h-auto m-auto max-w-2xl w-full"
-          height="984"
+        <Img
+          alt=""
+          attributes={{
+            img: {
+              class: 'h-auto m-auto max-w-2xl w-full'
+            }
+          }}
+          format="webp"
+          height={984}
+          placeholder="none"
           src="/img/hero-images/open-source.png"
-          width="1344"
+          width={1344}
         />
       </Fragment>
     </HeroBlock>

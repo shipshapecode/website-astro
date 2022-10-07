@@ -3,15 +3,17 @@ import { test, expect } from '@playwright/test';
 test('post info is correct', async ({ page }) => {
   await page.goto('/blog/an-emberjs-developers-guide-to-nuxtjs/');
 
-  const postTitle = page.locator('[itemprop="headline"]')
+  const postTitle = page.locator('[itemprop="headline"]');
   await expect(postTitle).toHaveText(
     "An Ember.js Developer's Guide to Nuxt.js"
   );
 
   const authorName = page.locator('[itemprop="author"] [itemprop="name"]');
   await expect(authorName).toHaveText('Robbie Wagner');
-  
-  const publishedDate = page.locator('time[itemprop="datePublished dateModified"]');
+
+  const publishedDate = page.locator(
+    'time[itemprop="datePublished dateModified"]'
+  );
   await expect(publishedDate).toHaveText('03.26.2019');
 });
 
@@ -41,4 +43,4 @@ test('meta is correct', async ({ page }) => {
     'content',
     'ember.js, nuxt.js, vue.js'
   );
-})
+});

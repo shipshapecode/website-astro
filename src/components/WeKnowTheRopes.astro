@@ -44,17 +44,9 @@ const technologies = [
   }
 ];
 ---
+
 <div
-  class="
-    waves
-    blue-waves
-    bg-blue-light
-    flex flex-wrap
-    justify-center
-    px-8
-    py-16
-    lg:py-20 lg:pb-32
-  "
+  class="waves blue-waves bg-blue-light flex flex-wrap justify-center px-8 py-16 lg:py-20 lg:pb-32"
 >
   <div class="section-content">
     <div
@@ -65,27 +57,29 @@ const technologies = [
         <h2 class="mb-6 text-4xl lg:text-5xl">We know the ropes</h2>
         <p>
           Ship Shape is a full-stack engineering and app development company
-          that specializes in JavaScript frameworks and scalable,
-          future-forward technology.
+          that specializes in JavaScript frameworks and scalable, future-forward
+          technology.
         </p>
       </div>
       <div class="gap-1 grid grid-cols-2 auto-rows-fr text-white">
-        {technologies.map((technology) => (
-          <div
-            class="bg-navy flex items-center justify-center rounded"
-          >
-            <a href={technology.href} aria-label={technology.label}>
-              <img
-                class="w-full h-full max-w-xxs px-6 py-3"
-                loading="lazy"
-                alt={technology.label + ' logo in white on a navy background.'}
-                height={technology.height}
-                src={technology.imgSrc}
-                width={technology.width}
-              />
-            </a>
-          </div>
-        ))}
+        {
+          technologies.map((technology) => (
+            <div class="bg-navy flex items-center justify-center rounded">
+              <a href={technology.href} aria-label={technology.label}>
+                <img
+                  class="w-full h-full max-w-xxs px-6 py-3"
+                  loading="lazy"
+                  alt={
+                    technology.label + ' logo in white on a navy background.'
+                  }
+                  height={technology.height}
+                  src={technology.imgSrc}
+                  width={technology.width}
+                />
+              </a>
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
