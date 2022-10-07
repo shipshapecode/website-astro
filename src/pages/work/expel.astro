@@ -1,5 +1,7 @@
 ---
+import { Img } from 'astro-imagetools/components';
 import { Icon } from 'astro-icon';
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BottomLinks from '../../components/BottomLinks.astro';
 
@@ -53,9 +55,15 @@ const description =
 
       <div class="bg-grey-light flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="An overview of NIST scores, broken down by category and visualized in a radar graph."
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/expel/nist-overview.png"
           />
         </div>
@@ -87,9 +95,15 @@ const description =
 
       <div class="bg-expel-green flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="The protect NIST category is selected and scores are filtered to that category."
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/expel/nist-selected.png"
           />
         </div>
@@ -107,9 +121,15 @@ const description =
 
       <div class="bg-grey-light flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="The edit mode for scores, showing a simple user interface with scoring criteria for guidance."
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/expel/nist-edit-scores.png"
           />
         </div>
@@ -131,9 +151,15 @@ const description =
 
       <div class="bg-expel-green flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="Graphs indicating the progress made in various NIST categories."
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/expel/nist-progress-graphs.png"
           />
         </div>

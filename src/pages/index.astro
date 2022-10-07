@@ -44,7 +44,7 @@ posts = posts
 <BaseLayout description={description} title={title}>
   <div class="relative">
     <HeroBlock heroClasses="bg-blue-light home">
-      <div slot="content">
+      <Fragment slot="content">
         <h1 class="leading-none text-5xl lg:text-6xl">
           Our software consultants make waves
         </h1>
@@ -54,20 +54,21 @@ posts = posts
             Come on board
           </a>
         </div>
-      </div>
+      </Fragment>
 
-      <Img
-        alt="Ship Shape octopus mascot, with a pencil in its tentacle, is working hard on Ember, Next.js and Nuxt apps."
-        attributes={{
-          img: {
-            class: 'h-auto max-w-3xl w-full'
-          }
-        }}
-        format="webp"
-        placeholder="none"
-        slot="icon"
-        src="/img/hero-images/landing.png"
-      />
+      <Fragment slot="icon">
+        <Img
+          alt="Ship Shape octopus mascot, with a pencil in its tentacle, is working hard on Ember, Next.js and Nuxt apps."
+          attributes={{
+            img: {
+              class: 'h-auto max-w-3xl w-full'
+            }
+          }}
+          format="webp"
+          placeholder="none"
+          src="/img/hero-images/landing.png"
+        />
+      </Fragment>
     </HeroBlock>
 
     <div class="relative z-10">

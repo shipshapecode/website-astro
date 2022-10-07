@@ -11,7 +11,7 @@ const description =
 <BaseLayout description={description} title={title}>
   <div itemscope itemtype="http://schema.org/Service">
     <HeroBlock hero-classes="podcast">
-      <div slot="content">
+      <Fragment slot="content">
         <h1 itemprop="name" class="text-5xl mb-6">Whiskey Web and Whatnot</h1>
         <p>
           Join Ship Shape's CEO Robbie, and COO Chuck as they discuss whiskey,
@@ -31,9 +31,9 @@ const description =
             <img class="h-12 w-auto" src="/svgs/apple-podcasts.svg" />
           </a>
         </div>
-      </div>
+      </Fragment>
 
-      <div slot="icon">
+      <Fragment slot="icon">
         <Img
           attributes={{
             img: {
@@ -46,7 +46,7 @@ const description =
           width={1344}
           alt="Whiskey, Web, and Whatnot podcast logo"
         />
-      </div>
+      </Fragment>
     </HeroBlock>
   </div>
 </BaseLayout>

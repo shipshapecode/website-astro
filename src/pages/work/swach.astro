@@ -1,10 +1,13 @@
 ---
+import { Img } from 'astro-imagetools/components';
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BottomLinks from '../../components/BottomLinks.astro';
 
 const title = 'Case Study - Swach';
 const description = `Learn how we made Swach into a robust cross platform desktop app for MacOS, Windows, and Linux.`;
 ---
+
 <BaseLayout description={description} title={title}>
   <div class="section flex flex-wrap justify-center">
     <div class="max-w-5xl w-full">
@@ -22,20 +25,10 @@ const description = `Learn how we made Swach into a robust cross platform deskto
       </div>
 
       <div
-        class="
-          bg-swach-purple
-          flex flex-wrap
-          h-64
-          md:h-140
-          justify-center
-          items-center
-        "
+        class="bg-swach-purple flex flex-wrap h-64 md:h-140 justify-center items-center"
       >
         <div class="w-1/2 lg:w-1/3">
-          <img
-            class="h-auto w-full"
-            src="/svgs/clients/swach-white.svg"
-          />
+          <img class="h-auto w-full" src="/svgs/clients/swach-white.svg" />
         </div>
       </div>
 
@@ -45,8 +38,8 @@ const description = `Learn how we made Swach into a robust cross platform deskto
         <p>
           There are many desktop color tools out there that do just one thing,
           but do it well like
-          <a href="https://usecontrast.com/">Contrast</a> and others that do a
-          lot of different things, but only run on MacOS like
+          <a href="https://usecontrast.com/">Contrast</a> and others that do a lot
+          of different things, but only run on MacOS like
           <a href="http://sipapp.io/">Sip</a>. The goal with Swach was to create
           a robust, cross platform desktop app that encompassed the
           functionality of many popular tools, while working across not just
@@ -56,9 +49,15 @@ const description = `Learn how we made Swach into a robust cross platform deskto
 
       <div class="bg-grey-light flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="Swach in dark mode showing the palettes screen"
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/swach/palette-dark.png"
           />
         </div>
@@ -70,9 +69,9 @@ const description = `Learn how we made Swach into a robust cross platform deskto
         <p>
           Building apps that work across MacOS, Windows, and Linux used to mean
           learning completely different tech stacks for each app, but now we can
-          use <a href="https://www.electronjs.org/">Electron</a> to build
-          cross-platform apps using JavaScript, HTML and CSS. Drawing on our
-          Ember.js experience, we decided to leverage
+          use <a href="https://www.electronjs.org/">Electron</a> to build cross-platform
+          apps using JavaScript, HTML and CSS. Drawing on our Ember.js experience,
+          we decided to leverage
           <a href="https://ember-electron.js.org/">Ember Electron</a>, an Ember
           addon for building Electron apps to create a seamless experience
           across all platforms.
@@ -80,9 +79,15 @@ const description = `Learn how we made Swach into a robust cross platform deskto
       </div>
       <div class="bg-swach-purple flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="Swach in light mode showing the palettes screen"
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/swach/palette-light.png"
           />
         </div>
@@ -99,9 +104,15 @@ const description = `Learn how we made Swach into a robust cross platform deskto
       </div>
       <div class="bg-grey-light flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="The color harmonies tab of Swach, showing a color wheel and color palette."
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/swach/kuler.png"
           />
         </div>
@@ -114,17 +125,23 @@ const description = `Learn how we made Swach into a robust cross platform deskto
           storing individual colors, checking their WCAG contrast scores,
           organizing them into palettes, and even discovering new color
           combinations from a base color. Our color harmonies tab was inspired
-          by <a href="https://color.adobe.com/">Adobe Color</a> and allows you
-          to create new palettes by using a base color and calculating
-          analogous, monochromatic, and other color harmonies for it.
+          by <a href="https://color.adobe.com/">Adobe Color</a> and allows you to
+          create new palettes by using a base color and calculating analogous, monochromatic,
+          and other color harmonies for it.
         </p>
       </div>
 
       <div class="bg-swach-purple flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="Swach showing the contrast checker tab comparing colors and calculating the WCAG score."
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/swach/contrast-checker.png"
           />
         </div>

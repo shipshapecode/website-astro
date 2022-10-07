@@ -1,5 +1,7 @@
 ---
+import { Img } from 'astro-imagetools/components';
 import { Icon } from 'astro-icon';
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BottomLinks from '../../components/BottomLinks.astro';
 import SingleQuote from '../../components/SingleQuote.astro';
@@ -62,9 +64,15 @@ const description =
 
       <div class="bg-grey-light flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="The Enigma login page"
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/enigma/enigma-login.png"
           />
         </div>
@@ -99,9 +107,15 @@ const description =
 
       <div class="bg-enigma-blue flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="An implementation of a Shepherd tour for the Enigma hirer dashboard"
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/enigma/enigma-hirer-assessment-tour.png"
           />
         </div>
@@ -149,9 +163,15 @@ const description =
 
       <div class="bg-grey-light flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="A detailed overview of a cybersecurity assessment"
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/enigma/enigma-hirer-assessment-detail.png"
           />
         </div>
@@ -163,9 +183,15 @@ const description =
 
       <div class="bg-enigma-blue flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="A detailed overview of all candidate assessment results"
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/enigma/enigma-hirer-results.png"
           />
         </div>
