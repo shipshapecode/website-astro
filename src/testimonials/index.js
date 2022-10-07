@@ -2,6 +2,7 @@ export const enigmaTestimonial = {
   name: 'Harley Sugarman',
   title: 'Founder, CEO at Enigma',
   imgSrc: 'harley',
+  svgAlt: 'Enigma',
   svgSrc: '/svgs/clients/enigma-white.svg',
   quote: `I loved working with Ship Shape.
           They helped our small team build a product from the ground up
@@ -16,6 +17,7 @@ export const expelTestimonial = {
   name: 'Roger Studner',
   title: 'Chief Architect at Expel',
   imgSrc: 'roger',
+  svgAlt: 'Expel',
   svgSrc: '/svgs/clients/expel-white.svg',
   quote: `Ship Shape was a great aid to us because they were the voice of Ember
         best practices to keep our code base current, and they were able to
@@ -30,6 +32,7 @@ export const sephoraTestimonial = {
   name: 'Donald Piret',
   title: 'Director of Engineering at Sephora',
   imgSrc: 'donald',
+  svgAlt: 'Sephora',
   svgSrc: '/svgs/clients/sephora-white.svg',
   quote: `Ship Shape delivered beyond our expectations. They pointed out things
           we had never even thought of or knew about. Our team learned a huge
