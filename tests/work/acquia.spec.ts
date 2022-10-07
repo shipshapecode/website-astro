@@ -4,7 +4,7 @@ test('meta is correct', async ({ page }) => {
   await page.goto('/work/acquia/');
 
   await expect(page).toHaveTitle(
-    "Acquia Ember.js Enterprise App Development | Ship Shape"
+    'Acquia Ember.js Enterprise App Development | Ship Shape'
   );
 
   const canonicalLink = page.locator('link[rel="canonical"]');

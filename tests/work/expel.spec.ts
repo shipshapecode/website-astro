@@ -4,7 +4,7 @@ test('meta is correct', async ({ page }) => {
   await page.goto('/work/expel/');
 
   await expect(page).toHaveTitle(
-    "Expel Ember.js Enterprise App Development | Ship Shape"
+    'Expel Ember.js Enterprise App Development | Ship Shape'
   );
 
   const canonicalLink = page.locator('link[rel="canonical"]');

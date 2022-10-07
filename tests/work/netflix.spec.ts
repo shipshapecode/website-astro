@@ -4,7 +4,7 @@ test('meta is correct', async ({ page }) => {
   await page.goto('/work/netflix/');
 
   await expect(page).toHaveTitle(
-    "Netflix Ember.js Finance Dashboard | Ship Shape"
+    'Netflix Ember.js Finance Dashboard | Ship Shape'
   );
 
   const canonicalLink = page.locator('link[rel="canonical"]');
