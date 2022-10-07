@@ -17,7 +17,7 @@ Serverless allows abstraction from the infrastructure. You will not have to prov
 
 ## What we'll work on today
 
-A common need for teams today in their applications is a GraphQL server as the API for data persistence. While not challenging to setup a basic service for use locally, there tend to often be quite a bit more steps for deployment of these APIs for use in various environments. We'll use the Serverless framework to get us started quickly and give us the ability to deploy to many common cloud providers. 
+A common need for teams today in their applications is a GraphQL server as the API for data persistence. While not challenging to setup a basic service for use locally, there tend to often be quite a bit more steps for deployment of these APIs for use in various environments. We'll use the Serverless framework to get us started quickly and give us the ability to deploy to many common cloud providers.
 
 ```bash
 npx serverless
@@ -41,7 +41,7 @@ For our needs, we'll want to also add a package for GraphQL and I'm going to use
 yarn add apollo-server-lambda
 ```
 
-Now let's change our function to create a GraphQL server and use it to respond to query requests. For our demonstration, we'll just have it respond to a string for a simple query. 
+Now let's change our function to create a GraphQL server and use it to respond to query requests. For our demonstration, we'll just have it respond to a string for a simple query.
 
 ```js
 import { ApolloServer, gql } from 'apollo-server-lambda';
@@ -54,7 +54,7 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    hello: () => 'Hello world!',
+    hello: () => 'Hello world!'
   }
 };
 
@@ -69,7 +69,7 @@ export const graphql = server.createHandler();
 
 ## Try this out locally
 
-Now that you have a basic Lambda as your GraphQL server, you probably want to try it out before getting it out on the internet. Not that this is a requirement, most free tiers of providers make this a free experiment, and so there's no risk to pushing and testing. That said, a couple of packages also make it simple to test your function locally. 
+Now that you have a basic Lambda as your GraphQL server, you probably want to try it out before getting it out on the internet. Not that this is a requirement, most free tiers of providers make this a free experiment, and so there's no risk to pushing and testing. That said, a couple of packages also make it simple to test your function locally.
 
 For our basic needs, we'll use the [serverless-offline](https://www.npmjs.com/package/serverless-offline) plugin to emulate AWS Lamdba and API Gateway services on a local server. In this regard we are choosing a vendor in a way, but for our purposes, of choosing a path and pushing the code somewhere, AWS is the one I'm personally most familiar with, and it is the stated provider by default when generating a serverless project.
 

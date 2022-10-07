@@ -9,29 +9,31 @@ const { posts } = Astro.props;
 ---
 
 <div>
-  {posts.map((post) => (
-    <div class="blog-post border-b-2 border-blue-light border-solid py-3">
-      <a class="title" href={`/blog/${post.frontmatter.slug}/`}>
-        {post.frontmatter.linktitle || post.frontmatter.title}
-      </a>
+  {
+    posts.map((post) => (
+      <div class="blog-post border-b-2 border-blue-light border-solid py-3">
+        <a class="title" href={`/blog/${post.frontmatter.slug}/`}>
+          {post.frontmatter.linktitle || post.frontmatter.title}
+        </a>
 
-      <div class="attribution">
-        By {post.frontmatter.author.name}
-        {formatDateWithDots(post.frontmatter.date)}
-      </div>
+        <div class="attribution">
+          By {post.frontmatter.author.name}
+          {formatDateWithDots(post.frontmatter.date)}
+        </div>
 
-      <div class="tags pb-4 pt-4">
-        {post.frontmatter.categories?.map((tag) => (
-          <a
-            href={`/blog/categories/${tag.replace(/ |\./g, '-')}/`}
-            class="blog-tag mr-2"
-          >
-            #{tag}
-          </a>
-        ))}
+        <div class="tags pb-4 pt-4">
+          {post.frontmatter.categories?.map((tag) => (
+            <a
+              href={`/blog/categories/${tag.replace(/ |\./g, '-')}/`}
+              class="blog-tag mr-2"
+            >
+              #{tag}
+            </a>
+          ))}
+        </div>
       </div>
-    </div>
-  ))}
+    ))
+  }
 </div>
 
 <style lang="scss">
@@ -41,4 +43,4 @@ const { posts } = Astro.props;
       font-size: 2rem;
     }
   }
-  </style>
+</style>

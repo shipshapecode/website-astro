@@ -4,17 +4,7 @@ import { Img } from 'astro-imagetools/components';
 
 <nav class="bg-transparent flex justify-center w-full">
   <div
-    class="
-      flex
-      items-center
-      justify-between
-      flex-wrap
-      p-6
-      max-w-8xl
-      w-full
-      z-20
-      lg:px-0
-    "
+    class="flex items-center justify-between flex-wrap p-6 max-w-8xl w-full z-20 lg:px-0"
   >
     <div class="flex flex-no-shrink items-center pr-2 pt-2">
       <a href="/" class="logo inline-flex items-center" itemprop="url">
@@ -30,7 +20,7 @@ import { Img } from 'astro-imagetools/components';
             attributes={{
               img: {
                 class: '!h-[50px] w-auto',
-                itemprop: 'url',
+                itemprop: 'url'
               }
             }}
             height={100}
@@ -42,7 +32,9 @@ import { Img } from 'astro-imagetools/components';
           <meta itemprop="height" content="128" />
           <meta itemprop="width" content="128" />
         </div>
-        <div class="font-medium text-3xl text-navy" itemprop="name">Ship Shape</div>
+        <div class="font-medium text-3xl text-navy" itemprop="name">
+          Ship Shape
+        </div>
       </a>
     </div>
 
@@ -79,7 +71,8 @@ import { Img } from 'astro-imagetools/components';
           <g>
             <path
               d="M491.318,392.197H20.682C9.26,392.197,0,401.456,0,412.879s9.26,20.682,20.682,20.682h470.636
-			c11.423,0,20.682-9.259,20.682-20.682S502.741,392.197,491.318,392.197z"></path>
+			c11.423,0,20.682-9.259,20.682-20.682S502.741,392.197,491.318,392.197z"
+            ></path>
           </g>
         </svg>
       </button>
@@ -100,8 +93,8 @@ import { Img } from 'astro-imagetools/components';
               xmlns="http://www.w3.org/2000/svg"
               ><path
                 d="m28.228 23.986 18.864-18.864c1.172-1.171 1.172-3.071 0-4.242-1.172-1.172-3.07-1.172-4.242 0l-18.864 18.864-18.865-18.864c-1.172-1.172-3.07-1.172-4.242 0-1.172 1.171-1.172 3.071 0 4.242l18.865 18.864-18.865 18.864c-1.172 1.171-1.172 3.071 0 4.242.586.585 1.354.878 2.121.878s1.535-.293 2.121-.879l18.865-18.864 18.864 18.864c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879c1.172-1.171 1.172-3.071 0-4.242z"
-              ></path></svg
-            >
+              ></path>
+            </svg>
           </button>
         </div>
 

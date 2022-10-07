@@ -1,6 +1,6 @@
 ---
 authorId: rwwagner90
-categories: 
+categories:
   - ember.js
 date: '2016-07-19'
 image: blog-post-3.jpg
@@ -34,6 +34,5 @@ If you have a quick idea for an addon, and want to iterate on it directly in you
 <h5 id="managing-vendor-code">Managing Vendor Code</h5>
 
 You can take advantage of all available addon hooks. The `included` hook allows you to specify what vendor libraries should be pulled in and added.
-
 
 Most of this info was taken from [this video](https://www.youtube.com/watch?v=VYrMs1Zzpqs), as I could not really find any official documentation on in-repo addons. For more details, I highly recommend watching the video. Thanks a ton to Jake Bixby for the talk!

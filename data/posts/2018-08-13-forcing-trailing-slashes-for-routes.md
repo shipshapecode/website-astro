@@ -1,6 +1,6 @@
 ---
 authorId: rwwagner90
-categories: 
+categories:
   - ember.js
 date: '2018-08-13'
 slug: forcing-trailing-slashes-for-routes

@@ -1,8 +1,8 @@
 ---
 authorId: r0bc4ry
 categories:
-- react
-- javascript
+  - react
+  - javascript
 date: '2022-06-14'
 slug: dynamic-iframes-in-react
 title: 'Dynamic Iframes in React'
@@ -44,14 +44,14 @@ const MyComponent = ({ children }) => {
       >
         {children}
       </button>
-      
+
       <Modal isOpen={modalOpen}>
-        <iframe 
-          src="/login" 
-          frameBorder="0" 
-          height={} 
-          width={} 
-          scrolling="no" 
+        <iframe
+          src="/login"
+          frameBorder="0"
+          height={}
+          width={}
+          scrolling="no"
         />
       </Modal>
     </div>
@@ -68,9 +68,9 @@ And this completed the basic setup - a component that could take a call-to-actio
 But what about the width and height of the iframe? Because the underlying login page could change in the future, I wanted this to be handled dynamically. This would avoid needing to update the modal every time a content or style change happened on the login page. Luckily the width is easy, it's always 100% - but the height was a little more difficult. My solution was to utilize a `ResizeObserver` on the `<main>` element of the login page inside the `onLoad` event of the iframe. This method would require no changes to the login page and would notify my component of height changes with events without using any polling.
 
 ```javascript
-import { useEffect, useState } from "react";
-import classNames from "classnames";
-import styles from "./my-component.module.scss";
+import { useEffect, useState } from 'react';
+import classNames from 'classnames';
+import styles from './my-component.module.scss';
 
 const MyComponent = ({ children }) => {
   const [iframeHeight, setIframeHeight] = useState(0);
@@ -94,13 +94,13 @@ const MyComponent = ({ children }) => {
           height={iframeHeight}
           width="100%"
           scrolling="no"
-          onLoad={event => {
+          onLoad={(event) => {
             const { contentWindow } = event.target;
-            const main = contentWindow.document.body.querySelector("main");
+            const main = contentWindow.document.body.querySelector('main');
 
             // Because the login form has a dynamic height, observe any size changes and update the iframe height
-            const resizeObserver = new ResizeObserver(entries => {
-              entries.forEach(entry => {
+            const resizeObserver = new ResizeObserver((entries) => {
+              entries.forEach((entry) => {
                 setIframeHeight(entry.contentRect.height);
               });
             });
@@ -110,11 +110,17 @@ const MyComponent = ({ children }) => {
             // When the iframe is hiden (i.e. modal is closed), remove any listeners
             const onVisibilityChange = () => {
               resizeObserver.disconnect();
-              contentWindow.addEventListener("visibilitychange", onVisibilityChange);
+              contentWindow.addEventListener(
+                'visibilitychange',
+                onVisibilityChange
+              );
             };
 
             // Add listener for when iframe is hiden (i.e. modal is closed)
-            contentWindow.addEventListener("visibilitychange", onVisibilityChange);
+            contentWindow.addEventListener(
+              'visibilitychange',
+              onVisibilityChange
+            );
           }}
         />
       </Modal>
@@ -133,15 +139,15 @@ So now our modal opens, loads our page, and dynamically sets the height of the i
 
 ```javascript
 // Within our parent page source code, we'll need to add the following line
-window.parent.postMessage("onLogin", window.location.origin);
+window.parent.postMessage('onLogin', window.location.origin);
 ```
 
 **MyComponent**
 
 ```javascript
-import { useEffect, useState } from "react";
-import classNames from "classnames";
-import styles from "./my-component.module.scss";
+import { useEffect, useState } from 'react';
+import classNames from 'classnames';
+import styles from './my-component.module.scss';
 
 const MyComponent = ({ children }) => {
   const [iframeHeight, setIframeHeight] = useState(0);
@@ -154,13 +160,13 @@ const MyComponent = ({ children }) => {
 
   // Listen for `onLogin` message from login page
   useEffect(() => {
-    const onMessage = event => {
-      if (event.data === "onLogin") onLogin();
+    const onMessage = (event) => {
+      if (event.data === 'onLogin') onLogin();
     };
 
-    window.addEventListener("message", onMessage);
+    window.addEventListener('message', onMessage);
     return () => {
-      window.removeEventListener("message", onMessage);
+      window.removeEventListener('message', onMessage);
     };
   }, []);
 
@@ -182,13 +188,13 @@ const MyComponent = ({ children }) => {
           height={iframeHeight}
           width="100%"
           scrolling="no"
-          onLoad={event => {
+          onLoad={(event) => {
             const { contentWindow } = event.target;
-            const main = contentWindow.document.body.querySelector("main");
+            const main = contentWindow.document.body.querySelector('main');
 
             // Because the login form has a dynamic height, observe any size changes and update the iframe height
-            const resizeObserver = new ResizeObserver(entries => {
-              entries.forEach(entry => {
+            const resizeObserver = new ResizeObserver((entries) => {
+              entries.forEach((entry) => {
                 setIframeHeight(entry.contentRect.height);
               });
             });
@@ -198,11 +204,17 @@ const MyComponent = ({ children }) => {
             // When the iframe is hiden (i.e. modal is closed), remove any listeners
             const onVisibilityChange = () => {
               resizeObserver.disconnect();
-              contentWindow.addEventListener("visibilitychange", onVisibilityChange);
+              contentWindow.addEventListener(
+                'visibilitychange',
+                onVisibilityChange
+              );
             };
 
             // Add listener for when iframe is hiden (i.e. modal is closed)
-            contentWindow.addEventListener("visibilitychange", onVisibilityChange);
+            contentWindow.addEventListener(
+              'visibilitychange',
+              onVisibilityChange
+            );
           }}
         />
       </Modal>

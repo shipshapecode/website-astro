@@ -82,9 +82,7 @@ An anti-pattern for using `h-tag`'s is to set each header level to a certain set
 
 <img alt="Section of shipshape.io with blocks of text using 5 different styles: large-font blue header, large-font white header, small, bolded white text within a button, small regular-weight blue body text, and small regular-weight white body text" src="/img/blog/h-tag-don't.png" align="left" style="padding-right: 2rem" />
 
-
 ```css
-
 h1 {
   color: blue;
   font-size: 48px;
@@ -110,16 +108,6 @@ h5 {
   color: white;
   font-size: 20px;
 }
-
-
-
-
-
-
-
-
-
-
 ```
 
 In the example above, the intention was not to nest each section within each other, therefore we should not be using multiple levels of h-tags to style these elements of text, and instead create the right classes for each set of styles.
@@ -148,7 +136,7 @@ Lighthouse scans through your web app and offers a rundown of what is and isn't 
 
 Lighhouse will let you know about sections of your website that pass/fail color contrast. You can quickly determine at what colors and sizes of text have enough contrast with their background color by using contrast checkers like [WCAG Color contrast checker](https://chrome.google.com/webstore/detail/wcag-color-contrast-check/plnahcmalebffmaghcpcmpaciebdhgdf?hl=en) or [Colour Contrast Checker](https://chrome.google.com/webstore/detail/colour-contrast-checker/nmmjeclfkgjdomacpcflgdkgpphpmnfe?hl=en-GB).
 
-Your primary text should have enough contrast to be readable by folks with different types of color blindness. Additional text states like `hover` or `active` don’t necessarily need to pass the contrast test as long as you have other cues that someone is over a link for example (i.e.: by using semantic html 😉). 
+Your primary text should have enough contrast to be readable by folks with different types of color blindness. Additional text states like `hover` or `active` don’t necessarily need to pass the contrast test as long as you have other cues that someone is over a link for example (i.e.: by using semantic html 😉).
 
 ### HeadingsMap Browser Extension
 
@@ -156,7 +144,7 @@ Your primary text should have enough contrast to be readable by folks with diffe
 
 ### Hands-on Testing Your Web App
 
-Last but not least, try accessing your website in different ways to make sure things are working how you intended. Try going through each of your pages using only your keyboard. Next try with your device’s built-in assistive technology. 
+Last but not least, try accessing your website in different ways to make sure things are working how you intended. Try going through each of your pages using only your keyboard. Next try with your device’s built-in assistive technology.
 
 Some common unintended scenarios are skipping over elements you can normally click on, or opening a modal and getting sent back to the top of the page when you close it instead of where you last were.
 

@@ -1,6 +1,6 @@
 ---
 authorId: rwwagner90
-categories: 
+categories:
   - ember.js
   - ember-data
 date: '2017-07-31'
@@ -18,11 +18,11 @@ For anyone else who has the same problem, here is how I got around it and forced
 ```javascript
 item.save().then(() => {
   const user = this.modelFor(this.routeName);
-      const item = this.store.createRecord(type);
-      const pluralType = `${type}s`;
-      user.get(pluralType).addObject(item);
-        return user.save().then((savedUser) => {
-          savedUser.hasMany(pluralType).reload();
-        });
-      });
+  const item = this.store.createRecord(type);
+  const pluralType = `${type}s`;
+  user.get(pluralType).addObject(item);
+  return user.save().then((savedUser) => {
+    savedUser.hasMany(pluralType).reload();
+  });
+});
 ```

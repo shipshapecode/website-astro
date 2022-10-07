@@ -1,6 +1,6 @@
 ---
 authorId: rwwagner90
-categories: 
+categories:
   - ember.js
   - nuxt.js
   - vue.js
@@ -9,15 +9,16 @@ slug: an-emberjs-developers-guide-to-nuxtjs
 title: An Ember.js Developer's Guide to Nuxt.js
 ---
 
-I am a huge Ember.js fan, but recently wanted to experiment with some other frameworks, and decided to try 
-[Nuxt.js](https://nuxtjs.org/). I was very pleasantly surprised, that Nuxt had many nice "magic" things, 
-just like Ember had, and felt very familiar to Ember development. There were a lot of additional nice features as well, 
-like built in PWA support, static site generation, tree shaking, and code splitting. With all of these awesome features, 
-I decided to convert [shipshape.io](/) from [Ember](https://github.com/shipshapecode/shipshape.io) to 
-[Nuxt](https://github.com/shipshapecode/website-nuxt), and wanted to document the mappings between things in Ember 
+I am a huge Ember.js fan, but recently wanted to experiment with some other frameworks, and decided to try
+[Nuxt.js](https://nuxtjs.org/). I was very pleasantly surprised, that Nuxt had many nice "magic" things,
+just like Ember had, and felt very familiar to Ember development. There were a lot of additional nice features as well,
+like built in PWA support, static site generation, tree shaking, and code splitting. With all of these awesome features,
+I decided to convert [shipshape.io](/) from [Ember](https://github.com/shipshapecode/shipshape.io) to
+[Nuxt](https://github.com/shipshapecode/website-nuxt), and wanted to document the mappings between things in Ember
 and Nuxt and the benefits and drawbacks of each.
 
 ## Table of Contents
+
 1. [Application Wrapper](#applicationwrapper)
 1. [Components](#components)
 1. [Routes](#routes)
@@ -38,7 +39,7 @@ you define your application wrapper markup.
 
 ### {{outlet}} -> &lt;Nuxt/&gt;
 
-In Nuxt, you'll define where your application content is inserted with `<Nuxt/>`, rather than the 
+In Nuxt, you'll define where your application content is inserted with `<Nuxt/>`, rather than the
 `{{outlet}}` you typically have in Ember.
 
 ### Example
@@ -50,18 +51,14 @@ In Nuxt, you'll define where your application content is inserted with `<Nuxt/>`
 
 {{head-layout}}
 
-<div 
-  itemscope 
-  itemtype="https://schema.org/Organization" 
-  itemid="shipshapeorg"
->
-  <NavMenu/>
+<div itemscope itemtype='https://schema.org/Organization' itemid='shipshapeorg'>
+  <NavMenu />
 
   <main>
     {{outlet}}
   </main>
 
-  <WaveFooter/>
+  <WaveFooter />
 </div>
 ```
 
@@ -76,15 +73,15 @@ In Nuxt, you'll define where your application content is inserted with `<Nuxt/>`
     itemtype="https://schema.org/Organization"
     itemid="shipshapeorg"
   >
-    <meta itemprop="legalName" content="Ship Shape Consulting LLC">
-    
-    <NavMenu/>
-    
+    <meta itemprop="legalName" content="Ship Shape Consulting LLC" />
+
+    <NavMenu />
+
     <main>
-      <Nuxt/>
+      <Nuxt />
     </main>
-    
-    <WaveFooter/>
+
+    <WaveFooter />
   </div>
 </template>
 
@@ -101,11 +98,10 @@ In Nuxt, you'll define where your application content is inserted with `<Nuxt/>`
 </script>
 ```
 
-
 # Components
 
 With the new angle bracket syntax for Ember's Glimmer components, copying and pasting components into Nuxt/Vue
-becomes much easier. Especially with the addition of [Tailwind CSS](https://tailwindcss.com/docs/what-is-tailwind/), 
+becomes much easier. Especially with the addition of [Tailwind CSS](https://tailwindcss.com/docs/what-is-tailwind/),
 I did not have to worry much about specific styles for each component.
 
 ### components/blog-post/component.js + components/blog-post/template.hbs -> components/BlogPost.vue
@@ -167,7 +163,9 @@ export default class BlogPost extends Component {
   didRender() {
     super.didRender(...arguments);
 
-    let nodeList = this.element.querySelectorAll('pre:not(.no-line-numbers) > code');
+    let nodeList = this.element.querySelectorAll(
+      'pre:not(.no-line-numbers) > code'
+    );
 
     if (nodeList) {
       // console.log(nodeList);
@@ -179,45 +177,38 @@ export default class BlogPost extends Component {
     Prism.highlightAll();
   }
 }
-
 ```
 
 ```handlebars
 {{! components/blog-post/template.hbs }}
 
-<div itemscope itemtype="http://schema.org/BlogPosting">
-  <link itemprop="publisher" href="shipshapeorg">
-  <link itemprop="image" href="shipshapelogo">
+<div itemscope itemtype='http://schema.org/BlogPosting'>
+  <link itemprop='publisher' href='shipshapeorg' />
+  <link itemprop='image' href='shipshapelogo' />
 
-  <div class="section flex flex-wrap justify-center">
-    <div class="max-w-3xl w-full">
-      <h1 class="blog-post-title" itemprop="headline">
+  <div class='section flex flex-wrap justify-center'>
+    <div class='max-w-3xl w-full'>
+      <h1 class='blog-post-title' itemprop='headline'>
         {{this.title}}
       </h1>
 
-      <AuthorRow
-        @author={{this.author}}
-        @date={{this.date}}
-      >
-      </AuthorRow>
+      <AuthorRow @author={{this.author}} @date={{this.date}} />
 
-      <div class="post-content">
+      <div class='post-content'>
         {{this.content}}
       </div>
 
       <BottomLinksWithPath
-        @nextLink="blog.post"
+        @nextLink='blog.post'
         @nextLinkPath={{this.nextSlug}}
         @nextLinkText={{this.nextTitle}}
-        @previousLink="blog.post"
+        @previousLink='blog.post'
         @previousLinkPath={{this.previousSlug}}
         @previousLinkText={{this.previousTitle}}
-      >
-      </BottomLinksWithPath>
+      />
     </div>
   </div>
 </div>
-
 ```
 
 ##### Nuxt.js
@@ -226,25 +217,17 @@ export default class BlogPost extends Component {
 <!-- components/BlogPost.vue -->
 <template>
   <article itemscope itemtype="http://schema.org/BlogPosting">
-    <link itemprop="mainEntityOfPage" :href="$nuxt.$route.path">
-    <link itemprop="publisher" href="shipshapeorg">
-    <link itemprop="image" href="shipshapelogo">
+    <link itemprop="mainEntityOfPage" :href="$nuxt.$route.path" />
+    <link itemprop="publisher" href="shipshapeorg" />
+    <link itemprop="image" href="shipshapelogo" />
 
     <div class="section flex flex-wrap justify-center">
       <div class="max-w-3xl w-full">
-        <h1 class="blog-post-title" itemprop="headline">
-          {{ post.title }}
-        </h1>
+        <h1 class="blog-post-title" itemprop="headline">{{ post.title }}</h1>
 
-        <AuthorRow
-          v-bind="post.author.attributes"
-          :date="post.date"
-        />
+        <AuthorRow v-bind="post.author.attributes" :date="post.date" />
 
-        <div
-          class="post-content"
-          v-html="post.html"
-        />
+        <div class="post-content" v-html="post.html" />
 
         <BottomLinks
           :next-link="`/blog/${post.nextSlug}/`"
@@ -290,10 +273,10 @@ all in one file. I find this to be a big downside of Nuxt, and would really pref
 
 ### model -> asyncData
 
-In Ember, you will typically do all of your data fetching in the [model](https://guides.emberjs.com/v3.8.0/routing/specifying-a-routes-model/) 
-hook. Nuxt has a similar concept in its [asyncData](https://nuxtjs.org/api/) method, which will load all the data server side, 
-allowing you to do `async` things, before setting the component data, much like Ember waits for the `model` hook to return, 
-before rendering the page. 
+In Ember, you will typically do all of your data fetching in the [model](https://guides.emberjs.com/v3.8.0/routing/specifying-a-routes-model/)
+hook. Nuxt has a similar concept in its [asyncData](https://nuxtjs.org/api/) method, which will load all the data server side,
+allowing you to do `async` things, before setting the component data, much like Ember waits for the `model` hook to return,
+before rendering the page.
 
 ### Example
 
@@ -323,11 +306,11 @@ export default class Blog extends Route {
     });
 
     return posts.sort((post1, post2) => {
-      if(post1.attributes.date > post2.attributes.date){
+      if (post1.attributes.date > post2.attributes.date) {
         return -1;
       }
 
-      if(post1.attributes.date < post2.attributes.date){
+      if (post1.attributes.date < post2.attributes.date) {
         return 1;
       }
 
@@ -338,36 +321,35 @@ export default class Blog extends Route {
 ```
 
 ```handlebars
-<div class="blog-posts section flex flex-wrap justify-center">
-  <div class="section-content">
-    <div class="flex items-center">
+<div class='blog-posts section flex flex-wrap justify-center'>
+  <div class='section-content'>
+    <div class='flex items-center'>
       <h1>Blog</h1>
 
       <a
-        class="p-12"
-        href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fshipshape.io%2Ffeed.xml"
-        target="_blank"
-        rel="noopener"
+        class='p-12'
+        href='https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fshipshape.io%2Ffeed.xml'
+        target='_blank'
+        rel='noopener'
       >
-        {{svg-jar "rss"}}
+        {{svg-jar 'rss'}}
       </a>
     </div>
 
     <p>
-      Ramblings about Ember.js, JavaScript, life, liberty, and the pursuit of happiness.
+      Ramblings about Ember.js, JavaScript, life, liberty, and the pursuit of
+      happiness.
     </p>
 
     <BlogPostMenu
-      @navigatePages={{action "navigatePages"}}
+      @navigatePages={{action 'navigatePages'}}
       @page={{this.page}}
       @posts={{this.model}}
       @totalPosts={{this.model.length}}
-    >
-    </BlogPostMenu>
+    />
   </div>
 </div>
 ```
-
 
 ##### Nuxt.js
 
@@ -376,9 +358,7 @@ export default class Blog extends Route {
   <div class="blog-posts section flex flex-wrap justify-center">
     <div class="section-content">
       <div class="flex items-center">
-        <h1>
-          Blog
-        </h1>
+        <h1>Blog</h1>
 
         <a
           class="p-12"
@@ -386,15 +366,16 @@ export default class Blog extends Route {
           target="_blank"
           rel="noopener"
         >
-          <inline-svg src="/svgs/rss.svg"/>
+          <inline-svg src="/svgs/rss.svg" />
         </a>
       </div>
 
       <p>
-        Ramblings about Ember.js, JavaScript, life, liberty, and the pursuit of happiness.
+        Ramblings about Ember.js, JavaScript, life, liberty, and the pursuit of
+        happiness.
       </p>
 
-      <BlogPostMenu :posts="posts"/>
+      <BlogPostMenu :posts="posts" />
     </div>
   </div>
 </template>
@@ -417,7 +398,8 @@ export default class Blog extends Route {
 
     head() {
       const title = 'Blog';
-      const description = 'Ramblings about Ember.js, JavaScript, life, liberty, and the pursuit of happiness.';
+      const description =
+        'Ramblings about Ember.js, JavaScript, life, liberty, and the pursuit of happiness.';
       const url = 'https://shipshape.io/blog/';
 
       return generateMeta(title, description, url);
@@ -452,12 +434,12 @@ installed, but other than that, it is zero config.
 
 Sitemaps in Ember and Nuxt are very similar, and both require the addition of a plugin to generate them. In Ember
 we use [prember-sitemap-generator](https://github.com/shipshapecode/prember-sitemap-generator) and in Nuxt we use
-[@nuxtjs/sitemap](https://github.com/nuxt-community/sitemap-module). Unless you have no dynamic routes, 
+[@nuxtjs/sitemap](https://github.com/nuxt-community/sitemap-module). Unless you have no dynamic routes,
 both require that you pass the urls for all of your pages in, and output the resulting sitemap.
 
 # Code Splitting, Tree Shaking, and PurgeCSS
 
-Features like code splitting and tree shaking have been experimented with in Ember and efforts to support them are 
+Features like code splitting and tree shaking have been experimented with in Ember and efforts to support them are
 [in progress](https://emberjs.com/statusboard/), however they are not currently usable or stable. Additionally,
 due to the dynamic nature of classes in Ember, and the lack of explicit template imports, it is currently not
 possible to use PurgeCSS, without a lot of manual work.
@@ -468,8 +450,6 @@ is the [nuxt-purgecss](https://github.com/Developmint/nuxt-purgecss) module.
 # Summary
 
 There is no right or wrong framework to use, only what you decide works best for your project. However, it is nice to see
-how much things are beginning to overlap in modern frameworks, and how copying and pasting code between them is 
+how much things are beginning to overlap in modern frameworks, and how copying and pasting code between them is
 becoming more and more viable. This really solidifies my belief that both Ember and Nuxt are on the right track, and
 I am excited to see where each of them goes in the coming years!
-
-

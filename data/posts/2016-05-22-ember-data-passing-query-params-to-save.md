@@ -1,6 +1,6 @@
 ---
 authorId: rwwagner90
-categories: 
+categories:
   - ember.js
   - ember-data
 date: '2016-05-22'
@@ -13,7 +13,7 @@ I recently had a need to pass query params to an Ember Data `save()` call, and I
 
 Therefore, I decided I would post this article detailing how exactly I did it.
 
-The model I need to accept query params on save, is the `appointment` model. 
+The model I need to accept query params on save, is the `appointment` model.
 
 My application adapter uses the `DS.JSONAPIAdapter` and I wanted to extend that default adapter, and just add some query params to the `appointment.save()` call.
 
@@ -29,7 +29,7 @@ export default ApplicationAdapter.extend({
     const data = {};
     const serializer = store.serializerFor(type.modelName);
 
-    serializer.serializeIntoHash(data, type, snapshot, {includeId: true});
+    serializer.serializeIntoHash(data, type, snapshot, { includeId: true });
 
     const id = snapshot.id;
     let url = this.buildURL(type.modelName, id, snapshot, 'updateRecord');
@@ -38,15 +38,15 @@ export default ApplicationAdapter.extend({
       url += '?recurrenceStart=' + snapshot.adapterOptions.recurrenceStart;
     }
 
-    return this.ajax(url, 'PATCH', {data: data});
+    return this.ajax(url, 'PATCH', { data: data });
   }
 });
-
 ```
 
 For the most part, this is just a copy of the `updateRecord` method from the `DS.JSONAPIAdapter`, so you'll want to copy the `updateRecord` method from whatever adapter you are using by default.
 
 The important part, which adds the query params to the url is this:
+
 ```javascript
 if (snapshot.adapterOptions && snapshot.adapterOptions.recurrenceStart) {
   url += '?recurrenceStart=' + snapshot.adapterOptions.recurrenceStart;

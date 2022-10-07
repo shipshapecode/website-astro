@@ -1,6 +1,6 @@
 ---
 authorId: wcanavan
-categories: 
+categories:
   - javascript
 date: '2020-11-30'
 slug: simple-docker-postgresql
@@ -10,14 +10,14 @@ title: The Simplest Possible Docker Setup For Postgresql
 Recently I was working through [Xiaoru Li](https://www.xiaoru.li/)’s [excellent tutorial on Next-Auth](https://dev.to/prisma/passwordless-authentication-with-next-js-prisma-and-next-auth-5g8g) and I needed a Postgresql database _quick_. My search got a lot of results that were similar, but different enough for me to lose confidence in any given solution. I spent a little time searching for a simple configuration and this is what I came up with. For those of you in a rush, copy and paste away:
 
 ```yml
-version: "3.8"
+version: '3.8'
 
 services:
   postgres:
     image: postgres:13-alpine
     restart: always
     ports:
-      - "5432:5432"
+      - '5432:5432'
     environment:
       POSTGRES_USER: prisma
       POSTGRES_PASSWORD: prisma
@@ -49,7 +49,7 @@ Using a `docker-compose.yml` file is the easier route, as it is the more legible
 What is the `docker-compose.yml` file doing? Let's go line by line.
 
 ```yml
-version: "3.8"
+version: '3.8'
 ```
 
 The `docker-compose.yml` API has different versions, this is something to be keenly aware of while researching and creating your configuration. It is typically best to use the [latest version](https://docs.docker.com/compose/compose-file/). You should also check what version of Docker Engine you are running.
@@ -75,7 +75,7 @@ What it says on the label! [Always restart](https://docs.docker.com/compose/comp
 
 ```yml
 ports:
-  - "5432:5432"
+  - '5432:5432'
 ```
 
 This forwards the [Docker containers ports](https://docs.docker.com/compose/compose-file/#ports) to your machine's ports. `5432` is PostgreSQL's [default port](https://www.postgresql.org/docs/current/app-postgres.html). You should only need to change this if you have a conflicting process using the same port.

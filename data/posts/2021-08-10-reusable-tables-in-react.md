@@ -150,7 +150,7 @@ const sortedData = data.sort(function (a, b) {
       </TableCell>
     ))}
   </TableRow>
-</TableHead>
+</TableHead>;
 ```
 
 And that’s it! You now have a basic, reusable table that you can easily style once and add/remove features as needed. I’ve included the Gist of the full component below, but let me know what you think or if you can think of a better way to tackle any of these features in your own tables.
