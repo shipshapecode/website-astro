@@ -1,8 +1,8 @@
 ---
 authorId: r0bc4ry
 categories:
-- react
-- javascript
+  - react
+  - javascript
 date: '2022-03-02'
 slug: wait-for-page-load-in-react
 title: 'Wait for Page Load in React'
@@ -37,8 +37,8 @@ set to false by default, to dynamically add the class to the element.
 **JavaScript**
 
 ```javascript
-import { useEffect, useState } from "react";
-import classNames from "classnames";
+import { useEffect, useState } from 'react';
+import classNames from 'classnames';
 
 const MyComponent = () => {
   const [playAnimation, setPlayAnimation] = useState(false);
@@ -49,7 +49,9 @@ const MyComponent = () => {
   }, []);
 
   return (
-    <div className={classNames("myComponentClass", { "myAnimation": playAnimation })}/>
+    <div
+      className={classNames('myComponentClass', { myAnimation: playAnimation })}
+    />
   );
 };
 
@@ -85,8 +87,8 @@ ever unmounted.
 **JavaScript**
 
 ```javascript
-import { useEffect, useState } from "react";
-import classNames from "classnames";
+import { useEffect, useState } from 'react';
+import classNames from 'classnames';
 
 const MyComponent = () => {
   const [playAnimation, setPlayAnimation] = useState(false);
@@ -98,17 +100,19 @@ const MyComponent = () => {
     };
 
     // Check if the page has already loaded
-    if (document.readyState === "complete") {
+    if (document.readyState === 'complete') {
       onPageLoad();
     } else {
-      window.addEventListener("load", onPageLoad);
+      window.addEventListener('load', onPageLoad);
       // Remove the event listener when component unmounts
-      return () => window.removeEventListener("load", onPageLoad);
+      return () => window.removeEventListener('load', onPageLoad);
     }
   }, []);
 
   return (
-    <div className={classNames("myComponentClass", { "myAnimation": playAnimation })}/>
+    <div
+      className={classNames('myComponentClass', { myAnimation: playAnimation })}
+    />
   );
 };
 
@@ -120,4 +124,3 @@ smooth as butter. The important thing to remember with this solution is to clean
 document readyState; without that check, it is possible our animation would never run if the component was mounted after
 the window `load` event had already fired. Hopefully, my work here helps you out! And, as always, feel free to reach out
 if you have any comments or questions. Thanks for reading!
-

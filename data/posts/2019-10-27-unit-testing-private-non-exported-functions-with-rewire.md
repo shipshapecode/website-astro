@@ -1,13 +1,13 @@
 ---
 authorId: rwwagner90
-categories: 
+categories:
   - testing
 date: '2019-10-27'
 slug: unit-testing-private-non-exported-functions-with-rewire
 title: Unit Testing Private, Non-exported Functions with Rewire
 ---
 
-When a JavaScript function is exported, it is straightforward to unit test. 
+When a JavaScript function is exported, it is straightforward to unit test.
 We can import it directly into our test and test the functionality. For example,
 we could use something like Jest to setup a simple import and unit test.
 
@@ -22,7 +22,7 @@ export function foo() {
 ```js
 // foo.spec.js
 
-import { foo } from './foo.js'
+import { foo } from './foo.js';
 
 describe('Foo', () => {
   describe('foo', () => {
@@ -33,8 +33,8 @@ describe('Foo', () => {
 
 How would we test functions that we do not expose via `export` though?
 
-There is a great tool, [rewire](https://www.npmjs.com/package/rewire), that allows getting references 
-to functions that are not explicitly exported. Assuming you are using Babel, we can use 
+There is a great tool, [rewire](https://www.npmjs.com/package/rewire), that allows getting references
+to functions that are not explicitly exported. Assuming you are using Babel, we can use
 [babel-plugin-rewire](https://github.com/speedskater/babel-plugin-rewire) to make the setup more simple.
 
 ```bash
@@ -66,7 +66,7 @@ function _bar() {
 ```js
 // bar.spec.js
 
-import Bar from './bar.js'
+import Bar from './bar.js';
 
 describe('Bar', () => {
   describe('_bar', () => {

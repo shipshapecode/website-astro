@@ -1,6 +1,6 @@
 ---
 authorId: rwwagner90
-categories: 
+categories:
   - electron
   - javascript
 date: '2020-04-17'
@@ -9,30 +9,30 @@ title: 'Signing Electron Apps with GitHub Actions'
 ---
 
 We've been working hard over the past many months, at Ship Shape, on a cross platform
-menubar color management app called [Swach](https://swach.io), and as part of that work, 
-we had a need to sign our app for both MacOS and Windows. There are many existing articles 
-on doing this with [Travis](https://www.update.rocks/blog/osx-signing-with-travis/) or 
-[Appveyor](https://www.update.rocks/blog/windows-signing-for-your-electron-app-with-appveyor-ci/), 
-but the documentation for using GitHub actions is lacking, so we wanted to quickly share what 
+menubar color management app called [Swach](https://swach.io), and as part of that work,
+we had a need to sign our app for both MacOS and Windows. There are many existing articles
+on doing this with [Travis](https://www.update.rocks/blog/osx-signing-with-travis/) or
+[Appveyor](https://www.update.rocks/blog/windows-signing-for-your-electron-app-with-appveyor-ci/),
+but the documentation for using GitHub actions is lacking, so we wanted to quickly share what
 we learned.
 
 ## MacOS
 
 ### Getting your certificate from Apple
 
-You will need an Apple developer account to generate a certificate. You can sign up at 
+You will need an Apple developer account to generate a certificate. You can sign up at
 [https://developer.apple.com/programs/](https://developer.apple.com/programs/).
 
-Once you have a developer account, you can go to your account and click 
+Once you have a developer account, you can go to your account and click
 `Certificates, Identifiers, and Profiles` to manage your certificates. Click the plus button
-to add a new certificate. 
+to add a new certificate.
 
 ![List of possible certificate types from Apple.](/img/blog/electron/apple-certs.jpg)
 
 At the time of writing, there are 9 types of certificates, but we are only interested in two.
 You will want to generate both the `Developer ID Installer`, and `Developer ID Application`
-certificates, as both are needed to sign the application and installer for distribution 
-*outside* the app store.
+certificates, as both are needed to sign the application and installer for distribution
+_outside_ the app store.
 
 ### Adding your certificate to GitHub
 
@@ -96,7 +96,7 @@ certs as env variables.
 
 ### Notarizing your MacOS app
 
-Apple now requires notarizing your MacOS apps as well. We use 
+Apple now requires notarizing your MacOS apps as well. We use
 [electron-forge](https://www.electronforge.io/) for building our apps,
 which allows for notarizing as well, and our config looks like this:
 
@@ -121,7 +121,7 @@ packagerConfig: {
 },
 ```
 
-You'll notice the `osxNotarize` section which essentially just requires you to set more 
+You'll notice the `osxNotarize` section which essentially just requires you to set more
 GitHub secrets containing your `APPLE_ID` and `APPLE_ID_PASSWORD` to be used for notarizing.
 
 ### Entitlements and other settings
@@ -158,8 +158,8 @@ but please let us know if you encountered any issues!
 
 As with MacOS, Windows applications must also be signed, however Microsoft does not
 handle certificates in house, so you will need to get a third party certificate to use
-for signing. We got our certificate from 
-[GoDaddy](https://au.godaddy.com/web-security/code-signing-certificate), but see 
+for signing. We got our certificate from
+[GoDaddy](https://au.godaddy.com/web-security/code-signing-certificate), but see
 [here](https://www.electronjs.org/docs/tutorial/code-signing#signing-windows-builds)
 for some alternative choices.
 
@@ -200,7 +200,7 @@ makers: [
       certificatePassword: process.env['WINDOWS_PFX_PASSWORD']
     }
   }
-]  
+];
 ```
 
 That should be all the setup necessary to get your Windows certificates up and running!
@@ -301,11 +301,11 @@ jobs:
             electron-app/out/**/*.zip
 ```
 
-Some of this is specific to our needs for Swach, and specific to both ember-electron and 
+Some of this is specific to our needs for Swach, and specific to both ember-electron and
 electron-forge usage, but most of it is generally applicable to any Electron app builds,
 so hopefully you can tweak it to work with whatever your setup may be!
 
-***Interested in building your own cross platform app? Ship Shape has extensive experience
-with Electron apps and progressive web apps. 
-Get help from the cross platform app experts! [Contact us](https://shipshape.io/contact/). 
-We would love to work with you!***
+**_Interested in building your own cross platform app? Ship Shape has extensive experience
+with Electron apps and progressive web apps.
+Get help from the cross platform app experts! [Contact us](https://shipshape.io/contact/).
+We would love to work with you!_**

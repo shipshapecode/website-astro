@@ -1,6 +1,6 @@
 ---
 authorId: rwwagner90
-categories: 
+categories:
   - ember.js
 date: '2018-02-18'
 image: blog-post-9.jpg
@@ -12,19 +12,21 @@ Now that Ember 3.0 is officially out, it is time to start playing more with the 
 of Ember. As I work through updating my apps and addons, I wanted to capture, step by step, what I am doing, so others
 can hopefully benefit from this and update their apps.
 
-* [Updating Ember/Ember CLI with ember-cli-update](#updating-ember)
+- [Updating Ember/Ember CLI with ember-cli-update](#updating-ember)
 
-* [Default Ember App Features](#default-features)
+- [Default Ember App Features](#default-features)
+
   1. [Native ES5 getters](#native-es5-getters)
   1. [Named Args](#named-args)
- 
-* [Optional Ember App Features](#optional-features)
+
+- [Optional Ember App Features](#optional-features)
+
   1. [Application Template Wrapper](#application-template-wrapper)
   1. [Template Only Glimmer Components](#template-only-glimmer-components)
 
-* [Ember Qunit Testing Tweaks](#testing-tweaks)
+- [Ember Qunit Testing Tweaks](#testing-tweaks)
   1. [ember-qunit-codemod](#ember-qunit-codemod)
-  1. [ember-test-helpers-codemod](#ember-test-helpers-codemod) 
+  1. [ember-test-helpers-codemod](#ember-test-helpers-codemod)
 
 <h2 id="updating-ember">Updating Ember/Ember CLI with ember-cli-update</h2>
 
@@ -53,7 +55,7 @@ This should automatically change most of your usages of things like `this.get('f
 
 <h3 id="named-args">Named Args</h3>
 
-Named args is also enabled by default, and is best explained from the summary straight from the RFC. 
+Named args is also enabled by default, and is best explained from the summary straight from the RFC.
 It says "Introduce `{{@foo}}` in as a dedicated syntax for a component's template to refer to named arguments passed in by the caller. This just means that if `foo` is passed to your component, not a property on the component itself, you should try to
 access it via `{{@foo}}`. This is not required right now, but will get you setup
 for the future.
@@ -86,7 +88,7 @@ This adds/removes the `<div class="ember-view"></div>` wrapper from your Ember a
 ember feature:disable application-template-wrapper
 ```
 
-It will prompt you to add the wrapper back into your `application.hbs`. Unless you 
+It will prompt you to add the wrapper back into your `application.hbs`. Unless you
 are really sure you don't want it, you may want to just go ahead and say yes, to be safe.
 
 <h3 id="template-only-glimmer-components">Template Only Glimmer Components</h3>
@@ -103,13 +105,13 @@ ember feature:enable template-only-glimmer-components
 
 <h3 id="ember-qunit-codemod">ember-qunit-codemod</h3>
 
-[ember-qunit-codemod](https://github.com/rwjblue/ember-qunit-codemod) is a quick and easy way to update all 
-your old style qunit tests to the new syntax from 
-[this rfc](https://github.com/emberjs/rfcs/blob/master/text/0232-simplify-qunit-testing-api.md). 
+[ember-qunit-codemod](https://github.com/rwjblue/ember-qunit-codemod) is a quick and easy way to update all
+your old style qunit tests to the new syntax from
+[this rfc](https://github.com/emberjs/rfcs/blob/master/text/0232-simplify-qunit-testing-api.md).
 It has been around and usable for awhile now, but if you
-have not yet made the switch, I highly recommend going ahead and making the jump. 
-[@rwjblue](https://twitter.com/rwjblue) also wrote a nice writeup about this testing syntax 
-update on his [site](http://rwjblue.com/2017/10/23/ember-qunit-simplication/). 
+have not yet made the switch, I highly recommend going ahead and making the jump.
+[@rwjblue](https://twitter.com/rwjblue) also wrote a nice writeup about this testing syntax
+update on his [site](http://rwjblue.com/2017/10/23/ember-qunit-simplication/).
 Again, for the sake of not having to leave here to accomplish this, I have copied over what you need to run.
 
 ```bash
@@ -119,8 +121,8 @@ jscodeshift -t https://rawgit.com/rwjblue/ember-qunit-codemod/master/ember-qunit
 
 <h3 id="ember-test-helpers-codemod">ember-test-helpers-codemod</h3>
 
-[ember-test-helpers-codemod](https://github.com/simonihmig/ember-test-helpers-codemod) is an awesome codemod 
-by [@simonihmig](https://twitter.com/simonihmig) that allows us to quickly bring in the new test helpers syntax 
+[ember-test-helpers-codemod](https://github.com/simonihmig/ember-test-helpers-codemod) is an awesome codemod
+by [@simonihmig](https://twitter.com/simonihmig) that allows us to quickly bring in the new test helpers syntax
 and remove old ember-native-dom-helpers usage, in favor of the new helpers. I ran this on most of
 my Ember apps and addons and it worked perfectly, for almost all cases. To run it, you can do:
 

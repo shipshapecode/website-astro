@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Lint
-        run: yarn lint  
+        run: yarn lint
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests

@@ -49,28 +49,28 @@ After generating the frontend application we'll make some adjustments to the `./
 
 ```javascript
 // we added the StaticSite import here
-import { StackContext, Api, StaticSite } from "@serverless-stack/resources";
+import { StackContext, Api, StaticSite } from '@serverless-stack/resources';
 
 export function MyStack({ stack }: StackContext) {
-  const api = new Api(stack, "api", {
+  const api = new Api(stack, 'api', {
     routes: {
-      "GET /": "functions/lambda/main.go",
-    },
+      'GET /': 'functions/lambda/main.go'
+    }
   });
 
   // we added instantiation of StaticSite for the Ember application here
-  const site = new StaticSite(this, "EmberSite", {
-    path: "frontend",
-    buildOutput: "dist",
-    buildCommand: "npm run build",
+  const site = new StaticSite(this, 'EmberSite', {
+    path: 'frontend',
+    buildOutput: 'dist',
+    buildCommand: 'npm run build',
     environment: {
       // Pass in the API endpoint to our app
-      EMBER_APP_API_URL: api.url,
-    },
+      EMBER_APP_API_URL: api.url
+    }
   });
 
   stack.addOutputs({
-    ApiEndpoint: api.url,
+    ApiEndpoint: api.url
   });
 }
 ```
@@ -119,11 +119,11 @@ module.exports = function (environment) {
     EmberENV: {
       FEATURES: {},
       EXTEND_PROTOTYPES: {
-        Date: false,
-      },
+        Date: false
+      }
     },
 
-    APP: {},
+    APP: {}
   };
 
   if (environment === 'development') {

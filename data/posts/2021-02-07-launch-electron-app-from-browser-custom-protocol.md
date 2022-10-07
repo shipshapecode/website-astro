@@ -19,7 +19,7 @@ This is incredibly useful, and allows users to have a seamless workflow of going
 
 ## Electron app -> browser
 
-We have been working tirelessly on new features for [Swach](https://swach.io/), and one of those new features was the ability to share palettes with other users and view them online. 
+We have been working tirelessly on new features for [Swach](https://swach.io/), and one of those new features was the ability to share palettes with other users and view them online.
 The sharing aspect was trivial. We used Electron's `shell` module which provides an [openExternal](https://www.electronjs.org/docs/api/shell#shellopenexternalurl-options)
 method that we used to generate a link with query params to pass the palette data to [swach.io](https://swach.io/).
 
@@ -29,7 +29,7 @@ Going the other direction, with deep links, proved much harder, however. Electro
 
 ### macOS
 
-On macOS there is a special [open-url](https://www.electronjs.org/docs/api/app#event-open-url-macos) event that is supported, which makes things fairly straightforward. 
+On macOS there is a special [open-url](https://www.electronjs.org/docs/api/app#event-open-url-macos) event that is supported, which makes things fairly straightforward.
 We can set our app as the default protocol client, and then use `open-url` to handle importing our data.
 
 **Note: You can replace `custom` with whatever you want to name your custom protocol.**
@@ -57,7 +57,7 @@ packagerConfig: {
       name: 'custom',
       schemes: 'custom'
     }
-  ]
+  ];
 }
 ```
 
@@ -78,7 +78,7 @@ packagerConfig: {
 
 ### Windows
 
-On Windows, the `open-url` event is not supported, and instead Electron will try to open a new instance of your application. 
+On Windows, the `open-url` event is not supported, and instead Electron will try to open a new instance of your application.
 We will have to catch this and focus our existing application instead. We also have to modify `setAsDefaultProtocolClient` to support running in dev mode in Windows.
 
 ```js

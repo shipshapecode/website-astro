@@ -1,6 +1,6 @@
 ---
 authorId: chuckcarpenter
-categories: 
+categories:
   - shepherd.js
   - app tour
   - site tour
