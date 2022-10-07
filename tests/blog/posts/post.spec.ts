@@ -33,8 +33,8 @@ test('meta is correct', async ({ page }) => {
   const description = page.locator('meta[name="description"]');
   await expect(description).toHaveAttribute(
     'content',
-    'I am a huge Ember.js fan, but recently wanted to experiment with some other frameworks, and decided to try \n' +
-      'Nuxt.js. I was very pleasantly surprised, that Nuxt had many nice "magic" things, \n' +
+    'I am a huge Ember.js fan, but recently wanted to experiment with some other frameworks, and decided to try\n' +
+      'Nuxt.js. I was very pleasantly surprised, that Nuxt had many nice "magic" things,\n' +
       'just like Ember had, and felt very familiar to Ember development...'
   );
 
