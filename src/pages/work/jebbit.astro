@@ -1,5 +1,7 @@
 ---
+import { Img } from 'astro-imagetools/components';
 import { Icon } from 'astro-icon';
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BottomLinks from '../../components/BottomLinks.astro';
 
@@ -58,9 +60,15 @@ const description =
 
       <div class="bg-grey-light flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
+          <Img
             alt="Jebbit Experience Builder Legacy"
-            class="flex"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/jebbit/jebbit-legacy-builder.png"
           />
         </div>
@@ -101,9 +109,15 @@ const description =
 
       <div class="bg-jebbit-green flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
-            alt="Jebbit Experience Builder Legacy"
-            class="flex"
+          <Img
+            alt="Jebbit Simple Builder"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/jebbit/jebbit-simple-builder.png"
           />
         </div>
@@ -130,9 +144,15 @@ const description =
 
       <div class="bg-grey-light flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
-            alt="Jebbit Experience Builder Legacy"
-            class="flex"
+          <Img
+            alt="Jebbit Simple Builder Active"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/jebbit/jebbit-simple-builder_active.png"
           />
         </div>
@@ -147,9 +167,15 @@ const description =
 
       <div class="bg-jebbit-green flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <img
-            alt="Jebbit Experience Builder Legacy"
-            class="flex"
+          <Img
+            alt="Jebbit Simple Builder Published"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
             src="/img/work/jebbit/jebbit-simple-builder_published.png"
           />
         </div>

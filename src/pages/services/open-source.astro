@@ -1,4 +1,6 @@
 ---
+import { Img } from 'astro-imagetools/components';
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroBlock from '../../components/HeroBlock.astro';
 import PortfolioContainer from '../../components/PortfolioContainer.astro';
@@ -12,7 +14,7 @@ const description =
 <BaseLayout description={description} title={title}>
   <div>
     <HeroBlock hero-classes="open-source">
-      <div slot="content">
+      <Fragment slot="content">
         <h1 itemprop="name" class="leading-tight text-5xl mb-6">
           Our Open Source Community
         </h1>
@@ -24,16 +26,16 @@ const description =
         <div>
           <a href="/contact/" class="btn btn-red"> Join our community</a>
         </div>
-      </div>
+      </Fragment>
 
-      <div slot="icon">
+      <Fragment slot="icon">
         <img
           class="h-auto m-auto max-w-2xl w-full"
           height="984"
           src="/img/hero-images/open-source.png"
           width="1344"
         />
-      </div>
+      </Fragment>
     </HeroBlock>
 
     <PortfolioContainer />

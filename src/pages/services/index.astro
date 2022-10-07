@@ -22,7 +22,7 @@ const textSection = [
 <BaseLayout description={description} title={title}>
   <article>
     <HeroBlock heroClasses="services waves blue-waves bg-blue-light !pb-20">
-      <div slot="content">
+      <Fragment slot="content">
         <h1 itemprop="name" class="leading-none text-4xl lg:text-6xl">
           Software consultants who build it right the first time, every time
         </h1>
@@ -36,22 +36,23 @@ const textSection = [
             </a>
           </div>
         </div>
-      </div>
+      </Fragment>
 
-      <Img
-        attributes={{
-          img: {
-            class: 'h-auto m-auto max-w-2xl w-full'
-          }
-        }}
-        height={1020}
-        format="webp"
-        placeholder="none"
-        src="/img/hero-images/services.png"
-        width={1344}
-        alt=""
-        slot="icon"
-      />
+      <Fragment slot="icon">
+        <Img
+          attributes={{
+            img: {
+              class: 'h-auto m-auto max-w-2xl w-full'
+            }
+          }}
+          height={1020}
+          format="webp"
+          placeholder="none"
+          src="/img/hero-images/services.png"
+          width={1344}
+          alt=""
+        />
+      </Fragment>
     </HeroBlock>
 
     <section class="section bg-white flex flex-wrap justify-center !pt-32">

@@ -1,5 +1,5 @@
 ---
-// import { Img } from 'astro-imagetools/components';
+import { Img } from 'astro-imagetools/components';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AllAboutSpecialty from '../../components/AllAboutSpecialty.astro';
@@ -61,7 +61,7 @@ const description =
 <BaseLayout description={description} title={title}>
   <article itemscope itemtype="http://schema.org/Service">
     <HeroBlock hero-classes="ember-consulting waves ember-waves !pb-48 !pt-20">
-      <div slot="content">
+      <Fragment slot="content">
         <h1 itemprop="name" class="text-5xl leading-tight">
           Build fast, reliable apps with expert Ember.js development,
           consulting, and training
@@ -72,23 +72,31 @@ const description =
             Let's get started
           </a>
         </div>
-      </div>
-      <div slot="icon">
-        <img
-          class="h-auto m-auto max-w-2xl w-full"
-          height="1058"
-          src="/img/hero-images/ember-consulting.png"
-          width="1344"
+      </Fragment>
+
+      <Fragment slot="icon">
+        <Img
           alt=""
+          attributes={{
+            img: {
+              class: 'h-auto m-auto max-w-2xl w-full'
+            }
+          }}
+          format="webp"
+          height={1058}
+          placeholder="none"
+          src="/img/hero-images/ember-consulting.png"
+          width={1344}
         />
-      </div>
+      </Fragment>
     </HeroBlock>
 
     <AllAboutSpecialty benefits={specialtyBenefits} flipParagraphs>
-      <div slot="h2">All about Ember.js</div>
-      <div slot="h3">Ember is great for large companies because of its:</div>
+      <Fragment slot="h2">All about Ember.js</Fragment>
+      
+      <Fragment slot="h3">Ember is great for large companies because of its:</Fragment>
 
-      <div slot="unboxed-text">
+      <Fragment slot="unboxed-text">
         <p>
           For these reasons, we often recommend it for
           <a class="hover:brightness-125 hover:text-red" href="/work/expel">
@@ -103,12 +111,13 @@ const description =
           Ember experts for a full range of support, from consulting to
           development to team training.
         </p>
-      </div>
-      <div slot="boxed-text">
+      </Fragment>
+
+      <Fragment slot="boxed-text">
         Ember.js is an open-source JavaScript web framework. We love its strong
         opinions, which help engineers work faster and keep their work
         organized.
-      </div>
+      </Fragment>
     </AllAboutSpecialty>
 
     <SpecialtyInAction caseStudies={caseStudies} specialty="Ember.js" />
@@ -119,12 +128,12 @@ const description =
       image={marketing}
       isFlipped={true}
     >
-      <div slot="content">
+      <Fragment slot="content">
         Ship Shape is committed to leaving every engineering team we work with
         better than we found it. Not only do we build robust, reliable software,
         but we also train your staff along the way to understand, maintain, and
         improve your product after our engagement ends.
-      </div>
+      </Fragment>
     </TwoColumnSection>
 
     <SingleQuote classString="lg:pt-32" testimonial={testimonial} />

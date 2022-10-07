@@ -64,7 +64,7 @@ const description =
     <HeroBlock
       hero-classes="next-consulting waves next-waves !pb-20 2xl:!pb-48"
     >
-      <div slot="content">
+      <Fragment slot="content">
         <h1 itemprop="name" class="leading-tight text-5xl mb-6">
           Boost performance and easily make the leap from React to Next.js
         </h1>
@@ -74,10 +74,11 @@ const description =
             Let’s get started
           </a>
         </div>
-      </div>
+      </Fragment>
 
-      <div slot="icon">
+      <Fragment slot="icon">
         <Img
+          alt=""
           attributes={{
             img: {
               class: 'h-auto m-auto max-w-2xl w-full'
@@ -87,15 +88,18 @@ const description =
           height={1000}
           src="/img/hero-images/next-consulting.png"
           width={1344}
-          alt=""
         />
-      </div>
+      </Fragment>
     </HeroBlock>
 
     <AllAboutSpecialty benefits={specialtyBenefits}>
-      <div slot="h2">All about Next.js</div>
-      <div slot="h3">Some of our favorite Next.js features include:</div>
-      <div slot="unboxed-text">
+      <Fragment slot="h2">All about Next.js</Fragment>
+
+      <Fragment slot="h3"
+        >Some of our favorite Next.js features include:</Fragment
+      >
+
+      <Fragment slot="unboxed-text">
         <p>
           Whether you’re dipping your toes into the app development waters and
           wondering, “What is Next.js?” or you already know the ropes and are
@@ -110,14 +114,15 @@ const description =
           pre-fetching, and more, it’s a great choice for production-ready web
           apps.
         </p>
-      </div>
-      <div slot="boxed-text">
+      </Fragment>
+
+      <Fragment slot="boxed-text">
         Teams who have worked in generic React apps can easily make the leap
         into Next.js. If you’re wondering “What is Next.js, and can my team
         transition?” Ship Shape’s experienced developers not only consult and
         develop in Next.js, but also train and mentor teams to maintain and
         improve their code over time.
-      </div>
+      </Fragment>
     </AllAboutSpecialty>
 
     <SpecialtyInAction specialty="Next.js" caseStudies={caseStudies} />
@@ -128,21 +133,21 @@ const description =
       image={marketing}
       isFlipped={true}
     >
-      <div slot="content">
+      <Fragment slot="content">
         Ship Shape is committed to leaving every engineering team we work with
         better than we found it. Not only do we build robust, reliable software,
         but we also train your staff along the way to understand, maintain, and
         improve your product after our engagement ends.
-      </div>
+      </Fragment>
     </TwoColumnSection>
 
     <SingleQuote classString="lg:pt-32" testimonial={testimonial} />
 
     <TwoColumnSection header="We ❤️ the Next.js Community" image={community}>
-      <div slot="content">
+      <Fragment slot="content">
         We’re a team of makers who are passionate about improving software
         products and the people who create them.
-      </div>
+      </Fragment>
     </TwoColumnSection>
 
     <WaveMoreLinks />

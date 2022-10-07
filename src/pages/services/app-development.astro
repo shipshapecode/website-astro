@@ -1,4 +1,5 @@
 ---
+import { Img } from 'astro-imagetools/components';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroBlock from '../../components/HeroBlock.astro';
 
@@ -12,7 +13,7 @@ const description =
   <div>
     <div itemscope itemtype="http://schema.org/Service">
       <HeroBlock hero-classes="web-apps">
-        <div slot="content">
+        <Fragment slot="content">
           <h1 itemprop="name">App Development</h1>
           <p>
             We've translated our expertise in full-stack engineering and
@@ -22,16 +23,23 @@ const description =
           <div>
             <a class="btn btn-red" href="/contact/"> Let's build together</a>
           </div>
-        </div>
+        </Fragment>
 
-        <div slot="icon">
-          <img
-            class="h-auto m-auto max-w-2xl w-full"
-            height="972"
+        <Fragment slot="icon">
+          <Img
+            alt=""
+            attributes={{
+              img: {
+                class: 'h-auto m-auto max-w-2xl w-full'
+              }
+            }}
+            format="webp"
+            height={972}
+            placeholder="none"
             src="/img/hero-images/app-development.png"
-            width="1344"
+            width={1344}
           />
-        </div>
+        </Fragment>
       </HeroBlock>
 
       <div class="section bg-blue-light flex flex-wrap justify-center">

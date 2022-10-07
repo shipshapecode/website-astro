@@ -1,4 +1,6 @@
 ---
+import { Img } from 'astro-imagetools/components';
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroBlock from '../../components/HeroBlock.astro';
 import MentoringBlurbs from '../../components/MentoringBlurbs.astro';
@@ -12,7 +14,7 @@ const description =
 <BaseLayout description={description} title={title}>
   <div>
     <HeroBlock hero-classes="services">
-      <div slot="content">
+      <Fragment slot="content">
         <h1>Ember & Open Source Mentoring</h1>
         <p>
           With Ship Shape's deep experience in Ember.js, product strategy, user
@@ -23,16 +25,22 @@ const description =
         <div>
           <a class="btn btn-red" href="/contact/"> Work with us</a>
         </div>
-      </div>
+      </Fragment>
 
-      <div slot="icon">
-        <img
-          class="h-auto m-auto max-w-2xl w-full"
-          height="790"
+      <Fragment slot="icon">
+        <Img
+          alt=""
+          attributes={{
+            img: {
+              class: 'h-auto m-auto max-w-2xl w-full'
+            }
+          }}
+          format="webp"
+          height={790}
           src="/img/hero-images/mentoring.png"
-          width="1344"
+          width={1344}
         />
-      </div>
+      </Fragment>
     </HeroBlock>
 
     <MentoringBlurbs />

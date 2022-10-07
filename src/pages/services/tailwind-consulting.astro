@@ -49,7 +49,7 @@ const specialtyBenefits = [
     <HeroBlock
       heroClasses="next-consulting waves tailwind-waves !pb-48 !pt-20 lg:!pb-52"
     >
-      <div slot="content">
+      <Fragment slot="content">
         <h1 itemprop="name" class="leading-tight text-5xl">
           Customize your app quickly with the help of our Tailwind CSS experts
         </h1>
@@ -59,9 +59,9 @@ const specialtyBenefits = [
             Let’s get started
           </a>
         </div>
-      </div>
+      </Fragment>
 
-      <div slot="icon">
+      <Fragment slot="icon">
         <Img
           attributes={{
             img: {
@@ -75,15 +75,17 @@ const specialtyBenefits = [
           width={1344}
           alt=""
         />
-      </div>
+      </Fragment>
     </HeroBlock>
 
     <AllAboutSpecialty benefits={specialtyBenefits} flipParagraphs={true}>
-      <div slot="h2">All about Tailwind CSS</div>
-      <div slot="h3">
+      <Fragment slot="h2">All about Tailwind CSS</Fragment>
+
+      <Fragment slot="h3">
         Ship Shape’s experienced engineers love Tailwind CSS because:
-      </div>
-      <div slot="unboxed-text">
+      </Fragment>
+
+      <Fragment slot="unboxed-text">
         At Ship Shape, we like Tailwind CSS so much that we even use it on our
         own products and passion projects, such as our
         <a class="hover:brightness-125 hover:text-red" href="https://swach.io/">
@@ -91,12 +93,13 @@ const specialtyBenefits = [
         </a>
         In addition to building Tailwind UIs, we also love training other teams on
         it to help sharpen their skills too.
-      </div>
-      <div slot="boxed-text">
+      </Fragment>
+
+      <Fragment slot="boxed-text">
         Much faster than with most CSS frameworks, Tailwind CSS provides almost
         all the tools you need to build a site without writing any custom
         styles.
-      </div>
+      </Fragment>
     </AllAboutSpecialty>
 
     <TwoColumnSection
@@ -105,21 +108,21 @@ const specialtyBenefits = [
       image={copilot}
       isFlipped={true}
     >
-      <div slot="content">
+      <Fragment slot="content">
         Ship Shape is committed to leaving every engineering team we work with
         better than we found it. Not only do we build robust, reliable software,
         but we also train your staff along the way to understand, maintain, and
         improve your product after our engagement ends.
-      </div>
+      </Fragment>
     </TwoColumnSection>
 
     <!--<SingleQuote testimonial={testimonial} />-->
 
     <TwoColumnSection header="We ❤️ the Tailwind Community" image={community}>
-      <div slot="content">
+      <Fragment slot="content">
         We’re a team of makers who are passionate about improving software
         products and the people who create them.
-      </div>
+      </Fragment>
     </TwoColumnSection>
 
     <WaveMoreLinks />

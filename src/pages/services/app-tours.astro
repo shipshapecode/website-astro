@@ -12,7 +12,7 @@ const description =
 <BaseLayout description={description} title={title}>
   <div itemscope itemtype="http://schema.org/Service">
     <HeroBlock hero-classes="app-tours">
-      <div slot="content">
+      <Fragment slot="content">
         <h1 itemprop="name" class="text-5xl mb-6">
           App Tours with Shepherd.js
         </h1>
@@ -24,14 +24,14 @@ const description =
         <div>
           <a class="btn btn-red" href="/contact/"> Let's build together</a>
         </div>
-      </div>
+      </Fragment>
 
-      <div slot="icon">
+      <Fragment slot="icon">
         <img
           class="shepherd-logo max-w-lg p-12 w-full"
           src="/svgs/shepherd.svg"
         />
-      </div>
+      </Fragment>
     </HeroBlock>
 
     <div

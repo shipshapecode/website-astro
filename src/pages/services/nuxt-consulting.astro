@@ -49,7 +49,7 @@ const description =
     <HeroBlock
       hero-classes="nuxt-consulting waves nuxt-waves !pb-48 2xl:!pb-56"
     >
-      <div slot="content">
+      <Fragment slot="content">
         <h1 itemprop="name" class="leading-tight text-5xl">
           Create a Nuxt.js app that's universal — without all the hassle
         </h1>
@@ -59,24 +59,33 @@ const description =
             Let's get started
           </a>
         </div>
-      </div>
+      </Fragment>
 
-      <div slot="icon">
+      <Fragment slot="icon">
         <Img
-          class="h-auto m-auto max-w-2xl w-full"
+          alt=""
+          attributes={{
+            img: {
+              class: 'h-auto m-auto max-w-2xl w-full'
+            }
+          }}
           format="webp"
           height={834}
+          placeholder="none"
           src="/img/hero-images/nuxt-consulting.png"
           width={1344}
-          alt=""
         />
-      </div>
+      </Fragment>
     </HeroBlock>
 
     <AllAboutSpecialty benefits={specialtyBenefits} flipParagraphs={true}>
-      <div slot="h2">All about Nuxt.js</div>
-      <div slot="h3">Nuxt works well for apps big and small thanks to its:</div>
-      <div slot="unboxed-text">
+      <Fragment slot="h2">All about Nuxt.js</Fragment>
+
+      <Fragment slot="h3"
+        >Nuxt works well for apps big and small thanks to its:</Fragment
+      >
+
+      <Fragment slot="unboxed-text">
         <p>
           At Ship Shape, we love Nuxt.js because it’s still an opinionated
           framework (though not quite as opinionated as Ember.js), and it has
@@ -91,13 +100,14 @@ const description =
           can refine or create a Nuxt.js app while training your team in the
           process.
         </p>
-      </div>
-      <div slot="boxed-text">
+      </Fragment>
+
+      <Fragment slot="boxed-text">
         Nuxt.js is an open-source framework used to build Vue.js web
         applications. It’s a performant system that makes creating universal
         apps easier because of its reduced routing complexity, giving you SEO
         benefits right out of the box.
-      </div>
+      </Fragment>
     </AllAboutSpecialty>
 
     <TwoColumnSection
@@ -106,18 +116,18 @@ const description =
       image={marketing}
       isFlipped={true}
     >
-      <div slot="content">
+      <Fragment slot="content">
         Ship Shape is committed to leaving every engineering team we work with
         better than we found it. Not only do we build robust, reliable software,
         but we also train your staff along the way to understand, maintain, and
         improve your product after our engagement ends.
-      </div>
+      </Fragment>
     </TwoColumnSection>
 
     <SingleQuote classString="lg:pt-32" testimonial={testimonial} />
 
     <TwoColumnSection image={community} header="We ❤️ the Nuxt.js Community">
-      <div slot="content">
+      <Fragment slot="content">
         <h3 class="text-2xl mb-4" data-aos="fade-up">Proud Nuxt.js partners</h3>
         <p data-aos="fade-up">
           Ship Shape proudly
@@ -126,7 +136,7 @@ const description =
           one of the main reasons we’re always ready to create Nuxt.js apps: because
           we stay up-to-date with the Nuxt team and give back to the community.
         </p>
-      </div>
+      </Fragment>
     </TwoColumnSection>
 
     <WaveMoreLinks />

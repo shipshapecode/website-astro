@@ -117,18 +117,20 @@ const description =
 <BaseLayout description={description} title={title}>
   <article>
     <HeroBlock heroClasses="about bg-blue-light">
-      <Img
-        attributes={{
-          img: {
-            class: 'mt-8'
-          }
-        }}
-        alt="Ship Shape employee group photo"
-        format="webp"
-        loading="lazy"
-        src="/img/about/group.png"
-        slot="icon"
-      />
+      <Fragment slot="icon">
+        <Img
+          attributes={{
+            img: {
+              class: 'mt-8'
+            }
+          }}
+          alt="Ship Shape employee group photo"
+          format="webp"
+          loading="lazy"
+          foo="bar"
+          src="/img/about/group.png"
+        />
+      </Fragment>
 
       <div class="m-auto max-w-lg" slot="content">
         <h1 class="leading-tight text-5xl text-navy">
