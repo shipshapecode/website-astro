@@ -4,7 +4,7 @@ test('meta is correct', async ({ page }) => {
   await page.goto('/services/');
 
   await expect(page).toHaveTitle(
-    "Ember.js, Next.js & Nuxt.js Software Consultant | Ship Shape"
+    'Ember.js, Next.js & Nuxt.js Software Consultant | Ship Shape'
   );
 
   const canonicalLink = page.locator('link[rel="canonical"]');

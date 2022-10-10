@@ -8,7 +8,10 @@ test('meta is correct', async ({ page }) => {
   );
 
   const canonicalLink = page.locator('link[rel="canonical"]');
-  await expect(canonicalLink).toHaveAttribute('href', 'https://shipshape.io/contact/');
+  await expect(canonicalLink).toHaveAttribute(
+    'href',
+    'https://shipshape.io/contact/'
+  );
 
   const description = page.locator('meta[name="description"]');
   await expect(description).toHaveAttribute(
@@ -16,4 +19,3 @@ test('meta is correct', async ({ page }) => {
     "Want to improve your products and people? Contact Ship Shape's software consultants to chat about custom app development, optimization, and training."
   );
 });
-

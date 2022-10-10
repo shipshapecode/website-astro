@@ -8,7 +8,10 @@ test('meta is correct', async ({ page }) => {
   );
 
   const canonicalLink = page.locator('link[rel="canonical"]');
-  await expect(canonicalLink).toHaveAttribute('href', 'https://shipshape.io/about/');
+  await expect(canonicalLink).toHaveAttribute(
+    'href',
+    'https://shipshape.io/about/'
+  );
 
   const description = page.locator('meta[name="description"]');
   await expect(description).toHaveAttribute(

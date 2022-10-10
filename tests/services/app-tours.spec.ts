@@ -3,9 +3,7 @@ import { test, expect } from '@playwright/test';
 test('meta is correct', async ({ page }) => {
   await page.goto('/services/app-tours/');
 
-  await expect(page).toHaveTitle(
-    "App Tours with Shepherd.js | Ship Shape"
-  );
+  await expect(page).toHaveTitle('App Tours with Shepherd.js | Ship Shape');
 
   const canonicalLink = page.locator('link[rel="canonical"]');
   await expect(canonicalLink).toHaveAttribute(
