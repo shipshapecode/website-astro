@@ -1,21 +1,21 @@
 import { test, expect } from '@playwright/test';
 
 test('meta is correct', async ({ page }) => {
-  await page.goto('/services/nuxt-consulting/');
+  await page.goto('/whiskey-web-and-whatnot-podcast/');
 
   await expect(page).toHaveTitle(
-    'Nuxt.js Software Consultants & Developers | Ship Shape'
+    'Whiskey, Web, & Whatnot: A Software Engineering Podcast | Ship Shape'
   );
 
   const canonicalLink = page.locator('link[rel="canonical"]');
   await expect(canonicalLink).toHaveAttribute(
     'href',
-    'https://shipshape.io/services/nuxt-consulting/'
+    'https://shipshape.io/whiskey-web-and-whatnot-podcast/'
   );
 
   const description = page.locator('meta[name="description"]');
   await expect(description).toHaveAttribute(
     'content',
-    "Working to improve or create a Nuxt app? Ship Shape's first-class engineers build fast, lightweight Nuxt.js applications while training your team too."
+    'Join Ship Shape CEO Robbie Wagner and COO Chuck Carpenter for this software engineering podcast for developers who love whiskey, web development, and whatnot.'
   );
 });

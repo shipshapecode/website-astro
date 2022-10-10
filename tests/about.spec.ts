@@ -1,21 +1,21 @@
 import { test, expect } from '@playwright/test';
 
 test('meta is correct', async ({ page }) => {
-  await page.goto('/services/nuxt-consulting/');
+  await page.goto('/about/');
 
   await expect(page).toHaveTitle(
-    'Nuxt.js Software Consultants & Developers | Ship Shape'
+    'About Our Software Development Agency | Ship Shape'
   );
 
   const canonicalLink = page.locator('link[rel="canonical"]');
   await expect(canonicalLink).toHaveAttribute(
     'href',
-    'https://shipshape.io/services/nuxt-consulting/'
+    'https://shipshape.io/about/'
   );
 
   const description = page.locator('meta[name="description"]');
   await expect(description).toHaveAttribute(
     'content',
-    "Working to improve or create a Nuxt app? Ship Shape's first-class engineers build fast, lightweight Nuxt.js applications while training your team too."
+    'Meet Ship Shape, a full-stack software development agency with senior-level engineers who specialize in JavaScript frameworks, serverless architecture, & more.'
   );
 });

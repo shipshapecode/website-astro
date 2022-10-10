@@ -7,6 +7,12 @@ test('meta is correct', async ({ page }) => {
     'Next.js Software Consultants & Developers | Ship Shape'
   );
 
+  const canonicalLink = page.locator('link[rel="canonical"]');
+  await expect(canonicalLink).toHaveAttribute(
+    'href',
+    'https://shipshape.io/services/next-consulting/'
+  );
+
   const description = page.locator('meta[name="description"]');
   await expect(description).toHaveAttribute(
     'content',
