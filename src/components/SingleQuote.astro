@@ -8,7 +8,7 @@ export interface Props {
     imgSrc: string;
     name: string;
     quote: string;
-    svgAlt: string;
+    companyName: string;
     svgSrc: string;
     title: string;
   };
@@ -22,13 +22,11 @@ const { classString, testimonial } = Astro.props as Props;
 >
   <div class="section-content bg-navy mb-16 p-4 rounded-md lg:mb-20 xl:py-20">
     <figure class="flex flex-col p-4 relative text-white xl:px-16 xl:py-0">
-      <h2>
-        <img
-          alt={testimonial.svgAlt}
-          class="h-8 max-w-full mb-3 self-start w-auto"
-          src={testimonial.svgSrc}
-        />
-      </h2>
+      <img
+        alt={testimonial.companyName}
+        class="h-8 max-w-full mb-3 self-start w-auto"
+        src={testimonial.svgSrc}
+      />
 
       <Icon
         class="absolute h-auto mt-[2.75rem] top-0 transform translate-y-6 w-10 z-0 xl:mt-12 xl:w-16 xl:translate-y-0"
