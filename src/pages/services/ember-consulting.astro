@@ -44,13 +44,13 @@ const marketing = {
 };
 
 const specialtyBenefits = [
-  { imgSrc: '/svgs/icons/modular.svg', description: 'Clear Organization' },
+  { iconName: 'icons/modular', description: 'Clear Organization' },
   {
-    imgSrc: '/svgs/icons/chart.svg',
+    iconName: 'icons/chart',
     description: 'Scalable UI architecture'
   },
-  { imgSrc: '/svgs/icons/retainer.svg', description: 'Simple updates' },
-  { imgSrc: '/svgs/icons/sail.svg', description: 'Commitment to stability' }
+  { iconName: 'icons/retainer', description: 'Simple updates' },
+  { iconName: 'icons/sail', description: 'Commitment to stability' }
 ];
 
 const title = 'Ember.js Enterprise App Development';
@@ -62,7 +62,7 @@ const description =
   <article itemscope itemtype="http://schema.org/Service">
     <HeroBlock hero-classes="ember-consulting waves ember-waves !pb-48 !pt-20">
       <Fragment slot="content">
-        <h1 itemprop="name" class="text-5xl leading-tight">
+        <h1 class="text-5xl leading-tight" itemprop="name">
           Build fast, reliable apps with expert Ember.js development,
           consulting, and training
         </h1>

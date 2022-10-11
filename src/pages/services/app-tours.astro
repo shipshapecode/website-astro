@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroBlock from '../../components/HeroBlock.astro';
 import WhyShepherd from '../../components/WhyShepherd.astro';
@@ -27,10 +28,7 @@ const description =
       </Fragment>
 
       <Fragment slot="icon">
-        <img
-          class="shepherd-logo max-w-lg p-12 w-full"
-          src="/svgs/shepherd.svg"
-        />
+        <Icon class="shepherd-logo max-w-lg p-12 w-full" name="shepherd" />
       </Fragment>
     </HeroBlock>
 

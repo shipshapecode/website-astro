@@ -1,8 +1,10 @@
 ---
 import { formatDateWithDots } from '../utils/date';
 
+import { Post } from './BlogPost.astro';
+
 export interface Props {
-  posts: any;
+  posts: Post[];
 }
 
 const { posts } = Astro.props;
@@ -13,7 +15,7 @@ const { posts } = Astro.props;
     posts.map((post) => (
       <div class="blog-post border-b-2 border-blue-light border-solid py-3">
         <a class="title" href={`/blog/${post.frontmatter.slug}/`}>
-          {post.frontmatter.linktitle || post.frontmatter.title}
+          {post.frontmatter.title}
         </a>
 
         <div class="attribution">

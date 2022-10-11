@@ -5,13 +5,17 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:astro/recommended',
-    // 'plugin:jsx-a11y/recommended',
+    'plugin:jsx-a11y/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended'
   ],
   globals: {
     AOS: false
+  },
+  rules: {
+    // For some reason, this rule always says our inputs have no labels
+    'jsx-a11y/label-has-associated-control': 'off'
   },
   overrides: [
     // node files
