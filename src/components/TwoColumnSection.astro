@@ -43,6 +43,7 @@ const { classString, image, header, isFlipped } = Astro.props as Props;
         }}
         format="webp"
         height={image.height}
+        loading="lazy"
         placeholder="none"
         src={image.src}
         alt=""

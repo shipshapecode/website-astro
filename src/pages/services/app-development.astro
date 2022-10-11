@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon';
 import { Img } from 'astro-imagetools/components';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroBlock from '../../components/HeroBlock.astro';
@@ -14,7 +15,10 @@ const description =
     <div itemscope itemtype="http://schema.org/Service">
       <HeroBlock hero-classes="web-apps">
         <Fragment slot="content">
-          <h1 itemprop="name">App Development</h1>
+          <h1 class="text-5xl leading-tight" itemprop="name">
+            App Development
+          </h1>
+
           <p>
             We've translated our expertise in full-stack engineering and
             front-end to back-end design to expand on the possibilities of
@@ -60,9 +64,9 @@ const description =
             <div class="bg-navy mb-8 p-8 w-full lg:w-1/2 lg:mr-4 lg:p-12">
               <div class="flex flex-wrap items-center justify-center">
                 <div>
-                  <img
+                  <Icon
                     class="h-20 inline-block mb-12 w-20"
-                    src="/svgs/icons/speed.svg"
+                    name="icons/speed"
                   />
 
                   <h5 class="text-white">Save time and money</h5>
@@ -82,10 +86,7 @@ const description =
             <div class="bg-navy mb-8 p-8 w-full lg:w-1/2 lg:ml-4 lg:p-12">
               <div class="flex flex-wrap items-center justify-center">
                 <div>
-                  <img
-                    class="h-20 inline-block mb-12 w-20"
-                    src="/svgs/icons/pwa.svg"
-                  />
+                  <Icon class="h-20 inline-block mb-12 w-20" name="icons/pwa" />
 
                   <h5 class="text-white">Who's Using PWA's?</h5>
 
@@ -109,6 +110,7 @@ const description =
               data-aos="fade-up"
             >
               <img
+                alt=""
                 class="m-auto max-w-2xl"
                 src="/svgs/pages/app-development/app.svg"
               />
@@ -163,10 +165,7 @@ const description =
           <div class="bg-navy mb-8 p-8 w-full lg:w-1/2 lg:mr-4 lg:p-12">
             <div class="flex flex-wrap items-center justify-center">
               <div>
-                <img
-                  class="h-20 inline-block mb-12 w-20"
-                  src="/svgs/icons/sail.svg"
-                />
+                <Icon class="h-20 inline-block mb-12 w-20" name="icons/sail" />
 
                 <h5 class="text-white">Sail into an App Store</h5>
 
@@ -183,9 +182,9 @@ const description =
           <div class="bg-navy mb-8 p-8 w-full lg:w-1/2 lg:ml-4 lg:p-12">
             <div class="flex flex-wrap items-center justify-center">
               <div>
-                <img
+                <Icon
                   class="h-20 inline-block mb-12 w-20"
-                  src="/svgs/icons/native-apps.svg"
+                  name="icons/native-apps"
                 />
 
                 <h5 class="text-white">Ship native apps</h5>
