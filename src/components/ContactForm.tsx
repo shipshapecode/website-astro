@@ -36,10 +36,10 @@ export const ContactForm: Component = () => {
     <div class="relative w-full">
       <div class="pt-12 lg:grid lg:grid-cols-2 lg:gap-x-64 lg:pb-64">
         <div class="w-full">
-          <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
+          <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
             Get your product in <span class="italic">ship shape</span> with
             support from our trusted software consultants
-          </h2>
+          </h1>
           <p class="mt-4 text-lg sm:mt-3">
             As a full-stack development team, our goal is to be the last
             software consultant you ever need to hire. From custom app
