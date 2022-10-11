@@ -10,19 +10,19 @@ import LatestInsights from '../components/LatestInsights.astro';
 
 const benefits = [
   {
-    imgSrc: '/svgs/icons/client.svg',
+    iconName: 'icons/client',
     description: 'Strategic Nuxt.js partners'
   },
   {
-    imgSrc: '/svgs/icons/staff.svg',
+    iconName: 'icons/staff',
     description: 'Active GitHub contributors'
   },
   {
-    imgSrc: '/svgs/icons/fun.svg',
+    iconName: 'icons/fun',
     description: 'Local tech meetup hosts'
   },
   {
-    imgSrc: '/svgs/icons/pwa.svg',
+    iconName: 'icons/pwa',
     description: 'Whiskey, Web & Whatnot podcasters'
   }
 ];
@@ -127,7 +127,6 @@ const description =
           alt="Ship Shape employee group photo"
           format="webp"
           loading="lazy"
-          foo="bar"
           src="/img/about/group.png"
         />
       </Fragment>
@@ -280,7 +279,7 @@ const description =
               class="space-y-24 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-28 lg:pb-24"
             >
               {
-                team.map((employee, index) => (
+                team.map((employee) => (
                   <li>
                     <div
                       class="gap-y-8 grid lg:grid-cols-2 lg:gap-x-8"

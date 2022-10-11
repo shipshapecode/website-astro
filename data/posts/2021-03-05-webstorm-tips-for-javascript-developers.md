@@ -46,7 +46,7 @@ Setting up WebStorm run configurations is usually more confusing that it needs t
 
 ## Viewing git diff, changed files, and rollback
 
-WebStorm’s git handling is one place it really shines. While I still mostly use terminal for commits, pushing, and pulling - things like viewing diff history, merging, and showing changes  are vastly easier inside WebStorm. Allowing you to do things like compare file changes without the need to open to a pull request.
+WebStorm’s git handling is one place it really shines. While I still mostly use terminal for commits, pushing, and pulling - things like viewing diff history, merging, and showing changes are vastly easier inside WebStorm. Allowing you to do things like compare file changes without the need to open to a pull request.
 
 Viewing all the currently changed files in your project is as simple as changing the dropdown in the project sidebar from “Project” to “All Changed Files”. This is great for seeing if you left debug code in other files that you don’t want to commit, especially when a lot of files have been changed.
 

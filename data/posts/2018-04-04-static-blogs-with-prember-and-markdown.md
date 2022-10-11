@@ -1,6 +1,6 @@
 ---
 authorId: rwwagner90
-categories: 
+categories:
   - ember.js
   - fastboot
   - markdown
@@ -15,7 +15,7 @@ title: Static Blogs with Prember and Markdown
 It has been a long time goal of mine to move my blog off of [Ghost](https://ghost.org/) and host it myself here.
 I loved using Ghost and could never bring myself to make the switch, but finally decided to take the plunge.
 
-I originally got the inspiration for using Prember from Chris Manson ([@mansona](https://github.com/mansona)) from 
+I originally got the inspiration for using Prember from Chris Manson ([@mansona](https://github.com/mansona)) from
 [Stone Circle](https://stonecircle.io/), who was actively working on improving several of the Ember learning sites,
 like the official Ember guides and getting them to run as static sites with Prember. Having been looking for a way to
 use markdown to statically render my blog, I was intrigued by this possibility, and set out to implement it for the
@@ -65,7 +65,7 @@ I then configured these routes in `router.js`.
 ```js
 // router.js
 
-this.route('blog', function() {
+this.route('blog', function () {
   this.route('post', { path: '/*path/' });
 });
 ```
@@ -120,7 +120,7 @@ you will get a redirect to the slash most times. This is a common thing we need 
 <h3 id="formatting">Displaying Formatted Markdown and Code Syntax Highlighting</h3>
 
 With this simple setup, we are now pulling in the data from the markdown, but we need a way to display this in a meaningful way.
-For this we will be using [ember-cli-showdown](https://github.com/gcollazo/ember-cli-showdown) and 
+For this we will be using [ember-cli-showdown](https://github.com/gcollazo/ember-cli-showdown) and
 [ember-prism](https://github.com/shipshapecode/ember-prism).
 
 ```bash
@@ -148,13 +148,20 @@ To display the list of blog posts we will simply each through the `model` provid
 // templates/blog/index.hbs or a component for the menu etc
 
 {{#each posts as |post|}}
-   <box fit class="blog-post">
-     {{link-to post.attributes.title 'blog.post' post.attributes.slug class="title"}}
+  <box fit class='blog-post'>
+    {{link-to
+      post.attributes.title
+      'blog.post'
+      post.attributes.slug
+      class='title'
+    }}
 
-     <div class="attribution">
-       By {{post.attributes.author}} {{moment-format post.attributes.date 'LL'}}
-     </div>
-   </box>
+    <div class='attribution'>
+      By
+      {{post.attributes.author}}
+      {{moment-format post.attributes.date 'LL'}}
+    </div>
+  </box>
 {{/each}}
 ```
 
@@ -172,7 +179,7 @@ GitHub, etc.
 
 <h3 id="prember-route-generation">Prember Route Generation</h3>
 
-The final step is to install Prember and make sure it knows about these routes we have created. 
+The final step is to install Prember and make sure it knows about these routes we have created.
 
 ```bash
 ember install prember
@@ -197,7 +204,8 @@ function buildPremberUrls() {
 
   const paths = walkSync('app/blog');
 
-  const mdFiles = paths.filter(path => extname(path) === '.md')
+  const mdFiles = paths
+    .filter((path) => extname(path) === '.md')
     .map((path) => {
       const stripMD = path.replace(/\.md/, '');
       return `/blog/${stripMD}/`;
@@ -212,7 +220,7 @@ function buildPremberUrls() {
 ```
 
 This defines our routes that we are always sure will remain the same, and then looks at our markdown files to generate the other
-routes. This ensures, when we add new markdown files, the new routes are automatically pulled into Prember. Prember only runs in 
+routes. This ensures, when we add new markdown files, the new routes are automatically pulled into Prember. Prember only runs in
 production or when you run `PREMBER=true ember s`. You may need to also install `prember-middleware` and `ember-cli-fastboot`, but
 please refer to the most up to date instructions in the [Prember README](https://github.com/ef4/prember).
 
@@ -221,17 +229,10 @@ please refer to the most up to date instructions in the [Prember README](https:/
 This was just the initial implementation, but I will follow up with further posts to improve upon this functionality, by doing
 things like:
 
-  - [Offline support with service workers](https://shipshape.io/blog/offline-first-prember-and-service-workers/)
-  - [Forcing trailing slashes for routes](https://shipshape.io/blog/forcing-trailing-slashes-for-routes/)
-  - Maintaining scroll position with `ember-router-scroll`
-  - [Defining meta and tags similar to Ghost](https://shipshape.io/blog/ember-meta-tags-seo-social/)
-  - Further SEO and structured data tweaks
-  
+- [Offline support with service workers](https://shipshape.io/blog/offline-first-prember-and-service-workers/)
+- [Forcing trailing slashes for routes](https://shipshape.io/blog/forcing-trailing-slashes-for-routes/)
+- Maintaining scroll position with `ember-router-scroll`
+- [Defining meta and tags similar to Ghost](https://shipshape.io/blog/ember-meta-tags-seo-social/)
+- Further SEO and structured data tweaks
+
 Thanks for reading! I hope this helps, and stay tuned for the followup posts!
-
-
-
-
-
-
-

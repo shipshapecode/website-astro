@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon';
 
 const year = new Date().getFullYear();
 ---
+
 <footer class="wave text-base">
   <div class="footer-bottom flex flex-wrap w-full justify-center">
     <div class="max-w-8xl p-8 w-full">
@@ -10,9 +11,7 @@ const year = new Date().getFullYear();
         <Icon class="footer-logo h-20 w-20" name="logo" />
       </div>
 
-      <nav
-        class="grid grid-cols-2 max-w-5xl pt-12 pb-12 w-full lg:grid-cols-4"
-      >
+      <nav class="grid grid-cols-2 max-w-5xl pt-12 pb-12 w-full lg:grid-cols-4">
         <div class="p-8 lg:p-4">
           <h4 class="text-white text-xl md:text-2xl lg:text-3xl">Services</h4>
 
@@ -23,17 +22,11 @@ const year = new Date().getFullYear();
             App Development
           </a>
 
-          <a
-            href="/services/mentoring/"
-            class="block leading-6 py-2 lg:py-1"
-          >
+          <a href="/services/mentoring/" class="block leading-6 py-2 lg:py-1">
             Mentoring
           </a>
 
-          <a
-            href="/services/open-source/"
-            class="block leading-6 py-2 lg:py-1"
-          >
+          <a href="/services/open-source/" class="block leading-6 py-2 lg:py-1">
             Open Source
           </a>
         </div>
@@ -43,10 +36,7 @@ const year = new Date().getFullYear();
             Specialties
           </h4>
 
-          <a
-            href="/services/app-tours/"
-            class="block leading-6 py-2 lg:py-1"
-          >
+          <a href="/services/app-tours/" class="block leading-6 py-2 lg:py-1">
             App Tours
           </a>
 
@@ -75,17 +65,11 @@ const year = new Date().getFullYear();
         <div class="p-8 lg:p-4">
           <h4 class="text-white text-xl md:text-2xl lg:text-3xl">Company</h4>
 
-          <a href="/about/" class="block leading-6 py-2 lg:py-1">
-            About
-          </a>
+          <a href="/about/" class="block leading-6 py-2 lg:py-1"> About</a>
 
-          <a href="/work/" class="block leading-6 py-2 lg:py-1">
-            Work
-          </a>
+          <a href="/work/" class="block leading-6 py-2 lg:py-1"> Work</a>
 
-          <a href="/blog/" class="block leading-6 py-2 lg:py-1">
-            Blog
-          </a>
+          <a href="/blog/" class="block leading-6 py-2 lg:py-1"> Blog</a>
 
           <a
             href="/whiskey-web-and-whatnot-podcast/"
@@ -98,9 +82,7 @@ const year = new Date().getFullYear();
         <div class="p-8 w-full lg:p-4">
           <h4 class="text-white text-xl md:text-2xl lg:text-3xl">Connect</h4>
 
-          <a href="/contact/" class="block leading-6 py-2 lg:py-1">
-            Contact
-          </a>
+          <a href="/contact/" class="block leading-6 py-2 lg:py-1"> Contact</a>
 
           <a
             href="https://github.com/shipshapecode"
@@ -126,13 +108,7 @@ const year = new Date().getFullYear();
       </nav>
 
       <div
-        class="
-          flex flex-wrap
-          items-center
-          justify-center
-          w-full
-          lg:justify-start
-        "
+        class="flex flex-wrap items-center justify-center w-full lg:justify-start"
       >
         <div class="flex justify-center w-full lg:justify-start">
           <div class="social-links flex items-center pl-2 pr-2 justify-start">
@@ -175,62 +151,62 @@ const year = new Date().getFullYear();
 </footer>
 
 <style lang="scss" is:global>
-.wave {
-  @apply bg-navy pt-24;
+  .wave {
+    @apply bg-navy pt-24;
 
-  .footer-logo {
-    path {
-      fill: var(--white);
-      stroke: var(--white);
-      stroke-width: 1.25rem;
-    }
-  }
-
-  .footer-bottom {
-    a {
-      @apply font-bold text-white;
-
-      &:hover {
-        @apply text-red-light;
+    .footer-logo {
+      path {
+        fill: var(--white);
+        stroke: var(--white);
+        stroke-width: 1.25rem;
       }
     }
 
-    .social-links {
-      svg {
-        path {
-          fill: var(--white);
-          transition-duration: 0.25s;
-          transition-property: fill;
-        }
+    .footer-bottom {
+      a {
+        @apply font-bold text-white;
 
         &:hover {
+          @apply text-red-light;
+        }
+      }
+
+      .social-links {
+        svg {
           path {
-            fill: var(--red-light);
+            fill: var(--white);
+            transition-duration: 0.25s;
+            transition-property: fill;
+          }
+
+          &:hover {
+            path {
+              fill: var(--red-light);
+            }
           }
         }
       }
     }
-  }
 
-  .github-logo {
-    svg {
-      height: 22px;
-      width: 23px;
+    .github-logo {
+      svg {
+        height: 22px;
+        width: 23px;
+      }
+    }
+
+    .linkedin-logo {
+      svg {
+        height: 20px;
+        width: 19px;
+      }
+    }
+
+    .twitter-logo {
+      svg {
+        height: 19px;
+        width: 23px;
+      }
     }
   }
-
-  .linkedin-logo {
-    svg {
-      height: 20px;
-      width: 19px;
-    }
-  }
-
-  .twitter-logo {
-    svg {
-      height: 19px;
-      width: 23px;
-    }
-  }
-}
 </style>

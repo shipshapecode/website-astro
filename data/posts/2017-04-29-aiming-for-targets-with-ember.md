@@ -32,7 +32,7 @@ File sizes:
 I then set my config.targets.js to:
 
 ```js
-module.exports = {  
+module.exports = {
   browsers: [
     'last 1 Chrome versions',
     'last 1 Firefox versions',
@@ -45,8 +45,8 @@ module.exports = {
 And ran:
 
 ```bash
-npm uninstall --save-dev ember-cli-uglify  
-npm install --save-dev ember-cli-babili 
+npm uninstall --save-dev ember-cli-uglify
+npm install --save-dev ember-cli-babili
 yarn install --force
 ```
 

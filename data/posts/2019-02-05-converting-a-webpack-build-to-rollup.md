@@ -1,6 +1,6 @@
 ---
 authorId: rwwagner90
-categories: 
+categories:
   - app tour
   - rollup
   - shepherd.js
@@ -11,8 +11,8 @@ slug: converting-a-webpack-build-to-rollup
 title: Converting a Webpack Build to Rollup
 ---
 
-When we initially started on refreshing [Shepherd](https://github.com/shipshapecode/shepherd), we wanted to modernize 
-the build process, and decided to switch from gulp to [webpack](https://webpack.js.org/). This worked well, and was a 
+When we initially started on refreshing [Shepherd](https://github.com/shipshapecode/shepherd), we wanted to modernize
+the build process, and decided to switch from gulp to [webpack](https://webpack.js.org/). This worked well, and was a
 step in the right direction, but with all the buzz around [rollup](https://rollupjs.org/) 1.0, we decided to give it a try.
 
 In some cases, things were a simple 1:1 conversion from a webpack plugin to a rollup plugin, but other things were much less straightforward.
@@ -20,6 +20,7 @@ We'll go through each conversion, step by step here, in the hopes that it will b
 to see the entire webpack config and the entire rollup config, you can [skip to the bottom](#configfiles) and compare them yourself.
 
 ## Table of Contents
+
 1. [Linting](#linting)
 2. [Local Development](#localdevelopment)
 3. [Styles](#styles)
@@ -27,7 +28,7 @@ to see the entire webpack config and the entire rollup config, you can [skip to 
 5. [Config Files](#configfiles)
 6. [Summary](#summary)
 
-## Linting 
+## Linting
 
 ### eslint-loader -> rollup-plugin-eslint
 
@@ -52,12 +53,10 @@ module: {
     {
       test: /\.js$/,
       exclude: path.resolve(__dirname, 'node_modules'),
-      include: [
-        path.resolve(__dirname, 'src/js')
-      ],
+      include: [path.resolve(__dirname, 'src/js')],
       loader: 'babel-loader'
     }
-  ]
+  ];
 }
 ```
 
@@ -69,17 +68,17 @@ array of plugins.
 
 // Add eslint to plugins
 eslint(),
-babel({
-  exclude: 'node_modules/**'
-})
+  babel({
+    exclude: 'node_modules/**'
+  });
 ```
 
 This also needed to be added before babel still, to ensure it is run on the untranspiled code.
 
 ### stylelint-webpack-plugin -> rollup-plugin-stylelint
 
-[Stylelint](https://github.com/stylelint/stylelint) allows us to enforce linting rules for CSS and SCSS files. 
-We enforced this with [stylelint-webpack-plugin](https://github.com/webpack-contrib/stylelint-webpack-plugin) previously, 
+[Stylelint](https://github.com/stylelint/stylelint) allows us to enforce linting rules for CSS and SCSS files.
+We enforced this with [stylelint-webpack-plugin](https://github.com/webpack-contrib/stylelint-webpack-plugin) previously,
 but switched to [rollup-plugin-stylelint](https://github.com/tanyaisinmybed/rollup-plugin-stylelint) for use with rollup.
 
 First, we removed `stylelint-webpack-plugin` from our `package.json` and then added `rollup-plugin-stylelint` by running:
@@ -96,7 +95,7 @@ new StyleLintWebpackPlugin({
   fix: false,
   syntax: 'scss',
   quiet: false
-})
+});
 ```
 
 ```js
@@ -106,7 +105,7 @@ stylelint({
   include: ['src/**.scss'],
   syntax: 'scss',
   quiet: false
-})
+});
 ```
 
 The one difference was we had to specify to only include `scss` files, since the input for rollup is always the JS, and we did
@@ -116,7 +115,7 @@ not want to include imported CSS, just SCSS.
 
 ### browser-sync-webpack-plugin -> rollup-plugin-browsersync
 
-We use browsersync for local development of the demo/docs site, so we can see everything updating in real time across browsers. 
+We use browsersync for local development of the demo/docs site, so we can see everything updating in real time across browsers.
 This one was a fairly simple conversion.
 
 First, we removed `browser-sync-webpack-plugin` from our `package.json` and then added `rollup-plugin-browsersync` by running:
@@ -131,35 +130,7 @@ The config for each plugin is basically identical, so we just copied from one to
 // webpack.config.js
 
 new BrowserSyncPlugin(
-      {
-        host: 'localhost',
-        watch: true,
-        port: 3000,
-        notify: false,
-        open: true,
-        server: {
-          baseDir: 'docs/welcome',
-          routes: {
-            '/shepherd/dist/js/shepherd.js': 'dist/js/shepherd.js',
-            '/shepherd/docs/welcome/js/prism.js': 'docs/welcome/js/prism.js',
-            '/shepherd/docs/welcome/js/welcome.js': 'docs/welcome/js/welcome.js',
-            '/shepherd/docs/welcome/css/prism.css': 'docs/welcome/css/prism.css',
-            '/shepherd/docs/welcome/css/welcome.css': 'docs/welcome/css/welcome.css',
-            '/shepherd/docs/welcome/sheep.svg': 'docs/welcome/sheep.svg'
-          }
-        }
-      }, {
-        reload: true
-      }
-    )
-```
-
-```js
-// rollup.config.js
-
-// Only add the browsersync plugin if we are in development
-if (process.env.DEVELOPMENT) {
-  plugins.push(browsersync({
+  {
     host: 'localhost',
     watch: true,
     port: 3000,
@@ -172,11 +143,44 @@ if (process.env.DEVELOPMENT) {
         '/shepherd/docs/welcome/js/prism.js': 'docs/welcome/js/prism.js',
         '/shepherd/docs/welcome/js/welcome.js': 'docs/welcome/js/welcome.js',
         '/shepherd/docs/welcome/css/prism.css': 'docs/welcome/css/prism.css',
-        '/shepherd/docs/welcome/css/welcome.css': 'docs/welcome/css/welcome.css',
+        '/shepherd/docs/welcome/css/welcome.css':
+          'docs/welcome/css/welcome.css',
         '/shepherd/docs/welcome/sheep.svg': 'docs/welcome/sheep.svg'
       }
     }
-  }));
+  },
+  {
+    reload: true
+  }
+);
+```
+
+```js
+// rollup.config.js
+
+// Only add the browsersync plugin if we are in development
+if (process.env.DEVELOPMENT) {
+  plugins.push(
+    browsersync({
+      host: 'localhost',
+      watch: true,
+      port: 3000,
+      notify: false,
+      open: true,
+      server: {
+        baseDir: 'docs/welcome',
+        routes: {
+          '/shepherd/dist/js/shepherd.js': 'dist/js/shepherd.js',
+          '/shepherd/docs/welcome/js/prism.js': 'docs/welcome/js/prism.js',
+          '/shepherd/docs/welcome/js/welcome.js': 'docs/welcome/js/welcome.js',
+          '/shepherd/docs/welcome/css/prism.css': 'docs/welcome/css/prism.css',
+          '/shepherd/docs/welcome/css/welcome.css':
+            'docs/welcome/css/welcome.css',
+          '/shepherd/docs/welcome/sheep.svg': 'docs/welcome/sheep.svg'
+        }
+      }
+    })
+  );
 }
 ```
 
@@ -184,9 +188,9 @@ if (process.env.DEVELOPMENT) {
 
 ### sass-loader -> rollup-plugin-sass
 
-In webpack we used a combination of [sass-loader](https://github.com/webpack-contrib/sass-loader), 
-[css-loader](https://github.com/webpack-contrib/css-loader), [postcss-loader](https://github.com/postcss/postcss-loader), 
-[file-loader](https://github.com/webpack-contrib/file-loader), and [extract-loader](https://github.com/peerigon/extract-loader) 
+In webpack we used a combination of [sass-loader](https://github.com/webpack-contrib/sass-loader),
+[css-loader](https://github.com/webpack-contrib/css-loader), [postcss-loader](https://github.com/postcss/postcss-loader),
+[file-loader](https://github.com/webpack-contrib/file-loader), and [extract-loader](https://github.com/peerigon/extract-loader)
 to consume our `scss` files and output our various theme files.
 
 ```js
@@ -246,8 +250,8 @@ module.exports = [{
 }];
 ```
 
-We were able to replace all of these loaders with just [rollup-plugin-sass](https://github.com/differui/rollup-plugin-sass), 
-and [postcss](https://github.com/postcss/postcss), when we switched to rollup. However, rollup has a hard time with 
+We were able to replace all of these loaders with just [rollup-plugin-sass](https://github.com/differui/rollup-plugin-sass),
+and [postcss](https://github.com/postcss/postcss), when we switched to rollup. However, rollup has a hard time with
 outputting multiple css files. It wants to consume all the styles and either bundle them as one file or just inject them into `head`
 automatically for you. This made generating multiple theme files not very straightforward, but wasn't **too** bad, once we figured it out.
 
@@ -298,7 +302,7 @@ resolve: {
 }
 ```
 
-We initially tried to use an alias in rollup as well, but could not get it to work. We decided instead to use 
+We initially tried to use an alias in rollup as well, but could not get it to work. We decided instead to use
 [rollup-plugin-css-only](https://github.com/thgh/rollup-plugin-css-only) to handle CSS imports in the JS, and
 we then injected those styles directly into the `head`.
 
@@ -331,7 +335,7 @@ import tippyStyles from 'tippy.js/dist/tippy.css';
 export class Tour extends Evented {
   constructor(){
     ...
-    
+
     injectCSS(tippyStyles);
   }
 }
@@ -349,13 +353,11 @@ a ton to configure with Babel, and it was mostly just switching packages, but we
 ```js
 // babel.config.js
 
-module.exports = function(api) {
+module.exports = function (api) {
   api.cache(true);
 
   return {
-    presets: [
-      ['@babel/preset-env']
-    ],
+    presets: [['@babel/preset-env']],
     plugins: [
       'add-module-exports',
       'lodash',
@@ -375,7 +377,7 @@ module.exports = function(api) {
 ```js
 // babel.config.js
 
-module.exports = function(api) {
+module.exports = function (api) {
   api.cache(true);
 
   return {
@@ -387,9 +389,7 @@ module.exports = function(api) {
         }
       ]
     ],
-    plugins: [
-      '@babel/plugin-transform-object-assign'
-    ],
+    plugins: ['@babel/plugin-transform-object-assign'],
     env: {
       test: {
         presets: [
@@ -400,9 +400,7 @@ module.exports = function(api) {
             }
           ]
         ],
-        plugins: [
-          'transform-es2015-modules-commonjs'
-        ]
+        plugins: ['transform-es2015-modules-commonjs']
       }
     }
   };
@@ -438,15 +436,15 @@ The usage in webpack and rollup is very similar, with the only option being to i
 
 babel({
   exclude: 'node_modules/**'
-})
+});
 ```
 
 ### uglifyjs-webpack-plugin -> rollup-plugin-uglify
 
 Uglify is the most common package used for minification of JavaScript, and we used it with both webpack
-and rollup, we just needed to switch which package we used. 
+and rollup, we just needed to switch which package we used.
 
-First we removed `uglifyjs-webpack-plugin` from our `package.json` and then we installed 
+First we removed `uglifyjs-webpack-plugin` from our `package.json` and then we installed
 [rollup-plugin-uglify](https://github.com/TrySound/rollup-plugin-uglify).
 
 ```bash
@@ -465,7 +463,7 @@ optimization: {
       include: /\.min\.js$/,
       sourceMap: true
     })
-  ]
+  ];
 }
 ```
 
@@ -501,7 +499,8 @@ if (!process.env.DEVELOPMENT) {
         uglify(),
         filesize()
       ]
-    });
+    }
+  );
 }
 ```
 
@@ -536,121 +535,120 @@ const sassEntries = sassArray.reduce((acc, item) => {
 // Theme SCSS files
 sassEntries['css/welcome'] = './docs/welcome/scss/welcome.scss';
 
-module.exports = [{
-  entry: sassEntries,
-  output: {
-    // This is necessary for webpack to compile
-    // But we never use removable-style-bundle.js
-    filename: 'removable-[id]-bundle.js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.s[c|a]ss$/,
-        include: [
-          path.resolve(__dirname, 'src/scss')
-        ],
-        exclude: [
-          path.resolve(__dirname, 'docs/welcome/scss')
-        ],
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'css/[name].css'
+module.exports = [
+  {
+    entry: sassEntries,
+    output: {
+      // This is necessary for webpack to compile
+      // But we never use removable-style-bundle.js
+      filename: 'removable-[id]-bundle.js'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.s[c|a]ss$/,
+          include: [path.resolve(__dirname, 'src/scss')],
+          exclude: [path.resolve(__dirname, 'docs/welcome/scss')],
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'css/[name].css'
+              }
+            },
+            { loader: 'extract-loader' },
+            { loader: 'css-loader' },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [autoprefixer({ grid: false })]
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: false
+              }
             }
-          },
-          { loader: 'extract-loader' },
-          { loader: 'css-loader' },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [autoprefixer({ grid: false })]
+          ]
+        },
+        {
+          test: /welcome\.s[c|a]ss$/,
+          include: [path.resolve(__dirname, 'docs/welcome/scss')],
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                outputPath: '../docs/welcome/',
+                name: 'css/[name].css'
+              }
+            },
+            { loader: 'extract-loader' },
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+                plugins: () => [
+                  autoprefixer({
+                    grid: false,
+                    browsers: ['last 2 versions']
+                  })
+                ]
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                outputStyle: 'expanded',
+                sourceMap: true
+              }
             }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: false
-            }
-          }
-        ]
-      },
-      {
-        test: /welcome\.s[c|a]ss$/,
-        include: [
-          path.resolve(__dirname, 'docs/welcome/scss')
-        ],
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: '../docs/welcome/',
-              name: 'css/[name].css'
-            }
-          },
-          { loader: 'extract-loader' },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              plugins: () => [
-                autoprefixer({
-                  grid: false,
-                  browsers: [
-                    'last 2 versions'
-                  ]
-                })]
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              outputStyle: 'expanded',
-              sourceMap: true
-            }
-          }
-        ]
-      }
-    ]
-  },
-  plugins: [
-    new StyleLintWebpackPlugin({
-      fix: false,
-      syntax: 'scss',
-      quiet: false
-    }),
-    new BrowserSyncPlugin(
-      {
-        host: 'localhost',
-        watch: true,
-        port: 3000,
-        notify: false,
-        open: true,
-        server: {
-          baseDir: 'docs/welcome',
-          routes: {
-            '/shepherd/dist/js/shepherd.js': 'dist/js/shepherd.js',
-            '/shepherd/docs/welcome/js/prism.js': 'docs/welcome/js/prism.js',
-            '/shepherd/docs/welcome/js/welcome.js': 'docs/welcome/js/welcome.js',
-            '/shepherd/docs/welcome/css/prism.css': 'docs/welcome/css/prism.css',
-            '/shepherd/docs/welcome/css/welcome.css': 'docs/welcome/css/welcome.css',
-            '/shepherd/docs/welcome/sheep.svg': 'docs/welcome/sheep.svg'
-          }
+          ]
         }
-      }, {
-        reload: true
-      }
-    ),
-    new webpack.BannerPlugin(banner)
-  ]
-}];
+      ]
+    },
+    plugins: [
+      new StyleLintWebpackPlugin({
+        fix: false,
+        syntax: 'scss',
+        quiet: false
+      }),
+      new BrowserSyncPlugin(
+        {
+          host: 'localhost',
+          watch: true,
+          port: 3000,
+          notify: false,
+          open: true,
+          server: {
+            baseDir: 'docs/welcome',
+            routes: {
+              '/shepherd/dist/js/shepherd.js': 'dist/js/shepherd.js',
+              '/shepherd/docs/welcome/js/prism.js': 'docs/welcome/js/prism.js',
+              '/shepherd/docs/welcome/js/welcome.js':
+                'docs/welcome/js/welcome.js',
+              '/shepherd/docs/welcome/css/prism.css':
+                'docs/welcome/css/prism.css',
+              '/shepherd/docs/welcome/css/welcome.css':
+                'docs/welcome/css/welcome.css',
+              '/shepherd/docs/welcome/sheep.svg': 'docs/welcome/sheep.svg'
+            }
+          }
+        },
+        {
+          reload: true
+        }
+      ),
+      new webpack.BannerPlugin(banner)
+    ]
+  }
+];
 
 // Library Shepherd files
 module.exports.push({
@@ -669,7 +667,7 @@ module.exports.push({
     filename: '[name].js',
     library: 'Shepherd',
     libraryTarget: 'umd',
-    globalObject: 'this',
+    globalObject: 'this'
   },
   resolve: {
     alias: {
@@ -687,9 +685,7 @@ module.exports.push({
       {
         test: /\.js$/,
         exclude: path.resolve(__dirname, 'node_modules'),
-        include: [
-          path.resolve(__dirname, 'src/js')
-        ],
+        include: [path.resolve(__dirname, 'src/js')],
         loader: 'babel-loader'
       }
     ]
@@ -704,7 +700,7 @@ module.exports.push({
   },
   plugins: [
     new webpack.BannerPlugin(banner),
-    new LodashModuleReplacementPlugin
+    new LodashModuleReplacementPlugin()
   ]
 });
 ```
@@ -747,14 +743,15 @@ const sassOptions = {
       fs.writeFileSync(`dist/css/${name}.css`, content);
     });
   },
-  processor: css => postcss([
-    autoprefixer({
-      grid: false
-    }),
-    cssnano()
-  ])
-    .process(css)
-    .then(result => result.css)
+  processor: (css) =>
+    postcss([
+      autoprefixer({
+        grid: false
+      }),
+      cssnano()
+    ])
+      .process(css)
+      .then((result) => result.css)
 };
 
 const plugins = [
@@ -774,34 +771,40 @@ const plugins = [
 ];
 
 if (!process.env.DEVELOPMENT) {
-  plugins.push(sass({
-    output: false
-  }));
+  plugins.push(
+    sass({
+      output: false
+    })
+  );
 }
 
 // If we are running with --environment DEVELOPMENT, serve via browsersync for local development
 if (process.env.DEVELOPMENT) {
   plugins.push(sass(sassOptions));
 
-  plugins.push(browsersync({
-    host: 'localhost',
-    watch: true,
-    port: 3000,
-    notify: false,
-    open: true,
-    server: {
-      baseDir: 'docs/welcome',
-      routes: {
-        '/shepherd/dist/css/shepherd-theme-default.css': 'dist/css/shepherd-theme-default.css',
-        '/shepherd/dist/js/shepherd.js': 'dist/js/shepherd.js',
-        '/shepherd/docs/welcome/js/prism.js': 'docs/welcome/js/prism.js',
-        '/shepherd/docs/welcome/js/welcome.js': 'docs/welcome/js/welcome.js',
-        '/shepherd/docs/welcome/css/prism.css': 'docs/welcome/css/prism.css',
-        '/shepherd/docs/welcome/css/welcome.css': 'docs/welcome/css/welcome.css',
-        '/shepherd/docs/welcome/sheep.svg': 'docs/welcome/sheep.svg'
+  plugins.push(
+    browsersync({
+      host: 'localhost',
+      watch: true,
+      port: 3000,
+      notify: false,
+      open: true,
+      server: {
+        baseDir: 'docs/welcome',
+        routes: {
+          '/shepherd/dist/css/shepherd-theme-default.css':
+            'dist/css/shepherd-theme-default.css',
+          '/shepherd/dist/js/shepherd.js': 'dist/js/shepherd.js',
+          '/shepherd/docs/welcome/js/prism.js': 'docs/welcome/js/prism.js',
+          '/shepherd/docs/welcome/js/welcome.js': 'docs/welcome/js/welcome.js',
+          '/shepherd/docs/welcome/css/prism.css': 'docs/welcome/css/prism.css',
+          '/shepherd/docs/welcome/css/welcome.css':
+            'docs/welcome/css/welcome.css',
+          '/shepherd/docs/welcome/sheep.svg': 'docs/welcome/sheep.svg'
+        }
       }
-    }
-  }));
+    })
+  );
 }
 
 plugins.push(license({ banner }));
@@ -854,7 +857,8 @@ if (!process.env.DEVELOPMENT) {
         uglify(),
         filesize()
       ]
-    });
+    }
+  );
 }
 
 export default rollupBuilds;

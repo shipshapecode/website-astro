@@ -1,9 +1,16 @@
-name: Playwright Tests
+name: CI
+
 on:
   push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
+    branches:
+      - main
+      - master
+  pull_request: {}
+
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     timeout-minutes: 60
@@ -15,6 +22,8 @@ jobs:
           node-version: '16.x'
       - name: Install dependencies
         run: yarn
+      - name: Lint
+        run: yarn lint
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests

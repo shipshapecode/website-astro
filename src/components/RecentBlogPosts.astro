@@ -17,12 +17,9 @@ const { posts } = Astro.props;
       <div class="flex flex-wrap items-center justify-between mb-8 w-full">
         <h3 class="text-4xl text-navy">Ahoy - advice and insights ahead!</h3>
 
-        <a
-          href="/blog/"
-          class="btn btn-red mt-4 w-full lg:mt-0 lg:w-auto"
-        >
+        <a href="/blog/" class="btn btn-red mt-4 w-full lg:mt-0 lg:w-auto">
           See more insights
-      </a>
+        </a>
       </div>
 
       <div
@@ -57,7 +54,9 @@ const { posts } = Astro.props;
                 {post.frontmatter.linktitle || post.frontmatter.title}
               </a>
 
-              <div class="attribution bottom-0 mb-4">By {post.frontmatter.author.name}</div>
+              <div class="attribution bottom-0 mb-4">
+                By {post.frontmatter.author.name}
+              </div>
             </div>
           ))
         }

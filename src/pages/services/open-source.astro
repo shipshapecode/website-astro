@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon';
 import { Img } from 'astro-imagetools/components';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -29,11 +30,18 @@ const description =
       </Fragment>
 
       <Fragment slot="icon">
-        <img
-          class="h-auto m-auto max-w-2xl w-full"
-          height="984"
+        <Img
+          alt=""
+          attributes={{
+            img: {
+              class: 'h-auto m-auto max-w-2xl w-full'
+            }
+          }}
+          format="webp"
+          height={984}
+          placeholder="none"
           src="/img/hero-images/open-source.png"
-          width="1344"
+          width={1344}
         />
       </Fragment>
     </HeroBlock>
@@ -55,7 +63,7 @@ const description =
 
         <a class="learn-more" href="/contact/">
           Contact us
-          <img class="h-4 inline w-4" src="/svgs/angle-right.svg" />
+          <Icon class="h-4 inline w-4" name="arrow" />
         </a>
       </div>
     </div>

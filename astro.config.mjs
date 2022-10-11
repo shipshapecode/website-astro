@@ -1,11 +1,10 @@
 import { defineConfig } from 'astro/config';
 import { astroImageTools } from 'astro-imagetools';
 import solid from '@astrojs/solid-js';
-import tailwind from "@astrojs/tailwind";
+import tailwind from '@astrojs/tailwind';
 import { addAuthorRemarkPlugin } from './add-author-remark-plugin.mjs';
 import { addDescriptionRemarkPlugin } from './add-description-remark-plugin.mjs';
 import sitemap from '@astrojs/sitemap';
-
 
 // https://astro.build/config
 export default defineConfig({
@@ -38,7 +37,12 @@ export default defineConfig({
     })
   ],
   markdown: {
-    remarkPlugins: ['remark-gfm', 'remark-smartypants', addAuthorRemarkPlugin, addDescriptionRemarkPlugin],
+    remarkPlugins: [
+      'remark-gfm',
+      'remark-smartypants',
+      addAuthorRemarkPlugin,
+      addDescriptionRemarkPlugin
+    ],
     shikiConfig: {
       theme: 'nord'
     }

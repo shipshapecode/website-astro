@@ -1,6 +1,6 @@
 ---
 authorId: rwwagner90
-categories: 
+categories:
   - app tour
   - shepherd.js
   - site tour
@@ -9,13 +9,13 @@ slug: shepherd-popper-to-tether
 title: 'There and Back Again - Popper to Tether'
 ---
 
-[Shepherd.js](https://shepherdjs.dev/) has gone through many iterations, 
-since we started refactoring it for v2. We initially switched from 
-[Tether](https://github.com/shipshapecode/tether) to [Popper](https://popper.js.org/), on the 
+[Shepherd.js](https://shepherdjs.dev/) has gone through many iterations,
+since we started refactoring it for v2. We initially switched from
+[Tether](https://github.com/shipshapecode/tether) to [Popper](https://popper.js.org/), on the
 advice of the Tether maintainers who said they did not have time to maintain Tether
 and that Popper was a better option for now. We then doubled down and switched
-to [Tippy.js](https://atomiks.github.io/tippyjs/) which is built on top of Popper, and 
-provides animations and extra features. Ultimately, we ended up with a really bloated bundle, 
+to [Tippy.js](https://atomiks.github.io/tippyjs/) which is built on top of Popper, and
+provides animations and extra features. Ultimately, we ended up with a really bloated bundle,
 with lots of dependencies, and we decided to "trim the fat".
 
 ![Image of Tether attached to an element](/img/blog/tether.png)
@@ -41,14 +41,12 @@ dependency for Shepherd, which allows us to control all the code we are shipping
 reuse common utils between the two. It also has the added benefit of reducing our bundle
 size from `~35-40kb (min + gzip)` with Tippy + Popper, to `~15kb (min + gzip)` with Tether.
 
-Shepherd v6 will be out soon, and will include this huge bundle savings, and will use 
+Shepherd v6 will be out soon, and will include this huge bundle savings, and will use
 Tether instead of Popper. It will also include various other tweaks, new features, and
 enhancements, that we are very excited to share with you! We hope to continue to improve
 both Shepherd and Tether and bring them back to being industry standard choices for app
 tours and positioning elements together.
 
-***Need help with custom application tours? We've integrated Shepherd into several applications. 
-Get help from the Shepherd experts! [Contact us](https://shipshape.io/contact/). 
-We would love to work with you!***
-
-
+**_Need help with custom application tours? We've integrated Shepherd into several applications.
+Get help from the Shepherd experts! [Contact us](https://shipshape.io/contact/).
+We would love to work with you!_**

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Lost at sea | 404';
+const description = 'The page you are looking for could not be found.';
+---
+
+<BaseLayout description={description} title={title}>
+  <div class="section flex flex-wrap justify-center">
+    <div class="section-content text-center">
+      <img
+        alt="Tentacles coming out of the ocean with no traces left of the ship that was once there."
+        class="inline h-auto w-full max-w-2xl"
+        src="/svgs/404.svg"
+      />
+    </div>
+  </div>
+</BaseLayout>

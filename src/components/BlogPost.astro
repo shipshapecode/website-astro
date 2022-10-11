@@ -1,14 +1,22 @@
 ---
 import { Img } from 'astro-imagetools/components';
+
 import AuthorRow from './AuthorRow.astro';
 import BottomLinks from './BottomLinks.astro';
+import { MarkdownFrontmatter } from '../pages/index.astro';
+
+export interface Post {
+  Content: any;
+  frontmatter: MarkdownFrontmatter;
+}
 
 export interface Props {
   canonicalURL: URL;
-  post: any;
-  nextPost: any;
-  previousPost: any;
+  post: Post;
+  nextPost: Post;
+  previousPost: Post;
 }
+
 const { canonicalURL, post, nextPost, previousPost } = Astro.props;
 const { Content } = post;
 const { author } = post.frontmatter;
@@ -49,7 +57,9 @@ const { author } = post.frontmatter;
         )
       }
 
-      <div class="post-content prose prose-headings:text-navy prose-p:text-grey-light lg:prose-lg max-w-none">
+      <div
+        class="post-content prose prose-headings:text-navy prose-p:text-grey-light lg:prose-lg max-w-none"
+      >
         <Content />
       </div>
 

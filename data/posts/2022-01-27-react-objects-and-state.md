@@ -15,21 +15,21 @@ Objects are a useful way to store data when you have a set of related values tha
 A [primitive data type](https://developer.mozilla.org/en-US/docs/Glossary/Primitive), like a number or string, holds a value and therefore is inherently immutable.
 
 ```js
-let greeting = 'hello'
-let hello = 'hello'
-greeting === hello
+let greeting = 'hello';
+let hello = 'hello';
+greeting === hello;
 
 // Returns true
-// These 2 variables hold the same primitive data as values. 
+// These 2 variables hold the same primitive data as values.
 // If a variable is reassigned, it would take on a different value.
 ```
 
 Objects are non-primitive data and have a value as well as an identity. When an object is assigned to a variable, that variable acts as a reference point to the object's identity. Each object is unique, even if their properties might be identical.
 
 ```js
-const greeting = { text: 'hello' }
-const hello = { text: 'hello' }
-greeting === hello
+const greeting = { text: 'hello' };
+const hello = { text: 'hello' };
+greeting === hello;
 
 // Returns false
 ```
@@ -44,7 +44,7 @@ You can think of an object as a box and its properties as anything you put insid
 
 [Data in state should be treated as immutable](https://beta.reactjs.org/learn/updating-objects-in-state) - the values should not be mutated directly, but instead be replaced with a new one. The corresponding `set` method is then called with a new object in order for the change to occur.
 
-This may not seem immediately obvious with objects, since properties of an object *can* technically be updated. However, when you try to handle the change this way with React, it might not update your UI as you’d expect.
+This may not seem immediately obvious with objects, since properties of an object _can_ technically be updated. However, when you try to handle the change this way with React, it might not update your UI as you’d expect.
 
 ```js
 const [user, setUser] = useState({ name: '' })
@@ -71,12 +71,12 @@ You have several options to properly update data stored as objects in React stat
 
 ```js
 // Instead try:
-const input = {}
-input.name = e.target.value
-setUser(input)
+const input = {};
+input.name = e.target.value;
+setUser(input);
 
 // Or:
-setUser({ name: e.target.value })
+setUser({ name: e.target.value });
 ```
 
 Both these solutions create a brand new object that is being passed to replace the current state, instead of directly mutating the existing state. Directly manipulating `user.name` does not work because it does not trigger a re-render.
@@ -127,10 +127,10 @@ The `Object.assign()` method takes 2 arguments - a `target` and at least one `so
 
 ```js
 // This would not update state
-setUser(Object.assign(user, userName))
+setUser(Object.assign(user, userName));
 
 // You’d still need a reference to a new object for this to update
-setUser(Object.assign({}, user, userName))
+setUser(Object.assign({}, user, userName));
 ```
 
 ## So When Should an Object Be Used in State?

@@ -7,12 +7,12 @@ slug: five-tips-to-improve-your-terminal-experience
 title: 5 Tips to Improve Your Terminal Experience
 ---
 
-Working in software, we know the stereotypical terminals shown in movie scenes - with green text 
-whizzing through black backgrounds as a hacker furiously slings commands from memory onto an eight 
+Working in software, we know the stereotypical terminals shown in movie scenes - with green text
+whizzing through black backgrounds as a hacker furiously slings commands from memory onto an eight
 inch screen - is far from the reality of today's development.
 
-While our day-to-day development process might not appear as exciting and action-packed as the silver 
-screen renditions, as software developers, we do have a lot of great options to streamline our workflows 
+While our day-to-day development process might not appear as exciting and action-packed as the silver
+screen renditions, as software developers, we do have a lot of great options to streamline our workflows
 by improving the style and functionality of our terminals.
 
 # Fish
@@ -37,7 +37,7 @@ generates auto completes for other utilities by parsing their man pages, neat!
 
 [Starship](https://starship.rs/) is a cross-shell prompt that is blazing-fast, and infinitely customizable.
 It is built in Rust, which gives it best-in-class speed and safety, to make your prompt as quick and reliable
-as possible. Out of the box it shows you pertinent information like what git branch you are on, what version of CLI 
+as possible. Out of the box it shows you pertinent information like what git branch you are on, what version of CLI
 tools you are running (e.g. node, Rust, etc), how long commands took to run, and so much more!
 
 # MonoLisa

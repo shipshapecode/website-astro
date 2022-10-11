@@ -1,6 +1,6 @@
 ---
 authorId: rwwagner90
-categories: 
+categories:
   - a11y
   - app tour
   - CSSinJS
@@ -18,13 +18,14 @@ for your website or app.
 
 [![Shepherd.js Logo](/img/blog/shepherd-4-a11y-ie11-preact/shepherd-logo.png)](https://shepherdjs.dev/)
 
-We rewrote a significant chunk of the library from the ground up, using [Preact](https://preactjs.com/) and 
-[nano-css](https://github.com/streamich/nano-css), switched styles from SCSS to CSSinJS, simplified 
+We rewrote a significant chunk of the library from the ground up, using [Preact](https://preactjs.com/) and
+[nano-css](https://github.com/streamich/nano-css), switched styles from SCSS to CSSinJS, simplified
 the API, and tweaked the demo and API docs for a more cohesive experience.
 We also solidified our IE11 support, and made everything work out of the box with no need to add any more
 polyfills yourself, and focused heavily on improving our a11y support.
 
 ## Table of Contents
+
 1. [API Simplification](#apisimplification)
 1. [IE 11 Support](#ie11support)
 1. [Styles](#styles)
@@ -36,8 +37,8 @@ polyfills yourself, and focused heavily on improving our a11y support.
 
 ## API Simplification
 
-We had several APIs that accepted more than one input format, such as `attachTo` and 
-`advanceOn`, which was both making the code harder to maintain and causing unnecessary 
+We had several APIs that accepted more than one input format, such as `attachTo` and
+`advanceOn`, which was both making the code harder to maintain and causing unnecessary
 confusion for users. In the spirit of keeping things simple, we removed the `string` options
 in favor of passing an `object` hash of options. For example `attachTo` now only supports
 this format:
@@ -53,7 +54,7 @@ tour.addStep({
 
 ## IE 11 Support
 
-We always advertised IE 11 support, but we did not test it as often as we should have. 
+We always advertised IE 11 support, but we did not test it as often as we should have.
 Sometime during the 2.x or 3.x era, we unwittingly broke support for IE. Most people did not
 notice, as you are likely already shipping a ton of polyfills, if your app supports IE, but
 for those who were not, things were broken.
@@ -70,17 +71,17 @@ and work on opting in/out to the IE polyfills later.
 We wanted to find an easy way to include all of our styles in our JS bundle, rather than shipping separate
 stylesheets, and we decided we wanted to explore CSSinJS solutions to solve this.
 After a lot of searching for the smallest CSSinJS library, we settled on using [nano-css](https://github.com/streamich/nano-css).
-It is small and simple, but also provides a powerful API. 
+It is small and simple, but also provides a powerful API.
 
-Including the styles in the JS does increase the bundle size, but it is the same amount of bytes, or less, 
+Including the styles in the JS does increase the bundle size, but it is the same amount of bytes, or less,
 as including the old stylesheets separately. nano-css also allows for setting prefixes for class names as well,
-which has helped us launch our new prefixing feature. 
+which has helped us launch our new prefixing feature.
 
 ### classPrefix
 
-You can pass `classPrefix` in your tour options, and all `shepherd-*` classes will be prefixed. 
-For example `classPrefix: 'my-prefix'` would yield `my-prefix-shepherd-*` style classes. 
-This is an important feature if you potentially need to run two separate Shepherd instances and 
+You can pass `classPrefix` in your tour options, and all `shepherd-*` classes will be prefixed.
+For example `classPrefix: 'my-prefix'` would yield `my-prefix-shepherd-*` style classes.
+This is an important feature if you potentially need to run two separate Shepherd instances and
 ensure they do not conflict with one another.
 
 ### styleVariables
@@ -112,10 +113,10 @@ components now and handle their own logic, styles and classes.
 
 ## a11y
 
-There was an [issue](https://github.com/shipshapecode/shepherd/issues/198) opened on the Shepherd GitHub 
-repo awhile ago, asking about a11y support. We had always wanted to make Shepherd as accessible as possible, 
+There was an [issue](https://github.com/shipshapecode/shepherd/issues/198) opened on the Shepherd GitHub
+repo awhile ago, asking about a11y support. We had always wanted to make Shepherd as accessible as possible,
 but lacked the knowledge on what exactly to do. Luckily, with help from [@gorner](https://github.com/gorner)
-and [@knoobie](https://github.com/knoobie), as well as an [amazing post](https://bitsofco.de/accessible-modal-dialog/) 
+and [@knoobie](https://github.com/knoobie), as well as an [amazing post](https://bitsofco.de/accessible-modal-dialog/)
 on making modal dialogs accessible, we were able to ship arrow key navigation, the proper `aria` attributes,
 focus trapping, etc to make things more accessible for both keyboard users and screen readers.
 
@@ -136,7 +137,7 @@ and we found ourselves wanting a nicer looking solution, that allowed us to nest
 other pages alongside the generated docs. After spending several days exploring various
 tools, we finally decided to use JSDoc and to fork and extend a nice existing theme.
 
-The original theme is [here](https://github.com/braintree/jsdoc-template) and our extended and tweaked theme, 
+The original theme is [here](https://github.com/braintree/jsdoc-template) and our extended and tweaked theme,
 used for our doc site currently, can be found [here](https://github.com/shipshapecode/jsdoc-template-ship-shape).
 
 JSDoc has the concept of tutorials, which are extra pages you want to add to your docs. We used these
@@ -149,12 +150,11 @@ Having everything in one place should make for a much more cohesive and easy to 
 
 [![Shepherd.js Landing Page](/img/blog/shepherd-4-a11y-ie11-preact/landing.png)](https://shepherdjs.dev/)
 
-
 As things were evolving for 4.0, we realized we needed a dedicated home for all things Shepherd, and bought the
 domain [https://shepherdjs.dev/](https://shepherdjs.dev/). We have slowly been rebranding the demo page, and plan
 to host all the docs, demos, examples, and a landing page on this new site.
 
 We hope everyone will try out the new and improved Shepherd 4.0 and please let us know your thoughts!
 
-***If you would like us to help integrate Shepherd into your app, please [contact us](https://shipshape.io/contact/). We would love to 
-work with you!***
+**_If you would like us to help integrate Shepherd into your app, please [contact us](https://shipshape.io/contact/). We would love to
+work with you!_**

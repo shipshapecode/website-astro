@@ -15,7 +15,7 @@ function truncatedExcerpt(file, options) {
 
 export function addDescriptionRemarkPlugin() {
   return function (tree, post) {
-    const file = matter.read(post.history[0], {excerpt: truncatedExcerpt});
+    const file = matter.read(post.history[0], { excerpt: truncatedExcerpt });
 
     post.data.astro.frontmatter.description = file.excerpt;
   };
