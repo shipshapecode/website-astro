@@ -44,7 +44,8 @@ export default defineConfig({
       addDescriptionRemarkPlugin
     ],
     shikiConfig: {
-      theme: 'nord'
+      theme: 'nord',
+      wrap: true,
     }
   }
 });
