@@ -15,7 +15,9 @@ const services = [
     logoName: 'ember',
     description:
       "One of the best frameworks for fast, reliable builds, especially complex apps and dashboards. Ember's opinionated structure lends well to efficiency and organization.",
+    learnMoreLinkDescription: 'Learn more about our work with Ember',
     learnMoreLink: '/services/ember-consulting/',
+    caseStudyLinkDescription: 'See our Ember work in action',
     caseStudyLink: '/work/netflix/'
   },
   {
@@ -23,7 +25,9 @@ const services = [
     logoName: 'nuxt',
     description:
       'A performant framework used to create flexible, universal Vue.js web apps, thanks to its simple routing and out-of-the-box optimizations.',
+    learnMoreLinkDescription: 'Learn more about our work with Nuxt',
     learnMoreLink: '/services/nuxt-consulting/',
+    caseStudyLinkDescription: 'See our Nuxt work in action',
     caseStudyLink: '/services/nuxt-consulting/'
   },
   {
@@ -31,7 +35,9 @@ const services = [
     logoName: 'next',
     description:
       'A nimble React framework for production with lots of magic built in, from server-side rendering for enhanced SEO to internationalization features.',
+    learnMoreLinkDescription: 'Learn more about our work with Next',
     learnMoreLink: '/services/next-consulting/',
+    caseStudyLinkDescription: 'See our Next work in action',
     caseStudyLink: '/work/enigma/'
   },
   {
@@ -39,7 +45,9 @@ const services = [
     logoName: 'tailwind',
     description:
       'Match mocks from designers with ease, and automagically remove all unused CSS with this convenient framework.',
+    learnMoreLinkDescription: 'Learn more about our work with Tailwind',
     learnMoreLink: '/services/tailwind-consulting/',
+    caseStudyLinkDescription: 'See our Tailwind work in action',
     caseStudyLink: '/services/tailwind-consulting/'
   },
   {
@@ -47,7 +55,9 @@ const services = [
     logoName: 'serverless',
     description:
       'Only pay for the computing you need, scale quickly, and reduce maintenance with serverless applications. We’ll show you how.',
+    learnMoreLinkDescription: 'Learn more about our work with Serverless',
     learnMoreLink: '/services/serverless-consulting/',
+    caseStudyLinkDescription: 'See our Serverless work in action',
     caseStudyLink: '/services/serverless-consulting/'
   },
   {
@@ -55,7 +65,9 @@ const services = [
     logoName: 'cncf',
     description:
       'Say goodbye to being locked into vendors, and deliver well-tested, secure products faster with this platform-agnostic methodology.',
+    learnMoreLinkDescription: 'Learn more about our work with Cloud Native',
     learnMoreLink: '/services/cloud-native-consulting/',
+    caseStudyLinkDescription: 'See our Cloud Native work in action',
     caseStudyLink: '/services/cloud-native-consulting/'
   }
 ];
@@ -80,6 +92,8 @@ const services = [
           <ServiceCard
             learnMoreLink={service.learnMoreLink}
             caseStudyLink={service.caseStudyLink}
+            learnMoreLinkDescription={service.learnMoreLinkDescription}
+            caseStudyLinkDescription={service.caseStudyLinkDescription}
           >
             <Fragment slot="header">
               <Icon
