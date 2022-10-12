@@ -8,7 +8,12 @@ export interface Props {
   learnMoreLinkDescription: string;
 }
 
-const { caseStudyLink, caseStudyLinkDescription, learnMoreLink, learnMoreLinkDescription } = Astro.props as Props;
+const {
+  caseStudyLink,
+  caseStudyLinkDescription,
+  learnMoreLink,
+  learnMoreLinkDescription
+} = Astro.props as Props;
 ---
 
 <article
@@ -28,13 +33,21 @@ const { caseStudyLink, caseStudyLinkDescription, learnMoreLink, learnMoreLinkDes
       <div
         class="flex justify-start lg:border-grey lg:border-r lg:justify-center"
       >
-        <a class="learn-more" href={learnMoreLink} aria-label={learnMoreLinkDescription}>
+        <a
+          class="learn-more"
+          href={learnMoreLink}
+          aria-label={learnMoreLinkDescription}
+        >
           Learn more
           <Icon class="h-4 inline w-6" name="arrow" />
         </a>
       </div>
       <div class="flex justify-start lg:justify-center">
-        <a class="learn-more" href={caseStudyLink} aria-label={caseStudyLinkDescription}>
+        <a
+          class="learn-more"
+          href={caseStudyLink}
+          aria-label={caseStudyLinkDescription}
+        >
           See it in action
           <Icon class="h-4 inline w-6" name="arrow" />
         </a>
