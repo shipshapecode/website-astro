@@ -28,6 +28,6 @@
   @apply !bg-blue-light !text-navy;
 }
 
-.btn-red:hover {
+.btn-red:hover, .btn-red:focus {
   @apply !bg-red-light !text-white;
 }

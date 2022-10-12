@@ -145,7 +145,7 @@ export const ContactForm: Component = () => {
           disabled={Object.keys(errors).length}
           type="submit"
           value="Send Message"
-          class="btn btn-red cursor-pointer inline-flex justify-center border border-transparent transition-colors font-medium rounded-md focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+          class="btn btn-red cursor-pointer inline-flex justify-center border border-transparent transition-colors font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
         />
       </form>
 
