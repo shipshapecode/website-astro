@@ -27,6 +27,7 @@ const { specialty, caseStudies }: Props = Astro.props;
             class="case-study-article"
             data-aos="flip-down"
             data-aos-delay="200 * index"
+            tabindex="0"
           >
             <a href={`/work/${study.linkName}/`}>
               <div
@@ -36,9 +37,8 @@ const { specialty, caseStudies }: Props = Astro.props;
                 h-full
                 relative
                 w-full
-                transition-all
-                hover:-translate-y-5
                 flex-col rounded-b-md
+                transition-all
                 ${
                   caseStudies.length > 1
                     ? ''
@@ -105,7 +105,11 @@ const { specialty, caseStudies }: Props = Astro.props;
       }
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
+      > a div {
+        @apply -translate-y-5;
+      }
       .dive-deeper {
         @apply cursor-pointer text-red;
 
