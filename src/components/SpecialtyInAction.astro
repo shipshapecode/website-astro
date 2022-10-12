@@ -22,14 +22,12 @@ const { specialty, caseStudies }: Props = Astro.props;
     <h2 class="pb-8 text-4xl mb-6">{specialty} in action</h2>
     <div class={`gap-5 grid grid-cols-1 lg:grid-cols-${caseStudies.length}`}>
       {
-        caseStudies.map((study) => (
-          <article
-            class="case-study-article"
-            data-aos="flip-down"
-            data-aos-delay="200 * index"
-            tabindex="0"
+        caseStudies.map((study, index) => (
+          <a
+            class="case-study-article transition-all hover:-translate-y-5 focus:-translate-y-5"
+            href={`/work/${study.linkName}/`}
           >
-            <a href={`/work/${study.linkName}/`}>
+            <article data-aos="flip-down" data-aos-delay={200 * index}>
               <div
                 class={`
                 bg-blue-light
@@ -38,7 +36,6 @@ const { specialty, caseStudies }: Props = Astro.props;
                 relative
                 w-full
                 flex-col rounded-b-md
-                transition-all
                 ${
                   caseStudies.length > 1
                     ? ''
@@ -48,10 +45,9 @@ const { specialty, caseStudies }: Props = Astro.props;
               >
                 <div class="flex flex-col flex-grow p-8 relative order-last lg:p-12">
                   <h3>
-                    <img
+                    <Icon
                       class="logo-navy h-8 max-w-full mb-8 self-start w-auto pointer-events-none"
-                      src={study.logoSrc}
-                      alt={`Logo for ${study.linkName}`}
+                      name={study.logoSrc}
                     />
                   </h3>
                   <p class="flex-grow mb-16 !text-navy">{study.text}</p>
@@ -63,22 +59,25 @@ const { specialty, caseStudies }: Props = Astro.props;
                 </div>
                 <div
                   class={`
-                  bg-red 
-                  flex 
-                  items-end 
-                  justify-center 
-                  px-8 relative 
-                  lg:pt-12 
-                  lg:px-12
-                  pt-12 rounded-t-md 
+                  bg-red
+                  flex
+                  items-end
+                  justify-center
+                  px-8
+                  relative
+                  lg:pt-12 lg:px-12
                   ${
                     caseStudies.length > 1
-                      ? ''
-                      : 'lg:rounded-t-none lg:rounded-r-md lg:w-5/12 xl:pt-24 xl:px-12'
+                      ? 'pt-8  rounded-t-md'
+                      : 'pt-12 rounded-t-md lg:rounded-t-none lg:rounded-r-md lg:w-5/12 xl:pt-24 xl:px-12'
                   }
                 `}
                 >
-                  <div class="bg-white rounded-t-md w-full">
+                  <div
+                    class={`bg-white rounded-t-md w-full ${
+                      caseStudies.length > 1 ? 'h-48' : 'h-56'
+                    }`}
+                  >
                     <img
                       class="object-cover object-top h-full max-w-full rounded-t-md w-full"
                       src={study.imgSrc}
@@ -87,15 +86,15 @@ const { specialty, caseStudies }: Props = Astro.props;
                   </div>
                 </div>
               </div>
-            </a>
-          </article>
+            </article>
+          </a>
         ))
       }
     </div>
   </div>
 </section>
 
-<style lang="scss">
+<style lang="scss" is:global>
   .case-study-article {
     .dive-deeper {
       @apply text-navy;
@@ -107,9 +106,6 @@ const { specialty, caseStudies }: Props = Astro.props;
 
     &:hover,
     &:focus {
-      > a div {
-        @apply -translate-y-5;
-      }
       .dive-deeper {
         @apply cursor-pointer text-red;
 
@@ -120,6 +116,10 @@ const { specialty, caseStudies }: Props = Astro.props;
           }
         }
       }
+    }
+
+    .logo-navy path {
+      @apply fill-navy;
     }
   }
 </style>
