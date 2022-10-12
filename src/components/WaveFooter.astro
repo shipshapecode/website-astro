@@ -171,7 +171,8 @@ const year = new Date().getFullYear();
       a {
         @apply font-bold text-white;
 
-        &:hover {
+        &:hover,
+        &:focus {
           @apply text-red-light;
         }
       }
@@ -183,8 +184,8 @@ const year = new Date().getFullYear();
             transition-duration: 0.25s;
             transition-property: fill;
           }
-
-          &:hover {
+          // this one doesn't seem to work on focus/keypress
+          &:hover,
             path {
               fill: var(--red-light);
             }

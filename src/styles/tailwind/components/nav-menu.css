@@ -24,7 +24,7 @@
   @apply text-navy;
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link:focus {
   @apply text-red-light;
 }
 
@@ -51,7 +51,7 @@
     @apply text-white;
   }
 
-  .nav-link-alt:hover {
+  .nav-link-alt:hover, .nav-link-alt:focus {
     @apply text-red-light;
   }
 }
