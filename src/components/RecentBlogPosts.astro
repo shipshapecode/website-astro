@@ -2,8 +2,10 @@
 import { Icon } from 'astro-icon';
 import { formatDate } from '../utils/date';
 
+import { Post } from './BlogPost.astro';
+
 export interface Props {
-  posts: any[];
+  posts: Post[];
 }
 
 const { posts } = Astro.props;
@@ -51,7 +53,7 @@ const { posts } = Astro.props;
               "
                 href={`/blog/${post.frontmatter.slug}/`}
               >
-                {post.frontmatter.linktitle || post.frontmatter.title}
+                {post.frontmatter.title}
               </a>
 
               <div class="attribution bottom-0 mb-4">

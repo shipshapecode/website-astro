@@ -135,7 +135,7 @@ export const ContactForm: Component = () => {
               required
               rows={4}
               use:validate={[]}
-            ></textarea>
+            />
           </div>
 
           {errors.description && <ErrorMessage error={errors.description} />}
