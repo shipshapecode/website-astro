@@ -1,11 +1,10 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'jsx-a11y'],
+  plugins: ['@typescript-eslint'],
   extends: [
     'eslint:recommended',
     'plugin:astro/recommended',
-    'plugin:jsx-a11y/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended'
@@ -13,10 +12,7 @@ module.exports = {
   globals: {
     AOS: false
   },
-  rules: {
-    // For some reason, this rule always says our inputs have no labels
-    'jsx-a11y/label-has-associated-control': 'off'
-  },
+  rules: {},
   overrides: [
     // node files
     {
@@ -42,6 +38,17 @@ module.exports = {
         }
       )
     },
+    // SolidJS files
+    {
+      files: ['*.tsx'],
+      plugins: ['jsx-a11y', 'solid'],
+      extends: ['plugin:jsx-a11y/recommended', 'plugin:solid/typescript'],
+      rules: {
+        // For some reason, this rule always says our inputs have no labels
+        'jsx-a11y/label-has-associated-control': 'off'
+      }
+    },
+    // Astro files
     {
       // Define the configuration for `.astro` file.
       files: ['*.astro'],
