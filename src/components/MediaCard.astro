@@ -58,6 +58,9 @@ const { details, imgHeight, imgWidth, imgSrc, mediaType } = Astro.props;
       href={mediaType === 'podcast'
         ? 'https://www.whiskeywebandwhatnot.fm/'
         : `/blog/${details?.slug}/`}
+      aria-label={mediaType === 'podcast'
+        ? 'Dive deeper into our podcast'
+        : 'Dive into our most recent blog post'}
     >
       Dive Deeper
       <Icon class="h-4 inline w-6" name="arrow" />
