@@ -36,10 +36,7 @@ export const ContactForm: Component = () => {
     <div class="w-full">
       <form
         class="contact-form grid grid-cols-1 gap-y-6 -mt-6 lg:grid-cols-2 lg:gap-x-6"
-        data-netlify-recaptcha="true"
         name="contact-us"
-        netlify-honeypot="bot-field"
-        netlify
         use:formSubmit={sendContactRequest}
       >
         <div class="lg:col-span-2">
