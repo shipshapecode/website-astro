@@ -7,7 +7,13 @@ import { MarkdownFrontmatter } from '../../index.astro';
 const { author, posts } = Astro.props;
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob<MarkdownFrontmatter>('/data/posts/*.md');
+  let allPosts = await Astro.glob<MarkdownFrontmatter>('/data/posts/*.md');
+  allPosts = allPosts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  );
+
   return Object.keys(authorData).map((authorId) => {
     const posts = allPosts.filter(
       (post) => post.frontmatter.authorId === authorId
@@ -32,7 +38,7 @@ const description = `See the ${posts?.length ?? 0} blog posts ${
   <div class="blog-posts section flex flex-wrap justify-center">
     <div class="section-content">
       <div class="flex items-center">
-        <h1 class="font-semibold">
+        <h1 class="font-semibold mb-8 text-5xl lg:text-6xl">
           {author.name}
         </h1>
       </div>

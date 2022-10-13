@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BlogPostMenu from '../../../components/BlogPostMenu.astro';
+import { MarkdownFrontmatter } from '../../index.astro';
+
+const { category, posts } = Astro.props;
+
+export async function getStaticPaths() {
+  let allPosts = await Astro.glob<MarkdownFrontmatter>('/data/posts/*.md');
+  allPosts = allPosts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  );
+
+  return allPosts.map((post, index) => {
+    return post.frontmatter.categories.flatMap((category) => {
+      const dasherizedCategory = category.replace(/ |\./g, '-');
+      const posts = allPosts.filter((post) => {
+        const dasherizedCategories = post.frontmatter.categories.map(
+          (category) => {
+            return category.replace(/ |\./g, '-');
+          }
+        );
+
+        return dasherizedCategories.includes(dasherizedCategory);
+      });
+
+      return {
+        params: {
+          category: dasherizedCategory
+        },
+        props: { category, posts }
+      };
+    });
+  });
+}
+
+const title = `${category} - Blog Category`;
+const description = `See the ${
+  posts?.length ?? 0
+} blog posts Ship Shape has written about ${category}.`;
+---
+
+<BaseLayout description={description} title={title}>
+  <div class="blog-posts section flex flex-wrap justify-center">
+    <div class="section-content">
+      <div class="flex items-center">
+        <h1 class="font-semibold mb-8 text-5xl lg:text-6xl">
+          {category}
+        </h1>
+      </div>
+
+      <BlogPostMenu posts={posts} />
+    </div>
+  </div>
+</BaseLayout>
