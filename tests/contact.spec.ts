@@ -78,4 +78,45 @@ test.describe('contact form validations', () => {
 
     await expect(emailError).toBeHidden();
   });
+
+  test('submit failure', async ({ page }) => {
+    await page.route('https://shipshape.io/', (route) => route.abort('failed'));
+    const emailInput = page.locator('input[id="email"]');
+    const nameInput = page.locator('input[id="name"]');
+    const textInput = page.locator('textarea');
+
+    await emailInput.fill('boba@fett.com');
+    await nameInput.fill('Boba');
+    await textInput.fill('I have come for Han Solo.');
+
+    const submitBtn = page.locator('input[type="submit"]');
+    await submitBtn.click();
+    const failureToast = await page.getByText(
+      'Something went wrong :(. Please refresh and try again.'
+    );
+    await expect(failureToast).toBeVisible();
+  });
+
+  test('submit successfully', async ({ page }) => {
+    await page.route('https://shipshape.io/', (route) =>
+      route.fulfill({
+        status: 200,
+        body: 'accept'
+      })
+    );
+    const emailInput = page.locator('input[id="email"]');
+    const nameInput = page.locator('input[id="name"]');
+    const textInput = page.locator('textarea');
+
+    await emailInput.fill('boba@fett.com');
+    await nameInput.fill('Boba');
+    await textInput.fill('I have come for Han Solo.');
+
+    const submitBtn = page.locator('input[type="submit"]');
+    await submitBtn.click();
+    const successToast = await page.getByText(
+      "Thanks for contacting us! We'll be in touch shortly."
+    );
+    await expect(successToast).toBeVisible();
+  });
 });
