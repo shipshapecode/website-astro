@@ -1,18 +1,24 @@
 import type { Component } from 'solid-js';
+import { createSignal } from 'solid-js';
 import toast, { Toaster } from 'solid-toast';
 import { useForm } from '../utils/validation.jsx';
 import './ContactForm.scss';
 
 export const ContactForm: Component = () => {
+  const [loading, setLoading] = createSignal(false);
+  console.log('loading', loading());
   function _successMessage() {
+    setLoading(false);
     toast.success("Thanks for contacting us! We'll be in touch shortly.");
   }
 
   function _errorMessage() {
+    setLoading(false);
     toast.error('Something went wrong :(. Please refresh and try again.');
   }
 
   const sendContactRequest = async function (form) {
+    setLoading(true);
     const formData = new FormData(form);
 
     return fetch('https://shipshape.io/', {
@@ -27,6 +33,24 @@ export const ContactForm: Component = () => {
   const { validate, formSubmit, errors } = useForm({
     errorClass: 'error-input'
   });
+
+  const SubmitButton = () => (
+    <input
+      disabled={Object.keys(errors).length}
+      type="submit"
+      value="Send Message"
+      class="btn btn-red cursor-pointer inline-flex justify-center border border-transparent transition-colors font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+    />
+  );
+
+  const LoadingButton = () => (
+    <input
+      disabled
+      type="submit"
+      value="Loading..."
+      class="btn btn-red cursor-pointer inline-flex justify-center border border-transparent transition-colors font-medium rounded-md disabled:cursor-not-allowed"
+    />
+  );
 
   const ErrorMessage = (props) => (
     <span class="error-message">{props.error}</span>
@@ -140,13 +164,7 @@ export const ContactForm: Component = () => {
 
           {errors.description && <ErrorMessage error={errors.description} />}
         </div>
-
-        <input
-          disabled={Object.keys(errors).length}
-          type="submit"
-          value="Send Message"
-          class="btn btn-red cursor-pointer inline-flex justify-center border border-transparent transition-colors font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
-        />
+        {loading() ? <LoadingButton /> : <SubmitButton />}
       </form>
 
       <Toaster
