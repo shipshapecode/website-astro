@@ -33,7 +33,8 @@
     @apply bg-red -mt-12 inset-auto pt-16 rounded-b static text-white w-auto;
   }
 
-  .contact-link:hover {
+  .contact-link:hover,
+  .contact-link:focus {
     @apply bg-red-light text-white;
   }
 
