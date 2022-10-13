@@ -6,7 +6,7 @@ import './ContactForm.scss';
 
 export const ContactForm: Component = () => {
   const [loading, setLoading] = createSignal(false);
-  console.log('loading', loading());
+
   function _successMessage() {
     setLoading(false);
     toast.success("Thanks for contacting us! We'll be in touch shortly.");
@@ -44,12 +44,19 @@ export const ContactForm: Component = () => {
   );
 
   const LoadingButton = () => (
-    <input
+    <button
+      type="button"
+      class="btn btn-red cursor-pointer flex relative justify-center border border-transparent transition-colors font-medium rounded-md disabled:cursor-not-allowed"
       disabled
-      type="submit"
-      value="Loading..."
-      class="btn btn-red cursor-pointer inline-flex justify-center border border-transparent transition-colors font-medium rounded-md disabled:cursor-not-allowed"
-    />
+    >
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div>Loading...</div>
+    </button>
   );
 
   const ErrorMessage = (props) => (
@@ -164,7 +171,8 @@ export const ContactForm: Component = () => {
 
           {errors.description && <ErrorMessage error={errors.description} />}
         </div>
-        {loading() ? <LoadingButton /> : <SubmitButton />}
+        {/* {loading() ? <LoadingButton /> : <SubmitButton />} */}
+        <LoadingButton />
       </form>
 
       <Toaster
