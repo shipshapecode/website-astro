@@ -1,4 +1,5 @@
 ---
+import ShepherdLogo from '../icons/shepherd.svg?raw';
 import { Icon } from 'astro-icon';
 ---
 
@@ -9,11 +10,9 @@ import { Icon } from 'astro-icon';
     <div class="section-content">
       <div class="flex flex-wrap justify-center">
         <div class="project flex-1" data-aos="flip-up">
-          <img
-            alt=""
-            class="shepherd-logo h-48 -ml-6 p-6 w-48"
-            src="/svgs/shepherd.svg"
-          />
+          <div class="shepherd-logo h-48 mb-8 -ml-6 p-8 w-48">
+            <Fragment set:html={ShepherdLogo} />
+          </div>
 
           <h2 class="text-navy text-5xl mb-6">
             Shepherd.js, Designed for Product Tours
@@ -158,33 +157,3 @@ import { Icon } from 'astro-icon';
     </div>
   </div>
 </div>
-
-<style>
-  .shepherd-logo .lines,
-  .shepherd-logo .open-eye,
-  .shepherd-logo .wink {
-    transition: visibility 0s, opacity 0.25s ease-in-out;
-  }
-
-  .shepherd-logo .open-eye {
-    opacity: 1;
-    visibility: visible !important;
-  }
-
-  .shepherd-logo .lines,
-  .shepherd-logo .wink {
-    opacity: 0;
-    visibility: hidden !important;
-  }
-
-  .shepherd-logo:hover .lines,
-  .shepherd-logo:hover .wink {
-    opacity: 1;
-    visibility: visible !important;
-  }
-
-  .shepherd-logo:hover .open-eye {
-    opacity: 0;
-    visibility: hidden !important;
-  }
-</style>

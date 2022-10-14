@@ -19,40 +19,12 @@
   }
 }
 
-.nav-link:active,
-.nav-link:visited {
-  @apply text-navy;
-}
-
-.nav-link:hover {
-  @apply text-red-light;
+.nav-link {
+  @apply text-navy active:text-navy visited:text-navy hover:text-red-light;
 }
 
 @screen lg {
   .contact-link {
-    @apply bg-red -mt-12 inset-auto pt-16 rounded-b static text-white w-auto;
-  }
-
-  .contact-link:hover,
-  .contact-link:focus {
-    @apply bg-red-light text-white;
-  }
-
-  .contact-link:active,
-  .contact-link:visited {
-    @apply text-white;
-  }
-
-  .nav-link-alt {
-    @apply block font-bold p-4 text-base text-white;
-  }
-
-  .nav-link-alt:active,
-  .nav-link-alt:visited {
-    @apply text-white;
-  }
-
-  .nav-link-alt:hover {
-    @apply text-red-light;
+    @apply bg-red -mt-12 inset-auto pt-16 rounded-b static text-white w-auto active:text-white visited:text-white hover:bg-red-light hover:text-white focus:bg-red-light focus:text-white;
   }
 }

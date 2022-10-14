@@ -7,16 +7,7 @@
 }
 
 a {
-  @apply duration-200 text-red transition-all no-underline;
-
-  &:active,
-  &:visited {
-    @apply text-red;
-  }
-
-  &:hover {
-    @apply text-navy;
-  }
+  @apply duration-200 text-red transition-all no-underline active:text-red visited:text-red focus:text-navy hover:text-navy;
 }
 
 html,
@@ -56,15 +47,10 @@ h6 {
 }
 
 .learn-more {
-  @apply font-normal text-navy;
+  @apply font-normal text-navy active:text-navy visited:text-navy;
 
   svg {
     @apply duration-200 fill-navy ml-1 transition-all;
-  }
-
-  &:active,
-  &:visited {
-    @apply text-navy;
   }
 
   &:hover {
@@ -123,6 +109,34 @@ h6 {
     &::before {
       height: calc(1400px + ((100vw - 2300px) * 0.75));
       top: calc(-400px - ((100vw - 2300px) * 0.75));
+    }
+  }
+}
+
+.shepherd-logo {
+  .lines, .open-eye, .wink {
+  transition: visibility 0s, opacity 0.25s ease-in-out;
+  }
+
+  .open-eye {
+    opacity: 1;
+    visibility: visible !important;
+  }
+
+  .lines, .wink {
+    opacity: 0;
+    visibility: hidden !important;
+  }
+
+  &:hover {
+    .lines, .wink {
+      opacity: 1;
+      visibility: visible !important;
+    }
+
+    .open-eye {
+      opacity: 0;
+      visibility: hidden !important;
     }
   }
 }

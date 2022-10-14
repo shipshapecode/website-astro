@@ -232,22 +232,34 @@ const description =
                         <p>{employee.blurb ? employee.blurb : null}</p>
                         <ul class="flex space-x-8">
                           <li>
-                            <a href={employee.github} class="github-logo">
+                            <a href={employee.github} class="group">
                               <span class="sr-only">GitHub</span>
-                              <Icon aria-hidden="true" name="github" />
+                              <Icon
+                                aria-hidden="true"
+                                class="h-[22px] w-[23px] child:fill-navy-light child:transition-colors group-focus:child:fill-red-light group-hover:child:fill-red-light"
+                                name="github"
+                              />
                             </a>
                           </li>
                           <li>
-                            <a href={employee.linkedin} class="linkedin-logo">
+                            <a href={employee.linkedin} class="group">
                               <span class="sr-only">LinkedIn</span>
-                              <Icon aria-hidden="true" name="linkedin" />
+                              <Icon
+                                aria-hidden="true"
+                                class="h-[20px] w-[19px] child:fill-navy-light child:transition-colors group-focus:child:fill-red-light group-hover:child:fill-red-light"
+                                name="linkedin"
+                              />
                             </a>
                           </li>
                           {employee.twitter ? (
                             <li>
-                              <a href={employee.twitter} class="twitter-logo">
+                              <a href={employee.twitter} class="group">
                                 <span class="sr-only">Twitter</span>
-                                <Icon aria-hidden="true" name="twitter" />
+                                <Icon
+                                  aria-hidden="true"
+                                  class="h-[19px] w-[23px] child:fill-navy-light child:transition-colors group-focus:child:fill-red-light group-hover:child:fill-red-light"
+                                  name="twitter"
+                                />
                               </a>
                             </li>
                           ) : null}
@@ -295,22 +307,34 @@ const description =
 
                         <ul class="flex mb-0 space-x-8">
                           <li class="mb-0">
-                            <a href={employee.github} class="github-logo">
+                            <a href={employee.github} class="group">
                               <span class="sr-only">GitHub</span>
-                              <Icon aria-hidden="true" name="github" />
+                              <Icon
+                                aria-hidden="true"
+                                class="h-[22px] w-[23px] child:fill-navy-light child:transition-colors group-focus:child:fill-red-light group-hover:child:fill-red-light"
+                                name="github"
+                              />
                             </a>
                           </li>
                           <li class="mb-0">
-                            <a href={employee.linkedin} class="linkedin-logo">
+                            <a href={employee.linkedin} class="group">
                               <span class="sr-only">LinkedIn</span>
-                              <Icon aria-hidden="true" name="linkedin" />
+                              <Icon
+                                aria-hidden="true"
+                                class="h-[20px] w-[19px] child:fill-navy-light child:transition-colors group-focus:child:fill-red-light group-hover:child:fill-red-light"
+                                name="linkedin"
+                              />
                             </a>
                           </li>
                           {employee.twitter ? (
                             <li class="mb-0">
-                              <a href={employee.twitter} class="twitter-logo">
+                              <a href={employee.twitter} class="group">
                                 <span class="sr-only">Twitter</span>
-                                <Icon aria-hidden="true" name="twitter" />
+                                <Icon
+                                  aria-hidden="true"
+                                  class="h-[19px] w-[23px] child:fill-navy-light child:transition-colors group-focus:child:fill-red-light group-hover:child:fill-red-light"
+                                  name="twitter"
+                                />
                               </a>
                             </li>
                           ) : null}
@@ -442,45 +466,3 @@ const description =
     </div>
   </article>
 </BaseLayout>
-
-<style lang="scss" is:global>
-  .github-logo,
-  .linkedin-logo,
-  .twitter-logo {
-    svg {
-      path {
-        @apply transition-colors;
-        fill: var(--navy-light);
-      }
-    }
-
-    &:hover {
-      svg {
-        path {
-          fill: var(--red-light);
-        }
-      }
-    }
-  }
-
-  .github-logo {
-    svg {
-      height: 22px;
-      width: 23px;
-    }
-  }
-
-  .linkedin-logo {
-    svg {
-      height: 20px;
-      width: 19px;
-    }
-  }
-
-  .twitter-logo {
-    svg {
-      height: 19px;
-      width: 23px;
-    }
-  }
-</style>
