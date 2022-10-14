@@ -20,14 +20,15 @@ const { specialty, caseStudies }: Props = Astro.props;
 <section class="section flex flex-wrap justify-center" data-aos="fade-down">
   <div class="section-content">
     <h2 class="pb-8 text-4xl mb-6">{specialty} in action</h2>
+
     <div class={`gap-5 grid grid-cols-1 lg:grid-cols-${caseStudies.length}`}>
       {
         caseStudies.map((study, index) => (
           <a
-            class="case-study-article transition-all hover:-translate-y-5 focus:-translate-y-5"
+            class="case-study-article block group transition-all hover:-translate-y-5 focus:-translate-y-5"
             href={`/work/${study.linkName}/`}
           >
-            <article data-aos="flip-down" data-aos-delay={200 * index}>
+            <article class="inline" data-aos="flip-down" data-aos-delay={200 * index}>
               <div
                 class={`
                 bg-blue-light
@@ -46,15 +47,18 @@ const { specialty, caseStudies }: Props = Astro.props;
                 <div class="flex flex-col flex-grow p-8 relative order-last lg:p-12">
                   <h3>
                     <Icon
-                      class="logo-navy h-8 max-w-full mb-8 self-start w-auto pointer-events-none"
+                      class="h-8 max-w-full mb-8 self-start w-auto pointer-events-none child:fill-navy"
                       name={study.logoSrc}
                     />
                   </h3>
                   <p class="flex-grow mb-16 !text-navy">{study.text}</p>
 
-                  <span class="dive-deeper">
+                  <span class="text-navy group-hover:text-red">
                     Dive deeper
-                    <Icon class="h-4 inline w-6" name="arrow" />
+                    <Icon
+                      class="duration-200 h-4 inline ml-1 transition-all w-6 group-focus:child:fill-red group-focus:translate-x-2 group-hover:child:fill-red group-hover:translate-x-2"
+                      name="arrow"
+                    />
                   </span>
                 </div>
                 <div
@@ -93,33 +97,3 @@ const { specialty, caseStudies }: Props = Astro.props;
     </div>
   </div>
 </section>
-
-<style lang="scss" is:global>
-  .case-study-article {
-    .dive-deeper {
-      @apply text-navy;
-
-      svg {
-        @apply duration-200 fill-navy ml-1 transition-all;
-      }
-    }
-
-    &:hover,
-    &:focus {
-      .dive-deeper {
-        @apply cursor-pointer text-red;
-
-        svg {
-          @apply fill-red translate-x-2;
-          > * {
-            fill: var(--red);
-          }
-        }
-      }
-    }
-
-    .logo-navy path {
-      @apply fill-navy;
-    }
-  }
-</style>

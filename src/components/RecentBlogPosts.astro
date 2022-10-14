@@ -41,15 +41,14 @@ const { posts } = Astro.props;
 
               <a
                 class="
-                blog-link
                 block
                 font-bold
                 flex-grow
                 leading-8
                 min-h-24
                 my-2
-                text-navy text-2xl
-                hover:text-red
+                !text-navy text-2xl
+                hover:!text-red focus:!text-red
               "
                 href={`/blog/${post.frontmatter.slug}/`}
               >
@@ -66,18 +65,3 @@ const { posts } = Astro.props;
     </div>
   </div>
 </div>
-
-<style lang="scss">
-  .blog-link {
-    @apply text-navy;
-
-    &:active,
-    &:visited {
-      @apply text-navy;
-    }
-
-    &:hover {
-      @apply text-red;
-    }
-  }
-</style>
