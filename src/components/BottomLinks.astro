@@ -13,7 +13,7 @@ const { previousLink, previousLinkText, nextLink, nextLinkText } = Astro.props;
   class="border-t-2 border-blue-light border-solid flex flex-wrap mt-24 w-full"
 >
   <a
-    class="border-r-2 border-blue-light border-solid flex-1 font-bold p-4 lg:p-12 w-1/2 hover:bg-blue-light"
+    class="border-r-2 border-blue-light border-solid flex-1 font-bold p-4 lg:p-12 w-1/2 hover:bg-blue-light focus:bg-blue-light"
     href={previousLink}
   >
     <span class="text-navy text-sm lg:text-xl"> Previous</span>
@@ -24,7 +24,7 @@ const { previousLink, previousLinkText, nextLink, nextLinkText } = Astro.props;
   </a>
 
   <a
-    class="flex-1 font-bold p-4 lg:p-12 w-1/2 hover:bg-blue-light"
+    class="flex-1 font-bold p-4 lg:p-12 w-1/2 hover:bg-blue-light focus:bg-blue-light"
     href={nextLink}
   >
     <span class="text-navy text-sm lg:text-xl">Next Up</span>

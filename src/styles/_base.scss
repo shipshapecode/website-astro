@@ -14,7 +14,8 @@ a {
     @apply text-red;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     @apply text-navy;
   }
 }
@@ -67,7 +68,8 @@ h6 {
     @apply text-navy;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     @apply cursor-pointer text-red;
 
     svg {

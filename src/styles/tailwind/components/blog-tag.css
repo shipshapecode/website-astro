@@ -7,6 +7,6 @@
   @apply text-grey-light;
 }
 
-.blog-tag:hover {
+.blog-tag:hover, .blog-tag:focus {
   @apply bg-navy text-white;
 }

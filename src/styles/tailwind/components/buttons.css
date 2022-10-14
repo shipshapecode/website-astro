@@ -24,7 +24,7 @@
   @apply !text-white;
 }
 
-.btn-white:hover {
+.btn-white:hover, .btn-white:focus {
   @apply !bg-blue-light !text-navy;
 }
 
