@@ -28,7 +28,11 @@ const { specialty, caseStudies }: Props = Astro.props;
             class="case-study-article block group transition-all hover:-translate-y-5 focus:-translate-y-5"
             href={`/work/${study.linkName}/`}
           >
-            <article class="inline" data-aos="flip-down" data-aos-delay={200 * index}>
+            <article
+              class="inline"
+              data-aos="flip-down"
+              data-aos-delay={200 * index}
+            >
               <div
                 class={`
                 bg-blue-light
