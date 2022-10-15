@@ -14,7 +14,10 @@ const { posts } = Astro.props;
   {
     posts.map((post) => (
       <div class="border-b-2 border-blue-light border-solid py-3">
-        <a class="block pb-2 !text-navy text-3xl focus:!text-red-light hover:!text-red-light" href={`/blog/${post.frontmatter.slug}/`}>
+        <a
+          class="block pb-2 !text-navy text-3xl focus:!text-red-light hover:!text-red-light"
+          href={`/blog/${post.frontmatter.slug}/`}
+        >
           {post.frontmatter.title}
         </a>
 
