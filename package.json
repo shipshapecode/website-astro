@@ -12,6 +12,7 @@
     "test": "playwright test"
   },
   "dependencies": {
+    "@astrojs/prefetch": "^0.0.8",
     "solid-js": "^1.5.7",
     "solid-toast": "^0.3.5"
   },

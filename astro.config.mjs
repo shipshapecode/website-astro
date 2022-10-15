@@ -4,6 +4,7 @@ import solid from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';
 import { addAuthorRemarkPlugin } from './add-author-remark-plugin.mjs';
 import { addDescriptionRemarkPlugin } from './add-description-remark-plugin.mjs';
+import prefetch from '@astrojs/prefetch';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
@@ -28,6 +29,7 @@ export default defineConfig({
   },
   integrations: [
     astroImageTools,
+    prefetch(),
     solid(),
     sitemap(),
     tailwind({
@@ -45,7 +47,7 @@ export default defineConfig({
     ],
     shikiConfig: {
       theme: 'nord',
-      wrap: true,
+      wrap: true
     }
   }
 });
