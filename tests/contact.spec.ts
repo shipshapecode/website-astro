@@ -30,7 +30,7 @@ test.describe('contact form validations', () => {
 
     await expect(nameError).toBeHidden();
 
-    const nameInput = page.locator('input[id="name"]');
+    const nameInput = page.locator('.contact-form input[id="name"]');
     await nameInput.focus();
     await nameInput.evaluate((e) => e.blur());
 
@@ -50,7 +50,7 @@ test.describe('contact form validations', () => {
 
     await expect(emailError).toBeHidden();
 
-    const emailInput = page.locator('input[id="email"]');
+    const emailInput = page.locator('.contact-form input[id="email"]');
     await emailInput.focus();
     await emailInput.evaluate((e) => e.blur());
 
@@ -80,16 +80,17 @@ test.describe('contact form validations', () => {
   });
 
   test('submit failure', async ({ page }) => {
-    await page.route('https://shipshape.io/', (route) => route.abort('failed'));
-    const emailInput = page.locator('input[id="email"]');
-    const nameInput = page.locator('input[id="name"]');
-    const textInput = page.locator('textarea');
+    await page.route('/', (route) => route.abort('failed'));
+
+    const emailInput = page.locator('.contact-form input[id="email"]');
+    const nameInput = page.locator('.contact-form input[id="name"]');
+    const textInput = page.locator('.contact-form textarea');
 
     await emailInput.fill('boba@fett.com');
     await nameInput.fill('Boba');
     await textInput.fill('I have come for Han Solo.');
 
-    const submitBtn = page.locator('input[type="submit"]');
+    const submitBtn = page.locator('.contact-form input[type="submit"]');
     await submitBtn.click();
     const failureToast = await page.getByText(
       'Something went wrong :(. Please refresh and try again.'
@@ -98,21 +99,22 @@ test.describe('contact form validations', () => {
   });
 
   test('submit successfully', async ({ page }) => {
-    await page.route('https://shipshape.io/', (route) =>
+    await page.route('/', (route) =>
       route.fulfill({
         status: 200,
         body: 'accept'
       })
     );
-    const emailInput = page.locator('input[id="email"]');
-    const nameInput = page.locator('input[id="name"]');
-    const textInput = page.locator('textarea');
+
+    const emailInput = page.locator('.contact-form input[id="email"]');
+    const nameInput = page.locator('.contact-form input[id="name"]');
+    const textInput = page.locator('.contact-form textarea');
 
     await emailInput.fill('boba@fett.com');
     await nameInput.fill('Boba');
     await textInput.fill('I have come for Han Solo.');
 
-    const submitBtn = page.locator('input[type="submit"]');
+    const submitBtn = page.locator('.contact-form input[type="submit"]');
     await submitBtn.click();
     const successToast = await page.getByText(
       "Thanks for contacting us! We'll be in touch shortly."
