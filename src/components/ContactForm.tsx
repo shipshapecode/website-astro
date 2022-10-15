@@ -13,14 +13,18 @@ export const ContactForm: Component = () => {
 
   const sendContactRequest = async function (form) {
     const formData = new FormData(form);
+    const body = new URLSearchParams(formData).toString();
 
-    return fetch('https://shipshape.io/', {
+    return fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString()
+      body
     })
       .then(_successMessage)
-      .catch(_errorMessage);
+      .catch(_errorMessage)
+      .finally(function () {
+        form.reset();
+      });
   };
 
   const { validate, formSubmit, errors } = useForm({
@@ -35,6 +39,7 @@ export const ContactForm: Component = () => {
     <div class="w-full">
       <form
         class="contact-form grid grid-cols-1 gap-y-6 -mt-6 lg:grid-cols-2 lg:gap-x-6"
+        data-netlify="true"
         data-netlify-recaptcha="true"
         name="contact-us"
         netlify-honeypot="bot-field"
