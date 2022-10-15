@@ -1,0 +1,16 @@
+[build]
+  publish = "dist/"
+
+[[plugins]]
+  package = "netlify-plugin-submit-sitemap"
+
+	[plugins.inputs]
+
+	sitemapPath = "/sitemap-index.xml"
+
+	ignorePeriod = 0
+
+	providers = [
+		"google",
+		"yandex"
+	]
