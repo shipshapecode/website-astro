@@ -16,9 +16,8 @@ body {
 }
 
 body {
-  @apply bg-white leading-relaxed text-grey-light text-lg;
+  @apply bg-white leading-relaxed font-light text-grey-light text-lg;
   font-family: 'Pier Sans', sans-serif;
-  font-weight: lighter;
 }
 
 h1,
@@ -81,8 +80,8 @@ h6 {
     background-image: url(/svgs/contact-blob.svg);
     background-position: center top;
     background-repeat: no-repeat;
-    background-size: 2072px;
-    top: -275px;
+    background-size: 1800px;
+    top: -225px;
     content: '';
     height: 1250px;
     position: absolute;
@@ -90,12 +89,11 @@ h6 {
     z-index: 0;
   }
 
-  // @media only screen and (max-width: 1024px) {
-  //   &::before {
-  //     background-size: cover;
-  //     width: 500vw;
-  //   }
-  // }
+  @media only screen and (max-width: 1024px) {
+    &::before {
+      display: none;
+    }
+  }
 
   @media only screen and (min-width: 2065px) {
     &::before {

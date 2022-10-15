@@ -6,10 +6,11 @@ import { formatDateWithDots } from '../utils/date';
 
 export interface Props {
   details: {
-    date: string;
     description: string;
     title: string;
     slug: string;
+    date?: string;
+    pubDate?: string;
   };
   mediaType: string;
   imgHeight?: number;
@@ -45,7 +46,7 @@ const { details, imgHeight, imgWidth, imgSrc, mediaType } = Astro.props;
       </h4>
 
       <p>
-        {formatDateWithDots(details?.date)}
+        {formatDateWithDots(details?.date || details?.pubDate)}
       </p>
 
       <p class="max-w-4xl mb-0">

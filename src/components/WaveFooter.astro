@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon';
 const year = new Date().getFullYear();
 ---
 
-<footer class="wave text-base">
+<footer class="bg-navy pt-24 text-base">
   <div class="footer-bottom flex flex-wrap w-full justify-center">
     <div class="max-w-8xl p-8 w-full">
       <div class="flex justify-center lg:justify-start w-full">
@@ -131,30 +131,33 @@ const year = new Date().getFullYear();
           <div class="social-links flex items-center pl-2 pr-2 justify-start">
             <a
               aria-label="GitHub"
-              class="p-2"
+              class="group p-2"
               href="https://github.com/shipshapecode"
             >
-              <div class="github-logo">
-                <Icon name="github" />
-              </div>
+              <Icon
+                class="h-[22px] w-[23px] child:fill-white child:transition-colors group-focus:child:fill-red-light group-hover:child:fill-red-light"
+                name="github"
+              />
             </a>
             <a
               aria-label="Twitter"
-              class="p-2"
+              class="group p-2"
               href="https://twitter.com/shipshapecode"
             >
-              <div class="twitter-logo">
-                <Icon name="twitter" />
-              </div>
+              <Icon
+                class="h-[19px] w-[23px] child:fill-white child:transition-colors group-focus:child:fill-red-light group-hover:child:fill-red-light"
+                name="twitter"
+              />
             </a>
             <a
               aria-label="LinkedIn"
-              class="p-2"
+              class="group p-2"
               href="https://www.linkedin.com/company/ship-shape/"
             >
-              <div class="linkedin-logo">
-                <Icon name="linkedin" />
-              </div>
+              <Icon
+                class="h-[20px] w-[19px] child:fill-white child:transition-colors group-focus:child:fill-red-light group-hover:child:fill-red-light"
+                name="linkedin"
+              />
             </a>
           </div>
         </div>
@@ -168,62 +171,16 @@ const year = new Date().getFullYear();
 </footer>
 
 <style lang="scss" is:global>
-  .wave {
-    @apply bg-navy pt-24;
-
-    .footer-logo {
-      path {
-        fill: var(--white);
-        stroke: var(--white);
-        stroke-width: 1.25rem;
-      }
+  .footer-logo {
+    path {
+      @apply fill-white stroke-white;
+      stroke-width: 1.25rem;
     }
+  }
 
-    .footer-bottom {
-      a {
-        @apply font-bold text-white;
-
-        &:hover {
-          @apply text-red-light;
-        }
-      }
-
-      .social-links {
-        svg {
-          path {
-            fill: var(--white);
-            transition-duration: 0.25s;
-            transition-property: fill;
-          }
-
-          &:hover {
-            path {
-              fill: var(--red-light);
-            }
-          }
-        }
-      }
-    }
-
-    .github-logo {
-      svg {
-        height: 22px;
-        width: 23px;
-      }
-    }
-
-    .linkedin-logo {
-      svg {
-        height: 20px;
-        width: 19px;
-      }
-    }
-
-    .twitter-logo {
-      svg {
-        height: 19px;
-        width: 23px;
-      }
+  .footer-bottom {
+    a {
+      @apply font-bold text-white focus:text-red-light hover:text-red-light;
     }
   }
 </style>

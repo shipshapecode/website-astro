@@ -1,7 +1,6 @@
 import type { Component } from 'solid-js';
 import toast, { Toaster } from 'solid-toast';
 import { useForm } from '../utils/validation.jsx';
-import './ContactForm.scss';
 
 export const ContactForm: Component = () => {
   function _successMessage() {
