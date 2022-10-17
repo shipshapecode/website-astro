@@ -23,7 +23,7 @@ listen to, to stay up to date on the latest JavaScript trends.
 
 [![Syntax podcast logo](/img/blog/top-five-javascript-podcasts/syntax.png)](https://syntax.fm/)
 
-One of _the_ most popular, and tastiest web development podcasts out there is Syntax
+One of _the_ most popular, and tastiest web development podcasts out there is [Syntax](https://syntax.fm/)
 by Scott Tolinski and Wes Bos. They keep things lighthearted and fun with games like
 Stump'd where they do random JavaScript interview questions and try to stump one another.
 They release three episodes a week of various formats, a short "Hasty Treat", a longer
@@ -34,10 +34,11 @@ the developer community.
 
 [![Shop Talk Show podcast logo](/img/blog/top-five-javascript-podcasts/shop-talk.png)](https://shoptalkshow.com/)
 
-If you have been around the web development scene for awhile, you have probably heard
+If you have been around the web development scene for a while, you have probably heard
 of [CSS-Tricks](https://css-tricks.com/) and/or [CodePen](https://codepen.io/), and if
-you have, you are likely also familiar with their founder, Chris Coyier. He and Dave Rupert release episodes weekly for the Shopamaniacs and cover a wide range of topics
-from JavaScript and CSS to parenting and hot topics of the day.
+you have, you are likely also familiar with their founder, Chris Coyier. He and Dave Rupert
+release episodes of [Shop Talk](https://shoptalkshow.com/) weekly for the Shopamaniacs and
+cover a wide range of topics from JavaScript and CSS to parenting and hot topics of the day.
 
 ## 3. [JS Party](https://changelog.com/jsparty)
 
@@ -62,6 +63,11 @@ grab a glass, and have a drink with us.
 
 ## 5. [Front End Happy Hour](https://www.frontendhappyhour.com/)
 
-TODO
+[![Front End Happy Hour podcast logo](/img/blog/top-five-javascript-podcasts/front-end-hh.jpg)](https://www.frontendhappyhour.com/)
 
-
+Front End Happy Hour is another somewhat less formal option featuring a panel of Software
+Engineers from Netflix, Twitch, and Atlassian talking over drinks about Frontend,
+JavaScript, and career development. They have lots of guests from the Netflix engineering
+team, so it gives you a peek into how one of the hottest tech companies is approaching
+their web apps. They also talk about things such as job hunting, interview prep, and
+dealing with burnout.
