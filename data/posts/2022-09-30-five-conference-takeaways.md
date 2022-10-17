@@ -47,7 +47,7 @@ Some would argue the opportunity to meet and get to know others in the industry 
 
 During the breaks from talks (or if I'm honest, also while looking for seating at talks), I found myself seeking familiar faces. It’s often the easier option for many of us to stick with our co-workers and friends at large events. I challenged myself to stop defaulting to my comfort zone and get out there and meet new people. I found that most everyone is happy to chat and it's up to us to take the initiative to start conversations.
 
-![Pacman game scene made of happy hour snacks (cheese and grapes)](/img/blog/pacman-cheese.jpeg)
+![Pacman game scene made of happy hour snacks (cheese and grapes)](/img/blog/pacman-cheese.jpg)
 The organizers went over the "Pac-Man Rule" - we can display with our body language that we are open to others joining our conversations, which may be an easier start than jumping into a conversation. Instead of closing off into an encircled huddle, leave room for someone to join in.
 
 Another way I met new people was by asking to sit with them during mealtimes, if I saw an open seat. Food seems to be a natural conducer of community - it puts us in a good mood and offers us time to slow down so we can share conversations.
