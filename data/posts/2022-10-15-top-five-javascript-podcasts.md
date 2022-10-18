@@ -26,8 +26,9 @@ JavaScript trends.
 [![Syntax podcast logo](/img/blog/top-five-javascript-podcasts/syntax.png)](https://syntax.fm/)
 
 One of _the_ most popular, and tastiest web development podcasts out there is
-[Syntax](https://syntax.fm/) by Scott Tolinski and Wes Bos. They keep things lighthearted
-and fun with games like Stump'd where they do random JavaScript interview questions and
+[Syntax](https://syntax.fm/) by [Scott Tolinski](https://twitter.com/stolinski) 
+and [Wes Bos](https://twitter.com/wesbos). They keep things lighthearted and fun 
+with games like Stump'd where they do random JavaScript interview questions and
 try to stump one another.
 
 They release three episodes a week of various formats, a short "Hasty Treat", a longer
@@ -40,9 +41,11 @@ the developer community.
 
 If you have been around the web development scene for a while, you have probably heard
 of [CSS-Tricks](https://css-tricks.com/) and/or [CodePen](https://codepen.io/), and if
-you have, you are likely also familiar with their founder, Chris Coyier. He and Dave Rupert
-release episodes of [Shop Talk](https://shoptalkshow.com/) weekly for the Shopamaniacs and
-cover a wide range of topics from JavaScript and CSS to parenting and hot topics of the day.
+you have, you are likely also familiar with their founder, 
+[Chris Coyier](https://twitter.com/chriscoyier). He and 
+[Dave Rupert](https://twitter.com/davatron5000) release episodes of 
+[Shop Talk](https://shoptalkshow.com/) weekly for the Shopamaniacs and cover a wide 
+range of topics from JavaScript and CSS to parenting and hot topics of the day.
 
 ## 3. [JS Party](https://changelog.com/jsparty)
 
@@ -73,3 +76,9 @@ If you're looking for something a little less technical, find an episode that so
 option featuring a panel of Software Engineers from Netflix, Twitch, and Atlassian talking over drinks about Frontend, JavaScript, and career development.
 
 They have lots of guests from the Netflix engineering team, so it gives you a peek into how one of the hottest tech companies is approaching their web apps. They also talk about things such as job hunting, interview prep, and dealing with burnout.
+
+## Wrapup
+
+We think these are the top 5 JavaScript podcasts currently, but new podcasts are released
+all the time and this is not an exhaustive list. If we missed one of your favorites, let
+us know on Twitter! ([@shipshapecode](https://twitter.com/shipshapecode))
