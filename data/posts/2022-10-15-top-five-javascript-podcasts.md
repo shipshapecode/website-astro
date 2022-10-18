@@ -77,7 +77,7 @@ option featuring a panel of Software Engineers from Netflix, Twitch, and Atlassi
 
 They have lots of guests from the Netflix engineering team, so it gives you a peek into how one of the hottest tech companies is approaching their web apps. They also talk about things such as job hunting, interview prep, and dealing with burnout.
 
-## Wrapup
+## Wrap-up
 
 We think these are the top 5 JavaScript podcasts currently, but new podcasts are released
 all the time and this is not an exhaustive list. If we missed one of your favorites, let
