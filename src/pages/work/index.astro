@@ -1,7 +1,10 @@
 ---
+import { Img } from 'astro-imagetools/components';
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CaseStudiesList from '../../components/CaseStudiesList.astro';
 import ClientsGrid from '../../components/ClientsGrid.astro';
+import HeroBlock from '../../components/HeroBlock.astro';
 
 const title = 'Our Work - Enterprise Custom App Development';
 const description =
@@ -9,6 +12,41 @@ const description =
 ---
 
 <BaseLayout description={description} title={title}>
+  <HeroBlock heroClasses="services waves blue-waves bg-blue-light !pb-20">
+    <Fragment slot="content">
+      <h1 class="leading-none text-4xl lg:text-6xl">
+        <p>Better Products.</p>
+        <p>Better People.</p>
+        <p>Better Payoff.</p>
+      </h1>
+
+      <div>
+        <div class="flex justify-center mt-8 w-full lg:justify-start lg:mt-12">
+          <a class="btn btn-red w-full lg:w-auto" href="/contact/">
+            Get these results
+          </a>
+        </div>
+      </div>
+    </Fragment>
+
+    <Fragment slot="icon">
+      <Img
+        attributes={{
+          img: {
+            class: 'h-auto m-auto max-w-2xl w-full'
+          }
+        }}
+        height={1020}
+        format="webp"
+        loading="eager"
+        placeholder="none"
+        src="/img/hero-images/services.png"
+        width={1344}
+        alt=""
+      />
+    </Fragment>
+  </HeroBlock>
+
   <div>
     <div class="section flex flex-wrap justify-center">
       <div class="section-content">

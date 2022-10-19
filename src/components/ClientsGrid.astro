@@ -2,32 +2,35 @@
 import { Icon } from 'astro-icon';
 ---
 
-<div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3">
-  <div>
-    <a href="https://marianatek.com/" aria-label="Mariana Tek">
+<div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+  <div class="bg-white p-5 lg:p-12">
+    <a href="https://cos.io/" aria-label="COS">
       <img
-        alt="Mariana Tek logo"
-        class="h-8 mb-3 w-auto"
-        src="/svgs/clients/mariana-tek-full.svg"
+        alt="Center for Open Science logo"
+        class="h-20 mb-3 w-auto"
+        src="/svgs/clients/cos.svg"
       />
     </a>
-
     <p>
-      After building a proof of concept using Ember.js, this fitness business
-      management app had gradually strayed from best practices. Their software
-      developers brought in our team to get them back on track. We worked side
-      by side to not only apply consistent, up-to-date Ember coding practices
-      (e.g., adding several ESLint rules from eslint-plugin-ember, updating
-      various dependencies, etc.), but also realign the team and get everyone on
-      the same page.
+      As a non-profit, it’s critical for the Center for Open Science (COS) to
+      understand and communicate how funding is used. We developed custom
+      Ember.js dashboards for COS that provide visibility into how people are
+      using its system.
+    </p>
+
+    <h4>Results:</h4>
+
+    <p class="italic">
+      Helped the organization report back to its funders, reinforce the value of
+      their investment, and hopefully attract additional funds in the future.
     </p>
   </div>
 
-  <div>
+  <div class="bg-white p-5 lg:p-12">
     <a href="https://www.scoutforpets.com/" aria-label="Scout">
       <img
         alt="Scout logo"
-        class="h-8 mb-3 w-auto"
+        class="h-12 mb-3 w-auto"
         src="/svgs/clients/scout-white.svg"
       />
     </a>
@@ -41,12 +44,20 @@ import { Icon } from 'astro-icon';
       Flatpickr, Ember Paper, and Ember Power Select to make creating and
       editing appointments easier.
     </p>
+
+    <h4>Results:</h4>
+
+    <p class="italic">
+      Saved users time and improved the experience, driving more repeat business
+      and revenue for Scout.
+    </p>
   </div>
 
-  <div>
+  <div class="bg-white p-5 lg:p-12">
     <a href="https://anvyl.com/" aria-label="Anvyl">
-      <Icon alt="Anvyl logo" class="h-8 mb-3 w-auto" name="clients/anvyl" />
+      <Icon alt="Anvyl logo" class="h-7 mb-3 w-auto" name="clients/anvyl" />
     </a>
+
     <p>
       Our team collaborated with the engineers behind Anvyl’s supplier
       relationship management software to create a new messaging feature that
@@ -55,32 +66,51 @@ import { Icon } from 'astro-icon';
       as threaded replies, in-line editing, avatars, and more, we simplified the
       experience for both the customer and the supplier.
     </p>
-  </div>
 
-  <div>
-    <a href="https://cos.io/" aria-label="COS">
-      <img
-        alt="Center for Open Science logo"
-        class="h-8 mb-3 w-auto"
-        src="/svgs/clients/cos.svg"
-      />
-    </a>
-    <p>
-      As a non-profit, it’s critical for the Center for Open Science (COS) to
-      understand and communicate how funding is used. We developed custom
-      Ember.js dashboards for COS that provide visibility into how people are
-      using its system.
+    <h4>Results:</h4>
+
+    <p class="italic">
+      Customers now receive better, faster service, and suppliers can respond
+      quicker while reducing errors.
     </p>
   </div>
 
-  <div>
+  <div class="bg-white p-5 lg:p-12">
+    <a href="https://marianatek.com/" aria-label="Mariana Tek">
+      <img
+        alt="Mariana Tek logo"
+        class="h-20 mb-3 w-auto"
+        src="/svgs/clients/mariana-tek-full.svg"
+      />
+    </a>
+
+    <p>
+      After building a proof of concept using Ember.js, this fitness business
+      management app had gradually strayed from best practices. Their software
+      developers brought in our team to get them back on track. We worked side
+      by side to not only apply consistent, up-to-date Ember coding practices
+      (e.g., adding several ESLint rules from eslint-plugin-ember, updating
+      various dependencies, etc.), but also realign the team and get everyone on
+      the same page.
+    </p>
+
+    <h4>Results:</h4>
+
+    <p class="italic">
+      Saved Mariana Tek time and money, increased efficiency, and made
+      onboarding new developers much easier.
+    </p>
+  </div>
+
+  <div class="bg-white p-5 lg:p-12">
     <a href="https://musicat.co/rabble" aria-label="Rabble">
       <img
         alt="Rabble logo"
-        class="h-8 mb-3 w-auto"
+        class="h-20 mb-3 w-auto"
         src="/svgs/clients/rabble.svg"
       />
     </a>
+
     <p>
       We partnered with the Rabble team to bring their open source MUSICat
       platform up to date. Our work included removing bower in favor of npm,
@@ -88,6 +118,13 @@ import { Icon } from 'astro-icon';
       with ESLint, and other improvements. Our software developers also served
       as Ember subject matter experts who helped mentor the Rabble team and grow
       their Ember knowledge.
+    </p>
+
+    <h4>Results:</h4>
+
+    <p class="italic">
+      MUSICat’s platform is faster, more performant, and easier to maintain, and
+      the Rabble team is ready to carry on the work.
     </p>
   </div>
 </div>
