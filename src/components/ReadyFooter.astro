@@ -1,0 +1,49 @@
+---
+import { Img } from 'astro-imagetools/components';
+---
+
+<div
+  class="waves blue-waves section bg-blue-light flex flex-wrap justify-center"
+>
+  <div class="section-content py-20">
+    <section class="flex flex-wrap justify-center" data-aos="fade">
+      <div class="gap-8 grid grid-cols-1 items-center lg:gap-48 lg:grid-cols-2">
+        <div class="order-last lg:order-none">
+          <h2 class="mb-8 text-4xl lg:text-5xl">
+            <slot name="heading" />
+          </h2>
+
+          <div>
+            <div>
+              <p>
+                <slot name="text" />
+              </p>
+              <div
+                class="flex justify-center mt-3 w-full lg:justify-start lg:mt-8"
+              >
+                <a class="btn btn-red w-full lg:w-auto" href="/contact/">
+                  Contact us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <Img
+            attributes={{
+              img: {
+                class: 'h-auto m-auto max-w-2xl w-full'
+              }
+            }}
+            alt=""
+            format="webp"
+            height={988}
+            placeholder="none"
+            src="/img/hero-images/ember-consulting.png"
+            width={1248}
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
