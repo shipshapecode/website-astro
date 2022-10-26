@@ -18,7 +18,8 @@ const services = [
     learnMoreLinkDescription: 'Learn more about our work with Ember',
     learnMoreLink: '/services/ember-consulting/',
     caseStudyLinkDescription: 'See our Ember work in action',
-    caseStudyLink: '/work/netflix/'
+    caseStudyLink: '/work/netflix/',
+    title: 'Ember'
   },
   {
     logoClasses: 'w-24 pb-6 lg:w-40 lg:pt-5 lg:pb-12',
@@ -28,7 +29,8 @@ const services = [
     learnMoreLinkDescription: 'Learn more about our work with Nuxt',
     learnMoreLink: '/services/nuxt-consulting/',
     caseStudyLinkDescription: 'See our Nuxt work in action',
-    caseStudyLink: '/services/nuxt-consulting/'
+    caseStudyLink: '/services/nuxt-consulting/',
+    title: 'Nuxt'
   },
   {
     logoClasses: 'w-20 pb-6 lg:w-32 lg:pb-12',
@@ -38,7 +40,8 @@ const services = [
     learnMoreLinkDescription: 'Learn more about our work with Next',
     learnMoreLink: '/services/next-consulting/',
     caseStudyLinkDescription: 'See our Next work in action',
-    caseStudyLink: '/work/enigma/'
+    caseStudyLink: '/work/enigma/',
+    title: 'Next.js'
   },
   {
     logoClasses: 'w-36 pb-8 lg:w-52 lg:pt-5 lg:pb-20',
@@ -48,7 +51,8 @@ const services = [
     learnMoreLinkDescription: 'Learn more about our work with Tailwind',
     learnMoreLink: '/services/tailwind-consulting/',
     caseStudyLinkDescription: 'See our Tailwind work in action',
-    caseStudyLink: '/services/tailwind-consulting/'
+    caseStudyLink: '/services/tailwind-consulting/',
+    title: 'TailwindCSS'
   },
   {
     logoClasses: 'w-36 pb-8 lg:w-52 lg:pt-5 lg:pb-20',
@@ -58,7 +62,8 @@ const services = [
     learnMoreLinkDescription: 'Learn more about our work with Serverless',
     learnMoreLink: '/services/serverless-consulting/',
     caseStudyLinkDescription: 'See our Serverless work in action',
-    caseStudyLink: '/services/serverless-consulting/'
+    caseStudyLink: '/services/serverless-consulting/',
+    title: 'Serverless'
   },
   {
     logoClasses: 'w-36 pb-8 lg:w-52 lg:pt-5 lg:pb-20',
@@ -68,7 +73,8 @@ const services = [
     learnMoreLinkDescription: 'Learn more about our work with Cloud Native',
     learnMoreLink: '/services/cloud-native-consulting/',
     caseStudyLinkDescription: 'See our Cloud Native work in action',
-    caseStudyLink: '/services/cloud-native-consulting/'
+    caseStudyLink: '/services/cloud-native-consulting/',
+    title: 'Cloud Native'
   }
 ];
 ---
@@ -99,6 +105,7 @@ const services = [
               <Icon
                 class={`h-auto nested-svg ${service.logoClasses}`}
                 name={`technologies/${service.logoName}`}
+                title={service.title}
               />
             </Fragment>
             <Fragment slot="description">{service.description}</Fragment>
