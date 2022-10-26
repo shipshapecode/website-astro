@@ -2,6 +2,8 @@
 import { Icon } from 'astro-icon';
 import { Img } from 'astro-imagetools/components';
 
+import { getSvgSrc } from '../utils/svg';
+
 export interface Props {
   testimonials: {
     imgSrc: string;
@@ -13,14 +15,6 @@ export interface Props {
 }
 
 const { testimonials } = Astro.props;
-
-async function getSvgSrc(path) {
-  const svg = await import(`${path}?raw`);
-  return svg.default.replace(
-    '<svg',
-    '<svg class="h-8 max-w-full pointer-events-none mb-3 self-start w-auto"'
-  );
-}
 ---
 
 <div
