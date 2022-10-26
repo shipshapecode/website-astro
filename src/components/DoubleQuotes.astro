@@ -16,7 +16,10 @@ const { testimonials } = Astro.props;
 
 async function getSvgSrc(path) {
   const svg = await import(`${path}?raw`);
-  return svg.default.replace('<svg', '<svg class="h-8 max-w-full pointer-events-none mb-3 self-start w-auto"');
+  return svg.default.replace(
+    '<svg',
+    '<svg class="h-8 max-w-full pointer-events-none mb-3 self-start w-auto"'
+  );
 }
 ---
 
@@ -31,9 +34,7 @@ async function getSvgSrc(path) {
       testimonials.map((testimonial) => (
         <figure class="flex flex-col p-4 relative text-white xl:px-16 xl:py-0">
           <h3>
-            <Fragment
-              set:html={getSvgSrc(testimonial.svgSrc)}
-            />
+            <Fragment set:html={getSvgSrc(testimonial.svgSrc)} />
           </h3>
 
           <Icon
