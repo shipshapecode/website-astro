@@ -14,39 +14,115 @@ const description =
 ---
 
 <BaseLayout description={description} title={title}>
+  <div class="bg-enigma-red flex flex-wrap justify-center mt-6 w-full lg:pt-24">
+    <div class="max-w-6xl p-6 pb-0 relative w-full lg:p-0">
+      <h1 class="hidden text-4xl lg:text-6xl">Enigma</h1>
+      <Icon
+        class="fill-white h-auto mt-6 px-6 lg:w-1/3"
+        name="clients/enigma"
+      />
+      <div class="mb-6 px-6 text-s text-white">Case Study</div>
+      <section
+        class="bg-white p-10 right-56 rounded-md shadow-lg top-28 lg:absolute lg:w-1/3"
+      >
+        <h2 class="mb-4 text-m">Value Delivered:</h2>
+
+        <ul>
+          <li class="list-none w-fill flex items-center p-3">
+            <Img
+              alt=""
+              attributes={{
+                img: {
+                  class: 'flex-none w-10'
+                }
+              }}
+              format="webp"
+              placeholder="none"
+              src="/img/work/icon-speed.png"
+            />
+            <span class="ml-5">Accelerated Enigma's time to market</span>
+          </li>
+          <li class="list-none w-fill flex items-center p-3">
+            <Img
+              alt=""
+              attributes={{
+                img: {
+                  class: 'flex-none w-9'
+                }
+              }}
+              format="webp"
+              placeholder="none"
+              src="/img/work/icon-chart.png"
+            />
+            <span class="ml-6"
+              >Increased scalability of the overall platform</span
+            >
+          </li>
+          <li class="list-none w-fill flex items-center p-3">
+            <Img
+              alt=""
+              attributes={{
+                img: {
+                  class: 'flex-none w-10'
+                }
+              }}
+              format="webp"
+              placeholder="none"
+              src="/img/work/icon-mentor.png"
+            />
+            <span class="ml-6"
+              >Mentored new hires into Next.js best practices</span
+            >
+          </li>
+        </ul>
+      </section>
+      <Img
+        alt="A detailed overview of all candidate assessment results"
+        attributes={{
+          img: {
+            class: 'flex mt-24 lg:w-2/3'
+          }
+        }}
+        format="webp"
+        placeholder="none"
+        src="/img/work/enigma/enigma-hirer-results.png"
+      />
+    </div>
+  </div>
   <div class="section flex flex-wrap justify-center">
     <div class="max-w-5xl w-full">
-      <div class="p-4 lg:p-12">
-        <div class="text-xs">Case Study</div>
-
-        <h1 class="text-4xl lg:text-6xl mb-6">Enigma</h1>
-
-        <p class="mb-6">
-          Enigma is a platform designed to help cybersecurity teams make faster
-          hiring decisions and find stronger, more diverse talent. Through this
-          web application, employers can create and assign technical assessments
-          to candidates to ascertain their level of competency with key
-          cybersecurity concepts and industry best practices.
-        </p>
-
-        <p>
-          Once a candidate has completed an assessment through the Enigma
-          platform, employers can review their responses and overall performance
-          and then use these findings to better evaluate the candidate’s
-          application.
-        </p>
+      <div class="p-0 lg:px-12">
+        <h2 class="mb-6 text-4xl lg:-mb-8">In their words</h2>
+        <SingleQuote classString="-mx-8 lg:-mb-28" testimonial={testimonial} />
       </div>
 
       <div
-        class="bg-enigma-blue flex flex-wrap h-64 md:h-140 justify-center items-center"
+        class="flex flex-wrap items-center justify-center p-4 md:h-140 lg:p-12"
       >
-        <div class="bg-enigma-blue w-1/2 lg:w-1/3">
-          <Icon class="fill-white h-auto w-full" name="clients/enigma" />
+        <div class="pr-6 lg:w-1/2">
+          <h2 class="text-4xl mb-6">About the Client</h2>
+          <p>
+            <a href="https://www.askenigma.com/">Enigma</a> is a platform designed
+            to help cybersecurity teams make faster hiring decisions and find stronger,
+            more diverse talent. Through this web application, employers can create
+            and assign technical assessments to candidates to ascertain their level
+            of competency with key cybersecurity concepts and industry best practices.
+          </p>
+
+          <p>
+            Once a candidate has completed an assessment through the Enigma
+            platform, employers can review their responses and overall
+            performance and then use these findings to better evaluate the
+            candidate’s application.
+          </p>
+        </div>
+        <div class="hidden pl-6 lg:block lg:w-1/2">
+          <Icon class="fill-enigma-red h-auto w-full" name="clients/enigma" />
         </div>
       </div>
 
       <div class="p-4 lg:p-12">
-        <h2 class="text-3xl mb-6">Challenge</h2>
+        <h2 class="text-4xl mb-6">Challenge</h2>
 
         <p>
           The Enigma assessment application was in a very raw proof of concept
@@ -60,30 +136,30 @@ const description =
           continued to help build out the application based on customers’
           feedback about their additional needs.
         </p>
-      </div>
 
-      <div class="bg-grey-light flex justify-center lg:flex-1">
-        <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <Img
-            alt="The Enigma login page"
-            attributes={{
-              img: {
-                class: 'flex'
-              }
-            }}
-            format="webp"
-            placeholder="none"
-            src="/img/work/enigma/enigma-login.png"
-          />
+        <div class="bg-enigma-red flex justify-center lg:flex-1 rounded-md">
+          <div class="pl-4 pr-4 pt-4 lg:pl-12 lg:pr-12 lg:pt-12">
+            <Img
+              alt="The Enigma login page"
+              attributes={{
+                img: {
+                  class: 'flex'
+                }
+              }}
+              format="webp"
+              placeholder="none"
+              src="/img/work/enigma/enigma-login.png"
+            />
+          </div>
         </div>
       </div>
 
       <div class="p-4 lg:p-12">
-        <h2 class="text-3xl mb-6">Solution</h2>
+        <h2 class="text-4xl mb-6">Solution</h2>
 
         <h3 class="text-2xl mb-6">Next.js</h3>
 
-        <p class="mb-6">
+        <p>
           The development team made use of
           <a href="/https://nextjs.org/">Next.js</a> to prioritize quick loading
           times on the client side of this application. The server-side rendering
@@ -92,46 +168,71 @@ const description =
           network requests and preventing subsequent delays in data population.
         </p>
 
-        <h3 class="text-2xl mb-6">Shepherd Tour</h3>
+        <div class="lg:flex lg:my-14">
+          <div class="lg:mr-12 lg:w-1/2">
+            <h3 class="text-2xl mb-6">Shepherd Tour</h3>
 
-        <p>
-          The Ship Shape team also had the opportunity to integrate one of our
-          own open source projects,
-          <a href="https://shepherdjs.dev/docs/">Shepherd</a>, into the Enigma
-          platform. The Shepherd library provides a way to guide users through a
-          tour of a web application, highlighting the key features users should
-          familiarize themselves with, in order to use the app at its full
-          potential.
-        </p>
-      </div>
+            <p>
+              The Ship Shape team also had the opportunity to integrate one of
+              our own open source projects,
+              <a href="https://shepherdjs.dev/docs/">Shepherd</a>, into the
+              Enigma platform. The Shepherd library provides a way to guide
+              users through a tour of a web application, highlighting the key
+              features users should familiarize themselves with, in order to use
+              the app at its full potential.
+            </p>
+          </div>
 
-      <div class="bg-enigma-blue flex justify-center lg:flex-1">
-        <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <Img
-            alt="An implementation of a Shepherd tour for the Enigma hirer dashboard"
-            attributes={{
-              img: {
-                class: 'flex'
-              }
-            }}
-            format="webp"
-            placeholder="none"
-            src="/img/work/enigma/enigma-hirer-assessment-tour.png"
-          />
+          <div class="lg:w-1/2">
+            <figure>
+              <Img
+                alt="An implementation of a Shepherd tour for the Enigma hirer dashboard"
+                attributes={{
+                  img: {
+                    class: 'bg-enigma-red pl-4 pr-4 pt-4 rounded-md'
+                  }
+                }}
+                format="webp"
+                placeholder="none"
+                src="/img/work/enigma/enigma-hirer-assessment-tour.png"
+              />
+              <figcaption>Example Shepherd.js tour</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="flex flex-col-reverse mt-14 md:flex-row">
+          <div class="lg:w-1/2">
+            <figure>
+              <Img
+                alt="A detailed overview of a cybersecurity assessment"
+                attributes={{
+                  img: {
+                    class: 'bg-enigma-red pl-4 pr-4 pt-4 rounded-md'
+                  }
+                }}
+                format="webp"
+                placeholder="none"
+                src="/img/work/enigma/enigma-hirer-assessment-detail.png"
+              />
+              <figcaption>User flow of assessment</figcaption>
+            </figure>
+          </div>
+          <div class="lg:ml-12 lg:w-1/2">
+            <h3 class="text-2xl mb-6">Cypress Testing</h3>
+
+            <p>
+              The development team also incorporated
+              <a href="https://www.cypress.io/">Cypress</a>, an integration
+              testing framework, into the Enigma application. This end-to-end
+              testing technology allowed the development team to deliver
+              features to users with confidence that critical tasks aren’t
+              disrupted by bugs.
+            </p>
+          </div>
         </div>
       </div>
 
       <div class="p-4 lg:p-12">
-        <h3 class="pt-6 text-2xl mb-6">Cypress Testing</h3>
-
-        <p class="mb-6">
-          The development team also incorporated
-          <a href="https://www.cypress.io/">Cypress</a>, an integration testing
-          framework, into the Enigma application. This end-to-end testing
-          technology allowed the development team to deliver features to users
-          with confidence that critical tasks aren’t disrupted by bugs.
-        </p>
-
         <h3 class="text-2xl mb-6">Key Application Features</h3>
 
         <p>
@@ -140,17 +241,17 @@ const description =
           implementing the following key features and workflows:
         </p>
 
-        <ul class="ml-16">
+        <ul class="ml-6">
           <li class="list-disc">
             Authentication processes that allow candidates and employers to
             securely access their respective accounts
           </li>
           <li class="list-disc">
-            A candidate’s ability to work through assessments assigned by
+            A candidate's ability to work through assessments assigned by
             potential employers
           </li>
           <li class="list-disc">
-            An employer’s ability to create, view, assign, archive, and delete
+            An employer's ability to create, view, assign, archive, and delete
             assessments and candidate assessment attempts
           </li>
           <li class="list-disc">
@@ -161,53 +262,32 @@ const description =
         </ul>
       </div>
 
-      <div class="bg-grey-light flex justify-center lg:flex-1">
-        <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <Img
-            alt="A detailed overview of a cybersecurity assessment"
-            attributes={{
-              img: {
-                class: 'flex'
-              }
-            }}
-            format="webp"
-            placeholder="none"
-            src="/img/work/enigma/enigma-hirer-assessment-detail.png"
-          />
-        </div>
-      </div>
-
       <div class="p-4 lg:pb-0 lg:p-12">
-        <h2 class="text-3xl mb-6">Outcome</h2>
-      </div>
+        <h2 class="text-4xl mb-6">Outcome</h2>
 
-      <div class="bg-enigma-blue flex justify-center lg:flex-1">
-        <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <Img
-            alt="A detailed overview of all candidate assessment results"
-            attributes={{
-              img: {
-                class: 'flex'
-              }
-            }}
-            format="webp"
-            placeholder="none"
-            src="/img/work/enigma/enigma-hirer-results.png"
-          />
+        <div class="bg-enigma-red flex justify-center lg:flex-1 rounded-md">
+          <div class="pl-4 pr-4 pt-4 lg:pl-12 lg:pr-12 lg:pt-12">
+            <Img
+              alt="A detailed overview of all candidate assessment results"
+              attributes={{
+                img: {
+                  class: 'flex'
+                }
+              }}
+              format="webp"
+              placeholder="none"
+              src="/img/work/enigma/enigma-hirer-results.png"
+            />
+          </div>
         </div>
-      </div>
-      <div class="p-4 lg:p-12">
         <p class="pt-6">
           Ship Shape’s main priority was to successfully build and launch a
           feature rich application according to the client’s schedule, and we’re
           happy to report that we met this target! The Ship Shape crew had a
           great experience working with the Enigma team to get a
-          production-ready product off the ground. The client also had this to
-          say about their experience:
+          production-ready product off the ground.
         </p>
       </div>
-
-      <SingleQuote classString="lg:pt-32" testimonial={testimonial} />
 
       <BottomLinks
         nextLink="/work/netflix/"

@@ -7,6 +7,7 @@ module.exports = {
         'acquia-blue': 'var(--acquia)',
         black: 'var(--black)',
         'blue-light': 'var(--blue-light)',
+        'enigma-red': 'var(--enigma)',
         'expel-green': 'var(--expel)',
         navy: 'var(--navy)',
         'navy-card-dark': '#133254',
