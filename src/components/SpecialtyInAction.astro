@@ -53,6 +53,7 @@ const { specialty, caseStudies }: Props = Astro.props;
                     <Icon
                       class="h-8 max-w-full mb-8 self-start w-auto pointer-events-none child:fill-navy"
                       name={study.logoSrc}
+                      title={study.companyName}
                     />
                   </h3>
                   <p class="flex-grow mb-16 !text-navy">{study.text}</p>
