@@ -58,5 +58,11 @@ export default {
     id: 'wcanavan',
     image: '/img/blog/authors/welch.jpg',
     location: 'Portland, OR'
+  },
+  kristawilliams: {
+    name: 'Krista Williams',
+    id: 'kristawilliams',
+    image: '/img/blog/authors/krista.jpg',
+    location: 'Boston, MA'
   }
 };
