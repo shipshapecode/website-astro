@@ -5,5 +5,6 @@ module.exports = {
   astroAllowShorthand: false,
   trailingComma: 'none',
   semi: true,
-  singleQuote: true
+  singleQuote: true,
+  proseWrap: 'always'
 };
