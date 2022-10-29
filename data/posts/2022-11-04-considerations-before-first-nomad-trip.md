@@ -69,10 +69,17 @@ When leaving a country, you may need to show your visa, so make sure you keep it
 
 ## What to Bring
 
-This varies quite a bit. I am not a carry-on only packer -- for me, the stress versus benefits aren't really there. Lighter is better, but you do want to make sure you have the stuff you need. Often, you don't need to bring a huge amount of clothes, but if the clothing or shoe sizes you wear are not easy to find in the locations you are considering visiting, make sure to bring enough of those items in case you can't obtain them with ease locally. Make sure to bring medications ahead of time -- I would recommend bringing some sort of pain relief pills as well as digestive medicines -- and fill any prescriptions before you leave. In addition to your computer, phone, and charger, consider a set of noise-canceling headphones, and I suggest you bring some external battery packs that could be used to charge your devices on the go.
+This varies quite a bit. I am not a carry-on only packer -- for me, the stress versus benefits aren't really there. Lighter is better, but you do want to make sure you have the stuff you need. Often, you don't need to bring a huge amount of clothes, but if the clothing or shoe sizes you wear are not easy to find in the locations you are considering visiting, make sure to bring enough of those items in case you can't obtain them with ease locally. Make sure to bring medications ahead of time -- I would recommend bringing some sort of pain relief pills as well as digestive medicines -- and fill any prescriptions before you leave. In addition to your computer, phone, and charger, consider a set of noise-canceling headphones, and bringing an external battery pack to charge your devices is a must.
 
-Additionally, before arriving in the country do some preparation and download apps or information to make your life easier, such as offline maps, translations for languages that are spoken in the locations you'll been traveling to, and apps for the local rideshare services.
+Before arriving in the country do some preparation and download apps or information to make your life easier, such as offline maps, translations for languages that are spoken in the locations you'll been traveling to, and apps for the local rideshare services.
 
 ## Final Thoughts
 
-Planning your first trip as a digital nomad can be exhausting and maybe overwhelming, but it's totally worth it. When considering destinations, you'll need to keep in mind your absolutely necessary requirements for getting work done and balance those with your personal preferences and needs. Make sure to research how safe a given location is. Once you have an idea of that, looking into how accessible the Internet is in terms of speed and reliability in that area. then dive more into specifics, such as what you might be interested in seeing while there, where you might want to live, figuring out for how long you might want to stay there, and if there are other nearby destinations that are appealing to visit afterwards. Don't overthink and let it derail your trip, keeping these things in mind will help make your digital nomad journey successful.
+Planning your first trip as a digital nomad can be exhausting and maybe overwhelming, but totally worth it. When considering destinations, keep in mind your requirements for getting work done and balance those with your personal preferences and needs. Research how safe a given location is. Once you have an idea of that, look into how ubiquitous fast and reliable internet is. Then dive more into specifics.
+
+- What you might be interested in seeing
+- Where you want to live
+- How long you might want to stay there
+- Nearby destinations that are appealing to visit afterwards
+
+Don't overthink and let it derail your trip, keeping these things in mind will help make your digital nomad journey successful.
