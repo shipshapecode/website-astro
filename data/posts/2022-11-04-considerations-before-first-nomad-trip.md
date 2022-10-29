@@ -26,21 +26,22 @@ Timing is a critical component to making your digital nomad trip go smoothly. Yo
 
 ### Travel Pace 
 
-Even if you do give up your current residence and fully commit to digital nomading, keep in mind that when you start digital nomading, you shouldn't be embarking on a period of constant moving week-to-week for a period of months. I moved frequently when I first started nomading but eventually realized that I needed to go much slower in order to manage getting familiar with a new place, having time to see attractions near me, getting my work done, and planning the logistics of getting to my next destinations. I would personally recommend staying in most places you visit for a minimum of three weeks, especially when just starting out, in order for you to adapt to your new lifestyle and have time to get your bearings.
+Even if you do give up your current residence and fully commit to digital nomading, keep in mind that when you start digital nomading, you shouldn't be embarking on a period of constant moving week-to-week for a period of months. I moved frequently when I started nomading but eventually realized that I needed to go much slower in order to get familiar with a new place, have time to see attractions, getting work done, and planning the logistics of getting to the next destinations. I recommend staying in most places you visit for a minimum of three weeks, especially when starting out, in order to adapt to the new lifestyle and to get your bearings.
 
-Some first time nomads are excited about the idea of going away from their home country for months at a time. This can be invigorating, but months of the road can also be exhausting and could lead to burn out. You might not want to plan on being gone for a full year the first time you nomad.
+Some first time nomads are excited about the idea of going away from their home country for months at a time. This can be invigorating, but months of the road can be exhausting and could lead to burn out. You might not want to plan on being gone for a full year the first time you nomad.
 
 
 ### When You'll Travel
 
-If you go to a location in the winter, you'll have less daylight and won't get to see as much before it gets dark. On the other hand, many locations that experience four seasons tend to have an increase of tourists during the warmer seasons -- traveling in the winter could mean lower costs and less crowds. Similar considerations apply if you are considering visiting places that vary less in terms of temperature, but experience rainy and dry seasons. It’s important to keep in mind holidays, both in your home country, as well as the countries you are considering visiting. You may want to be home during certain holidays in your home country, and may either be excited about or want to avoid visiting certain places during major holidays.
+If you go to a location in the winter, you'll have less daylight and won't get to see as much before it gets dark. On the other hand, many locations that experience four seasons tend to have an increase of tourists during the warmer seasons -- traveling in the winter could mean lower costs and less crowds. Similar considerations apply if you visit places that experience rainy and dry seasons. It’s important to keep in mind holidays, both in your home country, as well as the countries you are considering visiting. You may want to be home during certain holidays in your home country, and may either be excited about or want to avoid visiting certain places during major holidays.
 
 ### Time Zones
 
-The time zone of the location you are working in is a huge consideration. Some nomads prefer working in the same or similar time zones to where their colleagues are based. Others don't mind working further and making adjustments in their sleep cycle and structure of their day. It’s a good idea to consider working in areas that will allow you to overlap for at least a few hours per day so that you will have some time to collaborate with your colleagues in real-time when needed. 
+The time zone of the location you are working in is a huge consideration. Some nomads prefer working in the same or similar time zones as their colleagues. Others don't mind working further and making adjustments in their sleep cycle and structure of their day. It’s a good idea to consider working in areas that overlap for a few hours per day with your colleagues to allow real-time collaboration when needed. 
 
 ## Lifestyle
-I would recommend giving some thought to what kind of lifestyle you'll want to live while abroad. In order to do so, at a minimum, you'll need to consider the cost of living of places you are interested in, preferences for your accommodation and working, ease of access to service and goods, and logistics for traveling domestically or otherwise in destinations of interest to you. 
+
+Give thought to what kind of lifestyle you'll want to live while abroad. In order to do so, at a minimum, you'll need to consider the cost of living of places you are interested in, preferences for your accommodation and working, ease of access to service and goods, and logistics for traveling domestically or otherwise in destinations of interest to you. 
 
 ### Cost of Living
 
