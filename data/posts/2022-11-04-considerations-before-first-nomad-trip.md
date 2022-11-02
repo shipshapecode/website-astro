@@ -43,15 +43,15 @@ The time zone of the location you are working in is a huge consideration. Some n
 
 Give thought to what kind of lifestyle you'll want to live while abroad. In order to do so, at a minimum, you'll need to consider the cost of living of places you are interested in, preferences for your accommodation and working, ease of access to service and goods, and logistics for traveling domestically or otherwise in destinations of interest to you. 
 
+
 ### Cost of Living
 
 A major factor in how you'll live while abroad is the cost of living. When I plan a trip, a lower cost of living is often a draw for me. I don't entirely avoid higher cost of living locations but stay for less time than I do less expensive locations. When planning a trip take a look at the cost of living for the specific cities or towns you're curious about and pay attention to prices for food and lodging in particular. 
 
-### Your Accomodation and Workplace
+### Your Accommodation and Workplace
 
 I recommend finding the more central neighborhoods where you're staying and trying to stay in one of those if they are considered to be safe. This generally costs a bit more, but allows you to make more of the time you have there. Staying somewhere that is a bit further out, but well connected by public transit is also a consideration, especially if you're going to be staying awhile. I prefer to rent an apartment and often work from there, but many nomads really enjoy both living in and working in shared accommodations.
-
-Some hostels or more communal accommodations have quieter common areas with desk space where you can work if that interests to you. As an example, I once stayed at Cityhub in Copenhagen and was able to get work done in the shared area near the kitchen with no problem. Additionally, if you have a different working preference and prefer to get out of the house, try to look into local options such as cafes. If you like to work at cafes, try to find out ahead of time if outlets are available at the cafes. Another option, especially common in digital nomad hubs, is to work at local co-working places. This allows you space to work and meet people who are working while traveling as well
+Some hostels or more communal accommodations have quieter common areas with desk space where you can work if that interests you. As an example, I once stayed at Cityhub in Copenhagen and was able to get work done in the shared area near the kitchen with no problem. Additionally, if you have a different working preference and prefer to get out of the house, try to look into local options such as cafes. If you like to work at cafes, try to find out ahead of time if outlets are available at the cafes. Another option, especially common in digital nomad hubs, is to work at local co-working places. This allows you space to work and meet people who are working while traveling as well.
 
 ### Ease of Travel To Other Locations
 
@@ -69,9 +69,9 @@ When leaving a country, you may need to show your visa, so make sure you keep it
 
 ## What to Bring
 
-This varies quite a bit. I am not a carry-on only packer -- for me, the stress versus benefits aren't really there. Lighter is better, but you do want to make sure you have the stuff you need. Often, you don't need to bring a huge amount of clothes, but if the clothing or shoe sizes you wear are not easy to find in the locations you are considering visiting, make sure to bring enough of those items in case you can't obtain them with ease locally. Make sure to bring medications ahead of time -- I would recommend bringing some sort of pain relief pills as well as digestive medicines -- and fill any prescriptions before you leave. In addition to your computer, phone, and charger, consider a set of noise-canceling headphones, and bringing an external battery pack to charge your devices is a must.
+This varies quite a bit. I am not a carry-on only packer -- for me, the stress versus the benefits aren't really there. Lighter is better, but you do want to make sure you have the stuff you need. Often, you don't need to bring a huge amount of clothes, but if the clothing or shoe sizes you wear are not easy to find in the locations you are considering visiting, make sure to bring enough of those items in case you can't obtain them with ease locally. Make sure to bring medications ahead of time -- I would recommend bringing some sort of pain relief pills as well as digestive medicines so you have them ahead of time -- and fill any necessary prescriptions before you leave. In addition to your computer, phone, and charger, you may want to consider a set of noise-canceling headphones, and I would definitely suggest you bring some external battery packs that could be used to charge your devices on the go.
 
-Before arriving in the country do some preparation and download apps or information to make your life easier, such as offline maps, translations for languages that are spoken in the locations you'll been traveling to, and apps for the local rideshare services.
+Additionally, before arriving in the country you may want to do some preparation and download apps or information to make your life easier, such as offline maps, translations for languages that are spoken in the locations you'll be traveling to, and apps for the local rideshare services.
 
 ## Final Thoughts
 
