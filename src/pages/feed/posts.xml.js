@@ -3,11 +3,15 @@ import rss from '@astrojs/rss';
 const postImportResult = import.meta.glob('/data/posts/**/*.md', {
   eager: true
 });
-const posts = Object.values(postImportResult);
+const posts = Object.values(postImportResult).sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+);
 
 export const get = () =>
   rss({
-    title: 'Shipshape Blog',
+    title: 'Ship Shape Blog',
     description:
       'Read our blog to stay ahead of trends in Ember.js, JavaScript, and everything in between.',
     site: import.meta.env.SITE,
