@@ -17,6 +17,7 @@
     "solid-toast": "^0.3.5"
   },
   "devDependencies": {
+    "@astrojs/rss": "^1.0.3",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/solid-js": "^1.2.0",
     "@astrojs/tailwind": "^2.1.0",
