@@ -15,6 +15,8 @@ allPosts = allPosts.sort(
     new Date(b.frontmatter.date).valueOf() -
     new Date(a.frontmatter.date).valueOf()
 );
+
+const feedURL = new URL('/feed/posts.xml', Astro.url);
 ---
 
 <BaseLayout description={description} title={title}>
@@ -25,7 +27,7 @@ allPosts = allPosts.sort(
 
         <a
           class="p-12"
-          href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fshipshape.io%2Ffeed.xml"
+          href={feedURL}
           target="_blank"
           rel="noopener"
         >
