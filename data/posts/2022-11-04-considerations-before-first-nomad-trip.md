@@ -2,19 +2,19 @@
 authorId: kristawilliams
 categories: 
   - travel
-  - digital_nomad
+  - digital nomad
 date: '2022-11-04'
 slug: considerations-before-first-digital-nomad-trip
 title: What To Consider Before Your First Digital Nomad Trip
 image: digital-nomad.jpg
 ---
 
-The needs of a digital nomad are different from those of travelers who are not working as they visit different places, or people who are on vacation for a considerably shorter period of time. There are a number of logistical and lifestyle considerations that need to be thought about prior to making a first trip as a digital nomad.
+The needs of a digital nomad are different from those of travelers who are not working as they visit different places, or people who are on vacation for a considerably shorter period of time. There are several logistical and lifestyle considerations that need to be thought about before making the first trip as a digital nomad.
 
 ## Safety
 ![Digital nomad working on laptop](/img/blog/considerations-before-first-nomad-trip/safety.jpg)
 
-Take a look at the statistics on safety for the location you're considering visiting. Lots of people paint certain areas with a wide brush, cautioning how unsafe a particular destination might be, when that might not be the case. Take a look at data for the country as a whole, but also the city you are interested in visiting. Investigate if certain neighborhoods are considered safer than others, if you should take extra precautions walking around at night, and if travelers to a location are advised to conceal their valuables while they are there.
+Take a look at the statistics on safety for the location you’re considering visiting. Lots of people paint certain areas with a wide brush, cautioning how unsafe a particular destination might be when that might not be the case. Take a look at data for the country as a whole, but also the city you are interested in visiting. Investigate if certain neighborhoods are considered safer than others, if you should take extra precautions walking around at night, and if travelers to a location are advised to conceal their valuables while they are there.
 
 ## Internet Access
 ![Digital nomad working on laptop](/img/blog/considerations-before-first-nomad-trip/internet-access.jpg)
@@ -76,13 +76,29 @@ When leaving a country, you may need to show your visa, so make sure you keep it
 ## What to Bring
 ![Person in the midst of packing](/img/blog/considerations-before-first-nomad-trip/what-to-bring.jpg)
 
-This varies quite a bit. I am not a carry-on only packer -- for me, the stress versus the benefits aren't really there. Lighter is better, but you do want to make sure you have the stuff you need. Often, you don't need to bring a huge amount of clothes, but if the clothing or shoe sizes you wear are not easy to find in the locations you are considering visiting, make sure to bring enough of those items in case you can't obtain them with ease locally. Make sure to bring medications ahead of time -- I would recommend bringing some sort of pain relief pills as well as digestive medicines so you have them ahead of time -- and fill any necessary prescriptions before you leave. In addition to your computer, phone, and charger, you may want to consider a set of noise-canceling headphones, and I would definitely suggest you bring some external battery packs that could be used to charge your devices on the go.
+This varies quite a bit. I am not a carry-on only packer — for me, the stress versus the benefits aren’t there. Lighter is better, but you do want to make sure you have the stuff you need. Often, you don’t need to bring a huge amount of clothes, but if the clothing or shoe sizes you wear are not easy to find in the locations you are considering visiting, make sure to bring enough of those items in case you can’t obtain them with ease locally. Make sure to bring medications ahead of time — I would recommend bringing some sort of pain relief pills as well as digestive medicines so you have them ahead of time — and fill any necessary prescriptions before you leave. In addition to your computer, phone, and charger, you may want to consider a set of noise-canceling headphones, and I would strongly suggest you bring some external battery packs that could be used to charge your devices on the go. Some of the items I would recommend include:
+
+- External battery pack and/or charging phone case
+- Travel adapter and/or travel converter (if you are bringing devices that operate on a different voltage than what’s used in your travel destination)
+- Headphones or earbuds
+- An electronics organizer
+- Unlocked telephone
+- Laundry supplies. I recommend travel strips, color catcher sheets if you might need to wash differently colored clothing together, and possibly a travel laundry line. In many places, dryers aren't common in residences, even if a washing machine is available in an apartment.
+- Pain relief, digestive medicines, preferred menstrual products if needed, and any prescriptions
+- Some pens and a small notebook
+- Transparent, plastic three-flap enclosed folder for important documents
+- Four shirts, four bottoms, five pairs of underwear (2-3 bras if needed), and five pairs of socks.
+	- I would recommend giving thought to the material while you are selecting your travel clothing. For instance, synthetic fabrics often can dry quickly but are more prone to forming odors. Merino wool is more expensive and will take longer to dry, but popular among travelers for its temperature regulation and odor resistance.
+- A black bathing suit. I love vibrant-colored bathing suits, but black is most versatile, especially if you are considering getting in thermal waters with mineral deposits that could leave stains.
+- Sneakers and potentially dressier shoes in case you need to attend an event, maybe sandals if your destination is warm. I’ve worn sneakers made of wool which I liked for traveling primarily in cities, and they can be cleaned by throwing them in the washing machine. My only dislike was the lack of grip. On my most recent trip, I brought hiking sneakers with me instead, which take up less space than hiking boots, but still provide great grip when venturing into the outdoors.
+- Travel cubes for improved organization of your clothing
+- Toiletries such as toothbrush and toothpaste, shampoo, conditioner, body wash, lotion, and deodorant, preferably in smaller containers. I wouldn't worry too much about these as generally I've mostly been fairly pleased with toiletries for sale locally. The exception would be trying to find deodorant I like and find effective in East Asia.
 
 Additionally, before arriving in the country you may want to do some preparation and download apps or information to make your life easier, such as offline maps, translations for languages that are spoken in the locations you'll be traveling to, and apps for the local rideshare services.
 
 ## Final Thoughts
 
-Planning your first trip as a digital nomad can be exhausting and maybe overwhelming, but totally worth it. When considering destinations, keep in mind your requirements for getting work done and balance those with your personal preferences and needs. Research how safe a given location is. Once you have an idea of that, look into how ubiquitous fast and reliable internet is. Then dive more into specifics.
+Planning your first trip as a digital nomad can be exhausting and maybe overwhelming, but is totally worth it. When considering destinations, keep in mind your requirements for getting work done and balance those with your personal preferences and needs. Research how safe a given location is. Once you have an idea of that, look into how ubiquitous fast, reliable internet is. Then dive more into specifics, including:
 
 - What you might be interested in seeing
 - Where you want to live
