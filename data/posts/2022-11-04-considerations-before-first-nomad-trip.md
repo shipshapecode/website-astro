@@ -85,7 +85,7 @@ This varies quite a bit. I am not a carry-on only packer — for me, the stress 
 - Unlocked telephone
 - A laptop
 	- If you use a Macbook I would strongly recommend getting Apple's World Travel Adapter Kit, which will allow you to easily use your adapter in different outlets around the world.
-- A lightweight tripod, useful if you want to take photos
+- Larger, carry-on backpack and daypack
 - Laundry supplies. I recommend travel strips, color catcher sheets if you might need to wash differently colored clothing together, and possibly a travel laundry line. In many places, dryers aren't common in residences, even if a washing machine is available in an apartment.
 - Pain relief, digestive medicines, preferred menstrual products if needed, and any prescriptions
 - Some pens and a small notebook
@@ -97,7 +97,7 @@ This varies quite a bit. I am not a carry-on only packer — for me, the stress 
 - Travel cubes for improved organization of your clothing
 - Toiletries such as toothbrush and toothpaste, shampoo, conditioner, body wash, lotion, and deodorant, preferably in smaller containers. I wouldn't worry too much about these as generally I've mostly been fairly pleased with toiletries for sale locally. The exception would be trying to find deodorant I like and find effective in East Asia.
 
-Additionally, before arriving in the country you may want to do some preparation and download apps or information to make your life easier, such as offline maps, translations for languages that are spoken in the locations you'll be traveling to, and apps for the local rideshare services.
+Before arriving in the country you may want to do some preparation and download apps or information to make your life easier, such as offline maps, translations for languages that are spoken in the locations you'll be traveling to, and apps for the local rideshare services.
 
 ## Final Thoughts
 
