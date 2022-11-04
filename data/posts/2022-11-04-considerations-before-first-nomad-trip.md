@@ -85,13 +85,14 @@ This varies quite a bit. I am not a carry-on only packer — for me, the stress 
 - Unlocked telephone
 - A laptop
 	- If you use a Macbook I would strongly recommend getting Apple's World Travel Adapter Kit, which will allow you to easily use your adapter in different outlets around the world.
+- A lightweight tripod, useful if you want to take photos
 - Laundry supplies. I recommend travel strips, color catcher sheets if you might need to wash differently colored clothing together, and possibly a travel laundry line. In many places, dryers aren't common in residences, even if a washing machine is available in an apartment.
 - Pain relief, digestive medicines, preferred menstrual products if needed, and any prescriptions
 - Some pens and a small notebook
 - Transparent, plastic three-flap enclosed folder for important documents
 - Four shirts, four bottoms, five pairs of underwear (2-3 bras if needed), and five pairs of socks.
 	- I would recommend giving thought to the material while you are selecting your travel clothing. For instance, synthetic fabrics often can dry quickly but are more prone to forming odors. Merino wool is more expensive and will take longer to dry, but popular among travelers for its temperature regulation and odor resistance.
-- A black bathing suit. I love vibrant-colored bathing suits, but black is most versatile, especially if you are considering getting in thermal waters with mineral deposits that could leave stains.
+- A black bathing suit. I love vibrant-colored bathing suits, but black is most versatile, especially if you are considering getting in thermal waters with minerals that could leave stains.
 - Sneakers and potentially dressier shoes in case you need to attend an event, maybe sandals if your destination is warm. I’ve worn sneakers made of wool which I liked for traveling primarily in cities, and they can be cleaned by throwing them in the washing machine. My only dislike was the lack of grip. On my most recent trip, I brought hiking sneakers with me instead, which take up less space than hiking boots, but still provide great grip when venturing into the outdoors.
 - Travel cubes for improved organization of your clothing
 - Toiletries such as toothbrush and toothpaste, shampoo, conditioner, body wash, lotion, and deodorant, preferably in smaller containers. I wouldn't worry too much about these as generally I've mostly been fairly pleased with toiletries for sale locally. The exception would be trying to find deodorant I like and find effective in East Asia.
