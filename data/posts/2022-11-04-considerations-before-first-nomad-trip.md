@@ -83,6 +83,8 @@ This varies quite a bit. I am not a carry-on only packer — for me, the stress 
 - Headphones or earbuds
 - An electronics organizer
 - Unlocked telephone
+- A laptop
+	- If you use a Macbook I would strongly recommend getting Apple's World Travel Adapter Kit, which will allow you to easily use your adapter in different outlets around the world.
 - Laundry supplies. I recommend travel strips, color catcher sheets if you might need to wash differently colored clothing together, and possibly a travel laundry line. In many places, dryers aren't common in residences, even if a washing machine is available in an apartment.
 - Pain relief, digestive medicines, preferred menstrual products if needed, and any prescriptions
 - Some pens and a small notebook
