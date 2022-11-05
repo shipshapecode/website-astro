@@ -5,6 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CaseStudiesList from '../../components/CaseStudiesList.astro';
 import ClientsGrid from '../../components/ClientsGrid.astro';
 import HeroBlock from '../../components/HeroBlock.astro';
+import ImpactStats from '../../components/ImpactStats.astro';
 import ReadyFooter from '../../components/ReadyFooter.astro';
 
 const title = 'Our Work - Enterprise Custom App Development';
@@ -48,22 +49,30 @@ const description =
     </Fragment>
   </HeroBlock>
 
+  <div class="section bg-white flex flex-wrap justify-center">
+    <div class="section-content">
+      <div class="grid grid-cols-1 my-36 w-full lg:grid-cols-2">
+        <div>
+          <h1 class="mb-8 text-4xl lg:text-5xl">
+            Let’s get your enterprise app in
+            <span class="italic">ship shape</span>
+          </h1>
+
+          <p class="max-w-3xl">
+            Whether you’re charting a new course for engineering success or
+            saving an app that’s capsized, our software developers are here to
+            strengthen your products <span class="italic">and</span> your people.
+            Together, we’ll solve your most complex challenges, reach your destination
+            with ease, and grow your team’s knowledge along the way.
+          </p>
+        </div>
+      </div>
+      <ImpactStats />
+    </div>
+  </div>
+
   <div class="section flex flex-wrap justify-center">
     <div class="section-content">
-      <div class="flex flex-col mb-12 w-full">
-        <h1 class="mb-6 text-5xl lg:text-6xl">
-          Let’s get your enterprise app in
-          <span class="italic">ship shape</span>
-        </h1>
-
-        <p class="max-w-3xl">
-          Whether you’re charting a new course for engineering success or saving
-          an app that’s capsized, our software developers are here to strengthen
-          your products <span class="italic">and</span> your people. Together, we’ll
-          solve your most complex challenges, reach your destination with ease, and
-          grow your team’s knowledge along the way.
-        </p>
-      </div>
       <CaseStudiesList />
       <ClientsGrid />
     </div>

@@ -70,7 +70,7 @@ const caseStudies = [
   {
     caseStudies.map((study) => (
       <a
-        class="group transition-all hover:-translate-y-5 focus:-translate-y-5"
+        class="group transition-all hover:-translate-y-2 focus:-translate-y-2"
         href={study.link}
       >
         <div class="bg-white p-12 pb-0 rounded-md w-full">
@@ -92,7 +92,7 @@ const caseStudies = [
           </div>
 
           <div class={`bg-${study.bgColor} rounded-t-md w-full`}>
-            <div class="h-56 p-8 pb-0 rounded-t-md w-full">
+            <div class="h-28 p-8 pb-0 rounded-t-md w-full sm:h-56">
               <img
                 class="object-cover object-top h-full max-w-full rounded-t-md w-full"
                 src={study.imgSrc}
