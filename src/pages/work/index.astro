@@ -53,10 +53,10 @@ const description =
     </Fragment>
   </HeroBlock>
 
-  <div class="bg-white flex flex-wrap justify-center pt-20">
+  <div class="section bg-white flex flex-wrap justify-center !pb-0">
     <div class="section-content">
       <div
-        class="grid grid-cols-1 mt-32 w-full lg:grid-cols-2 lg:mt-36"
+        class="grid grid-cols-1 mt-10 w-full lg:grid-cols-2"
         data-aos="fade-up"
       >
         <div class="flex items-center justify-center w-full">
@@ -81,7 +81,7 @@ const description =
             alt="Ship Shape octopus mascot in an innertube"
             attributes={{
               img: {
-                class: 'm-auto w-full !max-w-xs h-auto'
+                class: 'm-auto mt-8 w-full !max-w-xs h-auto lg:mt-0'
               }
             }}
             format="webp"
@@ -131,18 +131,35 @@ const description =
 
   <div class="section bg-navy flex flex-wrap justify-center">
     <div class="section-content">
-      <h2 class="mb-8 text-4xl text-white lg:text-5xl">
+      <h2 class="mb-8 text-4xl text-white lg:text-5xl" data-aos="fade">
         Giving back for the greater good
       </h2>
 
-      <p class="text-white">
-        Our team does this work for passion, not just for profit. The developer
-        community has helped us grow into the people we are today, and we’re
-        committed to giving back even more than we’ve gained.
-      </p>
+      <div
+        class="flex flex-wrap gap-8 justify-between w-full lg:flex-nowrap lg:gap-36"
+      >
+        <p class="text-white" data-aos="fade">
+          Our team does this work for passion, not just for profit. The
+          developer community has helped us grow into the people we are today,
+          and we’re committed to giving back even more than we’ve gained.
+        </p>
+
+        <div class="w-full lg:w-auto">
+          <a
+            class="btn btn-red w-full lg:w-auto"
+            href="/services/ember-consulting/"
+          >
+            See community contributions
+          </a>
+        </div>
+      </div>
 
       <div class="gap-5 grid grid-cols-1 mt-12 lg:grid-cols-3">
-        <div class="bg-blue-light p-5 rounded-md lg:p-12">
+        <div
+          class="bg-blue-light p-5 rounded-md lg:p-12"
+          data-aos="flip-down"
+          data-aos-delay={100}
+        >
           <div class="flex h-48 items-center justify-center w-full">
             <Img
               attributes={{
@@ -169,7 +186,12 @@ const description =
             you come learn with us!
           </p>
         </div>
-        <div class="bg-blue-light p-5 rounded-md lg:p-12">
+
+        <div
+          class="bg-blue-light p-5 rounded-md lg:p-12"
+          data-aos="flip-down"
+          data-aos-delay={200}
+        >
           <div class="flex h-48 items-center justify-center w-full">
             <div class="shepherd-logo h-36 w-36">
               <Fragment set:html={ShepherdLogo} />
@@ -186,7 +208,12 @@ const description =
             more.
           </p>
         </div>
-        <div class="bg-blue-light p-5 rounded-md lg:p-12">
+
+        <div
+          class="bg-blue-light p-5 rounded-md lg:p-12"
+          data-aos="flip-down"
+          data-aos-delay={300}
+        >
           <div class="flex h-48 items-center justify-center w-full">
             <Icon class="h-36 w-auto" name="ember-cares" />
           </div>
