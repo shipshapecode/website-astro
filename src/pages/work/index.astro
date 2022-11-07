@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon';
 import { Img } from 'astro-imagetools/components';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -7,6 +8,9 @@ import ClientsGrid from '../../components/ClientsGrid.astro';
 import HeroBlock from '../../components/HeroBlock.astro';
 import ImpactStats from '../../components/ImpactStats.astro';
 import ReadyFooter from '../../components/ReadyFooter.astro';
+import TwoColumnSection from '../../components/TwoColumnSection.astro';
+
+import ShepherdLogo from '../../icons/shepherd.svg?raw';
 
 const title = 'Our Work - Enterprise Custom App Development';
 const description =
@@ -51,20 +55,40 @@ const description =
 
   <div class="bg-white flex flex-wrap justify-center pt-20">
     <div class="section-content">
-      <div class="grid grid-cols-1 mt-32 w-full lg:grid-cols-2 lg:mt-36">
-        <div>
-          <h1 class="mb-8 text-4xl lg:text-5xl">
-            Let’s get your enterprise app in
-            <span class="italic">ship shape</span>
-          </h1>
+      <div
+        class="grid grid-cols-1 mt-32 w-full lg:grid-cols-2 lg:mt-36"
+        data-aos="fade-up"
+      >
+        <div class="flex items-center justify-center w-full">
+          <div>
+            <h1 class="mb-8 text-4xl lg:text-5xl">
+              Let’s get your enterprise app in
+              <span class="italic">ship shape</span>
+            </h1>
 
-          <p class="max-w-3xl">
-            Whether you’re charting a new course for engineering success or
-            saving an app that’s capsized, our software developers are here to
-            strengthen your products <span class="italic">and</span> your people.
-            Together, we’ll solve your most complex challenges, reach your destination
-            with ease, and grow your team’s knowledge along the way.
-          </p>
+            <p>
+              Whether you’re charting a new course for engineering success or
+              saving an app that’s capsized, our software developers are here to
+              strengthen your products <span class="italic">and</span> your people.
+              Together, we’ll solve your most complex challenges, reach your destination
+              with ease, and grow your team’s knowledge along the way.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center w-full">
+          <Img
+            alt="Ship Shape octopus mascot in an innertube"
+            attributes={{
+              img: {
+                class: 'm-auto w-full !max-w-xs h-auto'
+              }
+            }}
+            format="webp"
+            loading="lazy"
+            placeholder="none"
+            src="/img/innertube.png"
+          />
         </div>
       </div>
     </div>
@@ -78,15 +102,32 @@ const description =
 
   <div class="section flex flex-wrap justify-center">
     <div class="section-content">
-      <h2 class="mb-12 text-4xl lg:text-5xl">A peek at our past work</h2>
+      <h2 class="mb-12 text-4xl lg:text-5xl" data-aos="fade">
+        A peek at our past work
+      </h2>
 
-      <h3 class="mb-8 text-2xl lg:text-4xl">Case studies:</h3>
+      <h3 class="mb-8 text-2xl lg:text-4xl" data-aos="fade">Case studies:</h3>
 
       <CaseStudiesList />
+
+      <h3 class="mb-8 text-2xl lg:text-4xl" data-aos="fade">Other projects:</h3>
 
       <ClientsGrid />
     </div>
   </div>
+
+  <TwoColumnSection
+    classString="bg-white"
+    header="Level-up your team with training and coaching"
+    image={{ height: 772, src: '/img/hero-images/mentoring.png', width: 1312 }}
+    isFlipped={true}
+  >
+    <Fragment slot="content">
+      We believe a rising tide lifts all boats. That’s why we not only focus on
+      improving your products through expert engineering, but also on upskilling
+      your team by working together, sharing knowledge, and training.
+    </Fragment>
+  </TwoColumnSection>
 
   <div class="section bg-navy flex flex-wrap justify-center">
     <div class="section-content">
@@ -102,7 +143,24 @@ const description =
 
       <div class="gap-5 grid grid-cols-1 mt-12 lg:grid-cols-3">
         <div class="bg-blue-light p-5 rounded-md lg:p-12">
-          <h3>Ember.js DC</h3>
+          <div class="flex h-48 items-center justify-center w-full">
+            <Img
+              attributes={{
+                img: {
+                  class: '!h-36 m-auto max-w-2xl w-auto'
+                }
+              }}
+              height={734}
+              format="webp"
+              loading="eager"
+              placeholder="none"
+              src="/img/ember-dc.png"
+              width={1500}
+              alt=""
+            />
+          </div>
+
+          <h3 class="mt-12">Ember.js DC</h3>
 
           <p>
             We organize the Ember.JS DC meetup, and we try to spread the love
@@ -112,7 +170,13 @@ const description =
           </p>
         </div>
         <div class="bg-blue-light p-5 rounded-md lg:p-12">
-          <h3>Shepherd.js</h3>
+          <div class="flex h-48 items-center justify-center w-full">
+            <div class="shepherd-logo h-36 w-36">
+              <Fragment set:html={ShepherdLogo} />
+            </div>
+          </div>
+
+          <h3 class="mt-12">Shepherd.js</h3>
 
           <p>
             As a part of our mission to create open source JavaScript Libraries,
@@ -123,7 +187,10 @@ const description =
           </p>
         </div>
         <div class="bg-blue-light p-5 rounded-md lg:p-12">
-          <h3>Ember Cares</h3>
+          <div class="flex h-48 items-center justify-center w-full">
+            <Icon class="h-36 w-auto" name="ember-cares" />
+          </div>
+          <h3 class="mt-12">Ember Cares</h3>
 
           <p>
             We spearheaded the efforts behind Ember Cares in 2017, where we

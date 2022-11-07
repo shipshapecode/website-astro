@@ -24,7 +24,7 @@ const clients = [
       Flatpickr, Ember Paper, and Ember Power Select to make creating and
       editing appointments easier.`,
     link: 'https://www.scoutforpets.com/',
-    logoSrc: 'clients/scout',
+    logoSrc: 'clients/scout-navy',
     name: 'Scout',
     results: `Saved users time and improved the experience, driving more repeat business
       and revenue for Scout.`
@@ -72,12 +72,14 @@ const clients = [
 ];
 ---
 
-<h3 class="mb-8 text-2xl lg:text-4xl">Other projects:</h3>
-
 <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
   {
-    clients.map((client) => (
-      <div class="bg-white p-8 rounded-md lg:p-12">
+    clients.map((client, index) => (
+      <div
+        class="bg-white p-8 rounded-md lg:p-12"
+        data-aos="fade-up"
+        data-aos-delay={200 * index}
+      >
         <a href={client.link} aria-label={client.name}>
           <Icon
             class="h-12 max-w-full mb-8 self-start w-auto pointer-events-none child:fill-navy"
@@ -87,7 +89,7 @@ const clients = [
 
         <p class="!text-grey-light">{client.blurb}</p>
 
-        <h4>Results:</h4>
+        <h4 class="mt-8 lg:mt-12">Results:</h4>
 
         <p class="italic !text-grey-light">{client.results}</p>
       </div>

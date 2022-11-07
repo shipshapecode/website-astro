@@ -66,17 +66,21 @@ const caseStudies = [
 ];
 ---
 
-<div class="gap-5 grid grid-cols-1 mb-32 lg:grid-cols-2" data-aos="fade">
+<div class="gap-5 grid grid-cols-1 mb-32 lg:grid-cols-2">
   {
-    caseStudies.map((study) => (
+    caseStudies.map((study, index) => (
       <a
         class="group transition-all hover:-translate-y-2 focus:-translate-y-2"
+        data-aos="flip-down"
+        data-aos-delay={200 * index}
         href={study.link}
       >
         <div class="bg-white p-12 pb-0 rounded-md w-full">
           <h3>
             <Icon
-              class="h-8 max-w-full mb-8 self-start w-auto pointer-events-none child:fill-navy"
+              class={`h-8 max-w-full mb-8 self-start w-auto pointer-events-none ${
+                study.logoSrc !== 'clients/swach' ? 'child:fill-navy' : ''
+              }`}
               name={study.logoSrc}
             />
           </h3>
