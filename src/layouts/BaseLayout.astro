@@ -12,7 +12,14 @@ export interface Props {
 const { description, tags, title } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-// TODO: add back dynamic classes
+
+function addBlueBackground() {
+  const pathname = canonicalURL?.pathname;
+  const paths = ['/', '/about/', '/services/', '/work/'];
+  if (paths.includes(pathname)) {
+    return 'bg-blue-light';
+  }
+}
 ---
 
 <html lang="en">
@@ -36,11 +43,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       itemscope
       itemtype="https://schema.org/Organization"
       itemid="shipshapeorg"
-      class={canonicalURL?.pathname === '/' ||
-      canonicalURL?.pathname === '/about/' ||
-      canonicalURL?.pathname === '/services/'
-        ? 'bg-blue-light'
-        : ''}
+      class={addBlueBackground()}
     >
       <meta itemprop="legalName" content="Ship Shape Consulting LLC" />
 

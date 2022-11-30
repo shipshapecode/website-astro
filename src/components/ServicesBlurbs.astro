@@ -79,20 +79,20 @@ const services = [
 ];
 ---
 
-<section class="section bg-blue-light flex flex-wrap justify-center lg:mb-16">
-  <div class="section-content">
-    <TwoColumnSection
-      image={headerImage}
-      header="Our fleet of specialties"
-      classString="lg-header"
-    >
-      <Fragment slot="content">
-        Our senior-level software consultants ensure your applications are
-        optimized for today and ready for the future.
-      </Fragment>
-    </TwoColumnSection>
+<TwoColumnSection
+  image={headerImage}
+  header="Our fleet of specialties"
+  classString="bg-blue-light lg-header !pb-0"
+>
+  <Fragment slot="content">
+    Our senior-level software consultants ensure your applications are optimized
+    for today and ready for the future.
+  </Fragment>
+</TwoColumnSection>
 
-    <section class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+<section class="section !pt-12 lg:!pt-24">
+  <div class="section-content">
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
       {
         services.map((service) => (
           <ServiceCard
@@ -112,7 +112,7 @@ const services = [
           </ServiceCard>
         ))
       }
-    </section>
+    </div>
   </div>
 </section>
 

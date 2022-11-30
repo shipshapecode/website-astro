@@ -8,13 +8,3 @@
 @import './tailwind/components/nav-menu.css';
 
 @tailwind utilities;
-
-@layer base {
-  li,
-  ol,
-  p,
-  pre,
-  ul {
-    @apply mb-6;
-  }
-}

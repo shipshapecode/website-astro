@@ -66,7 +66,7 @@ h6 {
 }
 
 .section {
-  padding: 5rem 2rem;
+  @apply px-8 py-32 lg:py-36;
 }
 
 .section-content {
