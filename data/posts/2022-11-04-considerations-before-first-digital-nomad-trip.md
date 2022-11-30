@@ -4,9 +4,9 @@ categories:
   - travel
   - digital nomad
 date: '2022-11-04'
+image: digital-nomad.jpg
 slug: considerations-before-first-digital-nomad-trip
 title: What To Consider Before Your First Digital Nomad Trip
-image: digital-nomad.jpg
 ---
 
 The needs of a digital nomad are different from those of travelers who are not working as they visit different places, or people who are on vacation for a considerably shorter period of time. There are several logistical and lifestyle considerations that need to be thought about before making your first trip as a digital nomad.
