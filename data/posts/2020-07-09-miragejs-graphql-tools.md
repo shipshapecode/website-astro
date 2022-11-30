@@ -8,11 +8,25 @@ slug: miragejs-graphql-tools
 title: Simplify using MirageJS with GraphQL
 ---
 
-Using [Mirage](https://miragejs.com/) can be very handy to allow app developers to build features early and not be blocked by an API that doesn't exist yet or that is still in progress. This way you can have a proof of concept or can work on features that simply need to be put in place for persistence somewhere later on.
+Using [Mirage](https://miragejs.com/) can be very handy to allow app developers
+to build features early and not be blocked by an API that doesn't exist yet or
+that is still in progress. This way you can have a proof of concept or can work
+on features that simply need to be put in place for persistence somewhere later
+on.
 
-While this works across many different application stacks, it has traditionally been used expecting a REST style API and it's not completely turn-key for some technologies such as GraphQL. A number of folks, including the Mirage core team, have been working on the best workflows to make that an easier experience, but it is not yet [robustly documented](https://miragejs.com/docs/comparison-with-other-tools/#graphql-query-mocking). While that is underway, this is how we decided to improve our workflow as the code base grows.
+While this works across many different application stacks, it has traditionally
+been used expecting a REST style API and it's not completely turn-key for some
+technologies such as GraphQL. A number of folks, including the Mirage core team,
+have been working on the best workflows to make that an easier experience, but
+it is not yet
+[robustly documented](https://miragejs.com/docs/comparison-with-other-tools/#graphql-query-mocking).
+While that is underway, this is how we decided to improve our workflow as the
+code base grows.
 
-Recently, we needed to apply simulation for a Javascript application using GraphQL. As part of the implementation, we worked on some utilities to streamline the developer experience for updates and maintenance. The examples for dealing with this are for a very basic use case.
+Recently, we needed to apply simulation for a Javascript application using
+GraphQL. As part of the implementation, we worked on some utilities to
+streamline the developer experience for updates and maintenance. The examples
+for dealing with this are for a very basic use case.
 
 ```js
 import { createServer } from 'miragejs';
@@ -58,7 +72,10 @@ export default function () {
 }
 ```
 
-This is how the basic recommended configuration is when working with GraphQl. This can work early on, but become problematic to manage when you start to have a much larger schema and need to maintain way more models and relationships for your mocking. Given the following schema:
+This is how the basic recommended configuration is when working with GraphQl.
+This can work early on, but become problematic to manage when you start to have
+a much larger schema and need to maintain way more models and relationships for
+your mocking. Given the following schema:
 
 ```graphql
 type Query {
@@ -82,7 +99,8 @@ type Movie {
 }
 ```
 
-The first thing we can do is automate adding models to our config at build time. This can be done by parsing our schema and some traversing of the parsed AST.
+The first thing we can do is automate adding models to our config at build time.
+This can be done by parsing our schema and some traversing of the parsed AST.
 
 ```js
 import { parse } from 'graphql';
@@ -117,7 +135,11 @@ const modelMaps = nodeTypes.reduce((modelAccumulator, node) => {
 }, {});
 ```
 
-We can then add that to the configuration for Mirage as `models: modelMaps` and we'll get that automatically registered as we add to our schema. This does get more complicated though, when we start to add associations in our objects and need Mirage to see that as a relationship for queries that load all that data. Ideally, the graph can work for a query like so on the UI:
+We can then add that to the configuration for Mirage as `models: modelMaps` and
+we'll get that automatically registered as we add to our schema. This does get
+more complicated though, when we start to add associations in our objects and
+need Mirage to see that as a relationship for queries that load all that data.
+Ideally, the graph can work for a query like so on the UI:
 
 ```graphql
 query ListAllMovies {
@@ -133,7 +155,9 @@ query ListAllMovies {
 }
 ```
 
-We first want to identify all the model names (variable `modelNames`). Also, we'll want to reduce the fields we're checking against to only fields that are confirmed to be other object types (variable `modelsReducedFields`).
+We first want to identify all the model names (variable `modelNames`). Also,
+we'll want to reduce the fields we're checking against to only fields that are
+confirmed to be other object types (variable `modelsReducedFields`).
 
 ```js
 const modelNames = nodeTypes.map((type) => type.model);
@@ -165,13 +189,19 @@ const modelsReducedFields = nodeTypes.map((node) => {
 });
 ```
 
-Now, what we're doing here with `modelsReducedFields()` is taking each node and reducing the fields down to other models and determining if they are a belongs-to or has-many kind of association. You might have noticed the call to `_getRootType()`, which is just a recursive function to go through nested objects in the AST and get the deepest node's name. I'm showing it independently in the following:
+Now, what we're doing here with `modelsReducedFields()` is taking each node and
+reducing the fields down to other models and determining if they are a
+belongs-to or has-many kind of association. You might have noticed the call to
+`_getRootType()`, which is just a recursive function to go through nested
+objects in the AST and get the deepest node's name. I'm showing it independently
+in the following:
 
 ```js
 const _getRootType = (field) => (field.type ? _getRootType(field.type) : field);
 ```
 
-We can now use this improved array for the `modelMaps` value to get models that have the associations automatically created.
+We can now use this improved array for the `modelMaps` value to get models that
+have the associations automatically created.
 
 ```js
 const modelMaps = modelsReducedFields.reduce((modelAccumulator, node) => {
@@ -192,6 +222,13 @@ const modelMaps = modelsReducedFields.reduce((modelAccumulator, node) => {
 }, {});
 ```
 
-While this may seem like a lot up front for such a small schema, if your schema is larger, or you expect your types to scale, yet still want to use Mirage for simulation or testing coverage, then it's really helpful to get this up front without maintaining those changes over time.
+While this may seem like a lot up front for such a small schema, if your schema
+is larger, or you expect your types to scale, yet still want to use Mirage for
+simulation or testing coverage, then it's really helpful to get this up front
+without maintaining those changes over time.
 
-That said, this only automates models and associations. We're still going to need to be explicit with our routes and resolvers to get that data as we add routes and different queries/mutations to our schemas. There are some ways to get those more automated to our build times as well and we'll explore that in a subsequent post on working with Mirage and GraphQL.
+That said, this only automates models and associations. We're still going to
+need to be explicit with our routes and resolvers to get that data as we add
+routes and different queries/mutations to our schemas. There are some ways to
+get those more automated to our build times as well and we'll explore that in a
+subsequent post on working with Mirage and GraphQL.

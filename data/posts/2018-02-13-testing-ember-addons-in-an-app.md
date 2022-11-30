@@ -10,13 +10,18 @@ slug: testing-ember-addons-in-an-app
 title: Testing Ember Addons in a Real App Using ember-cli-addon-tests
 ---
 
-The usual test flow, for testing most addons, is using acceptance tests with the dummy app, and testing functionality
-of your components etc. via integration and unit tests. I was not aware there was even an option to run a real app,
-consume the addon and ensure the addon interacts with the app as intended, until I was introduced to [ember-cli-addon-tests](https://github.com/tomdale/ember-cli-addon-tests).
+The usual test flow, for testing most addons, is using acceptance tests with the
+dummy app, and testing functionality of your components etc. via integration and
+unit tests. I was not aware there was even an option to run a real app, consume
+the addon and ensure the addon interacts with the app as intended, until I was
+introduced to
+[ember-cli-addon-tests](https://github.com/tomdale/ember-cli-addon-tests).
 
-I have been working on adding tests to [ember-cli-code-coverage](https://github.com/kategengler/ember-cli-code-coverage) using ember-cli-addon-tests,
-and I wanted to document how we are testing running our addon against a normal app, an in-repo addon, and an in-repo engine in case someone else
-has a need to test how their addon behaves in these situations.
+I have been working on adding tests to
+[ember-cli-code-coverage](https://github.com/kategengler/ember-cli-code-coverage)
+using ember-cli-addon-tests, and I wanted to document how we are testing running
+our addon against a normal app, an in-repo addon, and an in-repo engine in case
+someone else has a need to test how their addon behaves in these situations.
 
 1. [Testing with an App](#app)
 1. [Testing with an in-repo Addon](#in-repo-addon)
@@ -24,8 +29,11 @@ has a need to test how their addon behaves in these situations.
 
 <h3 id="app">Testing with an App</h3>
 
-Testing with a vanilla app is the simplest case, and if you do not want to generate any files to test against, there is no need to create any fixtures.
-If you do want to create some files to test against, like we did in ember-cli-code-coverage, you can easily create them by putting them in `test/fixtures/<your app name>`.
+Testing with a vanilla app is the simplest case, and if you do not want to
+generate any files to test against, there is no need to create any fixtures. If
+you do want to create some files to test against, like we did in
+ember-cli-code-coverage, you can easily create them by putting them in
+`test/fixtures/<your app name>`.
 
 For us, we started with:
 
@@ -33,15 +41,20 @@ For us, we started with:
 mkdir test/fixtures/my-app
 ```
 
-We then had a couple utils we wanted to include, to see if they were covered, so we copied them into their places in fixtures,
-`test/fixtures/my-app/app/utils/my-covered-util.js` and `test/fixtures/my-app/app/utils/my-uncovered-util.js`.
+We then had a couple utils we wanted to include, to see if they were covered, so
+we copied them into their places in fixtures,
+`test/fixtures/my-app/app/utils/my-covered-util.js` and
+`test/fixtures/my-app/app/utils/my-uncovered-util.js`.
 
-Now that we have our fixtures setup, it is time to actually use ember-cli-addon-tests to spin up the app and test our addon.
-To do this, we need to setup our first mocha test. It will live in `test/integration/app-coverage-test.js`.
+Now that we have our fixtures setup, it is time to actually use
+ember-cli-addon-tests to spin up the app and test our addon. To do this, we need
+to setup our first mocha test. It will live in
+`test/integration/app-coverage-test.js`.
 
-We first need to `require` in the test app and create a new instance of the app in our `beforeEach`. This will setup a new
-app for us to test against for each of our tests. You can also specify `emberVersion` to choose which version of Ember the app
-should run.
+We first need to `require` in the test app and create a new instance of the app
+in our `beforeEach`. This will setup a new app for us to test against for each
+of our tests. You can also specify `emberVersion` to choose which version of
+Ember the app should run.
 
 ```javascript
 // test/integration/app-coverage-test.js
@@ -61,9 +74,12 @@ describe('app coverage generation', function() {
     ...
 ```
 
-Now that we have instantiated our test app, we can do things like edit the package.json, run `npm install`, or whatever we need
-to do to get the app in the right state to test our addon. In our case, we needed to add [ember-exam](https://github.com/trentmwillis/ember-exam)
-so we could support parallel testing, and we also needed to remove our own addon, and add it back to get around symlink bugs.
+Now that we have instantiated our test app, we can do things like edit the
+package.json, run `npm install`, or whatever we need to do to get the app in the
+right state to test our addon. In our case, we needed to add
+[ember-exam](https://github.com/trentmwillis/ember-exam) so we could support
+parallel testing, and we also needed to remove our own addon, and add it back to
+get around symlink bugs.
 
 ```javascript
 ...
@@ -94,8 +110,9 @@ afterEach(function() {
 });
 ```
 
-After finishing all this setup, we are ready to run our test app and check its output to see if our addon is working!
-You can run normal commands, just like you would on the command line normally, like `app.run('ember', 'test')`.
+After finishing all this setup, we are ready to run our test app and check its
+output to see if our addon is working! You can run normal commands, just like
+you would on the command line normally, like `app.run('ember', 'test')`.
 
 ```javascript
 it('runs coverage when env var is set', function () {
@@ -173,20 +190,29 @@ describe('app coverage generation', function () {
 });
 ```
 
-This is not an out of the box working example that you can copy and paste. Things have been left out, for the sake of brevity.
-To see the actual tests and fixtures, please go [here](https://github.com/kategengler/ember-cli-code-coverage/tree/46e63140a8bad15caf8bae0a15357502d55b26ff/test).
+This is not an out of the box working example that you can copy and paste.
+Things have been left out, for the sake of brevity. To see the actual tests and
+fixtures, please go
+[here](https://github.com/kategengler/ember-cli-code-coverage/tree/46e63140a8bad15caf8bae0a15357502d55b26ff/test).
 
 <h3 id="in-repo-addon">Testing with an in-repo Addon</h3>
 
-Testing with an in-repo addon is similar to testing with a vanilla app, but we will need a helper to generate things for the in-repo addon.
-Luckily, [@rwjblue](https://github.com/rwjblue) has us covered and created these awesome helpers in ember-engines, [in-repo-addon.js](https://github.com/ember-engines/ember-engines/blob/090333032cabfae8b3a831097d309745b87bda61/node-tests/helpers/in-repo-addon.js)
-and [in-repo-engine.js](https://github.com/ember-engines/ember-engines/blob/090333032cabfae8b3a831097d309745b87bda61/node-tests/helpers/in-repo-engine.js)
-which we shamelessly borrowed and used to test against our own in-repo addons and in repo engines.
+Testing with an in-repo addon is similar to testing with a vanilla app, but we
+will need a helper to generate things for the in-repo addon. Luckily,
+[@rwjblue](https://github.com/rwjblue) has us covered and created these awesome
+helpers in ember-engines,
+[in-repo-addon.js](https://github.com/ember-engines/ember-engines/blob/090333032cabfae8b3a831097d309745b87bda61/node-tests/helpers/in-repo-addon.js)
+and
+[in-repo-engine.js](https://github.com/ember-engines/ember-engines/blob/090333032cabfae8b3a831097d309745b87bda61/node-tests/helpers/in-repo-engine.js)
+which we shamelessly borrowed and used to test against our own in-repo addons
+and in repo engines.
 
-The basic setup is the same as a vanilla app. You will create any fixtures you want in your app, and any fixtures you want in your
-in-repo addon under `lib/<your in-repo addon name>` and do the same basic setup of your app in `beforeEach`, but
-the main differences come when you do your actual test. Before running your commands with the app you generated, you will want to setup
-the in-repo addon.
+The basic setup is the same as a vanilla app. You will create any fixtures you
+want in your app, and any fixtures you want in your in-repo addon under
+`lib/<your in-repo addon name>` and do the same basic setup of your app in
+`beforeEach`, but the main differences come when you do your actual test. Before
+running your commands with the app you generated, you will want to setup the
+in-repo addon.
 
 ```javascript
 const AddonTestApp = require('ember-cli-addon-tests').AddonTestApp;
@@ -270,26 +296,34 @@ describe('in-repo addon coverage generation', function () {
 });
 ```
 
-Since we now see there is coverage info, we know our in-repo addon was generated correctly and is reporting in the coverage report.
-Again, these are not examples you can copy/paste, but meant to illustrate the setup steps. The full tests can be found [here](https://github.com/kategengler/ember-cli-code-coverage/tree/46e63140a8bad15caf8bae0a15357502d55b26ff/test).
+Since we now see there is coverage info, we know our in-repo addon was generated
+correctly and is reporting in the coverage report. Again, these are not examples
+you can copy/paste, but meant to illustrate the setup steps. The full tests can
+be found
+[here](https://github.com/kategengler/ember-cli-code-coverage/tree/46e63140a8bad15caf8bae0a15357502d55b26ff/test).
 
 <h3 id="in-repo-engine">Testing with an in-repo Engine</h3>
 
-Testing with an in-repo engine is almost identical to testing with an in-repo addon, but it uses a different helper, and your engine will have a
-slightly different file structure.
+Testing with an in-repo engine is almost identical to testing with an in-repo
+addon, but it uses a different helper, and your engine will have a slightly
+different file structure.
 
-You again start by generating your fixtures. If you do not want anything specific, just a vanilla app and vanilla in-repo engine, you do
-not need to create any fixtures, but if you want to test specific files, just create them in their normal app or in-repo engine folder
-structure and the tests will use the ones you provide.
+You again start by generating your fixtures. If you do not want anything
+specific, just a vanilla app and vanilla in-repo engine, you do not need to
+create any fixtures, but if you want to test specific files, just create them in
+their normal app or in-repo engine folder structure and the tests will use the
+ones you provide.
 
-After you have your fixtures setup, you will essentially do the same thing we did above in the in-repo addon tests.
-The only difference is you will use the `in-repo-engine` helper in your test.
+After you have your fixtures setup, you will essentially do the same thing we
+did above in the in-repo addon tests. The only difference is you will use the
+`in-repo-engine` helper in your test.
 
 ```javascript
 const InRepoEngine = require('../helpers/in-repo-engine');
 ```
 
-You will also need to add two deps to your engine's package.json, and you may or may not want to enable `lazy` loading.
+You will also need to add two deps to your engine's package.json, and you may or
+may not want to enable `lazy` loading.
 
 ```javascript
 it(
@@ -348,6 +382,7 @@ it(
 );
 ```
 
-As you can see, this is pretty much the same. Hopefully this will help some addon authors with testing their
-addons against real apps. I had no idea how to accomplish this programmatically before, but this makes it quite
-nice and easy to test with!
+As you can see, this is pretty much the same. Hopefully this will help some
+addon authors with testing their addons against real apps. I had no idea how to
+accomplish this programmatically before, but this makes it quite nice and easy
+to test with!

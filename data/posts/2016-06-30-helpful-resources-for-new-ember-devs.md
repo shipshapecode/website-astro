@@ -8,9 +8,13 @@ slug: helpful-resources-for-new-ember-devs
 title: Helpful Resources for New Ember Devs
 ---
 
-I have noticed a lot of developers start trying to pick up Ember, and they get overwhelmed by the steep learning curve and the inability to find up to date and helpful resources for learning about Ember, finding addons, how to do things the Ember way, etc.
+I have noticed a lot of developers start trying to pick up Ember, and they get
+overwhelmed by the steep learning curve and the inability to find up to date and
+helpful resources for learning about Ember, finding addons, how to do things the
+Ember way, etc.
 
-In order to try to ease some of this pain, I am going to try to list some various resources here that may be of help.
+In order to try to ease some of this pain, I am going to try to list some
+various resources here that may be of help.
 
 #### Documentation
 
@@ -36,4 +40,5 @@ In order to try to ease some of this pain, I am going to try to list some variou
 
 This list is by no means exhaustive, but should be enough to help get you going.
 
-For a frequently updated, community driven, extensive list of tutorials, podcasts, books, etc. check out [Ember Watch](http://emberwatch.com/).
+For a frequently updated, community driven, extensive list of tutorials,
+podcasts, books, etc. check out [Ember Watch](http://emberwatch.com/).

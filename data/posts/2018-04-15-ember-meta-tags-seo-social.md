@@ -13,35 +13,44 @@ slug: ember-meta-tags-seo-social
 title: Ember Meta - Adding Meta Tags to Your Blog
 ---
 
-Have you noticed that most popular sites, these days, have a preview of their content magically pop up when you share
-their links on social media?
+Have you noticed that most popular sites, these days, have a preview of their
+content magically pop up when you share their links on social media?
 
-As I mentioned in my previous post on [Static Blogs with Prember and Markdown](https://shipshape.io/blog/static-blogs-with-prember-and-markdown/),
-these meta tags were hugely important to me, when deciding to move away from Ghost. This post, number two in the series on using Ember to
-create a static blog, will cover my attempt at reaching parity with Ghost for meta tags.
+As I mentioned in my previous post on
+[Static Blogs with Prember and Markdown](https://shipshape.io/blog/static-blogs-with-prember-and-markdown/),
+these meta tags were hugely important to me, when deciding to move away from
+Ghost. This post, number two in the series on using Ember to create a static
+blog, will cover my attempt at reaching parity with Ghost for meta tags.
 
 ![Ship Shape Blog Social Media Meta Preview](/img/blog/unfurled.png)
 
-There are several meta types, from opengraph, to Twitter tags, to standard meta and links. These tags provide several benefits,
-including more structured data for SEO and nice looking previews of your content when you post links on social media.
+There are several meta types, from opengraph, to Twitter tags, to standard meta
+and links. These tags provide several benefits, including more structured data
+for SEO and nice looking previews of your content when you post links on social
+media.
 
 ### Adding Meta with ember-cli-head
 
-I originally took the brute force approach, and just added new meta, every time I found it, using
-[ember-cli-head](https://github.com/ronco/ember-cli-head). I would set the various meta values in
-the `afterModel` hook of my `blog/index` and `blog/post` routes. This did work, but I felt I could
-make it a bit more generic and share it with the Ember community, so that, if you were following the
-prescribed front matter format in your markdown, you would just get most of the meta for free.
+I originally took the brute force approach, and just added new meta, every time
+I found it, using [ember-cli-head](https://github.com/ronco/ember-cli-head). I
+would set the various meta values in the `afterModel` hook of my `blog/index`
+and `blog/post` routes. This did work, but I felt I could make it a bit more
+generic and share it with the Ember community, so that, if you were following
+the prescribed front matter format in your markdown, you would just get most of
+the meta for free.
 
 ### Simplifying Meta with ember-meta
 
-In an attempt to make this easy for everyone, to have a blog with mostly automatic meta, I created
-[ember-meta](https://github.com/shipshapecode/ember-meta). It takes some common values like, titles,
-descriptions, authors, etc. and generates opengraph and twitter meta tags, canonical urls from slugs,
-and most of the things that I found that Ghost was giving me out of the box.
+In an attempt to make this easy for everyone, to have a blog with mostly
+automatic meta, I created
+[ember-meta](https://github.com/shipshapecode/ember-meta). It takes some common
+values like, titles, descriptions, authors, etc. and generates opengraph and
+twitter meta tags, canonical urls from slugs, and most of the things that I
+found that Ghost was giving me out of the box.
 
-It can be used with or without markdown, and supports just normal POJOs, as well as ember-cli-markdown-resolver,
-or any sort of model that gives you the prescribed data format.
+It can be used with or without markdown, and supports just normal POJOs, as well
+as ember-cli-markdown-resolver, or any sort of model that gives you the
+prescribed data format.
 
 ### Global Config
 
@@ -58,21 +67,26 @@ ENV['ember-meta'] = {
 };
 ```
 
-There is a global config to define top level meta, like `title`, `description`, etc. which lives in `config/environment.js`.
-The title will be used for both the `<title>` tag of your page, and for `og:title` and `twitter:title`.
-Similarly, the description will be used for `description`, `og:description`, and `twitter:description`.
-You probably are starting to see a pattern forming here 😃.
+There is a global config to define top level meta, like `title`, `description`,
+etc. which lives in `config/environment.js`. The title will be used for both the
+`<title>` tag of your page, and for `og:title` and `twitter:title`. Similarly,
+the description will be used for `description`, `og:description`, and
+`twitter:description`. You probably are starting to see a pattern forming here
+😃.
 
-The global config will be merged with the local config, when you are on a specific post. This allows you to define
-sane defaults, while also retaining the flexibility to override each value on a specific post, by defining it on the
+The global config will be merged with the local config, when you are on a
+specific post. This allows you to define sane defaults, while also retaining the
+flexibility to override each value on a specific post, by defining it on the
 `model`.
 
 ### Using the Mixins
 
-Once you have defined your base values, there are two mixins exposed for use in your app's `blog/index` route, and each `blog/post`'s route.
+Once you have defined your base values, there are two mixins exposed for use in
+your app's `blog/index` route, and each `blog/post`'s route.
 
-The `blog-meta` mixin only needs the values from the global config, so it will work even without the model hook. You can
-simply pull in the mixin, and mix it into your `blog/index` route.
+The `blog-meta` mixin only needs the values from the global config, so it will
+work even without the model hook. You can simply pull in the mixin, and mix it
+into your `blog/index` route.
 
 ```js
 // routes/blog/index.js
@@ -84,15 +98,18 @@ export default Route.extend(BlogMetaMixin, {});
 
 ## Individual Post / Local Config
 
-The `post-meta` mixin, however, relies heavily on your model values. Therefore, if you do not have a model hook, and
-your `afterModel` is passed an `undefined` model reference, an assertion will be thrown that you must have a model.
+The `post-meta` mixin, however, relies heavily on your model values. Therefore,
+if you do not have a model hook, and your `afterModel` is passed an `undefined`
+model reference, an assertion will be thrown that you must have a model.
 
 ### Using with ember-cli-markdown-resolver
 
-In this example, we are using [ember-cli-markdown-resolver](https://github.com/willviles/ember-cli-markdown-resolver)
-and it will automatically set the front matter values from your markdown as properties on your model, under
-`model.attributes.title`, `model.attributes.description`, etc. when you grab the file. The post content itself will
-live at `model.content`.
+In this example, we are using
+[ember-cli-markdown-resolver](https://github.com/willviles/ember-cli-markdown-resolver)
+and it will automatically set the front matter values from your markdown as
+properties on your model, under `model.attributes.title`,
+`model.attributes.description`, etc. when you grab the file. The post content
+itself will live at `model.content`.
 
 The values in my `.md` files look something like this:
 
@@ -128,10 +145,12 @@ export default Route.extend(PostMetaMixin, {
 
 ### Using with a Vanilla Model Hook
 
-You do not have to use the markdown resolver, but your model must return values of the same format, i.e. an `author`
-name string, a `categories` array, a `slug` for the post, a title, etc. It must return the `content` of the post, as
-the `content` property of your model object, and all the other various things as `attributes`. An example of the
-same blog post from the markdown example, except using a POJO as the model, is below.
+You do not have to use the markdown resolver, but your model must return values
+of the same format, i.e. an `author` name string, a `categories` array, a `slug`
+for the post, a title, etc. It must return the `content` of the post, as the
+`content` property of your model object, and all the other various things as
+`attributes`. An example of the same blog post from the markdown example, except
+using a POJO as the model, is below.
 
 ```js
 // routes/blog/post.js
@@ -158,9 +177,10 @@ export default Route.extend(PostMetaMixin, {
 
 ### Final Result
 
-With this relatively simple setup, and the help of fastboot/prember, you should now have meta tags
-rendering and be able to have fancy previews for your links, and better SEO overall! The final resulting meta should look
-something like this:
+With this relatively simple setup, and the help of fastboot/prember, you should
+now have meta tags rendering and be able to have fancy previews for your links,
+and better SEO overall! The final resulting meta should look something like
+this:
 
 ```html
 <title>Ember Meta - Adding Meta Tags to Your Blog - Blog - Ship Shape</title>

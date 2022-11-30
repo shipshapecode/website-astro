@@ -8,11 +8,15 @@ slug: aiming-for-targets-with-ember
 title: Aiming for Targets with Ember
 ---
 
-After reading Robert Jackson's [post on targets](http://rwjblue.com/2017/04/21/ember-cli-targets/), I was excited to take them for a spin and see what sort of file size savings I could get.
+After reading Robert Jackson's
+[post on targets](http://rwjblue.com/2017/04/21/ember-cli-targets/), I was
+excited to take them for a spin and see what sort of file size savings I could
+get.
 
 ### First Attempt
 
-I took an initial baseline of my assets size by running `ember build -e production` and the results were:
+I took an initial baseline of my assets size by running
+`ember build -e production` and the results were:
 
 ```bash
 Built project successfully. Stored in "dist/".
@@ -67,15 +71,21 @@ File sizes:
  - dist/sw.js: 2.06 KB (874 B gzipped)
 ```
 
-This was less than ideal, as you'll probably notice that most of the dist sizes actually increased! I then decided I should probably go through my addons and give them the same treatment, to see if we could get some of this magic working.
+This was less than ideal, as you'll probably notice that most of the dist sizes
+actually increased! I then decided I should probably go through my addons and
+give them the same treatment, to see if we could get some of this magic working.
 
 ### Applying to addons
 
-I updated all my addons to the latest ember-cli 2.13 beta, and made sure they were running ember-cli-babel 6.0+, to ensure compatibility with targets.
+I updated all my addons to the latest ember-cli 2.13 beta, and made sure they
+were running ember-cli-babel 6.0+, to ensure compatibility with targets.
 
-I started with [ember-3d-nav](https://github.com/shipshapecode/ember-3d-nav) and wanted to try a build after updating it in my app, to see if anything got any smaller.
+I started with [ember-3d-nav](https://github.com/shipshapecode/ember-3d-nav) and
+wanted to try a build after updating it in my app, to see if anything got any
+smaller.
 
-Unfortunately, the results were roughly the same as what I had seen already, either no change or an increase in file size.
+Unfortunately, the results were roughly the same as what I had seen already,
+either no change or an increase in file size.
 
 ```bash
 Built project successfully. Stored in "dist/".
@@ -92,8 +102,12 @@ File sizes:
  - dist/sw.js: 2.06 KB (877 B gzipped)
 ```
 
-I spoke with Robert Jackson about these results, and he confirmed that babili is just not as good as uglify at minification, so the file sizes may increase slightly, but should be roughly the same as with uglify.
+I spoke with Robert Jackson about these results, and he confirmed that babili is
+just not as good as uglify at minification, so the file sizes may increase
+slightly, but should be roughly the same as with uglify.
 
 ## tl;dr
 
-Targets are cool, and I am going to use them. Hopefully most people will, but there are some cases where file sizes are a bit larger, and it may not be for everyone.
+Targets are cool, and I am going to use them. Hopefully most people will, but
+there are some cases where file sizes are a bit larger, and it may not be for
+everyone.

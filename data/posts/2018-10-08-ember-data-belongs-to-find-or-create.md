@@ -10,20 +10,23 @@ title: Creating a Default Record When a belongsTo Request Errors
 
 ## Creating a Default Record When a belongsTo Request Errors
 
-Today I had an interesting need in ember-data, which was to create an empty record,
-when the API returned a 404 for a `belongsTo`. Typically an `AdapterError` would be thrown,
-but we have some really hacky stuff in our serializer to create a bunch of blank lines, and I
-basically wanted ember-data to behave as if it had not received a 404, and return an empty record.
+Today I had an interesting need in ember-data, which was to create an empty
+record, when the API returned a 404 for a `belongsTo`. Typically an
+`AdapterError` would be thrown, but we have some really hacky stuff in our
+serializer to create a bunch of blank lines, and I basically wanted ember-data
+to behave as if it had not received a 404, and return an empty record.
 
-_Note:_ I do not think this is necessary if you correctly follow JSONAPI, as it should return 200 and
-`{ data: null }`.
+_Note:_ I do not think this is necessary if you correctly follow JSONAPI, as it
+should return 200 and `{ data: null }`.
 
-Naturally, I reached out to [runspired](https://twitter.com/Runspired), and he had an elegant solution for me,
-as he always does. The solution was to catch the error in the `findBelongsTo` method, and return an empty record there.
+Naturally, I reached out to [runspired](https://twitter.com/Runspired), and he
+had an elegant solution for me, as he always does. The solution was to catch the
+error in the `findBelongsTo` method, and return an empty record there.
 
 ### Models
 
-The models simply setup the relationships between themselves. For the sake of illustration, we will use a person -> address relationship.
+The models simply setup the relationships between themselves. For the sake of
+illustration, we will use a person -> address relationship.
 
 ```js
 // app/models/person.js
@@ -54,8 +57,9 @@ export default Model.extend({
 
 ### Adapter
 
-The adapter is going to catch the 404, and return an object with a default value instead, so this will be
-serialized as the "value from the server", and treated just like a normal server response would be.
+The adapter is going to catch the 404, and return an object with a default value
+instead, so this will be serialized as the "value from the server", and treated
+just like a normal server response would be.
 
 ```js
 // app/adapters/person.js
@@ -89,5 +93,5 @@ export default ApplicationAdapter.extend({
 });
 ```
 
-That's all there is to it! It's a pretty elegant and straightforward concept, and just one more reason
-ember-data is such a powerful tool.
+That's all there is to it! It's a pretty elegant and straightforward concept,
+and just one more reason ember-data is such a powerful tool.

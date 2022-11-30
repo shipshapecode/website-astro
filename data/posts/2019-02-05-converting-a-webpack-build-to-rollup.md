@@ -11,13 +11,19 @@ slug: converting-a-webpack-build-to-rollup
 title: Converting a Webpack Build to Rollup
 ---
 
-When we initially started on refreshing [Shepherd](https://github.com/shipshapecode/shepherd), we wanted to modernize
-the build process, and decided to switch from gulp to [webpack](https://webpack.js.org/). This worked well, and was a
-step in the right direction, but with all the buzz around [rollup](https://rollupjs.org/) 1.0, we decided to give it a try.
+When we initially started on refreshing
+[Shepherd](https://github.com/shipshapecode/shepherd), we wanted to modernize
+the build process, and decided to switch from gulp to
+[webpack](https://webpack.js.org/). This worked well, and was a step in the
+right direction, but with all the buzz around [rollup](https://rollupjs.org/)
+1.0, we decided to give it a try.
 
-In some cases, things were a simple 1:1 conversion from a webpack plugin to a rollup plugin, but other things were much less straightforward.
-We'll go through each conversion, step by step here, in the hopes that it will be helpful to others who may want to take rollup for a spin. If you just want
-to see the entire webpack config and the entire rollup config, you can [skip to the bottom](#configfiles) and compare them yourself.
+In some cases, things were a simple 1:1 conversion from a webpack plugin to a
+rollup plugin, but other things were much less straightforward. We'll go through
+each conversion, step by step here, in the hopes that it will be helpful to
+others who may want to take rollup for a spin. If you just want to see the
+entire webpack config and the entire rollup config, you can
+[skip to the bottom](#configfiles) and compare them yourself.
 
 ## Table of Contents
 
@@ -32,12 +38,15 @@ to see the entire webpack config and the entire rollup config, you can [skip to 
 
 ### eslint-loader -> rollup-plugin-eslint
 
-[ESLint](https://eslint.org/) is a linting tool for JavaScript, that allows us to enforce code style for all of our JS. We typically use it
-in all our projects and we are used to it running automatically, while serving or building, since this is baked into
-Ember.js, so naturally we wanted to get this same behavior with rollup.
+[ESLint](https://eslint.org/) is a linting tool for JavaScript, that allows us
+to enforce code style for all of our JS. We typically use it in all our projects
+and we are used to it running automatically, while serving or building, since
+this is baked into Ember.js, so naturally we wanted to get this same behavior
+with rollup.
 
-We used [eslint-loader](https://github.com/webpack-contrib/eslint-loader) with webpack, and passed all JS through it,
-excluding `node_modules`. We also had to make sure we ran it before babel transpilation.
+We used [eslint-loader](https://github.com/webpack-contrib/eslint-loader) with
+webpack, and passed all JS through it, excluding `node_modules`. We also had to
+make sure we ran it before babel transpilation.
 
 ```js
 // webpack.config.js
@@ -60,8 +69,9 @@ module: {
 }
 ```
 
-For rollup, we installed [rollup-plugin-eslint](https://github.com/TrySound/rollup-plugin-eslint) and added it to our
-array of plugins.
+For rollup, we installed
+[rollup-plugin-eslint](https://github.com/TrySound/rollup-plugin-eslint) and
+added it to our array of plugins.
 
 ```js
 // rollup.config.js
@@ -73,21 +83,27 @@ eslint(),
   });
 ```
 
-This also needed to be added before babel still, to ensure it is run on the untranspiled code.
+This also needed to be added before babel still, to ensure it is run on the
+untranspiled code.
 
 ### stylelint-webpack-plugin -> rollup-plugin-stylelint
 
-[Stylelint](https://github.com/stylelint/stylelint) allows us to enforce linting rules for CSS and SCSS files.
-We enforced this with [stylelint-webpack-plugin](https://github.com/webpack-contrib/stylelint-webpack-plugin) previously,
-but switched to [rollup-plugin-stylelint](https://github.com/tanyaisinmybed/rollup-plugin-stylelint) for use with rollup.
+[Stylelint](https://github.com/stylelint/stylelint) allows us to enforce linting
+rules for CSS and SCSS files. We enforced this with
+[stylelint-webpack-plugin](https://github.com/webpack-contrib/stylelint-webpack-plugin)
+previously, but switched to
+[rollup-plugin-stylelint](https://github.com/tanyaisinmybed/rollup-plugin-stylelint)
+for use with rollup.
 
-First, we removed `stylelint-webpack-plugin` from our `package.json` and then added `rollup-plugin-stylelint` by running:
+First, we removed `stylelint-webpack-plugin` from our `package.json` and then
+added `rollup-plugin-stylelint` by running:
 
 ```bash
 yarn add rollup-plugin-stylelint --dev
 ```
 
-The options for both webpack and rollup are options passed directly to stylelint, so we mostly just needed to copy and paste these.
+The options for both webpack and rollup are options passed directly to
+stylelint, so we mostly just needed to copy and paste these.
 
 ```js
 // webpack.config.js
@@ -108,23 +124,27 @@ stylelint({
 });
 ```
 
-The one difference was we had to specify to only include `scss` files, since the input for rollup is always the JS, and we did
-not want to include imported CSS, just SCSS.
+The one difference was we had to specify to only include `scss` files, since the
+input for rollup is always the JS, and we did not want to include imported CSS,
+just SCSS.
 
 ## Local Development
 
 ### browser-sync-webpack-plugin -> rollup-plugin-browsersync
 
-We use browsersync for local development of the demo/docs site, so we can see everything updating in real time across browsers.
-This one was a fairly simple conversion.
+We use browsersync for local development of the demo/docs site, so we can see
+everything updating in real time across browsers. This one was a fairly simple
+conversion.
 
-First, we removed `browser-sync-webpack-plugin` from our `package.json` and then added `rollup-plugin-browsersync` by running:
+First, we removed `browser-sync-webpack-plugin` from our `package.json` and then
+added `rollup-plugin-browsersync` by running:
 
 ```bash
 yarn add rollup-plugin-browsersync --dev
 ```
 
-The config for each plugin is basically identical, so we just copied from one to the other.
+The config for each plugin is basically identical, so we just copied from one to
+the other.
 
 ```js
 // webpack.config.js
@@ -188,10 +208,13 @@ if (process.env.DEVELOPMENT) {
 
 ### sass-loader -> rollup-plugin-sass
 
-In webpack we used a combination of [sass-loader](https://github.com/webpack-contrib/sass-loader),
-[css-loader](https://github.com/webpack-contrib/css-loader), [postcss-loader](https://github.com/postcss/postcss-loader),
-[file-loader](https://github.com/webpack-contrib/file-loader), and [extract-loader](https://github.com/peerigon/extract-loader)
-to consume our `scss` files and output our various theme files.
+In webpack we used a combination of
+[sass-loader](https://github.com/webpack-contrib/sass-loader),
+[css-loader](https://github.com/webpack-contrib/css-loader),
+[postcss-loader](https://github.com/postcss/postcss-loader),
+[file-loader](https://github.com/webpack-contrib/file-loader), and
+[extract-loader](https://github.com/peerigon/extract-loader) to consume our
+`scss` files and output our various theme files.
 
 ```js
 // webpack.config.js
@@ -250,10 +273,13 @@ module.exports = [{
 }];
 ```
 
-We were able to replace all of these loaders with just [rollup-plugin-sass](https://github.com/differui/rollup-plugin-sass),
-and [postcss](https://github.com/postcss/postcss), when we switched to rollup. However, rollup has a hard time with
-outputting multiple css files. It wants to consume all the styles and either bundle them as one file or just inject them into `head`
-automatically for you. This made generating multiple theme files not very straightforward, but wasn't **too** bad, once we figured it out.
+We were able to replace all of these loaders with just
+[rollup-plugin-sass](https://github.com/differui/rollup-plugin-sass), and
+[postcss](https://github.com/postcss/postcss), when we switched to rollup.
+However, rollup has a hard time with outputting multiple css files. It wants to
+consume all the styles and either bundle them as one file or just inject them
+into `head` automatically for you. This made generating multiple theme files not
+very straightforward, but wasn't **too** bad, once we figured it out.
 
 ```js
 // rollup.config.js
@@ -290,7 +316,8 @@ plugins.push(sass(sassOptions));
 
 ### Including tippy.js styles
 
-In our webpack build, we aliased `tippy.js`, so that when it was imported, it would import the styles as well.
+In our webpack build, we aliased `tippy.js`, so that when it was imported, it
+would import the styles as well.
 
 ```js
 // webpack.config.js
@@ -302,9 +329,11 @@ resolve: {
 }
 ```
 
-We initially tried to use an alias in rollup as well, but could not get it to work. We decided instead to use
-[rollup-plugin-css-only](https://github.com/thgh/rollup-plugin-css-only) to handle CSS imports in the JS, and
-we then injected those styles directly into the `head`.
+We initially tried to use an alias in rollup as well, but could not get it to
+work. We decided instead to use
+[rollup-plugin-css-only](https://github.com/thgh/rollup-plugin-css-only) to
+handle CSS imports in the JS, and we then injected those styles directly into
+the `head`.
 
 ```js
 // css.js
@@ -345,8 +374,10 @@ export class Tour extends Evented {
 
 ### babel-loader -> rollup-plugin-babel
 
-Most modern web apps tend to use [Babel](https://babeljs.io/), so they can use next generation JavaScript today. There isn't
-a ton to configure with Babel, and it was mostly just switching packages, but we also did adjust our `babel.config.js`.
+Most modern web apps tend to use [Babel](https://babeljs.io/), so they can use
+next generation JavaScript today. There isn't a ton to configure with Babel, and
+it was mostly just switching packages, but we also did adjust our
+`babel.config.js`.
 
 #### Before
 
@@ -407,16 +438,19 @@ module.exports = function (api) {
 };
 ```
 
-The main differences are we no longer needed `istanbul` because `Jest` has code coverage built in, and we switched around
-our module exports and transforms, so we could ship both UMD and ESM.
+The main differences are we no longer needed `istanbul` because `Jest` has code
+coverage built in, and we switched around our module exports and transforms, so
+we could ship both UMD and ESM.
 
-After the Babel config changes, we removed `babel-loader` from our `package.json` and installed `rollup-plugin-babel`.
+After the Babel config changes, we removed `babel-loader` from our
+`package.json` and installed `rollup-plugin-babel`.
 
 ```bash
 yarn add rollup-plugin-babel --dev
 ```
 
-The usage in webpack and rollup is very similar, with the only option being to ignore `node_modules`.
+The usage in webpack and rollup is very similar, with the only option being to
+ignore `node_modules`.
 
 ```js
 // webpack.config.js
@@ -441,18 +475,20 @@ babel({
 
 ### uglifyjs-webpack-plugin -> rollup-plugin-uglify
 
-Uglify is the most common package used for minification of JavaScript, and we used it with both webpack
-and rollup, we just needed to switch which package we used.
+Uglify is the most common package used for minification of JavaScript, and we
+used it with both webpack and rollup, we just needed to switch which package we
+used.
 
-First we removed `uglifyjs-webpack-plugin` from our `package.json` and then we installed
+First we removed `uglifyjs-webpack-plugin` from our `package.json` and then we
+installed
 [rollup-plugin-uglify](https://github.com/TrySound/rollup-plugin-uglify).
 
 ```bash
 yarn add rollup-plugin-uglify --dev
 ```
 
-This was one place where the webpack build was a lot simpler. We added the uglify plugin and only included the `min`
-file, so we could use one build.
+This was one place where the webpack build was a lot simpler. We added the
+uglify plugin and only included the `min` file, so we could use one build.
 
 ```js
 // webpack.config.js
@@ -467,9 +503,10 @@ optimization: {
 }
 ```
 
-Then we added it to our rollup plugins, but to generate both a minified, and unminified version,
-we were required to use two rollup builds, which was not required in webpack. We checked for the presence
-of an environment variable `DEVELOPMENT`, and generated the minified version when true.
+Then we added it to our rollup plugins, but to generate both a minified, and
+unminified version, we were required to use two rollup builds, which was not
+required in webpack. We checked for the presence of an environment variable
+`DEVELOPMENT`, and generated the minified version when true.
 
 ```js
 // rollup.config.js
@@ -506,8 +543,10 @@ if (!process.env.DEVELOPMENT) {
 
 ## Config Files
 
-For those of you who want to see the entire config for both webpack and rollup, to compare one to the other, here they are! It may also be helpful to
-check out the [PR](https://github.com/shipshapecode/shepherd/pull/309/files) where we converted from webpack to rollup, so you can see all the things involved.
+For those of you who want to see the entire config for both webpack and rollup,
+to compare one to the other, here they are! It may also be helpful to check out
+the [PR](https://github.com/shipshapecode/shepherd/pull/309/files) where we
+converted from webpack to rollup, so you can see all the things involved.
 
 ### Webpack
 
@@ -866,5 +905,7 @@ export default rollupBuilds;
 
 ## Summary
 
-The webpack build of `shepherd.min.js` was ~80 kb and the rollup build was ~25% smaller, at ~60 kb. Although getting rollup set up and working
-is a lot more involved, and there are less examples than webpack, it is clearly worth the effort, for the bundle size savings alone.
+The webpack build of `shepherd.min.js` was ~80 kb and the rollup build was ~25%
+smaller, at ~60 kb. Although getting rollup set up and working is a lot more
+involved, and there are less examples than webpack, it is clearly worth the
+effort, for the bundle size savings alone.
