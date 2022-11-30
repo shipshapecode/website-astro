@@ -16,7 +16,7 @@ const description =
 
         <h1 class="text-4xl lg:text-6xl mb-6">Netflix</h1>
 
-        <p>
+        <p class="mb-6">
           Netflix is the world's leading internet entertainment service with
           more than 130 million memberships in over 190 countries enjoying TV
           series, documentaries and feature films across a wide variety of
@@ -37,7 +37,7 @@ const description =
       <div class="p-4 lg:p-12">
         <h2 class="text-3xl mb-6">Challenge</h2>
 
-        <p>
+        <p class="mb-6">
           Netflix maintains several apps, for their internal teams to use for
           keeping track of finances across the spectrum. There is currently a
           big push to standardize all the apps, and convert them to React, but
@@ -47,7 +47,7 @@ const description =
           freeing up the internal Netflix teams to work on the rewrite.
         </p>
 
-        <p>
+        <p class="mb-6">
           One of these features was the Cost Categories page, in an app that
           helps break down the costs associated with shows and movies. The app
           was fully integrated with Ember Data, and mostly used JSON API for the
@@ -58,7 +58,7 @@ const description =
 
         <h2 class="text-3xl mb-6">Solution</h2>
 
-        <p>
+        <p class="mb-6">
           One of the first issues we had to overcome was displaying a table of
           default values when a call to get the cost categories returned a 404.
           With JSON API, this would have returned a 200, with an empty response,
@@ -71,7 +71,7 @@ const description =
           >.
         </p>
 
-        <p>
+        <p class="mb-6">
           Another issue we encountered was it was not possible to setup links to
           pull in related data automatically, like you typically would with JSON
           API, so we decided to setup custom serializers that manually added in
