@@ -8,47 +8,51 @@ slug: signing-electron-apps-with-github-actions
 title: 'Signing Electron Apps with GitHub Actions'
 ---
 
-We've been working hard over the past many months, at Ship Shape, on a cross platform
-menubar color management app called [Swach](https://swach.io), and as part of that work,
-we had a need to sign our app for both MacOS and Windows. There are many existing articles
-on doing this with [Travis](https://www.update.rocks/blog/osx-signing-with-travis/) or
+We've been working hard over the past many months, at Ship Shape, on a cross
+platform menubar color management app called [Swach](https://swach.io), and as
+part of that work, we had a need to sign our app for both MacOS and Windows.
+There are many existing articles on doing this with
+[Travis](https://www.update.rocks/blog/osx-signing-with-travis/) or
 [Appveyor](https://www.update.rocks/blog/windows-signing-for-your-electron-app-with-appveyor-ci/),
-but the documentation for using GitHub actions is lacking, so we wanted to quickly share what
-we learned.
+but the documentation for using GitHub actions is lacking, so we wanted to
+quickly share what we learned.
 
 ## MacOS
 
 ### Getting your certificate from Apple
 
-You will need an Apple developer account to generate a certificate. You can sign up at
+You will need an Apple developer account to generate a certificate. You can sign
+up at
 [https://developer.apple.com/programs/](https://developer.apple.com/programs/).
 
 Once you have a developer account, you can go to your account and click
-`Certificates, Identifiers, and Profiles` to manage your certificates. Click the plus button
-to add a new certificate.
+`Certificates, Identifiers, and Profiles` to manage your certificates. Click the
+plus button to add a new certificate.
 
 ![List of possible certificate types from Apple.](/img/blog/electron/apple-certs.jpg)
 
-At the time of writing, there are 9 types of certificates, but we are only interested in two.
-You will want to generate both the `Developer ID Installer`, and `Developer ID Application`
-certificates, as both are needed to sign the application and installer for distribution
-_outside_ the app store.
+At the time of writing, there are 9 types of certificates, but we are only
+interested in two. You will want to generate both the `Developer ID Installer`,
+and `Developer ID Application` certificates, as both are needed to sign the
+application and installer for distribution _outside_ the app store.
 
 ### Adding your certificate to GitHub
 
-Once you have your certificates from Apple, you'll want to export them as a `.p12`, which
-we will then copy the contents of to save to GitHub as a secret.
+Once you have your certificates from Apple, you'll want to export them as a
+`.p12`, which we will then copy the contents of to save to GitHub as a secret.
 
 ```bash
 base64 -w 0 path/to/your/certificate.p12
 ```
 
-You will then want to copy your certificate output into a secret named `CERTIFICATE_OSX_APPLICATION`,
-as well as the password you set for the certificate to `CERTIFICATE_PASSWORD`.
+You will then want to copy your certificate output into a secret named
+`CERTIFICATE_OSX_APPLICATION`, as well as the password you set for the
+certificate to `CERTIFICATE_PASSWORD`.
 
 ![The GitHub settings page showing a list of secrets.](/img/blog/electron/github-secrets.jpg)
 
-Once the secrets are added, we need to write a script to get them into our keychain.
+Once the secrets are added, we need to write a script to get them into our
+keychain.
 
 **add-osx-cert.sh**
 
@@ -97,8 +101,8 @@ certs as env variables.
 ### Notarizing your MacOS app
 
 Apple now requires notarizing your MacOS apps as well. We use
-[electron-forge](https://www.electronforge.io/) for building our apps,
-which allows for notarizing as well, and our config looks like this:
+[electron-forge](https://www.electronforge.io/) for building our apps, which
+allows for notarizing as well, and our config looks like this:
 
 ```js
 packagerConfig: {
@@ -121,14 +125,16 @@ packagerConfig: {
 },
 ```
 
-You'll notice the `osxNotarize` section which essentially just requires you to set more
-GitHub secrets containing your `APPLE_ID` and `APPLE_ID_PASSWORD` to be used for notarizing.
+You'll notice the `osxNotarize` section which essentially just requires you to
+set more GitHub secrets containing your `APPLE_ID` and `APPLE_ID_PASSWORD` to be
+used for notarizing.
 
 ### Entitlements and other settings
 
-We found that additional configuration was needed to get our application running as more than
-just a blank screen. We needed `entitlements`, as well as `hardenedRuntime` and `gatekeeper-assess`,
-but these settings will vary depending on your app. The `entitlements.plist` that we are using is:
+We found that additional configuration was needed to get our application running
+as more than just a blank screen. We needed `entitlements`, as well as
+`hardenedRuntime` and `gatekeeper-assess`, but these settings will vary
+depending on your app. The `entitlements.plist` that we are using is:
 
 **entitlements.plist**
 
@@ -156,21 +162,23 @@ but please let us know if you encountered any issues!
 
 ## Windows
 
-As with MacOS, Windows applications must also be signed, however Microsoft does not
-handle certificates in house, so you will need to get a third party certificate to use
-for signing. We got our certificate from
+As with MacOS, Windows applications must also be signed, however Microsoft does
+not handle certificates in house, so you will need to get a third party
+certificate to use for signing. We got our certificate from
 [GoDaddy](https://au.godaddy.com/web-security/code-signing-certificate), but see
 [here](https://www.electronjs.org/docs/tutorial/code-signing#signing-windows-builds)
 for some alternative choices.
 
-Once you get your certificate file, you'll need to output it to `.pfx` and then we will copy
-the output of that into a GitHub secret called `CERTIFICATE_WINDOWS_PFX`.
+Once you get your certificate file, you'll need to output it to `.pfx` and then
+we will copy the output of that into a GitHub secret called
+`CERTIFICATE_WINDOWS_PFX`.
 
 ```shell
 base64.exe -w 0 <your-certificate-name>.pfx
 ```
 
-We will also need to add the password for the cert as a `WINDOWS_PFX_PASSWORD` GitHub secret.
+We will also need to add the password for the cert as a `WINDOWS_PFX_PASSWORD`
+GitHub secret.
 
 We'll then add a step to our GitHub actions of the following:
 
@@ -184,11 +192,12 @@ We'll then add a step to our GitHub actions of the following:
           encodedString: ${{ secrets.CERTIFICATE_WINDOWS_PFX }}
 ```
 
-This will copy the base64 output to a file to be used by the Windows signing process.
+This will copy the base64 output to a file to be used by the Windows signing
+process.
 
-Electron Forge allows you to specify the Windows certificate file and password in the config for
-the Windows Squirrel maker, so once the file has been created you should just need to add the
-following to your `config.forge.js`.
+Electron Forge allows you to specify the Windows certificate file and password
+in the config for the Windows Squirrel maker, so once the file has been created
+you should just need to add the following to your `config.forge.js`.
 
 ```js
 makers: [
@@ -203,16 +212,18 @@ makers: [
 ];
 ```
 
-That should be all the setup necessary to get your Windows certificates up and running!
+That should be all the setup necessary to get your Windows certificates up and
+running!
 
 ## Building the application
 
-Once your certificates are all setup, you should be ready to build your application.
-For completeness, here is our entire workflow file for GitHub actions, which includes
-adding all the certs, signing, and building the project.
+Once your certificates are all setup, you should be ready to build your
+application. For completeness, here is our entire workflow file for GitHub
+actions, which includes adding all the certs, signing, and building the project.
 
-It will only run tests unless a new tag is pushed. When a new tag is pushed, it will
-build on MacOS, Windows, and Ubuntu, and push all of those release assets to GitHub.
+It will only run tests unless a new tag is pushed. When a new tag is pushed, it
+will build on MacOS, Windows, and Ubuntu, and push all of those release assets
+to GitHub.
 
 ```yml
 name: Package and Release
@@ -267,10 +278,12 @@ jobs:
         if: matrix.os == 'macos-latest' && startsWith(github.ref, 'refs/tags/')
         run: chmod +x add-osx-cert.sh && ./add-osx-cert.sh
         env:
-          CERTIFICATE_OSX_APPLICATION: ${{ secrets.CERTIFICATE_OSX_APPLICATION }}
+          CERTIFICATE_OSX_APPLICATION:
+            ${{ secrets.CERTIFICATE_OSX_APPLICATION }}
           CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
       - name: Add Windows certificate
-        if: matrix.os == 'windows-latest' && startsWith(github.ref, 'refs/tags/')
+        if:
+          matrix.os == 'windows-latest' && startsWith(github.ref, 'refs/tags/')
         id: write_file
         uses: timheuer/base64-to-file@v1
         with:
@@ -301,11 +314,12 @@ jobs:
             electron-app/out/**/*.zip
 ```
 
-Some of this is specific to our needs for Swach, and specific to both ember-electron and
-electron-forge usage, but most of it is generally applicable to any Electron app builds,
-so hopefully you can tweak it to work with whatever your setup may be!
+Some of this is specific to our needs for Swach, and specific to both
+ember-electron and electron-forge usage, but most of it is generally applicable
+to any Electron app builds, so hopefully you can tweak it to work with whatever
+your setup may be!
 
-**_Interested in building your own cross platform app? Ship Shape has extensive experience
-with Electron apps and progressive web apps.
-Get help from the cross platform app experts! [Contact us](https://shipshape.io/contact/).
-We would love to work with you!_**
+**_Interested in building your own cross platform app? Ship Shape has extensive
+experience with Electron apps and progressive web apps. Get help from the cross
+platform app experts! [Contact us](https://shipshape.io/contact/). We would love
+to work with you!_**

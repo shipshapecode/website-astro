@@ -10,10 +10,11 @@ title: Tailwind UI Dropdowns with Ember
 ---
 
 [Tailwind CSS](https://tailwindcss.com/) has exploded in popularity recently,
-and so has their paid set of UI components, [Tailwind UI](https://tailwindui.com/).
-They have a lot of great components, most of which you can copy and paste into
-your project and they will "just work", but whenever an example requires some
-JavaScript, things get a little more complex.
+and so has their paid set of UI components,
+[Tailwind UI](https://tailwindui.com/). They have a lot of great components,
+most of which you can copy and paste into your project and they will "just
+work", but whenever an example requires some JavaScript, things get a little
+more complex.
 
 For example, one of the Tailwind UI dropdown component examples is:
 
@@ -109,13 +110,13 @@ Notice this part in the middle about the enter/leave transitions:
   -->
 ```
 
-So not only do we need to support transitions on enter/leave, but each transition
-needs to support a `from` and `to` state.
+So not only do we need to support transitions on enter/leave, but each
+transition needs to support a `from` and `to` state.
 
 I did some digging and found a framework agnostic solution
-[el-transition](https://www.npmjs.com/package/el-transition), and was about to use
-it, but then I discovered an Ember specific solution, which fit my needs better,
-since my app was using Ember.
+[el-transition](https://www.npmjs.com/package/el-transition), and was about to
+use it, but then I discovered an Ember specific solution, which fit my needs
+better, since my app was using Ember.
 
 The [ember-css-transitions](https://github.com/peec/ember-css-transitions) addon
 seemed to fit my use case perfectly. It ships a `css-transition` modifier that
@@ -160,6 +161,7 @@ The end result in Ember was something like:
 ```
 
 This applies all the transitions correctly, and gets us up and running with a
-Tailwind UI dropdown! 🎉 You may also have noticed the `on-click-outside` modifier
-and the Ember Named Blocks we are using here. More posts to follow going into more
-detail on those, but in the meantime hopefully this helps someone with transitions!
+Tailwind UI dropdown! 🎉 You may also have noticed the `on-click-outside`
+modifier and the Ember Named Blocks we are using here. More posts to follow
+going into more detail on those, but in the meantime hopefully this helps
+someone with transitions!

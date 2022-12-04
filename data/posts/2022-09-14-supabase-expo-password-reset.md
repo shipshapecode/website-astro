@@ -10,21 +10,25 @@ title: How to reset a supabase account password without working frontend.
 
 # Why
 
-When doing some greenfield work with a native application and [Supabase](https://supabase.com/) there was not an easy
-way to set users' passwords without having a way to handle the redirect back from Supabase.
+When doing some greenfield work with a native application and
+[Supabase](https://supabase.com/) there was not an easy way to set users'
+passwords without having a way to handle the redirect back from Supabase.
 
 # What
 
-The script found in the snippet below allows us to set a password for a live email that we have access to that has been added to our supabase
-instance.
+The script found in the snippet below allows us to set a password for a live
+email that we have access to that has been added to our supabase instance.
 
 # How
 
-The [supabase-js](https://github.com/supabase/supabase-js) package provides the [passwordResetForEmail function](https://supabase.com/docs/reference/javascript/auth-api-resetpasswordforemail).
+The [supabase-js](https://github.com/supabase/supabase-js) package provides the
+[passwordResetForEmail function](https://supabase.com/docs/reference/javascript/auth-api-resetpasswordforemail).
 
-Normally, your server calls this when a password reset is attempted. The user then receives an email with a URL and a password reset token.
+Normally, your server calls this when a password reset is attempted. The user
+then receives an email with a URL and a password reset token.
 
-The link in the email takes us to a supabase URL which then redirects us back to our server.
+The link in the email takes us to a supabase URL which then redirects us back to
+our server.
 
 ```javascript
 /**

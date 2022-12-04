@@ -7,9 +7,9 @@ slug: unit-testing-private-non-exported-functions-with-rewire
 title: Unit Testing Private, Non-exported Functions with Rewire
 ---
 
-When a JavaScript function is exported, it is straightforward to unit test.
-We can import it directly into our test and test the functionality. For example,
-we could use something like Jest to setup a simple import and unit test.
+When a JavaScript function is exported, it is straightforward to unit test. We
+can import it directly into our test and test the functionality. For example, we
+could use something like Jest to setup a simple import and unit test.
 
 ```js
 // foo.js
@@ -33,9 +33,11 @@ describe('Foo', () => {
 
 How would we test functions that we do not expose via `export` though?
 
-There is a great tool, [rewire](https://www.npmjs.com/package/rewire), that allows getting references
-to functions that are not explicitly exported. Assuming you are using Babel, we can use
-[babel-plugin-rewire](https://github.com/speedskater/babel-plugin-rewire) to make the setup more simple.
+There is a great tool, [rewire](https://www.npmjs.com/package/rewire), that
+allows getting references to functions that are not explicitly exported.
+Assuming you are using Babel, we can use
+[babel-plugin-rewire](https://github.com/speedskater/babel-plugin-rewire) to
+make the setup more simple.
 
 ```bash
   npm install babel-plugin-rewire --save-dev
@@ -52,8 +54,8 @@ plugins: [
 ...
 ```
 
-We can then import the whole file, and get references to the non-exported functions, using
-`__get__`.
+We can then import the whole file, and get references to the non-exported
+functions, using `__get__`.
 
 ```js
 // bar.js
@@ -76,6 +78,7 @@ describe('Bar', () => {
 });
 ```
 
-Rewire makes this setup downright magical, and saves us from needing to needlessly export things
-or use other hacks, just to get a reference to the function for testing. We can now ensure functions
-remain private, without all the headaches at testing time!
+Rewire makes this setup downright magical, and saves us from needing to
+needlessly export things or use other hacks, just to get a reference to the
+function for testing. We can now ensure functions remain private, without all
+the headaches at testing time!

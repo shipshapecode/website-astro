@@ -9,13 +9,17 @@ slug: an-emberjs-developers-guide-to-nuxtjs
 title: An Ember.js Developer's Guide to Nuxt.js
 ---
 
-I am a huge Ember.js fan, but recently wanted to experiment with some other frameworks, and decided to try
-[Nuxt.js](https://nuxtjs.org/). I was very pleasantly surprised, that Nuxt had many nice "magic" things,
-just like Ember had, and felt very familiar to Ember development. There were a lot of additional nice features as well,
-like built in PWA support, static site generation, tree shaking, and code splitting. With all of these awesome features,
-I decided to convert [shipshape.io](/) from [Ember](https://github.com/shipshapecode/shipshape.io) to
-[Nuxt](https://github.com/shipshapecode/website-nuxt), and wanted to document the mappings between things in Ember
-and Nuxt and the benefits and drawbacks of each.
+I am a huge Ember.js fan, but recently wanted to experiment with some other
+frameworks, and decided to try [Nuxt.js](https://nuxtjs.org/). I was very
+pleasantly surprised, that Nuxt had many nice "magic" things, just like Ember
+had, and felt very familiar to Ember development. There were a lot of additional
+nice features as well, like built in PWA support, static site generation, tree
+shaking, and code splitting. With all of these awesome features, I decided to
+convert [shipshape.io](/) from
+[Ember](https://github.com/shipshapecode/shipshape.io) to
+[Nuxt](https://github.com/shipshapecode/website-nuxt), and wanted to document
+the mappings between things in Ember and Nuxt and the benefits and drawbacks of
+each.
 
 ## Table of Contents
 
@@ -33,14 +37,15 @@ and Nuxt and the benefits and drawbacks of each.
 
 ### templates/application.hbs -> layouts/default.vue
 
-In Ember.js, you will typically setup your main application wrapper, with things like your navbar, footer, etc in
-the `templates/application.hbs` file. In Nuxt.js you have the concept of layouts, and `layouts/default.vue` is where
-you define your application wrapper markup.
+In Ember.js, you will typically setup your main application wrapper, with things
+like your navbar, footer, etc in the `templates/application.hbs` file. In
+Nuxt.js you have the concept of layouts, and `layouts/default.vue` is where you
+define your application wrapper markup.
 
 ### {{outlet}} -> &lt;Nuxt/&gt;
 
-In Nuxt, you'll define where your application content is inserted with `<Nuxt/>`, rather than the
-`{{outlet}}` you typically have in Ember.
+In Nuxt, you'll define where your application content is inserted with
+`<Nuxt/>`, rather than the `{{outlet}}` you typically have in Ember.
 
 ### Example
 
@@ -100,20 +105,22 @@ In Nuxt, you'll define where your application content is inserted with `<Nuxt/>`
 
 # Components
 
-With the new angle bracket syntax for Ember's Glimmer components, copying and pasting components into Nuxt/Vue
-becomes much easier. Especially with the addition of [Tailwind CSS](https://tailwindcss.com/docs/what-is-tailwind/),
-I did not have to worry much about specific styles for each component.
+With the new angle bracket syntax for Ember's Glimmer components, copying and
+pasting components into Nuxt/Vue becomes much easier. Especially with the
+addition of [Tailwind CSS](https://tailwindcss.com/docs/what-is-tailwind/), I
+did not have to worry much about specific styles for each component.
 
 ### components/blog-post/component.js + components/blog-post/template.hbs -> components/BlogPost.vue
 
-In Ember you have separate JS and template files for components, typically housed either in the `components` or
-`templates/components` directory. In Nuxt you have just one file, containing the template, script, and styles for
-the component. In most cases, the bulk of the code can be directly copied over.
+In Ember you have separate JS and template files for components, typically
+housed either in the `components` or `templates/components` directory. In Nuxt
+you have just one file, containing the template, script, and styles for the
+component. In most cases, the bulk of the code can be directly copied over.
 
 ### {{yield}} -> &lt;slot/&gt;
 
-`{{yield}}` is used to pass through the contents of a block component in Ember, and in Nuxt you will replace it with
-`<slot/>` instead.
+`{{yield}}` is used to pass through the contents of a block component in Ember,
+and in Nuxt you will replace it with `<slot/>` instead.
 
 ### Example
 
@@ -260,23 +267,27 @@ export default class BlogPost extends Component {
 </script>
 ```
 
-As you can see, the markup is very similar for both the Ember and Nuxt components. There are small differences, but in
-most cases you can change things like defining arguments to the component with `@foo` in Ember, to using `:foo` in
-Nuxt, and it will work.
+As you can see, the markup is very similar for both the Ember and Nuxt
+components. There are small differences, but in most cases you can change things
+like defining arguments to the component with `@foo` in Ember, to using `:foo`
+in Nuxt, and it will work.
 
 # Routes
 
 ### routes/blog/index.js + templates/blog/index.hbs -> pages/blog/index.vue
 
-In Ember, your routes have separate `JS` and `hbs` files, but in Nuxt you put your JavaScript, template, and styles
-all in one file. I find this to be a big downside of Nuxt, and would really prefer to keep separate files for everything.
+In Ember, your routes have separate `JS` and `hbs` files, but in Nuxt you put
+your JavaScript, template, and styles all in one file. I find this to be a big
+downside of Nuxt, and would really prefer to keep separate files for everything.
 
 ### model -> asyncData
 
-In Ember, you will typically do all of your data fetching in the [model](https://guides.emberjs.com/v3.8.0/routing/specifying-a-routes-model/)
-hook. Nuxt has a similar concept in its [asyncData](https://nuxtjs.org/api/) method, which will load all the data server side,
-allowing you to do `async` things, before setting the component data, much like Ember waits for the `model` hook to return,
-before rendering the page.
+In Ember, you will typically do all of your data fetching in the
+[model](https://guides.emberjs.com/v3.8.0/routing/specifying-a-routes-model/)
+hook. Nuxt has a similar concept in its [asyncData](https://nuxtjs.org/api/)
+method, which will load all the data server side, allowing you to do `async`
+things, before setting the component data, much like Ember waits for the `model`
+hook to return, before rendering the page.
 
 ### Example
 
@@ -410,46 +421,60 @@ export default class Blog extends Route {
 
 # Static Site Generation
 
-Ember has a nice addon, [Prember](https://github.com/ef4/prember), that allows you to turn your Ember app into a static site.
-Static site generation is built into Nuxt out of the box, so you can run `yarn generate` to get a static version
+Ember has a nice addon, [Prember](https://github.com/ef4/prember), that allows
+you to turn your Ember app into a static site. Static site generation is built
+into Nuxt out of the box, so you can run `yarn generate` to get a static version
 of your site.
 
 # Meta
 
-In Ember, there are a few ways to add meta tags for your pages, but [ember-meta](https://github.com/shipshapecode/ember-meta)
-is arguably the most popular addon, and the addon used for the [Ember.js website](https://emberjs.com/) meta.
+In Ember, there are a few ways to add meta tags for your pages, but
+[ember-meta](https://github.com/shipshapecode/ember-meta) is arguably the most
+popular addon, and the addon used for the
+[Ember.js website](https://emberjs.com/) meta.
 
-In Nuxt, meta has first class support, and you utilize the built in [head](https://nuxtjs.org/api/configuration-head/)
-property to set your meta for each page.
+In Nuxt, meta has first class support, and you utilize the built in
+[head](https://nuxtjs.org/api/configuration-head/) property to set your meta for
+each page.
 
 # PWA
 
-In Ember, you will need to install several service worker addons to get offline support and caching, but in Nuxt
-this is all built in to the framework, which is super nice because you do not have to worry about any of the
-service worker internals, and you know the framework has bought into the idea and will continue to support it
-as a first class feature. You do need to ensure [@nuxtjs/pwa](https://github.com/nuxt-community/pwa-module) is
-installed, but other than that, it is zero config.
+In Ember, you will need to install several service worker addons to get offline
+support and caching, but in Nuxt this is all built in to the framework, which is
+super nice because you do not have to worry about any of the service worker
+internals, and you know the framework has bought into the idea and will continue
+to support it as a first class feature. You do need to ensure
+[@nuxtjs/pwa](https://github.com/nuxt-community/pwa-module) is installed, but
+other than that, it is zero config.
 
 # Sitemaps
 
-Sitemaps in Ember and Nuxt are very similar, and both require the addition of a plugin to generate them. In Ember
-we use [prember-sitemap-generator](https://github.com/shipshapecode/prember-sitemap-generator) and in Nuxt we use
-[@nuxtjs/sitemap](https://github.com/nuxt-community/sitemap-module). Unless you have no dynamic routes,
-both require that you pass the urls for all of your pages in, and output the resulting sitemap.
+Sitemaps in Ember and Nuxt are very similar, and both require the addition of a
+plugin to generate them. In Ember we use
+[prember-sitemap-generator](https://github.com/shipshapecode/prember-sitemap-generator)
+and in Nuxt we use
+[@nuxtjs/sitemap](https://github.com/nuxt-community/sitemap-module). Unless you
+have no dynamic routes, both require that you pass the urls for all of your
+pages in, and output the resulting sitemap.
 
 # Code Splitting, Tree Shaking, and PurgeCSS
 
-Features like code splitting and tree shaking have been experimented with in Ember and efforts to support them are
-[in progress](https://emberjs.com/statusboard/), however they are not currently usable or stable. Additionally,
-due to the dynamic nature of classes in Ember, and the lack of explicit template imports, it is currently not
-possible to use PurgeCSS, without a lot of manual work.
+Features like code splitting and tree shaking have been experimented with in
+Ember and efforts to support them are
+[in progress](https://emberjs.com/statusboard/), however they are not currently
+usable or stable. Additionally, due to the dynamic nature of classes in Ember,
+and the lack of explicit template imports, it is currently not possible to use
+PurgeCSS, without a lot of manual work.
 
-Code Splitting, Tree Shaking and PurgeCSS all work out of the box with Nuxt, and the only additional thing to install
-is the [nuxt-purgecss](https://github.com/Developmint/nuxt-purgecss) module.
+Code Splitting, Tree Shaking and PurgeCSS all work out of the box with Nuxt, and
+the only additional thing to install is the
+[nuxt-purgecss](https://github.com/Developmint/nuxt-purgecss) module.
 
 # Summary
 
-There is no right or wrong framework to use, only what you decide works best for your project. However, it is nice to see
-how much things are beginning to overlap in modern frameworks, and how copying and pasting code between them is
-becoming more and more viable. This really solidifies my belief that both Ember and Nuxt are on the right track, and
-I am excited to see where each of them goes in the coming years!
+There is no right or wrong framework to use, only what you decide works best for
+your project. However, it is nice to see how much things are beginning to
+overlap in modern frameworks, and how copying and pasting code between them is
+becoming more and more viable. This really solidifies my belief that both Ember
+and Nuxt are on the right track, and I am excited to see where each of them goes
+in the coming years!
