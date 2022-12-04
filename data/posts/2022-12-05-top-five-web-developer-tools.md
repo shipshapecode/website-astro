@@ -96,7 +96,9 @@ allows true collaboration on the same file, at the same time.
 
 TODO
 
-## 5. [GitHub Desktop](https://www.frontendhappyhour.com/)
+## 5. [GitHub Desktop](https://desktop.github.com/)
+
+[![Screenshot of GitHub Desktop showing history and file changes](/img/blog/top-five-web-developer-tools/github-desktop.png)](https://desktop.github.com/)
 
 This one flies under the radar and is very underrated, in my opinion. There are
 a lot of very powerful tools for git built around power users and handling
@@ -106,6 +108,8 @@ intuitive to push and pull code, GitHub Desktop is a great tool.
 One of my favorite things is having a button to open a new pull request from my
 branch. It takes out the unnecessary step of needing to push, then open GitHub
 and create a PR. It seems like a small thing, but I find it incredibly useful.
+
+[![Screenshot of GitHub Desktop showing the create pull request button](/img/blog/top-five-web-developer-tools/github-desktop-pr.png)](https://desktop.github.com/)
 
 ## Wrap-up
 
