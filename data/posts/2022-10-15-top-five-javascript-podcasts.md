@@ -81,4 +81,4 @@ They have lots of guests from the Netflix engineering team, so it gives you a pe
 
 We think these are the top 5 JavaScript podcasts currently, but new podcasts are released
 all the time and this is not an exhaustive list. If we missed one of your favorites, let
-us know on Twitter! ([@shipshapecode](https://twitter.com/shipshapecode))
+us know on Twitter! ([@whiskeywebfm](https://twitter.com/whiskeywebfm))
