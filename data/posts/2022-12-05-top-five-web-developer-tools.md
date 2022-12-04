@@ -49,22 +49,67 @@ so give it a try for yourself and see what you think!
 
 ## 2. [Warp](https://www.warp.dev/)
 
-TODO
+Warp touts itself as "The terminal for the 21st century", and I think that's a
+pretty fair statement. It adds loads of features that most other terminal apps
+do not offer, and it's written in Rust, which makes it blazingly fast, and it
+easily outperforms Electron-based terminals.
+
+One of the coolest features of Warp is its AI Search. You may have been hearing
+a lot about GPT-3 and OpenAI Chat recently, and how powerful it is. Well, Warp
+uses the same amazing GPT-3 technology to power its AI search, which means
+searching things like `delete git branch` will suggest
+`git branch -d branch_name`, so finding the command you need is a breeze.
+
+[![Screenshot of Warp AI search showing results for deleting a git branch](/img/blog/top-five-web-developer-tools/warp-ai-search.jpg)](https://www.warp.dev/)
+
+Warp has also reimagined how your output is displayed. Instead of a huge wall of
+text, your commands and their output are grouped into blocks. This allows you to
+easily navigate through them, and share them with your team for easier
+debugging.
+
+Terminal sharing is coming soon, so you can share a permalink to your terminal
+with your team, and they can view it in real-time. Soon documentation will be
+supported inside Warp as well, so there will be no need to navigate to an
+external wiki or docs site, and instead, you can view the docs directly inline.
+
+[![Screenshot of Warp showing inline documentation for AWS](/img/blog/top-five-web-developer-tools/warp-docs.png)](https://www.warp.dev/)
+
+To learn more about Warp, check out our
+[podcast episode with Warp's founder, Zach Lloyd](https://www.whiskeywebandwhatnot.fm/prioritizing-performance-and-the-future-of-the-terminal-with-zach-lloyd/).
 
 ## 3. [Zed](https://zed.dev/)
 
-TODO
+[![Screenshot of Zed showing someone editing a markdown file and some people following along](/img/blog/top-five-web-developer-tools/zed.jpg)](https://zed.dev/)
+
+I just recently got my invite from Zed, so I have not had a ton of time to play
+with it, but the concept seems really cool, so I wanted to make sure to
+highlight it here. Zed tries hard to remove anything you don't need, so the
+window appears very bare bones. This eliminates distractions and gives you more
+space to work.
+
+The real selling point of Zed, however, is its collaboration features. You can
+invite any of your contacts to view your session and code alongside you, which
+is much easier and more productive than trying to screen share via Zoom. It
+allows true collaboration on the same file, at the same time.
 
 ## 4. TODO
 
 TODO
 
-
 ## 5. [GitHub Desktop](https://www.frontendhappyhour.com/)
 
-This one flies under the radar and is very underrated, in my opinion. There are a lot of very powerful tools for git built around power users and handling complex workflows, but if you use GitHub and you want something simple and intuitive to push and pull code, GitHub Desktop is a great tool.
+This one flies under the radar and is very underrated, in my opinion. There are
+a lot of very powerful tools for git built around power users and handling
+complex workflows, but if you use GitHub and you want something simple and
+intuitive to push and pull code, GitHub Desktop is a great tool.
+
+One of my favorite things is having a button to open a new pull request from my
+branch. It takes out the unnecessary step of needing to push, then open GitHub
+and create a PR. It seems like a small thing, but I find it incredibly useful.
 
 ## Wrap-up
 
-I think these are the top 5 web developer tools people should be checking out in 2023 and beyond. If there is a developer tool you think should have been on this list, let us know on Twitter!
+I think these are the top 5 web developer tools people should be checking out in
+2023 and beyond. If there is a developer tool you think should have been on this
+list, let us know on Twitter!
 ([@whiskeywebfm](https://twitter.com/whiskeywebfm))
