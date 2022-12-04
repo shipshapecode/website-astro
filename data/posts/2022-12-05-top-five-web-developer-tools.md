@@ -92,11 +92,7 @@ invite any of your contacts to view your session and code alongside you, which
 is much easier and more productive than trying to screen share via Zoom. It
 allows true collaboration on the same file, at the same time.
 
-## 4. TODO
-
-TODO
-
-## 5. [GitHub Desktop](https://desktop.github.com/)
+## 4. [GitHub Desktop](https://desktop.github.com/)
 
 [![Screenshot of GitHub Desktop showing history and file changes](/img/blog/top-five-web-developer-tools/github-desktop.png)](https://desktop.github.com/)
 
@@ -110,6 +106,19 @@ branch. It takes out the unnecessary step of needing to push, then open GitHub
 and create a PR. It seems like a small thing, but I find it incredibly useful.
 
 [![Screenshot of GitHub Desktop showing the create pull request button](/img/blog/top-five-web-developer-tools/github-desktop-pr.png)](https://desktop.github.com/)
+
+## 5. [Fig](https://fig.io/)
+
+<video autoplay muted loop width="100%" height="auto" playsinline preload="auto" style="border-radius:5px" poster="">
+<source src="/img/blog/top-five-web-developer-tools/fig-demo.mp4" type="video/mp4">
+Your browser doesn't support the video tag.
+</video>
+
+Another player, new to the terminal space, is Fig. Fig adds IDE-style
+autocomplete to your existing terminal. It works with the three most popular
+shells: `bash`, `zsh`, and `fish` and has integrations with various terminal
+apps and IDEs. It is very helpful when trying to remember commands or if you
+want to save keystrokes!
 
 ## Wrap-up
 
