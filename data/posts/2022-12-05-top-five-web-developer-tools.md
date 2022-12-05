@@ -25,7 +25,7 @@ consuming the web in 2023 and beyond.
 [![Screenshot of Arc showing GitHub open, some tabs on the left and a favorites bar](/img/blog/top-five-web-developer-tools/arc.png)](https://thebrowser.company/)
 
 It has been a long time since I got excited about a new browser. It seems like
-most "new" browsers are just a Chrome clone that has been reskinned and maybe
+most "new" browsers are often a Chrome clone that has been reskinned and maybe
 has a few extra features. Chrome is a great browser, don't get me wrong, and
 browsers like Brave have made Chromium even cooler, but The Browser Company has
 dramatically changed the game with their new browser: Arc.
@@ -51,8 +51,8 @@ so give it a try for yourself and see what you think!
 
 Warp touts itself as "The terminal for the 21st century", and I think that's a
 pretty fair statement. It adds loads of features that most other terminal apps
-do not offer, and it's written in Rust, which makes it blazingly fast, and it
-easily outperforms Electron-based terminals.
+do not offer, and it's written in Rust, making it blazing fast, so it easily
+outperforms Electron-based terminals.
 
 One of the coolest features of Warp is its AI Search. You may have been hearing
 a lot about GPT-3 and OpenAI Chat recently, and how powerful it is. Well, Warp
@@ -122,7 +122,7 @@ want to save keystrokes!
 
 ## Wrap-up
 
-I think these are the top 5 web developer tools people should be checking out in
-2023 and beyond. If there is a developer tool you think should have been on this
-list, let us know on Twitter!
+These, in my opinion, are the top 5 web developer tools people should be
+checking out in 2023 and beyond. If there is a developer tool you think should
+have been on this list, let us know on Twitter!
 ([@whiskeywebfm](https://twitter.com/whiskeywebfm))
