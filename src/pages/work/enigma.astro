@@ -15,17 +15,20 @@ const description =
 
 <BaseLayout description={description} title={title}>
   <div class="bg-enigma-red flex flex-wrap justify-center mt-6 w-full lg:pt-24">
-    <div class="max-w-6xl p-6 pb-0 relative w-full lg:p-0">
+    <div class="max-w-8xl p-6 pb-0 relative w-full lg:p-0">
       <h1 class="hidden text-4xl lg:text-6xl">Enigma</h1>
+
       <Icon
         class="fill-white h-auto mt-6 px-6 lg:w-1/3"
         name="clients/enigma"
       />
+
       <div class="mb-6 px-6 text-s text-white">Case Study</div>
+
       <section
-        class="bg-white p-10 right-56 rounded-md shadow-lg top-28 lg:absolute lg:w-1/3"
+        class="bg-white p-10 right-0 rounded-md shadow-lg top-48 lg:absolute lg:w-[383px]"
       >
-        <h2 class="mb-4 text-m">Value Delivered:</h2>
+        <h2 class="mb-4 text-md">Value Delivered:</h2>
 
         <ul>
           <li class="list-none w-fill flex items-center p-3">
@@ -80,7 +83,7 @@ const description =
         alt="A detailed overview of all candidate assessment results"
         attributes={{
           img: {
-            class: 'flex mt-24 lg:w-2/3'
+            class: 'mt-24 w-full lg:!max-w-[1250px]'
           }
         }}
         format="webp"
@@ -89,17 +92,19 @@ const description =
       />
     </div>
   </div>
-  <div class="section flex flex-wrap justify-center">
-    <div class="max-w-5xl w-full">
-      <div class="p-0 lg:px-12">
-        <h2 class="mb-6 text-4xl lg:-mb-8">In their words</h2>
-        <SingleQuote classString="-mx-8 lg:-mb-28" testimonial={testimonial} />
-      </div>
 
-      <div
-        class="flex flex-wrap items-center justify-center p-4 md:h-140 lg:p-12"
-      >
-        <div class="pr-6 lg:w-1/2">
+  <section class="section flex flex-wrap justify-center" data-aos="fade-down">
+    <div class="section-content">
+      <h2 class="mb-6 text-4xl">In their words</h2>
+    </div>
+  </section>
+
+  <SingleQuote testimonial={testimonial} />
+
+  <section class="section flex flex-wrap justify-center" data-aos="fade-down">
+    <div class="section-content">
+      <div class="gap-12 grid grid-cols-1 lg:grid-cols-2">
+        <div>
           <h2 class="text-4xl mb-6">About the Client</h2>
           <p>
             <a href="https://www.askenigma.com/">Enigma</a> is a platform designed
@@ -116,119 +121,124 @@ const description =
             candidate’s application.
           </p>
         </div>
-        <div class="hidden pl-6 lg:block lg:w-1/2">
+
+        <div class="flex items-center">
           <Icon class="fill-enigma-red h-auto w-full" name="clients/enigma" />
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="p-4 lg:p-12">
-        <h2 class="text-4xl mb-6">Challenge</h2>
+  <section class="section flex flex-wrap justify-center" data-aos="fade-down">
+    <div class="section-content">
+      <h2 class="text-4xl mb-6">Challenge</h2>
 
-        <p>
-          The Enigma assessment application was in a very raw proof of concept
-          state when Ship Shape was brought in to act as the development team
-          that would create a production-ready product. Enigma already had
-          customers signed up and ready to start utilizing the application for
-          their recruiting needs, but still had a substantial roadmap of
-          features in need of implementation. Ship Shape’s challenge was to
-          implement essential features, including the full assessment workflow
-          and corresponding administrative tasks, in order to launch Enigma. We
-          continued to help build out the application based on customers’
-          feedback about their additional needs.
-        </p>
+      <p>
+        The Enigma assessment application was in a very raw proof of concept
+        state when Ship Shape was brought in to act as the development team that
+        would create a production-ready product. Enigma already had customers
+        signed up and ready to start utilizing the application for their
+        recruiting needs, but still had a substantial roadmap of features in
+        need of implementation. Ship Shape’s challenge was to implement
+        essential features, including the full assessment workflow and
+        corresponding administrative tasks, in order to launch Enigma. We
+        continued to help build out the application based on customers’ feedback
+        about their additional needs.
+      </p>
 
-        <div class="bg-enigma-red flex justify-center lg:flex-1 rounded-md">
-          <div class="pl-4 pr-4 pt-4 lg:pl-12 lg:pr-12 lg:pt-12">
+      <div class="bg-enigma-red flex justify-center lg:flex-1 rounded-md">
+        <div class="pl-4 pr-4 pt-4 lg:pl-12 lg:pr-12 lg:pt-12">
+          <Img
+            alt="The Enigma login page"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
+            src="/img/work/enigma/enigma-login.png"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section flex flex-wrap justify-center" data-aos="fade-down">
+    <div class="section-content">
+      <h2 class="text-4xl mb-6">Solution</h2>
+
+      <h3 class="text-2xl mb-6">Next.js</h3>
+
+      <p>
+        The development team made use of
+        <a href="/https://nextjs.org/">Next.js</a> to prioritize quick loading times
+        on the client side of this application. The server-side rendering capabilities
+        of Next.js allow the Enigma application to retrieve web pages and any corresponding
+        data in one go, eliminating the need for multiple network requests and preventing
+        subsequent delays in data population.
+      </p>
+
+      <div class="lg:flex lg:my-14">
+        <div class="lg:mr-12 lg:w-1/2">
+          <h3 class="text-2xl mb-6">Shepherd Tour</h3>
+
+          <p>
+            The Ship Shape team also had the opportunity to integrate one of our
+            own open source projects,
+            <a href="https://shepherdjs.dev/docs/">Shepherd</a>, into the Enigma
+            platform. The Shepherd library provides a way to guide users through
+            a tour of a web application, highlighting the key features users
+            should familiarize themselves with, in order to use the app at its
+            full potential.
+          </p>
+        </div>
+
+        <div class="lg:w-1/2">
+          <figure>
             <Img
-              alt="The Enigma login page"
+              alt="An implementation of a Shepherd tour for the Enigma hirer dashboard"
               attributes={{
                 img: {
-                  class: 'flex'
+                  class: 'bg-enigma-red pl-4 pr-4 pt-4 rounded-md'
                 }
               }}
               format="webp"
               placeholder="none"
-              src="/img/work/enigma/enigma-login.png"
+              src="/img/work/enigma/enigma-hirer-assessment-tour.png"
             />
-          </div>
+            <figcaption>Example Shepherd.js tour</figcaption>
+          </figure>
         </div>
       </div>
-
-      <div class="p-4 lg:p-12">
-        <h2 class="text-4xl mb-6">Solution</h2>
-
-        <h3 class="text-2xl mb-6">Next.js</h3>
-
-        <p>
-          The development team made use of
-          <a href="/https://nextjs.org/">Next.js</a> to prioritize quick loading
-          times on the client side of this application. The server-side rendering
-          capabilities of Next.js allow the Enigma application to retrieve web pages
-          and any corresponding data in one go, eliminating the need for multiple
-          network requests and preventing subsequent delays in data population.
-        </p>
-
-        <div class="lg:flex lg:my-14">
-          <div class="lg:mr-12 lg:w-1/2">
-            <h3 class="text-2xl mb-6">Shepherd Tour</h3>
-
-            <p>
-              The Ship Shape team also had the opportunity to integrate one of
-              our own open source projects,
-              <a href="https://shepherdjs.dev/docs/">Shepherd</a>, into the
-              Enigma platform. The Shepherd library provides a way to guide
-              users through a tour of a web application, highlighting the key
-              features users should familiarize themselves with, in order to use
-              the app at its full potential.
-            </p>
-          </div>
-
-          <div class="lg:w-1/2">
-            <figure>
-              <Img
-                alt="An implementation of a Shepherd tour for the Enigma hirer dashboard"
-                attributes={{
-                  img: {
-                    class: 'bg-enigma-red pl-4 pr-4 pt-4 rounded-md'
-                  }
-                }}
-                format="webp"
-                placeholder="none"
-                src="/img/work/enigma/enigma-hirer-assessment-tour.png"
-              />
-              <figcaption>Example Shepherd.js tour</figcaption>
-            </figure>
-          </div>
+      <div class="flex flex-col-reverse mt-14 md:flex-row">
+        <div class="lg:w-1/2">
+          <figure>
+            <Img
+              alt="A detailed overview of a cybersecurity assessment"
+              attributes={{
+                img: {
+                  class: 'bg-enigma-red pl-4 pr-4 pt-4 rounded-md'
+                }
+              }}
+              format="webp"
+              placeholder="none"
+              src="/img/work/enigma/enigma-hirer-assessment-detail.png"
+            />
+            <figcaption>User flow of assessment</figcaption>
+          </figure>
         </div>
-        <div class="flex flex-col-reverse mt-14 md:flex-row">
-          <div class="lg:w-1/2">
-            <figure>
-              <Img
-                alt="A detailed overview of a cybersecurity assessment"
-                attributes={{
-                  img: {
-                    class: 'bg-enigma-red pl-4 pr-4 pt-4 rounded-md'
-                  }
-                }}
-                format="webp"
-                placeholder="none"
-                src="/img/work/enigma/enigma-hirer-assessment-detail.png"
-              />
-              <figcaption>User flow of assessment</figcaption>
-            </figure>
-          </div>
-          <div class="lg:ml-12 lg:w-1/2">
-            <h3 class="text-2xl mb-6">Cypress Testing</h3>
+        <div class="lg:ml-12 lg:w-1/2">
+          <h3 class="text-2xl mb-6">Cypress Testing</h3>
 
-            <p>
-              The development team also incorporated
-              <a href="https://www.cypress.io/">Cypress</a>, an integration
-              testing framework, into the Enigma application. This end-to-end
-              testing technology allowed the development team to deliver
-              features to users with confidence that critical tasks aren’t
-              disrupted by bugs.
-            </p>
-          </div>
+          <p>
+            The development team also incorporated
+            <a href="https://www.cypress.io/">Cypress</a>, an integration
+            testing framework, into the Enigma application. This end-to-end
+            testing technology allowed the development team to deliver features
+            to users with confidence that critical tasks aren’t disrupted by
+            bugs.
+          </p>
         </div>
       </div>
 
@@ -261,33 +271,35 @@ const description =
           </li>
         </ul>
       </div>
+    </div>
+  </section>
 
-      <div class="p-4 lg:pb-0 lg:p-12">
-        <h2 class="text-4xl mb-6">Outcome</h2>
+  <section class="section flex flex-wrap justify-center" data-aos="fade-down">
+    <div class="section-content">
+      <h2 class="text-4xl mb-6">Outcome</h2>
 
-        <div class="bg-enigma-red flex justify-center lg:flex-1 rounded-md">
-          <div class="pl-4 pr-4 pt-4 lg:pl-12 lg:pr-12 lg:pt-12">
-            <Img
-              alt="A detailed overview of all candidate assessment results"
-              attributes={{
-                img: {
-                  class: 'flex'
-                }
-              }}
-              format="webp"
-              placeholder="none"
-              src="/img/work/enigma/enigma-hirer-results.png"
-            />
-          </div>
+      <div class="bg-enigma-red flex justify-center lg:flex-1 rounded-md">
+        <div class="pl-4 pr-4 pt-4 lg:pl-12 lg:pr-12 lg:pt-12">
+          <Img
+            alt="A detailed overview of all candidate assessment results"
+            attributes={{
+              img: {
+                class: 'flex'
+              }
+            }}
+            format="webp"
+            placeholder="none"
+            src="/img/work/enigma/enigma-hirer-results.png"
+          />
         </div>
-        <p class="pt-6">
-          Ship Shape’s main priority was to successfully build and launch a
-          feature rich application according to the client’s schedule, and we’re
-          happy to report that we met this target! The Ship Shape crew had a
-          great experience working with the Enigma team to get a
-          production-ready product off the ground.
-        </p>
       </div>
+      <p class="pt-6">
+        Ship Shape’s main priority was to successfully build and launch a
+        feature rich application according to the client’s schedule, and we’re
+        happy to report that we met this target! The Ship Shape crew had a great
+        experience working with the Enigma team to get a production-ready
+        product off the ground.
+      </p>
 
       <BottomLinks
         nextLink="/work/netflix/"
@@ -296,5 +308,5 @@ const description =
         previousLinkText="Acquia"
       />
     </div>
-  </div>
+  </section>
 </BaseLayout>
