@@ -23,7 +23,7 @@ const description =
         name="clients/enigma"
       />
 
-      <div class="mb-6 px-6 text-s text-white">Case Study</div>
+      <p class="mb-6 mt-2 px-6 text-lg text-white">Case Study</p>
 
       <section
         class="bg-white p-10 right-0 rounded-md shadow-lg top-48 lg:absolute lg:w-[383px]"
@@ -54,12 +54,11 @@ const description =
               <Icon class="h-auto w-full" name="icons/mentor" />
             </div>
 
-            <div class="ml-7">
-              Mentored new hires in Next.js best practices
-            </div>
+            <div class="ml-7">Mentored new hires in Next.js best practices</div>
           </li>
         </ul>
       </section>
+
       <Img
         alt="A detailed overview of all candidate assessment results"
         attributes={{
@@ -77,10 +76,10 @@ const description =
   <section class="section flex flex-wrap justify-center" data-aos="fade-down">
     <div class="section-content">
       <h2 class="mb-6 text-4xl">In their words</h2>
+
+      <SingleQuote testimonial={testimonial} />
     </div>
   </section>
-
-  <SingleQuote testimonial={testimonial} />
 
   <section class="section flex flex-wrap justify-center" data-aos="fade-down">
     <div class="section-content">
@@ -114,7 +113,7 @@ const description =
     <div class="section-content">
       <h2 class="text-4xl mb-6">Challenge</h2>
 
-      <p>
+      <p class="mb-12">
         The Enigma assessment application was in a very raw proof of concept
         state when Ship Shape was brought in to act as the development team that
         would create a production-ready product. Enigma already had customers
@@ -188,7 +187,7 @@ const description =
               placeholder="none"
               src="/img/work/enigma/enigma-hirer-assessment-tour.png"
             />
-            <figcaption>Example Shepherd.js tour</figcaption>
+            <figcaption class="italic text-sm">Example Shepherd.js tour</figcaption>
           </figure>
         </div>
       </div>
@@ -206,7 +205,7 @@ const description =
               placeholder="none"
               src="/img/work/enigma/enigma-hirer-assessment-detail.png"
             />
-            <figcaption>User flow of assessment</figcaption>
+            <figcaption class="italic text-sm">User flow of assessment</figcaption>
           </figure>
         </div>
         <div class="lg:ml-12 lg:w-1/2">
@@ -223,35 +222,33 @@ const description =
         </div>
       </div>
 
-      <div class="p-4 lg:p-12">
-        <h3 class="text-2xl mb-6">Key Application Features</h3>
+      <h3 class="text-2xl mb-6">Key Application Features</h3>
 
-        <p>
-          In order to successfully launch this unique cybersecurity assessment
-          tool, the Enigma and Ship Shape development teams focused on
-          implementing the following key features and workflows:
-        </p>
+      <p>
+        In order to successfully launch this unique cybersecurity assessment
+        tool, the Enigma and Ship Shape development teams focused on
+        implementing the following key features and workflows:
+      </p>
 
-        <ul class="ml-6">
-          <li class="list-disc">
-            Authentication processes that allow candidates and employers to
-            securely access their respective accounts
-          </li>
-          <li class="list-disc">
-            A candidate's ability to work through assessments assigned by
-            potential employers
-          </li>
-          <li class="list-disc">
-            An employer's ability to create, view, assign, archive, and delete
-            assessments and candidate assessment attempts
-          </li>
-          <li class="list-disc">
-            An optional package that would allow employers to assign a
-            supplemental personality evaluation that would accompany a
-            candidate's overall job application
-          </li>
-        </ul>
-      </div>
+      <ul class="ml-6">
+        <li class="list-disc">
+          Authentication processes that allow candidates and employers to
+          securely access their respective accounts
+        </li>
+        <li class="list-disc">
+          A candidate's ability to work through assessments assigned by
+          potential employers
+        </li>
+        <li class="list-disc">
+          An employer's ability to create, view, assign, archive, and delete
+          assessments and candidate assessment attempts
+        </li>
+        <li class="list-disc">
+          An optional package that would allow employers to assign a
+          supplemental personality evaluation that would accompany a candidate's
+          overall job application
+        </li>
+      </ul>
     </div>
   </section>
 
