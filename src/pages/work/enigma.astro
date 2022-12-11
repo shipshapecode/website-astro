@@ -15,7 +15,7 @@ const description =
 
 <BaseLayout description={description} title={title}>
   <div class="bg-enigma-red flex flex-wrap justify-center mt-6 w-full lg:pt-24">
-    <div class="max-w-8xl p-6 pb-0 relative w-full lg:p-0">
+    <div class="max-w-8xl overflow-hidden p-6 pb-0 relative w-full lg:p-0">
       <h1 class="hidden text-4xl lg:text-6xl">Enigma</h1>
 
       <Icon
@@ -63,7 +63,8 @@ const description =
         alt="A detailed overview of all candidate assessment results"
         attributes={{
           img: {
-            class: 'mt-24 rounded-t-md w-full lg:!max-w-[1250px]'
+            class:
+              '-mb-12 mt-24 rounded-t-md w-full lg:!max-w-[1250px] lg:-mb-24'
           }
         }}
         format="webp"
@@ -83,9 +84,10 @@ const description =
 
   <section class="section flex flex-wrap justify-center" data-aos="fade-down">
     <div class="section-content">
+      <h2 class="text-4xl mb-6">About the Client</h2>
+
       <div class="gap-12 grid grid-cols-1 lg:grid-cols-2">
-        <div>
-          <h2 class="text-4xl mb-6">About the Client</h2>
+        <div class="order-2 lg:order-1">
           <p>
             <a href="https://www.askenigma.com/">Enigma</a> is a platform designed
             to help cybersecurity teams make faster hiring decisions and find stronger,
@@ -102,8 +104,13 @@ const description =
           </p>
         </div>
 
-        <div class="flex items-center">
-          <Icon class="fill-enigma-red h-auto w-full" name="clients/enigma" />
+        <div
+          class="flex items-center justify-center order-1 lg:justify-end lg:order-2"
+        >
+          <Icon
+            class="h-auto max-w-lg w-full child:fill-enigma-red"
+            name="clients/enigma"
+          />
         </div>
       </div>
     </div>
@@ -132,7 +139,7 @@ const description =
             alt="The Enigma login page"
             attributes={{
               img: {
-                class: 'flex'
+                class: 'flex rounded-t-md'
               }
             }}
             format="webp"
@@ -187,11 +194,14 @@ const description =
               placeholder="none"
               src="/img/work/enigma/enigma-hirer-assessment-tour.png"
             />
-            <figcaption class="italic text-sm">Example Shepherd.js tour</figcaption>
+            <figcaption class="italic text-sm">
+              Example Shepherd.js tour
+            </figcaption>
           </figure>
         </div>
       </div>
-      <div class="flex flex-col-reverse mt-14 md:flex-row">
+
+      <div class="flex flex-col-reverse my-14 md:flex-row">
         <div class="lg:w-1/2">
           <figure>
             <Img
@@ -205,7 +215,9 @@ const description =
               placeholder="none"
               src="/img/work/enigma/enigma-hirer-assessment-detail.png"
             />
-            <figcaption class="italic text-sm">User flow of assessment</figcaption>
+            <figcaption class="italic text-sm">
+              User flow of assessment
+            </figcaption>
           </figure>
         </div>
         <div class="lg:ml-12 lg:w-1/2">
