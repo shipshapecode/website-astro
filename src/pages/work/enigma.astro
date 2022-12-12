@@ -133,20 +133,18 @@ const description =
         about their additional needs.
       </p>
 
-      <div class="bg-enigma-red flex justify-center lg:flex-1 rounded-md">
-        <div class="pl-4 pr-4 pt-4 lg:pl-12 lg:pr-12 lg:pt-12">
-          <Img
-            alt="The Enigma login page"
-            attributes={{
-              img: {
-                class: 'flex rounded-t-md'
-              }
-            }}
-            format="webp"
-            placeholder="none"
-            src="/img/work/enigma/enigma-login.png"
-          />
-        </div>
+      <div class="bg-enigma-red overflow-hidden px-6 rounded-md lg:px-12">
+        <Img
+          alt="The Enigma login page"
+          attributes={{
+            img: {
+              class: '-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12'
+            }
+          }}
+          format="webp"
+          placeholder="none"
+          src="/img/work/enigma/enigma-login.png"
+        />
       </div>
     </div>
   </section>
@@ -166,8 +164,8 @@ const description =
         subsequent delays in data population.
       </p>
 
-      <div class="lg:flex lg:my-14">
-        <div class="lg:mr-12 lg:w-1/2">
+      <div class="gap-24 grid grid-cols-1 my-14 lg:grid-cols-2">
+        <div class="lg:order-2">
           <h3 class="text-2xl mb-6">Shepherd Tour</h3>
 
           <p>
@@ -181,46 +179,29 @@ const description =
           </p>
         </div>
 
-        <div class="lg:w-1/2">
-          <figure>
+        <figure class="lg:order-1">
+          <div class="bg-enigma-red overflow-hidden px-6 rounded-md lg:px-8">
             <Img
               alt="An implementation of a Shepherd tour for the Enigma hirer dashboard"
               attributes={{
                 img: {
-                  class: 'bg-enigma-red pl-4 pr-4 pt-4 rounded-md'
+                  class: '-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8'
                 }
               }}
               format="webp"
               placeholder="none"
               src="/img/work/enigma/enigma-hirer-assessment-tour.png"
             />
-            <figcaption class="italic text-sm">
-              Example Shepherd.js tour
-            </figcaption>
-          </figure>
-        </div>
+          </div>
+
+          <figcaption class="italic text-sm">
+            Example Shepherd.js tour
+          </figcaption>
+        </figure>
       </div>
 
-      <div class="flex flex-col-reverse my-14 md:flex-row">
-        <div class="lg:w-1/2">
-          <figure>
-            <Img
-              alt="A detailed overview of a cybersecurity assessment"
-              attributes={{
-                img: {
-                  class: 'bg-enigma-red pl-4 pr-4 pt-4 rounded-md'
-                }
-              }}
-              format="webp"
-              placeholder="none"
-              src="/img/work/enigma/enigma-hirer-assessment-detail.png"
-            />
-            <figcaption class="italic text-sm">
-              User flow of assessment
-            </figcaption>
-          </figure>
-        </div>
-        <div class="lg:ml-12 lg:w-1/2">
+      <div class="gap-24 grid grid-cols-1 my-14 lg:grid-cols-2">
+        <div>
           <h3 class="text-2xl mb-6">Cypress Testing</h3>
 
           <p>
@@ -232,6 +213,25 @@ const description =
             bugs.
           </p>
         </div>
+
+        <figure>
+          <div class="bg-enigma-red overflow-hidden px-6 rounded-md lg:px-8">
+            <Img
+              alt="A detailed overview of a cybersecurity assessment"
+              attributes={{
+                img: {
+                  class: '-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8'
+                }
+              }}
+              format="webp"
+              placeholder="none"
+              src="/img/work/enigma/enigma-hirer-assessment-detail.png"
+            />
+          </div>
+          <figcaption class="italic text-sm">
+            User flow of assessment
+          </figcaption>
+        </figure>
       </div>
 
       <h3 class="text-2xl mb-6">Key Application Features</h3>
@@ -268,21 +268,20 @@ const description =
     <div class="section-content">
       <h2 class="text-4xl mb-6">Outcome</h2>
 
-      <div class="bg-enigma-red flex justify-center lg:flex-1 rounded-md">
-        <div class="pl-4 pr-4 pt-4 lg:pl-12 lg:pr-12 lg:pt-12">
-          <Img
-            alt="A detailed overview of all candidate assessment results"
-            attributes={{
-              img: {
-                class: 'flex'
-              }
-            }}
-            format="webp"
-            placeholder="none"
-            src="/img/work/enigma/enigma-hirer-results.png"
-          />
-        </div>
+      <div class="bg-enigma-red overflow-hidden px-6 rounded-md lg:px-12">
+        <Img
+          alt="A detailed overview of all candidate assessment results"
+          attributes={{
+            img: {
+              class: '-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12'
+            }
+          }}
+          format="webp"
+          placeholder="none"
+          src="/img/work/enigma/enigma-hirer-results.png"
+        />
       </div>
+
       <p class="pt-6">
         Ship Shape’s main priority was to successfully build and launch a
         feature rich application according to the client’s schedule, and we’re
