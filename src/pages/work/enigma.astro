@@ -15,10 +15,10 @@ const description =
 
 <BaseLayout description={description} title={title}>
   <section
-    class="bg-enigma-red flex flex-wrap justify-center mt-6 w-full lg:pt-24"
+    class="bg-enigma-red flex flex-wrap justify-center mt-6 px-8 w-full lg:pt-24"
   >
     <div
-      class="max-w-8xl overflow-hidden p-6 pb-0 relative w-full lg:p-0"
+      class="max-w-8xl overflow-hidden relative w-full lg:p-0"
       data-aos="fade"
     >
       <h1 class="hidden text-4xl lg:text-6xl">Enigma</h1>
@@ -30,8 +30,8 @@ const description =
 
       <p class="mb-6 mt-2 px-6 text-lg text-white">Case Study</p>
 
-      <section
-        class="bg-white p-10 right-0 rounded-md shadow-lg top-48 lg:absolute lg:w-[383px]"
+      <aside
+        class="bg-white p-5 right-0 rounded-md shadow-lg top-48 lg:absolute lg:p-10 lg:w-[383px]"
       >
         <h2 class="mb-4 text-md">Value Delivered:</h2>
 
@@ -62,7 +62,7 @@ const description =
             <div class="ml-7">Mentored new hires in Next.js best practices</div>
           </li>
         </ul>
-      </section>
+      </aside>
 
       <Img
         alt="A detailed overview of all candidate assessment results"
@@ -80,18 +80,21 @@ const description =
   </section>
 
   <section
-    class="flex flex-wrap justify-center mt-28 lg:mt-36"
+    class="flex flex-wrap justify-center mt-28 px-8 lg:mt-36"
     data-aos="fade-down"
   >
-    <div class="section-content">
+    <div class="max-w-6xl w-full">
       <h2 class="mb-6 text-4xl">In their words</h2>
 
       <SingleQuote classString="!mb-0" testimonial={testimonial} />
     </div>
   </section>
 
-  <section class="flex flex-wrap justify-center mt-24" data-aos="fade-down">
-    <div class="section-content">
+  <section
+    class="flex flex-wrap justify-center mt-24 px-8"
+    data-aos="fade-down"
+  >
+    <div class="max-w-6xl w-full">
       <h2 class="text-4xl mb-6">About the Client</h2>
 
       <div class="gap-12 grid grid-cols-1 lg:grid-cols-2">
@@ -124,8 +127,11 @@ const description =
     </div>
   </section>
 
-  <section class="flex flex-wrap justify-center mt-24" data-aos="fade-down">
-    <div class="section-content">
+  <section
+    class="flex flex-wrap justify-center mt-24 px-8"
+    data-aos="fade-down"
+  >
+    <div class="max-w-6xl w-full">
       <h2 class="text-4xl mb-6">Challenge</h2>
 
       <p class="mb-12">
@@ -157,8 +163,11 @@ const description =
     </div>
   </section>
 
-  <section class="flex flex-wrap justify-center mt-24" data-aos="fade-down">
-    <div class="section-content">
+  <section
+    class="flex flex-wrap justify-center mt-24 px-8"
+    data-aos="fade-down"
+  >
+    <div class="max-w-6xl w-full">
       <h2 class="text-4xl mb-6">Solution</h2>
 
       <h3 class="text-2xl mb-6">Next.js</h3>
@@ -276,8 +285,11 @@ const description =
     </div>
   </section>
 
-  <section class="flex flex-wrap justify-center mt-24" data-aos="fade-down">
-    <div class="section-content">
+  <section
+    class="flex flex-wrap justify-center mt-24 px-8"
+    data-aos="fade-down"
+  >
+    <div class="max-w-6xl w-full">
       <h2 class="text-4xl mb-6">Outcome</h2>
 
       <div class="bg-enigma-red overflow-hidden px-6 rounded-md lg:px-12">
@@ -301,7 +313,11 @@ const description =
         experience working with the Enigma team to get a production-ready
         product off the ground.
       </p>
+    </div>
+  </section>
 
+  <div class="waves white-waves flex flex-wrap justify-center">
+    <div class="max-w-6xl mb-24 w-full">
       <BottomLinks
         nextLink="/work/netflix/"
         nextLinkText="Netflix"
@@ -309,5 +325,5 @@ const description =
         previousLinkText="Acquia"
       />
     </div>
-  </section>
+  </div>
 </BaseLayout>
