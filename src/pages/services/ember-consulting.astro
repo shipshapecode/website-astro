@@ -97,9 +97,9 @@ const description =
     <AllAboutSpecialty benefits={specialtyBenefits} flipParagraphs>
       <Fragment slot="h2">All about Ember.js</Fragment>
 
-      <Fragment slot="h3"
-        >Ember is great for large companies because of its:</Fragment
-      >
+      <Fragment slot="h3">
+        Ember is great for large companies because of its:
+      </Fragment>
 
       <Fragment slot="unboxed-text">
         <p>
@@ -140,7 +140,12 @@ const description =
       </Fragment>
     </TwoColumnSection>
 
-    <SingleQuote classString="lg:pt-32" testimonial={testimonial} />
+    <div
+      class="bg-white flex flex-wrap justify-center px-8 lg:py-16 lg:pt-32"
+      data-aos="fade"
+    >
+      <SingleQuote testimonial={testimonial} />
+    </div>
 
     <CommunityInvolvement />
 
