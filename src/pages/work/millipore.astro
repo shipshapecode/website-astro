@@ -1,0 +1,243 @@
+---
+import { Img } from 'astro-imagetools/components';
+import { Icon } from 'astro-icon';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BottomLinks from '../../components/BottomLinks.astro';
+
+const title = 'Outreach Replatforming Acceleration';
+const description =
+  "Outreach needed experienced engineers to add to their team to quickly integration and deliver key replatforming initiatives";
+---
+
+<BaseLayout description={description} title={title}>
+  <section
+    class="bg-millipore-purple flex flex-wrap justify-center mt-6 px-8 w-full lg:pt-24"
+  >
+    <div
+      class="max-w-8xl overflow-hidden relative w-full lg:p-0"
+      data-aos="fade"
+    >
+      <h1 class="hidden">Millipore Sigma</h1>
+
+      <div class="my-12 px-8">
+        <Icon class="fill-white h-auto max-w-md w-full" name="clients/millipore-sigma" />
+
+        <p class="mt-2 text-lg text-white">Case Study</p>
+      </div>
+
+      <aside
+        class="bg-white p-5 right-0 rounded-md shadow-lg top-48 lg:absolute lg:p-10 lg:w-[383px]"
+      >
+        <h2 class="mb-4 text-md">Value Delivered:</h2>
+
+        <ul>
+          <li class="list-none flex items-center p-3 w-full">
+            <div class="h-14 flex items-center w-14">
+              <Icon class="h-auto w-full" name="icons/speed" />
+            </div>
+
+            <div class="ml-7">Accelerated Outreach's replatforming efforts</div>
+          </li>
+
+          <li class="list-none flex items-center p-3 w-full">
+            <div class="h-14 flex items-center w-14">
+              <Icon class="h-auto p-1 w-full" name="icons/chart" />
+            </div>
+
+            <div class="ml-7">
+              Increased maintainability of overall codebase
+            </div>
+          </li>
+
+          <li class="list-none flex items-center p-3 w-full">
+            <div class="h-14 flex items-center w-14">
+              <Icon class="h-auto w-full" name="icons/mentor" />
+            </div>
+
+            <div class="ml-7">Improved effectiveness of notification architecture</div>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- <Img
+        alt="A detailed overview of the sequences dashboard"
+        attributes={{
+          img: {
+            class:
+              '-mb-12 mt-24 rounded-t-md w-full lg:!max-w-[1250px] lg:-mb-24'
+          }
+        }}
+        format="webp"
+        placeholder="none"
+        src="/img/work/outreach/sequences_report.png"
+      /> -->
+    </div>
+  </section>
+
+  <section
+    class="flex flex-wrap justify-center mt-24 px-8"
+    data-aos="fade-down"
+  >
+    <div class="max-w-6xl w-full">
+      <h2 class="text-4xl mb-6">About the Client</h2>
+
+      <div class="gap-12 grid grid-cols-1 lg:grid-cols-2">
+        <div class="order-2 lg:order-1">
+          <p>
+            <a href="https://www.sigmaaldrich.io/">MilliporeSigma</a>, the US and Canadian life science business of Merck KGaA, is a technology company that develops, manufactures, and distributes various biochemicals and organic chemicals.
+          </p>
+        </div>
+
+        <div
+          class="flex items-center justify-center order-1 lg:justify-end lg:order-2"
+        >
+          <Icon
+            class="h-auto max-w-lg w-full child:fill-outreach-purple"
+            name="clients/millipore-sigma"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="flex flex-wrap justify-center mt-24 px-8"
+    data-aos="fade-down"
+  >
+    <div class="max-w-6xl w-full">
+      <h2 class="text-4xl mb-6">Challenge</h2>
+
+      <p class="mb-12">
+        Users of Outreach’s legacy software were asking for new features and improved notifications of urgent or past due tasks.  In addition, Outreach’s ability to maintain the application at scale was difficult due to a highly coupled Ruby and React architecture. Outreach needed to accelerate the replatforming of thier primary SaaS product to
+use more maintainable, faster, and reliable modern technologies.
+      </p>
+
+      <div class="bg-outreach-purple overflow-hidden px-6 rounded-md lg:px-12">
+        <!-- <Img
+          alt="Sales execution report detail"
+          attributes={{
+            img: {
+              class: '-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12'
+            }
+          }}
+          format="webp"
+          placeholder="none"
+          src="/img/work/outreach/sales-execution-report.png"
+        /> -->
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="flex flex-wrap justify-center mt-24 px-8"
+    data-aos="fade-down"
+  >
+    <div class="max-w-6xl w-full">
+      <h2 class="text-4xl mb-6">Solution</h2>
+      <p>
+        Ship Shape brought our team of experts to the project to immediately improve velocity and start deliverying features in the updated application right away. The new application used a microservices API architecture, a custom GraphQL layer, and micro-frontend based apps tied together with an entry single page application. We worked to established strong communication channels with the team with worldwide distribution.
+      </p>
+
+      <div
+        class="gap-12 grid grid-cols-1 my-12 lg:my-24 lg:gap-24 lg:grid-cols-2"
+      >
+        <div class="lg:order-2">
+          <h3 class="text-2xl mb-6">Desktop Notifications</h3>
+
+          <p>
+            Our team owned the desktop notification feature to implement the application wide strategy for creating, managing, and adding custom actions to notifications. This also resulting in some newly acquired expertise for our team that we shared in an article.
+          </p>
+        </div>
+
+        <figure class="lg:order-1">
+          <div class="bg-outreach-purple overflow-hidden px-6 rounded-md lg:px-8">
+            <!-- <Img
+              alt="An action triggered from desktop notification"
+              attributes={{
+                img: {
+                  class: '-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8'
+                }
+              }}
+              format="webp"
+              placeholder="none"
+              src="/img/work/outreach/desktop-notifications.png"
+            /> -->
+          </div>
+          <figcaption class="italic text-sm">
+            User desktop notification for an urgent task
+          </figcaption>
+        </figure>
+      </div>
+
+      <div
+        class="gap-12 grid grid-cols-1 my-12 lg:my-24 lg:gap-24 lg:grid-cols-2"
+      >
+        <div>
+          <h3 class="text-2xl mb-6">Dyanmic customizable table views</h3>
+
+          <p>
+            We worked to introduce significant functionality to the way Outreach presented tabular data, delivering a highly customizable solution that was well received by internal and external customers. This allowed users to have data presented to them in the fastest, most useful, and efficient ways.
+          </p>
+        </div>
+
+        <figure>
+          <div class="bg-outreach-purple overflow-hidden px-6 rounded-md lg:px-8">
+            <!-- <Img
+              alt="An action triggered from desktop notification"
+              attributes={{
+                img: {
+                  class: '-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8'
+                }
+              }}
+              format="webp"
+              placeholder="none"
+              src="/img/work/outreach/kaia_live_content_card.png"
+            /> -->
+          </div>
+          <figcaption class="italic text-sm">
+            Dynamic data display for prospect
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="flex flex-wrap justify-center mt-24 px-8"
+    data-aos="fade-down"
+  >
+    <div class="max-w-6xl w-full">
+      <h2 class="text-4xl mb-6">Outcome</h2>
+
+      <div class="bg-outreach-purple overflow-hidden px-6 rounded-md lg:px-12">
+        <!-- <Img
+          alt="A detailed overview of all candidate assessment results"
+          attributes={{
+            img: {
+              class: '-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12'
+            }
+          }}
+          format="webp"
+          placeholder="none"
+          src="/img/work/enigma/enigma-hirer-results.png"
+        /> -->
+      </div>
+
+      <p class="pt-6">
+        Outreach was able to expose new features to users much faster and reduce the number of urgent tasks missed by sales professionals in order to improve the user’s ROI.
+      </p>
+    </div>
+  </section>
+
+  <div class="waves white-waves flex flex-wrap justify-center">
+    <div class="max-w-6xl mb-24 w-full">
+      <BottomLinks
+        nextLink="/work/enigma/"
+        nextLinkText="Enigma"
+        previousLink="/work/Netflix/"
+        previousLinkText="Netflix"
+      />
+    </div>
+  </div>
+</BaseLayout>
