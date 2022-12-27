@@ -1,0 +1,260 @@
+---
+import { Img } from 'astro-imagetools/components';
+import { Icon } from 'astro-icon';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BottomLinks from '../../components/BottomLinks.astro';
+
+const title = 'Millipore Sigma Internal Developer Platform';
+const description =
+  'Ship Shape helped Millipore Sigma set up and customize Backstage to enable org-wide service discoverability and standardize access to documentation across teams.';
+---
+
+<BaseLayout description={description} title={title}>
+  <section
+    class="bg-millipore-purple flex flex-wrap justify-center mt-6 px-8 w-full lg:pt-24"
+  >
+    <div
+      class="max-w-8xl overflow-hidden relative w-full lg:p-0"
+      data-aos="fade"
+    >
+      <h1 class="hidden">Millipore Sigma</h1>
+
+      <div class="my-12 px-8">
+        <Icon class="fill-white h-auto max-w-md w-full" name="clients/millipore-sigma" />
+
+        <p class="mt-2 text-lg text-white">Case Study</p>
+      </div>
+
+      <aside
+        class="bg-white p-5 right-0 rounded-md shadow-lg top-48 lg:absolute lg:p-10 lg:w-[383px]"
+      >
+        <h2 class="mb-4 text-md">Value Delivered:</h2>
+
+        <ul>
+          <li class="list-none flex items-center p-3 w-full">
+            <div class="h-14 flex items-center w-14">
+              <Icon class="h-auto w-full" name="icons/speed" />
+            </div>
+
+            <div class="ml-7">Improved speed of information through centralization</div>
+          </li>
+
+          <li class="list-none flex items-center p-3 w-full">
+            <div class="h-14 flex items-center w-14">
+              <Icon class="h-auto p-1 w-full" name="icons/chart" />
+            </div>
+
+            <div class="ml-7">
+              Increased accessibility to discovery outside of engineering
+            </div>
+          </li>
+
+          <li class="list-none flex items-center p-3 w-full">
+            <div class="h-14 flex items-center w-14">
+              <Icon class="h-auto w-full" name="icons/mentor" />
+            </div>
+
+            <div class="ml-7">Opened cross team communication and collaboration</div>
+          </li>
+        </ul>
+      </aside>
+
+      <Img
+        alt="A detailed overview of the catalog table"
+        attributes={{
+          img: {
+            class:
+              '-mb-12 mt-24 rounded-t-md w-full lg:!max-w-[1250px] lg:-mb-24'
+          }
+        }}
+        format="webp"
+        placeholder="none"
+        src="/img/work/millipore/catalog.png"
+      />
+    </div>
+  </section>
+
+  <section
+    class="flex flex-wrap justify-center mt-24 px-8"
+    data-aos="fade-down"
+  >
+    <div class="max-w-6xl w-full">
+      <h2 class="text-4xl mb-6">About the Client</h2>
+
+      <div class="gap-12 grid grid-cols-1 lg:grid-cols-2">
+        <div class="order-2 lg:order-1">
+          <p>
+            <a href="https://www.sigmaaldrich.io/">MilliporeSigma</a> is the Life Science business of Merck KGaA, Darmstadt, Germany, a leading science and technology company, operating across healthcare, life science and Electronics. Over 60,000 employees in 66 countries work to make a positive difference to millions of people's lives every day by creating more joyful and sustainable ways to live.
+          </p>
+        </div>
+
+        <div
+          class="flex items-center justify-center order-1 lg:justify-end lg:order-2"
+        >
+          <Icon
+            class="h-auto max-w-lg w-full child:fill-millipore-purple"
+            name="clients/millipore-sigma"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="flex flex-wrap justify-center mt-24 px-8"
+    data-aos="fade-down"
+  >
+    <div class="max-w-6xl w-full">
+      <h2 class="text-4xl mb-6">Challenge</h2>
+
+      <p class="mb-12">
+        MilliporeSigma has the issue of fragmented engineering teams, unclear service ownership, and a lack of consistent documentation strategy.
+        This caused issues in understanding how to work with services, where to ask for help, or how to request features. This serverly impacted
+        the delivery of new features. This also had the side effect of uncertainty on the risk of introducing changes within the main ecommerce application.
+      </p>
+
+      <figure class="lg:order-1">
+        <div class="bg-millipore-purple overflow-hidden px-6 rounded-md lg:px-12">
+          <Img
+            alt="Sales execution report detail"
+            attributes={{
+              img: {
+                class: '-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12'
+              }
+            }}
+            format="webp"
+            placeholder="none"
+            src="/img/work/millipore/graphql-playground.png"
+          />
+        </div>
+        <figcaption class="italic text-sm">
+          Complex schema and resolvers across services      
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section
+    class="flex flex-wrap justify-center mt-24 px-8"
+    data-aos="fade-down"
+  >
+    <div class="max-w-6xl w-full">
+      <h2 class="text-4xl mb-6">Solution</h2>
+      <p class="mb-4">
+        By creating an internal developer portal with <a href="https://backstage.io/">Backstage</a>, Ship Shape provided one location where everyone in the organization to have a singular way of viewing these services, accessing their repositories, documentation, and learning how to collaborate with the individuals behind them.
+      </p>
+
+      <p>
+        MilliporeSigma teams create tools without any particular "golden path" on technologies or documentation practices. Ship Shape leveraged the Catalog plugin for collecting the information on the existing teams and the codebases each own. Secondly, we implemented the TechDocs plugin to unify the way in which documentation can be created/maintained moving forward.  As part of the documentation ease effort, we created a custom plugin to display the release notes for each release of the main e-commerce application.
+      </p>
+
+      <div
+        class="gap-12 grid grid-cols-1 my-12 lg:my-24 lg:gap-24 lg:grid-cols-2"
+      >
+        <div class="lg:order-2">
+          <h3 class="text-2xl mb-6">Deployed Environments</h3>
+
+          <p>
+            MilliporeSigma uses a GitOps process to automate the continuous integration and delivery pipelines, 
+            but this process limits the transparency of the software development lifecycle to
+            other stakeholders outside the of the engineering teams. We developed a custom plugin 
+            to parse the YAML deployments and provide a simple interface to determine what 
+            releases are in each environment.
+          </p>
+        </div>
+
+        <figure class="lg:order-1">
+          <div class="bg-millipore-purple overflow-hidden px-6 rounded-md lg:px-8">
+            <Img
+              alt="Deployed Environments custom plugin"
+              attributes={{
+                img: {
+                  class: '-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8'
+                }
+              }}
+              format="webp"
+              placeholder="none"
+              src="/img/work/millipore/deployed-envs.png"
+            />
+          </div>
+          <figcaption class="italic text-sm">
+            Custom YAML parsing to display the release tags
+          </figcaption>
+        </figure>
+      </div>
+
+      <div
+        class="gap-12 grid grid-cols-1 my-12 lg:my-24 lg:gap-24 lg:grid-cols-2"
+      >
+        <div>
+          <h3 class="text-2xl mb-6">Graphical Schema Display</h3>
+
+          <p>
+            Using the <a href="https://github.com/IvanGoncharov/graphql-voyager">graphql voyager</a> package,
+            we created a custom plugin for a visual mapping of the schema and entity relations. This also provides 
+            an easier to search interface for UI creators to find entity fields as options when creating new or
+            editing existing queries. 
+          </p>
+        </div>
+
+        <figure>
+          <div class="bg-millipore-purple overflow-hidden px-6 rounded-md lg:px-8">
+            <Img
+              alt="GraphQL Voyager custom Backstage plugin"
+              attributes={{
+                img: {
+                  class: '-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8'
+                }
+              }}
+              format="webp"
+              placeholder="none"
+              src="/img/work/millipore/graphql-voyager.png"
+            />
+          </div>
+          <figcaption class="italic text-sm">
+            Graphql voyager custom Backstage plugin
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="flex flex-wrap justify-center mt-24 px-8"
+    data-aos="fade-down"
+  >
+    <div class="max-w-6xl w-full">
+      <h2 class="text-4xl mb-6">Outcome</h2>
+
+      <div class="bg-millipore-purple overflow-hidden px-6 rounded-md lg:px-12">
+        <Img
+          alt="A detailed overview of all candidate assessment results"
+          attributes={{
+            img: {
+              class: '-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12'
+            }
+          }}
+          format="webp"
+          placeholder="none"
+          src="/img/work/millipore/catalog-details.png"
+        />
+      </div>
+
+      <p class="pt-6">
+        Backstage empowers organizations to better understand their infrastructure through the Catalog and easily find documentation through TechDocs. Ship Shape was able to help their engineers extend beyond Backstage’s available capabilities to develop custom solutions for both developers and non-developer partners. Ship Shape helped MilliporeSigma in adopting Backstage open source software, while creating bespoke solutions to shape it into the IDP they needed.
+      </p>
+    </div>
+  </section>
+
+  <div class="waves white-waves flex flex-wrap justify-center">
+    <div class="max-w-6xl mb-24 w-full">
+      <BottomLinks
+        nextLink="/work/enigma/"
+        nextLinkText="Enigma"
+        previousLink="/work/Netflix/"
+        previousLinkText="Netflix"
+      />
+    </div>
+  </div>
+</BaseLayout>

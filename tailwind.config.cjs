@@ -13,6 +13,7 @@ module.exports = {
         'navy-card-dark': '#133254',
         'navy-card-light': '#1B3B5E',
         'navy-light': '#073256',
+        'millipore-purple': '#503091',
         'netflix-red': '#E50914',
         'enigma-blue': '#1B1D36',
         grey: 'var(--grey)',
