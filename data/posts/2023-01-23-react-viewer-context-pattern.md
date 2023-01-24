@@ -2,7 +2,7 @@
 authorId: nromero
 categories:
 
-- remix
+- react
 - rollup
   date: '2023-01-23'
   slug: react-viewer-context-pattern
