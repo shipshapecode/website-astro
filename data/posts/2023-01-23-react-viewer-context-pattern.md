@@ -13,7 +13,7 @@ categories:
 # Why
 
 Using [React Context](https://reactjs.org/docs/context.html) allows us to make one call to check the currently
-authenticated user is aka the "Viewer" at the top of our React tree, and we then want to be able to use the viewer
+the authenticated user is aka the "Viewer" at the top of our React tree, and we then want to be able to use the viewer
 object throughout our application without passing it around as a
 prop ([Prop Drilling Vs Context](https://medium.com/geekculture/props-drilling-v-s-context-api-which-one-is-the-best-75c503d21a65))
 
@@ -35,7 +35,7 @@ export type Viewer = {
 export const ViewerContext = React.createContext<Viewer | undefined>(undefined);
 
 /**
- * Return currently authenticated viewer (or undefined if no viewer is defined)
+ * Return the currently authenticated viewer (or undefined if no viewer is defined)
  */
 export default function useViewer() {
     return React.useContext(ViewerContext);
@@ -63,7 +63,7 @@ export default function App() {
 }
 ```
 
-Then any where else in our application we can call `useViewer`
+Any where else in our application we can call `useViewer`
 
 ```tsx
 export default function HelloName() {
@@ -84,14 +84,14 @@ authenticated viewer. This encapsulates this logic into reusable hooks, helping 
 
 ### SSR
 
-Using a framework like [Remix.js](https://remix.run/) which is always server side rendered we would check on the server
+Using a framework like [Remix.js](https://remix.run/) which is always server-side rendered we would check on the server
 if the user is authenticated before rendering any of the content.
 
 ```typescript
 /**
- * Ensure user is authenticated, error is thrown to make viewer always be defined
+ * Ensure the user is authenticated, an error is thrown to make the viewer always be defined
  * in any code after this hook from the type checkers perspective.
- * Redirect non authenticated viewers in the routes Remix Loader.
+ * Redirect non-authenticated viewers in the routes Remix Loader.
  */
 export function useAuthenticatedViewer() {
     const viewer = useViewer();
@@ -101,7 +101,7 @@ export function useAuthenticatedViewer() {
 ```
 
 Thus the `useAuthenticatedViewer` hook throws an error to let the type checker know that this hook will _always return a
-viewer object_ as the server will have redirected any non authenticated users before rendering this component.
+viewer object_ as the server will have redirected any non-authenticated users before rendering this component.
 
 A [Remix Loader](https://remix.run/docs/en/v1/route/loader) might look like this
 
@@ -119,7 +119,7 @@ export async function loader({request}: LoaderArgs) {
 
 ### Client Side checks
 
-In this scenario our viewer context also has loading field and viewer has moved to its own field on the return object.
+In this scenario, our viewer context also has a loading field and the viewer has moved to a field on the returned object.
 
 ```typescript
 const ViewerContext = React.createContext<{
@@ -134,7 +134,7 @@ const isClient = typeof window === "undefined";
 
 /**
  * Used in pages and components where the route has asserted viewer query is not loading
- * and and authenticated viewer was returned.
+ * and the authenticated viewer was returned.
  */
 export const useAuthenticated = () => {
   const location = useLocation();
@@ -158,4 +158,4 @@ export const useAuthenticated = () => {
 
 ### Final Thoughts
 
-To some extent the SSR version of `useAuthenticatedViewer` should also redirect in the case that the session cookie expires etc. 
+To some extent, the SSR version of `useAuthenticatedViewer` should also redirect in the case that the session cookie expires etc. 
