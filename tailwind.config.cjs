@@ -14,6 +14,7 @@ module.exports = {
         'navy-card-light': '#1B3B5E',
         'navy-light': '#073256',
         'netflix-red': '#E50914',
+        'outreach-purple': '#5951ff',
         'enigma-blue': '#1B1D36',
         grey: 'var(--grey)',
         'grey-light': 'var(--grey-light)',
