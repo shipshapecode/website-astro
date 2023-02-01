@@ -139,6 +139,12 @@
   }
 }
 
+.tan-waves {
+  &::after {
+    background-image: url(/svgs/waves/tan-waves.svg);
+  }
+}
+
 .white-waves {
   &::after {
     background-image: url(/svgs/waves/white-waves.svg);

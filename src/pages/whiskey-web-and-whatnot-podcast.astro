@@ -1,6 +1,7 @@
 ---
 import { Img } from 'astro-imagetools/components';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LatestInsights from '../components/LatestInsights.astro';
 
 const title = 'Whiskey, Web, & Whatnot: A Software Engineering Podcast';
 const description =
@@ -9,7 +10,7 @@ const description =
 
 <BaseLayout description={description} title={title}>
   <div itemscope itemtype="http://schema.org/Service">
-    <div class="flex flex-wrap justify-center relative">
+    <div class="waves tan-waves flex flex-wrap justify-center relative">
       <div class="section-content mb-8 relative z-10">
         <div class="grid grid-cols-1 grid-flow-row lg:grid-cols-5">
           <div class="pb-8 pt-2 lg:col-span-3 lg:pl-24 lg:py-12">
@@ -61,5 +62,57 @@ const description =
         </div>
       </div>
     </div>
+
+    <section class="section bg-white flex flex-wrap justify-center">
+      <div class="section-content">
+        <div class="gap-x-16 gap-y-8 grid grid-cols-1 lg:grid-cols-2">
+          <div class="flex justify-center items-center lg:justify-start">
+            <div>
+              <h3 class="text-2xl">Past topics include:</h3>
+
+              <ul class="list-disc mt-4">
+                <li class="ml-8 my-4">Updates to Ember, Glimmer, and more</li>
+
+                <li class="ml-8 my-4">DevOps</li>
+
+                <li class="ml-8 my-4">
+                  Tastings of our top whiskey picks (like Sagamore and Maker’s
+                  Mark Cask edition) and new-to-us varieties (Kamiki, Rabbit
+                  Hole Dareringer, and others with cool bottles and hard names)
+                </li>
+
+                <li class="ml-8 my-4">
+                  Random tangents, like what Chuck learned during his past life
+                  as a blackjack dealer, Nintendo and PC games we’re digging,
+                  and current events in tech that caught our attention
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center lg:justify-end">
+            <Img
+              alt="Collage of icons related to whiskey, web, and whatnot"
+              attributes={{
+                img: {
+                  class: '!max-w-md'
+                }
+              }}
+              format="webp"
+              height={696}
+              placeholder="none"
+              src="/img/podcast-collage.png"
+              width={828}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white waves white-waves flex flex-wrap justify-center">
+      <div class="section-content">
+        <LatestInsights hideHeader={true} />
+      </div>
+    </section>
   </div>
 </BaseLayout>
