@@ -1,0 +1,27 @@
+---
+import MediaCard from './MediaCard.astro';
+
+import { MarkdownFrontmatter } from '../pages/index.astro';
+
+async function getLatestBlogPost() {
+  const allPosts = await Astro.glob<MarkdownFrontmatter>('/data/posts/*.md');
+  const sortedPosts = allPosts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  );
+
+  const { frontmatter } = sortedPosts[0];
+
+  return frontmatter;
+}
+
+const latestBlogPost = await getLatestBlogPost();
+---
+
+<MediaCard
+  details={latestBlogPost}
+  imgSrc="/img/about/desk.jpg"
+  mediaType="blog post"
+  data-aos="fade-up"
+/>

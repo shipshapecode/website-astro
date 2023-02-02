@@ -7,6 +7,7 @@ import { formatDateWithDots } from '../utils/date';
 export interface Props {
   details: {
     description: string;
+    image?: string;
     title: string;
     slug: string;
     date?: string;
@@ -19,6 +20,7 @@ export interface Props {
 }
 
 const { details, imgHeight, imgWidth, imgSrc, mediaType } = Astro.props;
+const image = details.image ? `/img/blog/hero-images/${details.image}` : imgSrc;
 ---
 
 <section>
@@ -30,13 +32,13 @@ const { details, imgHeight, imgWidth, imgSrc, mediaType } = Astro.props;
       attributes={{
         img: {
           class:
-            'h-auto max-w-sm mb-7 rounded-md w-full lg:mb-0 lg:mr-7 lg:w-64'
+            '!aspect-square h-auto max-w-sm mb-7 object-cover rounded-md w-full lg:mb-0 lg:mr-7 lg:w-64'
         }
       }}
       format="webp"
       height={imgHeight}
       placeholder="none"
-      src={imgSrc}
+      src={image}
       width={imgWidth}
     />
 
