@@ -4,25 +4,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'acquia-blue': 'var(--acquia)',
         black: 'var(--black)',
         'blue-light': 'var(--blue-light)',
-        'enigma-red': 'var(--enigma)',
-        'expel-green': 'var(--expel)',
         navy: 'var(--navy)',
-        'navy-card-dark': '#133254',
-        'navy-card-light': '#1B3B5E',
-        'navy-light': '#073256',
-        'netflix-red': '#E50914',
-        'outreach-purple': '#5951ff',
-        'enigma-blue': '#1B1D36',
+        'navy-card-dark': 'var(--navy-card-dark)',
+        'navy-card-light': 'var(--navy-card-light)',
+        'navy-light': 'var(--navy-light)',
         grey: 'var(--grey)',
         'grey-light': 'var(--grey-light)',
-        'jebbit-green': 'var(--jebbit)',
         red: 'var(--red)',
         'red-light': 'var(--red-light)',
-        'swach-purple': 'var(--swach)',
-        white: 'var(--white)'
+        tan: 'var(--tan)',
+        white: 'var(--white)',
+
+        // client specific branding colors
+        'acquia-blue': 'var(--acquia)',
+        'enigma-blue': 'var(--enigma-blue)',
+        'enigma-red': 'var(--enigma-red)',
+        'expel-green': 'var(--expel-green)',
+        'jebbit-green': 'var(--jebbit-green)',
+        'netflix-red': 'var(--netflix-red)',
+        'outreach-purple': 'var(--outreach-purple)',
+        'swach-purple': 'var(--swach-purple)'
       },
       fill: (theme) => ({
         navy: theme('colors.navy'),

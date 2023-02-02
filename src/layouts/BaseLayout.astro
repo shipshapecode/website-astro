@@ -13,11 +13,18 @@ const { description, tags, title } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-function addBlueBackground() {
+function changeBackgroundColor() {
   const pathname = canonicalURL?.pathname;
-  const paths = ['/', '/about/', '/services/', '/work/'];
-  if (paths.includes(pathname)) {
+  const bluePaths = ['/', '/about/', '/services/', '/work/'];
+
+  if (bluePaths.includes(pathname)) {
     return 'bg-blue-light';
+  }
+
+  const tanPaths = ['/whiskey-web-and-whatnot-podcast/']
+
+  if (tanPaths.includes(pathname)) {
+    return 'bg-tan';
   }
 }
 ---
@@ -43,7 +50,7 @@ function addBlueBackground() {
       itemscope
       itemtype="https://schema.org/Organization"
       itemid="shipshapeorg"
-      class={addBlueBackground()}
+      class={changeBackgroundColor()}
     >
       <meta itemprop="legalName" content="Ship Shape Consulting LLC" />
 
