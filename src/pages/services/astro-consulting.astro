@@ -7,9 +7,9 @@ import HeroBlock from '../../components/HeroBlock.astro';
 import TwoColumnSection from '../../components/TwoColumnSection.astro';
 import WaveMoreLinks from '../../components/WaveMoreLinks.astro';
 
-const title = 'Tailwind CSS & Tailwind UI Experts';
+const title = 'Astro Experts';
 const description =
-  "Tailwind CSS makes it easy to build a site without using any custom CSS. Learn how Ship Shape's team of Tailwind UI experts can help tailor your app quickly.";
+  "Astro takes an HTML first approach to building websites that gives you reliable standards and accessibility, with modern tools that devs expect. Learn how Ship Shape's team of Astro experts can help.";
 
 const community = {
   src: '/img/services/tailwind/community.png',
@@ -48,11 +48,11 @@ const specialtyBenefits = [
 <BaseLayout description={description} title={title}>
   <article itemscope itemtype="http://schema.org/Service">
     <HeroBlock
-      heroClasses="tailwind-consulting waves tailwind-waves !pb-48 !pt-20 lg:!pb-52"
+      heroClasses="astro-consulting waves tailwind-waves !pb-48 !pt-20 lg:!pb-52"
     >
       <Fragment slot="content">
         <h1 itemprop="name" class="leading-tight text-5xl">
-          Customize your app quickly with the help of our Tailwind CSS experts
+          Modern tooling with HTML standards and accessibility baked in
         </h1>
 
         <div class="flex justify-center mt-3 w-full lg:justify-start lg:mt-8">
@@ -70,20 +70,20 @@ const specialtyBenefits = [
             }
           }}
           format="webp"
-          height={936}
+          height={1216}
           placeholder="none"
-          src="/img/hero-images/tailwind-consulting.png"
-          width={1344}
+          src="/img/hero-images/astro-consulting.png"
+          width={1536}
           alt=""
         />
       </Fragment>
     </HeroBlock>
 
     <AllAboutSpecialty benefits={specialtyBenefits} flipParagraphs={true}>
-      <Fragment slot="h2">All about Tailwind CSS</Fragment>
+      <Fragment slot="h2">All about Astro</Fragment>
 
       <Fragment slot="h3">
-        Ship Shape’s experienced engineers love Tailwind CSS because:
+        Ship Shape’s experienced engineers love Astro because:
       </Fragment>
 
       <Fragment slot="unboxed-text">
@@ -123,10 +123,14 @@ const specialtyBenefits = [
       <SingleQuote testimonial={testimonial} />
     </div> -->
 
-    <TwoColumnSection header="We ❤️ the Tailwind Community" image={community}>
+    <TwoColumnSection header="We ❤️ the Astro Community" image={community}>
       <Fragment slot="content">
-        We’re a team of makers who are passionate about improving software
-        products and the people who create them.
+        We believe Astro is the future of web development and we put our money
+        where our mouth is by <a
+          href="https://opencollective.com/astrodotbuild"
+        >
+          sponsoring the Astro team.
+        </a>
       </Fragment>
     </TwoColumnSection>
 
