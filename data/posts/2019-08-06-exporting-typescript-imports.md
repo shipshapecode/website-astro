@@ -1,5 +1,5 @@
 ---
-authorId: rwwagner90
+authorId: RobbieTheWagner
 categories:
   - typescript
 date: '2019-08-06'

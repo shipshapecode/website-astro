@@ -47,9 +47,9 @@ export default {
     image: '/img/blog/authors/rob.jpg',
     location: 'Alexandria, VA'
   },
-  rwwagner90: {
+  RobbieTheWagner: {
     name: 'Robbie Wagner',
-    id: 'rwwagner90',
+    id: 'RobbieTheWagner',
     image: '/img/blog/authors/robbie.jpg',
     location: 'Middleburg, VA'
   },
