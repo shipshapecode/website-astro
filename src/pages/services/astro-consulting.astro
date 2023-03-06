@@ -25,22 +25,22 @@ const copilot = {
 
 const specialtyBenefits = [
   {
-    iconName: 'icons/image',
-    description: 'It matches mocks and designs with ease.'
+    iconName: 'icons/pwa',
+    description: 'UI-agnostic: Supports React, Preact, Svelte, Vue, Solid.js, and more.'
   },
   {
     iconName: 'icons/speed',
     description:
-      'It automatically removes all unused CSS when building for production, which improves speed.'
+      'Zero JS, by default: No JavaScript runtime overhead to slow you down.'
   },
   {
     iconName: 'icons/modular',
     description:
-      'Its usability is quite nimble compared to similar frameworks (like Bootstrap).'
+      'Component Islands: A new web architecture for building faster websites.'
   },
   {
-    iconName: 'icons/pwa',
-    description: 'Prototyping is super fast with Tailwind UI components.'
+    iconName: 'icons/cloud-hard-drive',
+    description: 'Server-first design: Move expensive hydration off of your users’ devices.'
   }
 ];
 ---
@@ -48,7 +48,7 @@ const specialtyBenefits = [
 <BaseLayout description={description} title={title}>
   <article itemscope itemtype="http://schema.org/Service">
     <HeroBlock
-      heroClasses="astro-consulting waves tailwind-waves !pb-48 !pt-20 lg:!pb-52"
+      heroClasses="astro-consulting waves tailwind-waves !pb-20 !pt-20 lg:!pb-24"
     >
       <Fragment slot="content">
         <h1 itemprop="name" class="leading-tight text-5xl">
@@ -57,7 +57,7 @@ const specialtyBenefits = [
 
         <div class="flex justify-center mt-3 w-full lg:justify-start lg:mt-8">
           <a class="btn btn-red w-full lg:w-auto" href="/contact/">
-            Let’s get started
+            Let's get started
           </a>
         </div>
       </Fragment>
@@ -70,10 +70,10 @@ const specialtyBenefits = [
             }
           }}
           format="webp"
-          height={1216}
+          height={829}
           placeholder="none"
           src="/img/hero-images/astro-consulting.png"
-          width={1536}
+          width={1027}
           alt=""
         />
       </Fragment>
@@ -83,23 +83,21 @@ const specialtyBenefits = [
       <Fragment slot="h2">All about Astro</Fragment>
 
       <Fragment slot="h3">
-        Ship Shape’s experienced engineers love Astro because:
+        Ship Shape's experienced engineers love Astro because:
       </Fragment>
 
       <Fragment slot="unboxed-text">
-        At Ship Shape, we like Tailwind CSS so much that we even use it on our
-        own products and passion projects, such as our
-        <a class="hover:brightness-125 hover:text-red" href="https://swach.io/">
-          robust color management app called Swach.
-        </a>
-        In addition to building Tailwind UIs, we also love training other teams on
-        it to help sharpen their skills too.
+        At Ship Shape, we think Astro is a fresh but familiar approach to 
+        building websites. Astro combines decades of proven performance best 
+        practices with the developer experience improvements of the 
+        component-oriented era. Use your favorite JavaScript framework and 
+        automatically ship the bare-minimum amount of JavaScript—by default. 
+        We think it pairs particularly well with Solid.js.
       </Fragment>
 
       <Fragment slot="boxed-text">
-        Much faster than with most CSS frameworks, Tailwind CSS provides almost
-        all the tools you need to build a site without writing any custom
-        styles.
+        Astro is the easiest way to build a lightning-fast website. Keep working 
+        with the tools you love, in an environment that's easy to use. 
       </Fragment>
     </AllAboutSpecialty>
 
