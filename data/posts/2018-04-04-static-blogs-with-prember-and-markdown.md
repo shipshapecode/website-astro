@@ -1,5 +1,5 @@
 ---
-authorId: rwwagner90
+authorId: RobbieTheWagner
 categories:
   - ember.js
   - fastboot
@@ -148,7 +148,7 @@ matter for this post is:
 ```md
 ---
 authorId: Robert Wagner
-authorId: rwwagner90
+authorId: RobbieTheWagner
 date: 2018-04-04
 slug: static-blogs-with-prember-and-markdown
 tags: ember, fastboot, static, prember, prerender, blog, ghost, markdown
@@ -216,7 +216,7 @@ function buildPremberUrls() {
     '/open-source/',
     '/contact/',
     '/blog/',
-    '/blog/author/rwwagner90/'
+    '/blog/author/RobbieTheWagner/'
   ];
 
   const { extname } = require('path');

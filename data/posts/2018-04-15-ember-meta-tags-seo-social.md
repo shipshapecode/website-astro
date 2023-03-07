@@ -1,5 +1,5 @@
 ---
-authorId: rwwagner90
+authorId: RobbieTheWagner
 categories:
   - ember.js
   - ember-meta
@@ -116,7 +116,7 @@ The values in my `.md` files look something like this:
 ```md
 ---
 authorId: Robert Wagner
-authorId: rwwagner90
+authorId: RobbieTheWagner
 categories: 
   - ember
   - ember.js
@@ -164,7 +164,7 @@ export default Route.extend(PostMetaMixin, {
         '<h1>Ember Inspector - The Journey so Far</h1> <p>This is a post body!</p>',
       attributes: {
         author: 'Robert Wagner',
-        authorId: 'rwwagner90',
+        authorId: 'RobbieTheWagner',
         categories: ['ember', 'ember.js', 'ember inspector'],
         date: '2018-04-09',
         slug: 'ember-inspector-the-journey-so-far',
