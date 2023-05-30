@@ -24,9 +24,6 @@ export default defineConfig({
       external: ['svgo']
     }
   },
-  experimental: {
-    integrations: true
-  },
   integrations: [
     astroImageTools,
     prefetch(),
