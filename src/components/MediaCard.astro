@@ -59,7 +59,7 @@ const image = details.image ? `/img/blog/hero-images/${details.image}` : imgSrc;
     <a
       class="learn-more mt-12 self-start whitespace-nowrap lg:ml-24 lg:self-end"
       href={mediaType === 'podcast'
-        ? 'https://www.whiskeywebandwhatnot.fm/'
+        ? `https://www.whiskeywebandwhatnot.fm/${details?.slug}`
         : `/blog/${details?.slug}/`}
       aria-label={mediaType === 'podcast'
         ? 'Dive deeper into our podcast'
