@@ -1,5 +1,5 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 import { formatDateWithDots } from '../utils/date';
 
 export interface Props {
@@ -21,17 +21,12 @@ const { categories, date, id, image, name } = Astro.props;
     itemtype="http://schema.org/Person"
   >
     <div class="w-14">
-      <Img
+      <Image
         alt="Author image"
-        attributes={{
-          img: {
-            class: 'h-auto rounded-full w-full'
-          }
-        }}
+        class="h-auto rounded-full w-full"
         itemprop="image"
         format="webp"
         height={120}
-        placeholder="none"
         src={image}
         width={120}
       />

@@ -12,24 +12,24 @@
     "test": "playwright test"
   },
   "dependencies": {
-    "@astrojs/prefetch": "^0.2.3",
+    "@astrojs/prefetch": "^0.4.0",
     "solid-js": "^1.7.8",
     "solid-toast": "^0.5.0"
   },
   "devDependencies": {
-    "@astrojs/rss": "^2.4.3",
-    "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/solid-js": "^2.2.0",
-    "@astrojs/tailwind": "^3.0.0",
-    "@babel/core": "^7.22.9",
+    "@astrojs/rss": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/solid-js": "^3.0.1",
+    "@astrojs/tailwind": "^5.0.0",
+    "@babel/core": "^7.22.17",
     "@playwright/test": "^1.36.2",
     "@tailwindcss/forms": "^0.5.4",
     "@tailwindcss/typography": "^0.5.9",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",
-    "astro": "^2.9.5",
+    "astro": "^3.0.13",
     "astro-icon": "^0.8.1",
-    "astro-imagetools": "^0.8.1",
+    "astro-imagetools": "^0.9.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.9.0",
@@ -41,13 +41,13 @@
     "find-up": "^6.3.0",
     "gray-matter": "^4.0.3",
     "lodash.truncate": "^4.4.2",
-    "postcss": "^8.4.27",
-    "prettier": "^3.0.0",
-    "prettier-plugin-astro": "^0.11.0",
+    "postcss": "^8.4.29",
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0",
     "rss-to-json": "^2.1.1",
     "sass": "^1.64.1",
     "showdown": "^2.1.0",
     "tailwindcss": "^3.3.3"
   },
-  "packageManager": "pnpm@8.6.0"
+  "packageManager": "pnpm@8.7.5"
 }

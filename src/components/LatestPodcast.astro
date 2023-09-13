@@ -1,5 +1,5 @@
 ---
-import rssToJson from 'rss-to-json';
+import { parse } from 'rss-to-json';
 
 import MediaCard from './MediaCard.astro';
 import { dasherize } from '../utils/dasherize';
@@ -10,7 +10,7 @@ let apiCallTries = 5;
 async function getLatestPodcast() {
   try {
     // TODO: this breaks local development
-    let feed = await rssToJson.parse('https://anchor.fm/s/e329dea0/podcast/rss');
+    let feed = await parse('https://anchor.fm/s/e329dea0/podcast/rss');
     let [latestPodcastEpisode] = feed.items.map(
       ({
         title,
