@@ -5,6 +5,8 @@ import MediaCard from './MediaCard.astro';
 import { dasherize } from '../utils/dasherize';
 import { truncate } from '../utils/truncate';
 
+import wwwImage from '../images/hero-images/www.png';
+
 let apiCallTries = 5;
 
 async function getLatestPodcast() {
@@ -44,15 +46,11 @@ async function getLatestPodcast() {
 }
 
 const latestPodcastEpisode = await getLatestPodcast();
-
-const podcastImg = {
-  src: '/img/hero-images/www.png'
-};
 ---
 
 <MediaCard
   mediaType="podcast"
-  imgSrc={podcastImg.src}
+  imgSrc={wwwImage}
   details={latestPodcastEpisode}
   data-aos="fade-up"
 />

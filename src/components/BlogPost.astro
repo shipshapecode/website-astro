@@ -1,5 +1,5 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
 import AuthorRow from './AuthorRow.astro';
 import BottomLinks from './BottomLinks.astro';
@@ -43,16 +43,14 @@ const { author } = post.frontmatter;
 
       {
         post.frontmatter.image && (
-          <Img
+          <Image
             alt=""
-            attributes={{
-              img: {
-                class: 'mb-24 mt-6 rounded-md'
-              }
-            }}
+            class="mb-24 mt-6 rounded-md"
             itemprop="image"
             format="webp"
+            height={1080}
             src={`/img/blog/hero-images/${post.frontmatter.image}`}
+            width={1686}
           />
         )
       }

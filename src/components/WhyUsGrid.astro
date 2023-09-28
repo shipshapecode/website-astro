@@ -1,6 +1,8 @@
 ---
 import { Icon } from 'astro-icon';
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
+
+import innertubeImage from '../images/innertube.png';
 
 const traits = [
   {
@@ -58,17 +60,12 @@ const traits = [
         <div
           class="absolute bottom-0 text-center w-full lg:bottom-auto lg:relative"
         >
-          <Img
+          <Image
             alt="Ship Shape octopus mascot in an innertube"
-            attributes={{
-              img: {
-                class: 'm-auto w-full !max-w-xxs h-auto'
-              }
-            }}
+            class="m-auto w-full !max-w-xxs h-auto"
             format="webp"
             loading="lazy"
-            placeholder="none"
-            src="/img/innertube.png"
+            src={innertubeImage}
           />
 
           <a

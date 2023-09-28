@@ -1,5 +1,5 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 ---
 
 <div
@@ -29,16 +29,11 @@ import { Img } from 'astro-imagetools/components';
           </div>
         </div>
         <div>
-          <Img
-            attributes={{
-              img: {
-                class: 'h-auto m-auto max-w-2xl w-full'
-              }
-            }}
+          <Image
             alt=""
+            class="h-auto m-auto max-w-2xl w-full"
             format="webp"
             height={988}
-            placeholder="none"
             src="/img/hero-images/ember-consulting.png"
             width={1248}
           />

@@ -1,5 +1,5 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AllAboutSpecialty from '../../components/AllAboutSpecialty.astro';
@@ -63,15 +63,10 @@ const specialtyBenefits = [
       </Fragment>
 
       <Fragment slot="icon">
-        <Img
-          attributes={{
-            img: {
-              class: 'h-auto m-auto max-w-2xl w-full'
-            }
-          }}
+        <Image
+          class="h-auto m-auto max-w-2xl w-full"
           format="webp"
           height={936}
-          placeholder="none"
           src="/img/hero-images/tailwind-consulting.png"
           width={1344}
           alt=""

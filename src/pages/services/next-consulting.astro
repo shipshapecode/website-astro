@@ -1,5 +1,5 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AllAboutSpecialty from '../../components/AllAboutSpecialty.astro';
@@ -78,16 +78,11 @@ const description =
       </Fragment>
 
       <Fragment slot="icon">
-        <Img
+        <Image
           alt=""
-          attributes={{
-            img: {
-              class: 'h-auto m-auto max-w-2xl w-full'
-            }
-          }}
+          class="h-auto m-auto max-w-2xl w-full"
           format="webp"
           height={1000}
-          placeholder="none"
           src="/img/hero-images/next-consulting.png"
           width={1344}
         />

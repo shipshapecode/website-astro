@@ -1,6 +1,5 @@
 ---
 import { Icon } from 'astro-icon';
-import { Img } from 'astro-imagetools/components';
 
 import { formatDateWithDots } from '../utils/date';
 
@@ -15,31 +14,24 @@ export interface Props {
   };
   mediaType: string;
   imgHeight?: number;
-  imgSrc?: string;
+  imgSrc?: ImageMetadata;
   imgWidth?: number;
 }
 
 const { details, imgHeight, imgWidth, imgSrc, mediaType } = Astro.props;
-const image = details.image ? `/img/blog/hero-images/${details.image}` : imgSrc;
+const image = details.image ? `/img/blog/hero-images/${details.image}` : imgSrc.src;
 ---
 
 <section>
   <h3 class="capitalize m-0 py-12 text-4xl">Latest {mediaType}</h3>
 
   <article class="flex flex-col mb-12 lg:flex-row lg:items-center">
-    <Img
+    <img
       alt=""
-      attributes={{
-        img: {
-          class:
-            '!aspect-square h-auto max-w-sm mb-7 object-cover rounded-md w-full lg:mb-0 lg:mr-7 lg:w-64'
-        }
-      }}
-      format="webp"
-      height={imgHeight}
-      placeholder="none"
+      class="!aspect-square h-auto max-w-sm mb-7 object-cover rounded-md w-full lg:mb-0 lg:mr-7 lg:w-64"
+      height={imgHeight ?? 1080}
       src={image}
-      width={imgWidth}
+      width={imgWidth ?? 1686}
     />
 
     <div class="flex-grow">

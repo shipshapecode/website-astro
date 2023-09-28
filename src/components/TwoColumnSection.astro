@@ -1,5 +1,5 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
 export interface Props {
   classString?: string;
@@ -35,16 +35,11 @@ const { classString, image, header, isFlipped } = Astro.props as Props;
       </div>
     </div>
     <div data-aos="fade-up">
-      <Img
-        attributes={{
-          img: {
-            class: 'h-auto m-auto max-w-2xl w-full'
-          }
-        }}
+      <Image
+        class="h-auto m-auto max-w-2xl w-full"
         format="webp"
         height={image.height}
         loading="lazy"
-        placeholder="none"
         src={image.src}
         alt=""
         width={image.width}

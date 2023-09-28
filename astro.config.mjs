@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import { astroImageTools } from 'astro-imagetools';
 import solid from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';
 import { addAuthorRemarkPlugin } from './add-author-remark-plugin.mjs';
@@ -25,7 +24,6 @@ export default defineConfig({
     }
   },
   integrations: [
-    astroImageTools,
     prefetch(),
     solid(),
     sitemap(),

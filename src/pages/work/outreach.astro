@@ -1,9 +1,14 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BottomLinks from '../../components/BottomLinks.astro';
+
+import contentCard from '../../images/work/outreach/kaia_live_content_card.png';
+import desktopNotifications from '../../images/work/outreach/desktop-notifications.png';
+import salesExecutionReport from '../../images/work/outreach/sales-execution-report.png';
+import sequencesReport from '../../images/work/outreach/sequences_report.png'
 
 const title = 'Outreach Replatforming Acceleration';
 const description =
@@ -65,17 +70,11 @@ const description =
         </ul>
       </aside>
 
-      <Img
+      <Image
         alt="A detailed overview of the sequences dashboard"
-        attributes={{
-          img: {
-            class:
-              '-mb-12 mt-24 rounded-t-md w-full lg:!max-w-[1250px] lg:-mb-24'
-          }
-        }}
+        class="-mb-12 mt-24 rounded-t-md w-full lg:!max-w-[1250px] lg:-mb-24"
         format="webp"
-        placeholder="none"
-        src="/img/work/outreach/sequences_report.png"
+        src={sequencesReport}
       />
     </div>
   </section>
@@ -128,16 +127,11 @@ const description =
       </p>
 
       <div class="bg-outreach-purple overflow-hidden px-6 rounded-md lg:px-12">
-        <Img
+        <Image
           alt="Sales execution report detail"
-          attributes={{
-            img: {
-              class: '-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12'
-            }
-          }}
+          class="-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12"
           format="webp"
-          placeholder="none"
-          src="/img/work/outreach/sales-execution-report.png"
+          src={salesExecutionReport}
         />
       </div>
     </div>
@@ -180,16 +174,11 @@ const description =
           <div
             class="bg-outreach-purple overflow-hidden px-6 rounded-md lg:px-8"
           >
-            <Img
+            <Image
               alt="An action triggered from desktop notification"
-              attributes={{
-                img: {
-                  class: '-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8'
-                }
-              }}
+              class="-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8"
               format="webp"
-              placeholder="none"
-              src="/img/work/outreach/desktop-notifications.png"
+              src={desktopNotifications}
             />
           </div>
           <figcaption class="italic text-sm">
@@ -221,16 +210,11 @@ const description =
           <div
             class="bg-outreach-purple overflow-hidden px-6 rounded-md lg:px-8"
           >
-            <Img
+            <Image
               alt="An action triggered from desktop notification"
-              attributes={{
-                img: {
-                  class: '-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8'
-                }
-              }}
+              class="-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8"
               format="webp"
-              placeholder="none"
-              src="/img/work/outreach/kaia_live_content_card.png"
+              src={contentCard}
             />
           </div>
           <figcaption class="italic text-sm">

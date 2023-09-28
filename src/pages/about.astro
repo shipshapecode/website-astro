@@ -1,12 +1,20 @@
 ---
 import { Icon } from 'astro-icon';
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BenefitsList from '../components/BenefitsList.astro';
 import FunFacts from '../components/FunFacts.astro';
 import HeroBlock from '../components/HeroBlock.astro';
 import LatestInsights from '../components/LatestInsights.astro';
+
+import groupImage from '../images/about/group.png';
+import signImage from '../images/about/ship-shape-sign.png';
+
+import chuckImage from '../images/blog/authors/chuck.jpg';
+import jaredImage from '../images/blog/authors/jared.jpg';
+import robImage from '../images/blog/authors/rob.jpg';
+import robbieImage from '../images/blog/authors/robbie.jpg';
 
 const benefits = [
   {
@@ -31,7 +39,7 @@ const mgmt = [
   {
     name: 'Robbie Wagner',
     title: 'CEO',
-    imgSrc: '/img/blog/authors/robbie.jpg',
+    imgSrc: robbieImage,
     twitter: 'https://twitter.com/RobbieTheWagner',
     linkedin: 'https://www.linkedin.com/in/robertwilliamwagner/',
     github: 'https://github.com/RobbieTheWagner',
@@ -41,7 +49,7 @@ const mgmt = [
   {
     name: 'Chuck Carpenter',
     title: 'COO',
-    imgSrc: '/img/blog/authors/chuck.jpg',
+    imgSrc: chuckImage,
     twitter: 'https://twitter.com/charleswthe3rd',
     linkedin: 'https://www.linkedin.com/in/chuckcarpenter/',
     github: 'https://github.com/chuckcarpenter',
@@ -54,7 +62,7 @@ const team = [
   {
     name: 'Rob Cary',
     title: 'Lead Engineer',
-    imgSrc: '/img/blog/authors/rob.jpg',
+    imgSrc: robImage,
     twitter: 'https://twitter.com/r0bc4ry',
     linkedin: 'https://www.linkedin.com/in/r0bc4ry/',
     github: 'https://github.com/r0bc4ry'
@@ -62,7 +70,7 @@ const team = [
   {
     name: 'Jared Galanis',
     title: 'Senior Software Engineer',
-    imgSrc: '/img/blog/authors/jared.jpg',
+    imgSrc: jaredImage,
     twitter: 'https://twitter.com/jaredgalanis',
     linkedin: 'https://www.linkedin.com/in/jaredgalanis/',
     github: 'https://github.com/jaredgalanis'
@@ -78,16 +86,12 @@ const description =
   <article>
     <HeroBlock heroClasses="about bg-blue-light">
       <Fragment slot="icon">
-        <Img
-          attributes={{
-            img: {
-              class: 'mt-8'
-            }
-          }}
+        <Image
+          class="mt-8"
           alt="Ship Shape employee group photo"
           format="webp"
           loading="lazy"
-          src="/img/about/group.png"
+          src={groupImage}
         />
       </Fragment>
 
@@ -126,11 +130,11 @@ const description =
             </p>
           </div>
 
-          <Img
+          <Image
             alt=""
             format="webp"
             height={1278}
-            src="/img/about/ship-shape-sign.png"
+            src={signImage}
             width={1278}
             loading="lazy"
           />
@@ -144,16 +148,11 @@ const description =
       <div class="section-content flex flex-wrap justify-center">
         <!-- replace with TwoColumnSection -->
         <div class="lg:flex lg:py-20" data-aos="fade-down">
-          <Img
-            attributes={{
-              img: {
-                class: 'h-auto m-auto max-w-2xl w-full pb-12 lg:order-last'
-              }
-            }}
+          <Image
+            class="h-auto m-auto max-w-2xl w-full pb-12 lg:order-last"
             format="webp"
             height={772}
-            placeholder="none"
-            src="/img/hero-images/mentoring.png"
+            src='/img/hero-images/mentoring.png'
             width={1312}
             alt=""
           />
@@ -226,18 +225,12 @@ const description =
                           ) : null}
                         </ul>
                       </div>
-                      <Img
-                        attributes={{
-                          img: {
-                            class: `aspect-square filter h-auto grayscale object-cover order-first shadow-lg rounded-lg w-full lg:w-88 ${
-                              index % 2 !== 0 ? 'lg:order-last' : null
-                            }`,
-                            style: 'overflow: unset;'
-                          }
-                        }}
+                      <Image
+                        class={`aspect-square filter h-auto grayscale object-cover order-first shadow-lg rounded-lg w-full lg:w-88 ${
+                          index % 2 !== 0 ? 'lg:order-last' : null
+                        }`}
                         format="webp"
                         height={734}
-                        placeholder="none"
                         src={employee.imgSrc}
                         alt=""
                         width={734}
@@ -303,16 +296,12 @@ const description =
                       </div>
 
                       <div class="order-first">
-                        <Img
-                          attributes={{
-                            img: {
-                              class:
-                                'aspect-square filter grayscale object-cover shadow-lg rounded-lg'
-                            }
-                          }}
+                        <Image
+                          class="aspect-square filter grayscale object-cover shadow-lg rounded-lg"
                           format="webp"
-                          placeholder="none"
+                          height={734}
                           src={employee.imgSrc}
+                          width={734}
                           alt=""
                         />
                       </div>
@@ -406,16 +395,11 @@ const description =
               </div>
             </div>
             <div>
-              <Img
+              <Image
                 alt=""
-                attributes={{
-                  img: {
-                    class: 'h-auto m-auto max-w-2xl w-full'
-                  }
-                }}
+                class="h-auto m-auto max-w-2xl w-full"
                 format="webp"
                 height={988}
-                placeholder="none"
                 src="/img/hero-images/ember-consulting.png"
                 width={1248}
               />

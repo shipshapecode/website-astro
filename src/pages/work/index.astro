@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CaseStudiesList from '../../components/CaseStudiesList.astro';
@@ -10,6 +10,7 @@ import ImpactStats from '../../components/ImpactStats.astro';
 import ReadyFooter from '../../components/ReadyFooter.astro';
 import TwoColumnSection from '../../components/TwoColumnSection.astro';
 
+import innertubeImage from '../../images/innertube.png';
 import ShepherdLogo from '../../icons/shepherd.svg?raw';
 
 const title = 'Our Work - Enterprise Custom App Development';
@@ -36,16 +37,11 @@ const description =
     </Fragment>
 
     <Fragment slot="icon">
-      <Img
-        attributes={{
-          img: {
-            class: 'h-auto m-auto max-w-2xl w-full'
-          }
-        }}
+      <Image
+        class="h-auto m-auto max-w-2xl w-full"
         height={1020}
         format="webp"
         loading="eager"
-        placeholder="none"
         src="/img/hero-images/services.png"
         width={1344}
         alt=""
@@ -77,17 +73,12 @@ const description =
         </div>
 
         <div class="flex items-center justify-center w-full">
-          <Img
+          <Image
             alt="Ship Shape octopus mascot in an innertube"
-            attributes={{
-              img: {
-                class: 'mt-8 w-full !max-w-xs h-auto lg:mt-0'
-              }
-            }}
+            class="mt-8 w-full !max-w-xs h-auto lg:mt-0"
             format="webp"
             loading="lazy"
-            placeholder="none"
-            src="/img/innertube.png"
+            src={innertubeImage}
           />
         </div>
       </div>
@@ -161,16 +152,11 @@ const description =
           data-aos-delay={100}
         >
           <div class="flex h-48 items-center justify-center w-full">
-            <Img
-              attributes={{
-                img: {
-                  class: '!h-36 m-auto max-w-2xl w-auto'
-                }
-              }}
+            <Image
+              class="!h-36 m-auto max-w-2xl w-auto"
               height={734}
               format="webp"
               loading="eager"
-              placeholder="none"
               src="/img/ember-dc.png"
               width={1500}
               alt=""
