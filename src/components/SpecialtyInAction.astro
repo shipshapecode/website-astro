@@ -17,21 +17,19 @@ export interface CaseStudy {
 const { specialty, caseStudies }: Props = Astro.props;
 ---
 
-<section class="section flex flex-wrap justify-center" data-aos="fade-down">
+<section class="section flex flex-wrap justify-center">
   <div class="section-content">
     <h2 class="pb-8 text-4xl mb-6">{specialty} in action</h2>
 
     <div class={`gap-5 grid grid-cols-1 lg:grid-cols-${caseStudies.length}`}>
       {
-        caseStudies.map((study, index) => (
+        caseStudies.map((study) => (
           <a
             class="case-study-article block group transition-all hover:-translate-y-5 focus:-translate-y-5"
             href={`/work/${study.linkName}/`}
           >
             <article
               class="inline"
-              data-aos="flip-down"
-              data-aos-delay={200 * index}
             >
               <div
                 class={`
