@@ -3,6 +3,8 @@ import { Icon } from 'astro-icon';
 
 import { formatDateWithDots } from '../utils/date';
 
+import type { ImageMetadata } from 'astro/dist/assets/types';
+
 export interface Props {
   details: {
     description: string;
@@ -19,7 +21,9 @@ export interface Props {
 }
 
 const { details, imgHeight, imgWidth, imgSrc, mediaType } = Astro.props;
-const image = details.image ? `/img/blog/hero-images/${details.image}` : imgSrc.src;
+const image = details.image
+  ? `/img/blog/hero-images/${details.image}`
+  : imgSrc.src;
 ---
 
 <section>

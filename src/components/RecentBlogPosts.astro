@@ -28,10 +28,8 @@ const { posts } = Astro.props;
         class="grid grid-cols-1 gap-1 justify-center mb-4 w-full lg:grid-cols-3"
       >
         {
-          posts.map((post, index) => (
-            <div
-              class="bg-white flex flex-col px-8 py-16 rounded"
-            >
+          posts.map((post) => (
+            <div class="bg-white flex flex-col px-8 py-16 rounded">
               <div class="flex mb-4">
                 <Icon class="h-auto mr-4 w-10" name="fish" />
                 {formatDate(post.frontmatter.date)}

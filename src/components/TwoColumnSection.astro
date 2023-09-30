@@ -15,17 +15,12 @@ export interface Props {
 const { classString, image, header, isFlipped } = Astro.props as Props;
 ---
 
-<section
-  class={`section flex flex-wrap justify-center ${classString}`}
->
+<section class={`section flex flex-wrap justify-center ${classString}`}>
   <div
     class="section-content gap-8 grid grid-cols-1 items-center lg:gap-32 lg:grid-cols-2"
   >
     <div class={`order-last ${!isFlipped ? 'lg:order-none' : ''}`}>
-      <h2
-        v-if="header"
-        class="text-4xl mb-6"
-      >
+      <h2 v-if="header" class="text-4xl mb-6">
         {header}
       </h2>
       <div>
