@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint .",
-    "pretest": "yarn build",
+    "pretest": "pnpm build",
     "test": "playwright test"
   },
   "dependencies": {
