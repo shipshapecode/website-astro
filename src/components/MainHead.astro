@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 import '../styles/global.scss';
 import { Author } from '../pages/index.astro';
 
@@ -21,6 +23,7 @@ const keywords = tags?.join(', ');
 
 <!-- Common -->
 <meta charset='UTF-8' />
+<ViewTransitions />
 
 <!-- <meta name="view-transition" content="same-origin" /> -->
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
