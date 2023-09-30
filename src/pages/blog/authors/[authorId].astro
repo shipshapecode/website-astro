@@ -14,7 +14,7 @@ export async function getStaticPaths() {
       new Date(a.frontmatter.date).valueOf()
   );
 
-  return Object.keys(authorData).map((authorId) => {
+  return Object.keys(authorData).flatMap((authorId) => {
     const posts = allPosts.filter(
       (post) => post.frontmatter.authorId === authorId
     );

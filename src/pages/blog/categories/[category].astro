@@ -13,7 +13,7 @@ export async function getStaticPaths() {
       new Date(a.frontmatter.date).valueOf()
   );
 
-  return allPosts.map((post) => {
+  return allPosts.flatMap((post) => {
     return post.frontmatter.categories.flatMap((category) => {
       const dasherizedCategory = category.replace(/ |\./g, '-');
       const posts = allPosts.filter((post) => {

@@ -33,7 +33,7 @@ export async function getStaticPaths() {
       new Date(a.frontmatter.date).valueOf()
   );
 
-  return allPosts.map((post, index) => {
+  return allPosts.flatMap((post, index) => {
     const { nextPost, previousPost } = _getNextPrev(allPosts, index);
 
     return {
