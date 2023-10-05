@@ -1,6 +1,8 @@
 ---
 import { Icon } from 'astro-icon';
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
+
+import innertubeImage from '../images/innertube.png';
 
 const traits = [
   {
@@ -41,10 +43,7 @@ const traits = [
     class="section-content relative mb-10 pb-96 pt-8 lg:mb-0 lg:pb-0 lg:pt-0"
   >
     <div class="grid gap-x-40 grid-cols-1 lg:grid-cols-3">
-      <div
-        class="flex flex-col justify-between h-full lg:py-20"
-        data-aos="fade"
-      >
+      <div class="flex flex-col justify-between h-full lg:py-20">
         <div>
           <h2 class="text-4xl lg:text-5xl">
             We’ll get your product in ship shape
@@ -58,17 +57,12 @@ const traits = [
         <div
           class="absolute bottom-0 text-center w-full lg:bottom-auto lg:relative"
         >
-          <Img
+          <Image
             alt="Ship Shape octopus mascot in an innertube"
-            attributes={{
-              img: {
-                class: 'm-auto w-full !max-w-xxs h-auto'
-              }
-            }}
+            class="m-auto w-full !max-w-xxs h-auto"
             format="webp"
             loading="lazy"
-            placeholder="none"
-            src="/img/innertube.png"
+            src={innertubeImage}
           />
 
           <a
@@ -84,12 +78,8 @@ const traits = [
         class="grid grid-cols-1 gap-x-12 p-10 bg-blue-light rounded lg:col-span-2 lg:grid-cols-2 xl:px-16"
       >
         {
-          traits.map((trait, index) => (
-            <div
-              class="relative p-4 lg:p-10"
-              data-aos="flip-down"
-              data-aos-delay={index * 200}
-            >
+          traits.map((trait) => (
+            <div class="relative p-4 lg:p-10">
               <Icon class="absolute -ml-8 mt-2 w-4 h-4" name="check" />
 
               <h3 class="mb-8 text-2xl">{trait.title}</h3>

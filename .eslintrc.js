@@ -9,9 +9,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended'
   ],
-  globals: {
-    AOS: false
-  },
   rules: {},
   overrides: [
     // node files

@@ -1,24 +1,22 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
+
+import octocatImage from '../images/about/octocat.png';
+import wwwImage from '../images/hero-images/www.png';
 ---
 
 <section class="section flex flex-wrap justify-center bg-white">
-  <div class="section-content" data-aos="fade-right" data-aos-delay="400">
+  <div class="section-content">
     <h2 class="pb-20 text-5xl">Fun facts about us</h2>
     <ul class="grid grid-cols-1 gap-5 lg:grid-cols-3">
       <li class="bg-blue-light p-5 rounded-md lg:p-12">
         <div class="flex h-64 items-center">
-          <Img
+          <Image
             alt="Ship Shape's octopus mascot wearing headphones and holding a tumbler and microphone"
-            attributes={{
-              img: {
-                class: 'h-auto m-auto rounded-lg w-32 lg:w-44'
-              }
-            }}
+            class="h-auto m-auto rounded-lg w-32 lg:w-44"
             height={336}
             format="webp"
-            placeholder="none"
-            src="/img/hero-images/www.png"
+            src={wwwImage}
             width={336}
           />
         </div>
@@ -29,7 +27,7 @@ import { Img } from 'astro-imagetools/components';
             <a href="https://www.whiskeywebandwhatnot.fm/"
               >podcast for developers</a
             >
-            to share our love for whiskey, web development, and whatnot.
+             to share our love for whiskey, web development, and whatnot.
           </p>
         </div>
       </li>
@@ -54,23 +52,18 @@ import { Img } from 'astro-imagetools/components';
           <p>
             We run a
             <a href="https://ecologi.com/ship-shape">climate positive</a>
-            shop.
+             shop.
           </p>
         </div>
       </li>
       <li class="bg-blue-light p-5 rounded-md lg:p-12">
         <div class="flex h-64 items-center">
-          <Img
+          <Image
             alt="GitHub's mascot, Octocat, who has cat ears and tentacle legs"
-            attributes={{
-              img: {
-                class: 'h-auto m-auto max-w-2xl rounded-lg w-36 lg:w-48'
-              }
-            }}
+            class="h-auto m-auto max-w-2xl rounded-lg w-36 lg:w-48"
             height={322}
             format="webp"
-            placeholder="none"
-            src="/img/about/octocat.png"
+            src={octocatImage}
             width={386}
           />
         </div>

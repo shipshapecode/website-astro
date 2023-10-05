@@ -74,12 +74,8 @@ const clients = [
 
 <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
   {
-    clients.map((client, index) => (
-      <div
-        class="bg-white p-8 rounded-md lg:p-12"
-        data-aos="fade-up"
-        data-aos-delay={100 * index}
-      >
+    clients.map((client) => (
+      <div class="bg-white p-8 rounded-md lg:p-12">
         <a href={client.link} aria-label={client.name}>
           <Icon
             class="h-12 max-w-full mb-8 self-start w-auto pointer-events-none child:fill-navy"

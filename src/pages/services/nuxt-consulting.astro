@@ -1,5 +1,5 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AllAboutSpecialty from '../../components/AllAboutSpecialty.astro';
@@ -62,16 +62,11 @@ const description =
       </Fragment>
 
       <Fragment slot="icon">
-        <Img
+        <Image
           alt=""
-          attributes={{
-            img: {
-              class: 'h-auto m-auto max-w-2xl w-full'
-            }
-          }}
+          class="h-auto m-auto max-w-2xl w-full"
           format="webp"
           height={834}
-          placeholder="none"
           src="/img/hero-images/nuxt-consulting.png"
           width={1344}
         />
@@ -123,22 +118,20 @@ const description =
       </Fragment>
     </TwoColumnSection>
 
-    <div
-      class="bg-white flex flex-wrap justify-center px-8 lg:py-16 lg:pt-32"
-      data-aos="fade"
-    >
+    <div class="bg-white flex flex-wrap justify-center px-8 lg:py-16 lg:pt-32">
       <SingleQuote testimonial={testimonial} />
     </div>
 
     <TwoColumnSection image={community} header="We ❤️ the Nuxt.js Community">
       <Fragment slot="content">
-        <h3 class="text-2xl mb-4" data-aos="fade-up">Proud Nuxt.js partners</h3>
-        <p data-aos="fade-up">
+        <h3 class="text-2xl mb-4">Proud Nuxt.js partners</h3>
+        <p>
           Ship Shape proudly
           <a href="https://nuxtjs.org/partners/ship-shape">sponsors Nuxt.js</a>
-          to support its talented team and dynamic framework. Our partnership is
-          one of the main reasons we’re always ready to create Nuxt.js apps: because
-          we stay up-to-date with the Nuxt team and give back to the community.
+           to support its talented team and dynamic framework. Our partnership
+          is one of the main reasons we’re always ready to create Nuxt.js apps:
+          because we stay up-to-date with the Nuxt team and give back to the
+          community.
         </p>
       </Fragment>
     </TwoColumnSection>

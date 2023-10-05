@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import { astroImageTools } from 'astro-imagetools';
 import solid from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';
 import { addAuthorRemarkPlugin } from './add-author-remark-plugin.mjs';
@@ -25,14 +24,13 @@ export default defineConfig({
     }
   },
   integrations: [
-    astroImageTools,
     prefetch(),
     solid(),
     sitemap(),
     tailwind({
       // Example: Disable injecting a basic `base.css` import on every page.
       // Useful if you need to define and/or import your own custom `base.css`.
-      config: { applyBaseStyles: false }
+      applyBaseStyles: false
     })
   ],
   markdown: {

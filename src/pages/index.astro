@@ -1,5 +1,5 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BigNames from '../components/BigNames.astro';
 import BuildTheFuture from '../components/BuildTheFuture.astro';
@@ -60,17 +60,14 @@ posts = posts
       </Fragment>
 
       <Fragment slot="icon">
-        <Img
+        <Image
           alt="Ship Shape octopus mascot, with a pencil in its tentacle, is working hard on Ember, Next.js and Nuxt apps."
-          attributes={{
-            img: {
-              class: 'h-auto max-w-3xl w-full'
-            }
-          }}
+          class="h-auto max-w-3xl w-full"
           format="webp"
+          height={1167}
           loading="eager"
-          placeholder="none"
           src="/img/hero-images/landing.png"
+          width={1437}
         />
       </Fragment>
     </HeroBlock>

@@ -1,9 +1,14 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BottomLinks from '../../components/BottomLinks.astro';
+
+import contentCard from '../../images/work/outreach/kaia_live_content_card.png';
+import desktopNotifications from '../../images/work/outreach/desktop-notifications.png';
+import salesExecutionReport from '../../images/work/outreach/sales-execution-report.png';
+import sequencesReport from '../../images/work/outreach/sequences_report.png';
 
 const title = 'Outreach Replatforming Acceleration';
 const description =
@@ -14,10 +19,7 @@ const description =
   <section
     class="bg-outreach-purple flex flex-wrap justify-center mt-6 px-8 w-full lg:pt-24"
   >
-    <div
-      class="max-w-8xl overflow-hidden relative w-full lg:p-0"
-      data-aos="fade"
-    >
+    <div class="max-w-8xl overflow-hidden relative w-full lg:p-0">
       <h1 class="hidden">Outreach</h1>
 
       <div class="my-12 px-8">
@@ -65,25 +67,16 @@ const description =
         </ul>
       </aside>
 
-      <Img
+      <Image
         alt="A detailed overview of the sequences dashboard"
-        attributes={{
-          img: {
-            class:
-              '-mb-12 mt-24 rounded-t-md w-full lg:!max-w-[1250px] lg:-mb-24'
-          }
-        }}
+        class="-mb-12 mt-24 rounded-t-md w-full lg:!max-w-[1250px] lg:-mb-24"
         format="webp"
-        placeholder="none"
-        src="/img/work/outreach/sequences_report.png"
+        src={sequencesReport}
       />
     </div>
   </section>
 
-  <section
-    class="flex flex-wrap justify-center mt-24 px-8"
-    data-aos="fade-down"
-  >
+  <section class="flex flex-wrap justify-center mt-24 px-8">
     <div class="max-w-6xl w-full">
       <h2 class="text-4xl mb-6">About the Client</h2>
 
@@ -92,10 +85,11 @@ const description =
           <p>
             <a href="https://www.outreach.io/">Outreach</a> is the leading sales
             execution platform that helps market-facing teams efficiently create
-            and predictably close more pipeline. From prospecting to deal management
-            to forecasting, our platform leverages automation and artificial intelligence
-            to help revenue leaders increase efficiency and effectiveness of all
-            go-to-market activities and personnel across the revenue cycle.
+            and predictably close more pipeline. From prospecting to deal
+            management to forecasting, our platform leverages automation and
+            artificial intelligence to help revenue leaders increase efficiency
+            and effectiveness of all go-to-market activities and personnel
+            across the revenue cycle.
           </p>
         </div>
 
@@ -111,10 +105,7 @@ const description =
     </div>
   </section>
 
-  <section
-    class="flex flex-wrap justify-center mt-24 px-8"
-    data-aos="fade-down"
-  >
+  <section class="flex flex-wrap justify-center mt-24 px-8">
     <div class="max-w-6xl w-full">
       <h2 class="text-4xl mb-6">Challenge</h2>
 
@@ -128,25 +119,17 @@ const description =
       </p>
 
       <div class="bg-outreach-purple overflow-hidden px-6 rounded-md lg:px-12">
-        <Img
+        <Image
           alt="Sales execution report detail"
-          attributes={{
-            img: {
-              class: '-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12'
-            }
-          }}
+          class="-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12"
           format="webp"
-          placeholder="none"
-          src="/img/work/outreach/sales-execution-report.png"
+          src={salesExecutionReport}
         />
       </div>
     </div>
   </section>
 
-  <section
-    class="flex flex-wrap justify-center mt-24 px-8"
-    data-aos="fade-down"
-  >
+  <section class="flex flex-wrap justify-center mt-24 px-8">
     <div class="max-w-6xl w-full">
       <h2 class="text-4xl mb-6">Solution</h2>
       <p>
@@ -180,16 +163,11 @@ const description =
           <div
             class="bg-outreach-purple overflow-hidden px-6 rounded-md lg:px-8"
           >
-            <Img
+            <Image
               alt="An action triggered from desktop notification"
-              attributes={{
-                img: {
-                  class: '-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8'
-                }
-              }}
+              class="-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8"
               format="webp"
-              placeholder="none"
-              src="/img/work/outreach/desktop-notifications.png"
+              src={desktopNotifications}
             />
           </div>
           <figcaption class="italic text-sm">
@@ -221,16 +199,11 @@ const description =
           <div
             class="bg-outreach-purple overflow-hidden px-6 rounded-md lg:px-8"
           >
-            <Img
+            <Image
               alt="An action triggered from desktop notification"
-              attributes={{
-                img: {
-                  class: '-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8'
-                }
-              }}
+              class="-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8"
               format="webp"
-              placeholder="none"
-              src="/img/work/outreach/kaia_live_content_card.png"
+              src={contentCard}
             />
           </div>
           <figcaption class="italic text-sm">
@@ -241,7 +214,7 @@ const description =
     </div>
   </section>
 
-  <section class="flex flex-wrap justify-center px-8" data-aos="fade-down">
+  <section class="flex flex-wrap justify-center px-8">
     <div class="max-w-6xl w-full">
       <h2 class="text-4xl mb-6">Outcome</h2>
 

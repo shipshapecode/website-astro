@@ -1,23 +1,27 @@
 ---
+// This one is for local dev
+// import { parse } from 'rss-to-json';
+// We have to use this one when deploying
 import rssToJson from 'rss-to-json';
 
 import MediaCard from './MediaCard.astro';
 import { dasherize } from '../utils/dasherize';
 import { truncate } from '../utils/truncate';
 
+import wwwImage from '../images/hero-images/www.png';
+
 let apiCallTries = 5;
 
 async function getLatestPodcast() {
   try {
-    // TODO: this breaks local development
-    let feed = await rssToJson.parse('https://anchor.fm/s/e329dea0/podcast/rss');
+    // This one is for local dev
+    // let feed = await parse('https://anchor.fm/s/e329dea0/podcast/rss');
+    // We have to use this one when deploying
+    let feed = await rssToJson.parse(
+      'https://anchor.fm/s/e329dea0/podcast/rss'
+    );
     let [latestPodcastEpisode] = feed.items.map(
-      ({
-        title,
-        description,
-        published,
-        itunes_episode
-      }) => {
+      ({ title, description, published, itunes_episode }) => {
         return {
           date: published,
           description: truncate(description, 260),
@@ -44,15 +48,10 @@ async function getLatestPodcast() {
 }
 
 const latestPodcastEpisode = await getLatestPodcast();
-
-const podcastImg = {
-  src: '/img/hero-images/www.png'
-};
 ---
 
 <MediaCard
   mediaType="podcast"
-  imgSrc={podcastImg.src}
+  imgSrc={wwwImage}
   details={latestPodcastEpisode}
-  data-aos="fade-up"
 />

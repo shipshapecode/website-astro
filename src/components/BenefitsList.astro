@@ -23,11 +23,7 @@ const { benefits } = Astro.props as Props;
   <!-- should cards be separate component? -->
   {
     benefits.map((benefit, index) => (
-      <li
-        class="flex flex-col items-center px-16"
-        data-aos="flip-down"
-        data-aos-delay={200 * index}
-      >
+      <li class="flex flex-col items-center px-16">
         <Icon
           class={`h-20 inline-block mb-8 w-auto ${
             index > 0 ? 'mt-12  lg:mt-0' : null

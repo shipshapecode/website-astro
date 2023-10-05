@@ -1,5 +1,5 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AllAboutSpecialty from '../../components/AllAboutSpecialty.astro';
@@ -63,15 +63,10 @@ const specialtyBenefits = [
       </Fragment>
 
       <Fragment slot="icon">
-        <Img
-          attributes={{
-            img: {
-              class: 'h-auto m-auto max-w-2xl w-full'
-            }
-          }}
+        <Image
+          class="h-auto m-auto max-w-2xl w-full"
           format="webp"
           height={936}
-          placeholder="none"
           src="/img/hero-images/tailwind-consulting.png"
           width={1344}
           alt=""
@@ -92,8 +87,8 @@ const specialtyBenefits = [
         <a class="hover:brightness-125 hover:text-red" href="https://swach.io/">
           robust color management app called Swach.
         </a>
-        In addition to building Tailwind UIs, we also love training other teams on
-        it to help sharpen their skills too.
+         In addition to building Tailwind UIs, we also love training other teams
+        on it to help sharpen their skills too.
       </Fragment>
 
       <Fragment slot="boxed-text">
@@ -118,7 +113,6 @@ const specialtyBenefits = [
 
     <!-- <div
       class="bg-white flex flex-wrap justify-center px-8 lg:py-16 lg:pt-32"
-      data-aos="fade"
     >
       <SingleQuote testimonial={testimonial} />
     </div> -->

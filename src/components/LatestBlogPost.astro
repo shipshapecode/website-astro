@@ -3,6 +3,8 @@ import MediaCard from './MediaCard.astro';
 
 import { MarkdownFrontmatter } from '../pages/index.astro';
 
+import deskImage from '../images/about/desk.jpg';
+
 async function getLatestBlogPost() {
   const allPosts = await Astro.glob<MarkdownFrontmatter>('/data/posts/*.md');
   const sortedPosts = allPosts.sort(
@@ -19,9 +21,4 @@ async function getLatestBlogPost() {
 const latestBlogPost = await getLatestBlogPost();
 ---
 
-<MediaCard
-  details={latestBlogPost}
-  imgSrc="/img/about/desk.jpg"
-  mediaType="blog post"
-  data-aos="fade-up"
-/>
+<MediaCard details={latestBlogPost} imgSrc={deskImage} mediaType="blog post" />

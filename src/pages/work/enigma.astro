@@ -1,10 +1,15 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BottomLinks from '../../components/BottomLinks.astro';
 import SingleQuote from '../../components/SingleQuote.astro';
+
+import assessmentDetailImage from '../../images/work/enigma/enigma-hirer-assessment-detail.png';
+import assessmentTourImage from '../../images/work/enigma/enigma-hirer-assessment-tour.png';
+import enigmaLoginImage from '../../images/work/enigma/enigma-login.png';
+import hirerResultsImage from '../../images/work/enigma/enigma-hirer-results.png';
 
 import { enigmaTestimonial as testimonial } from '../../testimonials/index.js';
 
@@ -17,10 +22,7 @@ const description =
   <section
     class="bg-enigma-red flex flex-wrap justify-center mt-6 px-8 w-full lg:pt-24"
   >
-    <div
-      class="max-w-8xl overflow-hidden relative w-full lg:p-0"
-      data-aos="fade"
-    >
+    <div class="max-w-8xl overflow-hidden relative w-full lg:p-0">
       <h1 class="hidden">Enigma</h1>
 
       <div class="my-12 px-8">
@@ -63,25 +65,16 @@ const description =
         </ul>
       </aside>
 
-      <Img
+      <Image
         alt="A detailed overview of all candidate assessment results"
-        attributes={{
-          img: {
-            class:
-              '-mb-12 mt-24 rounded-t-md w-full lg:!max-w-[1250px] lg:-mb-24'
-          }
-        }}
+        class="-mb-12 mt-24 rounded-t-md w-full lg:!max-w-[1250px] lg:-mb-24"
         format="webp"
-        placeholder="none"
-        src="/img/work/enigma/enigma-hirer-results.png"
+        src={hirerResultsImage}
       />
     </div>
   </section>
 
-  <section
-    class="flex flex-wrap justify-center mt-28 px-8 lg:mt-36"
-    data-aos="fade-down"
-  >
+  <section class="flex flex-wrap justify-center mt-28 px-8 lg:mt-36">
     <div class="max-w-6xl w-full">
       <h2 class="mb-6 text-4xl">In their words</h2>
 
@@ -89,21 +82,19 @@ const description =
     </div>
   </section>
 
-  <section
-    class="flex flex-wrap justify-center mt-24 px-8"
-    data-aos="fade-down"
-  >
+  <section class="flex flex-wrap justify-center mt-24 px-8">
     <div class="max-w-6xl w-full">
       <h2 class="text-4xl mb-6">About the Client</h2>
 
       <div class="gap-12 grid grid-cols-1 lg:grid-cols-2">
         <div class="order-2 lg:order-1">
           <p>
-            <a href="https://www.askenigma.com/">Enigma</a> is a platform designed
-            to help cybersecurity teams make faster hiring decisions and find stronger,
-            more diverse talent. Through this web application, employers can create
-            and assign technical assessments to candidates to ascertain their level
-            of competency with key cybersecurity concepts and industry best practices.
+            <a href="https://www.askenigma.com/">Enigma</a> is a platform
+            designed to help cybersecurity teams make faster hiring decisions
+            and find stronger, more diverse talent. Through this web
+            application, employers can create and assign technical assessments
+            to candidates to ascertain their level of competency with key
+            cybersecurity concepts and industry best practices.
           </p>
 
           <p>
@@ -126,10 +117,7 @@ const description =
     </div>
   </section>
 
-  <section
-    class="flex flex-wrap justify-center mt-24 px-8"
-    data-aos="fade-down"
-  >
+  <section class="flex flex-wrap justify-center mt-24 px-8">
     <div class="max-w-6xl w-full">
       <h2 class="text-4xl mb-6">Challenge</h2>
 
@@ -147,25 +135,17 @@ const description =
       </p>
 
       <div class="bg-enigma-red overflow-hidden px-6 rounded-md lg:px-12">
-        <Img
+        <Image
           alt="The Enigma login page"
-          attributes={{
-            img: {
-              class: '-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12'
-            }
-          }}
+          class="-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12"
           format="webp"
-          placeholder="none"
-          src="/img/work/enigma/enigma-login.png"
+          src={enigmaLoginImage}
         />
       </div>
     </div>
   </section>
 
-  <section
-    class="flex flex-wrap justify-center mt-24 px-8"
-    data-aos="fade-down"
-  >
+  <section class="flex flex-wrap justify-center mt-24 px-8">
     <div class="max-w-6xl w-full">
       <h2 class="text-4xl mb-6">Solution</h2>
 
@@ -173,11 +153,12 @@ const description =
 
       <p>
         The development team made use of
-        <a href="/https://nextjs.org/">Next.js</a> to prioritize quick loading times
-        on the client side of this application. The server-side rendering capabilities
-        of Next.js allow the Enigma application to retrieve web pages and any corresponding
-        data in one go, eliminating the need for multiple network requests and preventing
-        subsequent delays in data population.
+        <a href="/https://nextjs.org/">Next.js</a> to prioritize quick loading
+        times on the client side of this application. The server-side rendering
+        capabilities of Next.js allow the Enigma application to retrieve web
+        pages and any corresponding data in one go, eliminating the need for
+        multiple network requests and preventing subsequent delays in data
+        population.
       </p>
 
       <div
@@ -199,16 +180,11 @@ const description =
 
         <figure class="lg:order-1">
           <div class="bg-enigma-red overflow-hidden px-6 rounded-md lg:px-8">
-            <Img
+            <Image
               alt="An implementation of a Shepherd tour for the Enigma hirer dashboard"
-              attributes={{
-                img: {
-                  class: '-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8'
-                }
-              }}
+              class="-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8"
               format="webp"
-              placeholder="none"
-              src="/img/work/enigma/enigma-hirer-assessment-tour.png"
+              src={assessmentTourImage}
             />
           </div>
 
@@ -236,16 +212,11 @@ const description =
 
         <figure>
           <div class="bg-enigma-red overflow-hidden px-6 rounded-md lg:px-8">
-            <Img
+            <Image
               alt="A detailed overview of a cybersecurity assessment"
-              attributes={{
-                img: {
-                  class: '-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8'
-                }
-              }}
+              class="-mb-6 mt-6 rounded-t-md lg:-mb-8 lg:mt-8"
               format="webp"
-              placeholder="none"
-              src="/img/work/enigma/enigma-hirer-assessment-detail.png"
+              src={assessmentDetailImage}
             />
           </div>
           <figcaption class="italic text-sm">
@@ -284,24 +255,16 @@ const description =
     </div>
   </section>
 
-  <section
-    class="flex flex-wrap justify-center mt-24 px-8"
-    data-aos="fade-down"
-  >
+  <section class="flex flex-wrap justify-center mt-24 px-8">
     <div class="max-w-6xl w-full">
       <h2 class="text-4xl mb-6">Outcome</h2>
 
       <div class="bg-enigma-red overflow-hidden px-6 rounded-md lg:px-12">
-        <Img
+        <Image
           alt="A detailed overview of all candidate assessment results"
-          attributes={{
-            img: {
-              class: '-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12'
-            }
-          }}
+          class="-mb-6 mt-6 rounded-t-md lg:-mb-12 lg:mt-12"
           format="webp"
-          placeholder="none"
-          src="/img/work/enigma/enigma-hirer-results.png"
+          src={hirerResultsImage}
         />
       </div>
 

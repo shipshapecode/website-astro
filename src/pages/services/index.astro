@@ -1,5 +1,5 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroBlock from '../../components/HeroBlock.astro';
@@ -41,34 +41,24 @@ const textSection = [
       </Fragment>
 
       <Fragment slot="icon">
-        <Img
-          attributes={{
-            img: {
-              class: 'h-auto m-auto max-w-2xl w-full'
-            }
-          }}
+        <Image
+          alt=""
+          class="h-auto m-auto max-w-2xl w-full"
           height={1020}
           format="webp"
           loading="eager"
-          placeholder="none"
           src="/img/hero-images/services.png"
           width={1344}
-          alt=""
         />
       </Fragment>
     </HeroBlock>
 
     <section class="section bg-white flex flex-wrap justify-center">
       <div class="section-content">
-        <h2 class="pt-12 mb-0 text-4xl lg:text-5xl" data-aos="fade-down">
-          High impact, low ego
-        </h2>
+        <h2 class="pt-12 mb-0 text-4xl lg:text-5xl">High impact, low ego</h2>
 
         <div class="divide-[#D8E3E8] divide-y-2">
-          <section
-            class="flex flex-wrap justify-center py-12"
-            data-aos="fade-right"
-          >
+          <section class="flex flex-wrap justify-center py-12">
             <div
               class="gap-8 grid grid-cols-1 items-center lg:gap-48 lg:grid-cols-2"
             >
@@ -82,16 +72,11 @@ const textSection = [
               </div>
 
               <div>
-                <Img
-                  attributes={{
-                    img: {
-                      class: 'h-auto m-auto max-w-2xl w-full'
-                    }
-                  }}
+                <Image
                   alt=""
+                  class="h-auto m-auto max-w-2xl w-full"
                   format="webp"
                   height={textSection[0].height}
-                  placeholder="none"
                   src={textSection[0].src}
                   width={textSection[0].width}
                 />
@@ -99,10 +84,7 @@ const textSection = [
             </div>
           </section>
 
-          <section
-            class="flex flex-wrap justify-center py-12"
-            data-aos="fade-left"
-          >
+          <section class="flex flex-wrap justify-center py-12">
             <div
               class="gap-8 grid grid-cols-1 items-center lg:gap-48 lg:grid-cols-2"
             >
@@ -116,7 +98,7 @@ const textSection = [
                   <a href="/services/serverless-consulting/"
                     >serverless frameworks
                   </a>
-                  and
+                   and
                   <a href="/services/cloud-native-consulting/"
                     >cloud native applications
                   </a>. We combine our high IQ in these technologies with a high
@@ -128,16 +110,11 @@ const textSection = [
               </div>
 
               <div>
-                <Img
-                  attributes={{
-                    img: {
-                      class: 'h-auto m-auto max-w-2xl w-full'
-                    }
-                  }}
+                <Image
                   alt=""
+                  class="h-auto m-auto max-w-2xl w-full"
                   format="webp"
                   height={textSection[1].height}
-                  placeholder="none"
                   src={textSection[1].src}
                   width={textSection[1].width}
                 />
@@ -145,10 +122,7 @@ const textSection = [
             </div>
           </section>
 
-          <section
-            class="flex flex-wrap justify-center py-12"
-            data-aos="fade-right"
-          >
+          <section class="flex flex-wrap justify-center py-12">
             <div
               class="gap-8 grid grid-cols-1 items-center lg:gap-48 lg:grid-cols-2"
             >
@@ -162,16 +136,11 @@ const textSection = [
               </div>
 
               <div>
-                <Img
-                  attributes={{
-                    img: {
-                      class: 'h-auto m-auto max-w-2xl w-full'
-                    }
-                  }}
+                <Image
                   alt=""
+                  class="h-auto m-auto max-w-2xl w-full"
                   format="webp"
                   height={textSection[2].height}
-                  placeholder="none"
                   src={textSection[2].src}
                   width={textSection[2].width}
                 />
@@ -184,10 +153,7 @@ const textSection = [
 
     <ServicesBlurbs />
 
-    <div
-      class="bg-white flex flex-wrap justify-center px-8 lg:py-16 lg:pt-32"
-      data-aos="fade"
-    >
+    <div class="bg-white flex flex-wrap justify-center px-8 lg:py-16 lg:pt-32">
       <SingleQuote testimonial={testimonial} />
     </div>
 

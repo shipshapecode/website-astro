@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 ---
 
 <nav
@@ -19,17 +19,12 @@ import { Img } from 'astro-imagetools/components';
           itemtype="https://schema.org/ImageObject"
           itemid="shipshapelogo"
         >
-          <Img
+          <Image
             alt="Ship Shape Logo"
-            attributes={{
-              img: {
-                class: '!h-[50px] w-auto',
-                itemprop: 'url'
-              }
-            }}
+            class="!h-[50px] w-auto"
             height={100}
+            itemprop="url"
             format="webp"
-            placeholder="none"
             src="/img/logo.png"
             width={100}
           />

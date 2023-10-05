@@ -1,9 +1,14 @@
 ---
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BottomLinks from '../../components/BottomLinks.astro';
+
+import nistEditScoresImage from '../../images/work/expel/nist-edit-scores.png';
+import nistOverviewImage from '../../images/work/expel/nist-overview.png';
+import nistProgressGraphs from '../../images/work/expel/nist-progress-graphs.png';
+import nistSelectedImage from '../../images/work/expel/nist-selected.png';
 
 const title = 'Expel Ember.js Enterprise App Development';
 const description =
@@ -55,16 +60,11 @@ const description =
 
       <div class="bg-grey-light flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <Img
+          <Image
             alt="An overview of NIST scores, broken down by category and visualized in a radar graph."
-            attributes={{
-              img: {
-                class: 'flex'
-              }
-            }}
+            class="flex"
             format="webp"
-            placeholder="none"
-            src="/img/work/expel/nist-overview.png"
+            src={nistOverviewImage}
           />
         </div>
       </div>
@@ -77,9 +77,9 @@ const description =
           at a glance which NIST categories they’re doing well in, and which
           require more attention. To achieve this, we created a custom chart and
           progress bars per category. We heavily leveraged
-          <a href="https://www.chartjs.org/">Chart.js</a> and the radar chart type
-          it provides, and pushed it outside of the confines of its typical API to
-          create an entirely new type of chart.
+          <a href="https://www.chartjs.org/">Chart.js</a> and the radar chart
+          type it provides, and pushed it outside of the confines of its typical
+          API to create an entirely new type of chart.
         </p>
 
         <p>
@@ -95,16 +95,11 @@ const description =
 
       <div class="bg-expel-green flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <Img
+          <Image
             alt="The protect NIST category is selected and scores are filtered to that category."
-            attributes={{
-              img: {
-                class: 'flex'
-              }
-            }}
+            class="flex"
             format="webp"
-            placeholder="none"
-            src="/img/work/expel/nist-selected.png"
+            src={nistSelectedImage}
           />
         </div>
       </div>
@@ -121,16 +116,11 @@ const description =
 
       <div class="bg-grey-light flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <Img
+          <Image
             alt="The edit mode for scores, showing a simple user interface with scoring criteria for guidance."
-            attributes={{
-              img: {
-                class: 'flex'
-              }
-            }}
+            class="flex"
             format="webp"
-            placeholder="none"
-            src="/img/work/expel/nist-edit-scores.png"
+            src={nistEditScoresImage}
           />
         </div>
       </div>
@@ -151,16 +141,11 @@ const description =
 
       <div class="bg-expel-green flex justify-center lg:flex-1">
         <div class="pl-4 pr-4 pt-4 lg:pl-24 lg:pr-24 lg:pt-12">
-          <Img
+          <Image
             alt="Graphs indicating the progress made in various NIST categories."
-            attributes={{
-              img: {
-                class: 'flex'
-              }
-            }}
+            class="flex"
             format="webp"
-            placeholder="none"
-            src="/img/work/expel/nist-progress-graphs.png"
+            src={nistProgressGraphs}
           />
         </div>
       </div>

@@ -6,7 +6,7 @@ const { benefits, flipParagraphs } = Astro.props;
 
 <section class="section bg-navy flex flex-wrap justify-center">
   <div class="section-content">
-    <h2 class="text-white text-4xl mb-6" data-aos="fade-up">
+    <h2 class="text-white text-4xl mb-6">
       <slot name="h2" />
     </h2>
     <section
@@ -17,8 +17,6 @@ const { benefits, flipParagraphs } = Astro.props;
         lg:pt-4 lg:grid-cols-2 lg:gap-32 lg:space-y-0
         ${flipParagraphs ? 'xl:grid-cols-8' : null}
       `}
-      data-aos="fade-up"
-      data-aos-delay="200"
     >
       <div
         class={flipParagraphs
@@ -41,7 +39,7 @@ const { benefits, flipParagraphs } = Astro.props;
     </section>
 
     <section>
-      <h3 class="text-white text-2xl" data-aos="fade">
+      <h3 class="text-white text-2xl">
         <slot name="h3" />
       </h3>
 

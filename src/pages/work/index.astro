@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CaseStudiesList from '../../components/CaseStudiesList.astro';
@@ -10,6 +10,7 @@ import ImpactStats from '../../components/ImpactStats.astro';
 import ReadyFooter from '../../components/ReadyFooter.astro';
 import TwoColumnSection from '../../components/TwoColumnSection.astro';
 
+import innertubeImage from '../../images/innertube.png';
 import ShepherdLogo from '../../icons/shepherd.svg?raw';
 
 const title = 'Our Work - Enterprise Custom App Development';
@@ -36,16 +37,11 @@ const description =
     </Fragment>
 
     <Fragment slot="icon">
-      <Img
-        attributes={{
-          img: {
-            class: 'h-auto m-auto max-w-2xl w-full'
-          }
-        }}
+      <Image
+        class="h-auto m-auto max-w-2xl w-full"
         height={1020}
         format="webp"
         loading="eager"
-        placeholder="none"
         src="/img/hero-images/services.png"
         width={1344}
         alt=""
@@ -55,10 +51,7 @@ const description =
 
   <div class="section bg-white flex flex-wrap justify-center !pb-0">
     <div class="section-content">
-      <div
-        class="grid grid-cols-1 mt-10 w-full lg:grid-cols-2"
-        data-aos="fade-up"
-      >
+      <div class="grid grid-cols-1 mt-10 w-full lg:grid-cols-2">
         <div class="flex items-center justify-center w-full">
           <div>
             <h1 class="mb-8 text-4xl lg:text-5xl">
@@ -69,25 +62,21 @@ const description =
             <p>
               Whether you’re charting a new course for engineering success or
               saving an app that’s capsized, our software developers are here to
-              strengthen your products <span class="italic">and</span> your people.
-              Together, we’ll solve your most complex challenges, reach your destination
-              with ease, and grow your team’s knowledge along the way.
+              strengthen your products <span class="italic">and</span> your
+              people. Together, we’ll solve your most complex challenges, reach
+              your destination with ease, and grow your team’s knowledge along
+              the way.
             </p>
           </div>
         </div>
 
         <div class="flex items-center justify-center w-full">
-          <Img
+          <Image
             alt="Ship Shape octopus mascot in an innertube"
-            attributes={{
-              img: {
-                class: 'mt-8 w-full !max-w-xs h-auto lg:mt-0'
-              }
-            }}
+            class="mt-8 w-full !max-w-xs h-auto lg:mt-0"
             format="webp"
             loading="lazy"
-            placeholder="none"
-            src="/img/innertube.png"
+            src={innertubeImage}
           />
         </div>
       </div>
@@ -102,15 +91,13 @@ const description =
 
   <div class="section flex flex-wrap justify-center">
     <div class="section-content">
-      <h2 class="mb-12 text-4xl lg:text-5xl" data-aos="fade">
-        A peek at our past work
-      </h2>
+      <h2 class="mb-12 text-4xl lg:text-5xl">A peek at our past work</h2>
 
-      <h3 class="mb-8 text-2xl lg:text-4xl" data-aos="fade">Case studies:</h3>
+      <h3 class="mb-8 text-2xl lg:text-4xl">Case studies:</h3>
 
       <CaseStudiesList />
 
-      <h3 class="mb-8 text-2xl lg:text-4xl" data-aos="fade">Other projects:</h3>
+      <h3 class="mb-8 text-2xl lg:text-4xl">Other projects:</h3>
 
       <ClientsGrid />
     </div>
@@ -131,14 +118,14 @@ const description =
 
   <div class="section bg-navy flex flex-wrap justify-center">
     <div class="section-content">
-      <h2 class="mb-8 text-4xl text-white lg:text-5xl" data-aos="fade">
+      <h2 class="mb-8 text-4xl text-white lg:text-5xl">
         Giving back for the greater good
       </h2>
 
       <div
         class="flex flex-wrap gap-8 justify-between w-full lg:flex-nowrap lg:gap-36"
       >
-        <p class="text-white" data-aos="fade">
+        <p class="text-white">
           Our team does this work for passion, not just for profit. The
           developer community has helped us grow into the people we are today,
           and we’re committed to giving back even more than we’ve gained.
@@ -155,22 +142,13 @@ const description =
       </div>
 
       <div class="gap-5 grid grid-cols-1 mt-12 lg:grid-cols-3">
-        <div
-          class="bg-blue-light p-5 rounded-md lg:p-12"
-          data-aos="flip-down"
-          data-aos-delay={100}
-        >
+        <div class="bg-blue-light p-5 rounded-md lg:p-12">
           <div class="flex h-48 items-center justify-center w-full">
-            <Img
-              attributes={{
-                img: {
-                  class: '!h-36 m-auto max-w-2xl w-auto'
-                }
-              }}
+            <Image
+              class="!h-36 m-auto max-w-2xl w-auto"
               height={734}
               format="webp"
               loading="eager"
-              placeholder="none"
               src="/img/ember-dc.png"
               width={1500}
               alt=""
@@ -187,11 +165,7 @@ const description =
           </p>
         </div>
 
-        <div
-          class="bg-blue-light p-5 rounded-md lg:p-12"
-          data-aos="flip-down"
-          data-aos-delay={200}
-        >
+        <div class="bg-blue-light p-5 rounded-md lg:p-12">
           <div class="flex h-48 items-center justify-center w-full">
             <div class="shepherd-logo h-36 w-36">
               <Fragment set:html={ShepherdLogo} />
@@ -209,11 +183,7 @@ const description =
           </p>
         </div>
 
-        <div
-          class="bg-blue-light p-5 rounded-md lg:p-12"
-          data-aos="flip-down"
-          data-aos-delay={300}
-        >
+        <div class="bg-blue-light p-5 rounded-md lg:p-12">
           <div class="flex h-48 items-center justify-center w-full">
             <Icon class="h-36 w-auto" name="ember-cares" />
           </div>

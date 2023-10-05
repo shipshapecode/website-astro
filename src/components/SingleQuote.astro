@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
-import { Img } from 'astro-imagetools/components';
+import { Image } from 'astro:assets';
 
 import { getSvgSrc } from '../utils/svg';
 
@@ -22,7 +22,6 @@ const { classString, testimonial } = Astro.props as Props;
   class={`section-content bg-navy mb-16 p-4 rounded-md lg:mb-20 xl:py-20 ${
     classString ?? ''
   }`}
-  data-aos="fade"
 >
   <figure class="flex flex-col p-4 relative text-white xl:px-16 xl:py-0">
     <h3>
@@ -39,13 +38,9 @@ const { classString, testimonial } = Astro.props as Props;
     </blockquote>
 
     <figcaption class="flex items-center px-4 xl:px-6">
-      <Img
+      <Image
         alt={`Headshot of ${testimonial.name}`}
-        attributes={{
-          img: {
-            class: 'border-2 border-white h-16 mr-4 rounded-full w-16'
-          }
-        }}
+        class="border-2 border-white h-16 mr-4 rounded-full w-16"
         format="webp"
         height={256}
         loading="lazy"
