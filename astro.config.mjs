@@ -3,28 +3,12 @@ import solid from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';
 import { addAuthorRemarkPlugin } from './add-author-remark-plugin.mjs';
 import { addDescriptionRemarkPlugin } from './add-description-remark-plugin.mjs';
-import prefetch from '@astrojs/prefetch';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://shipshape.io/',
-  vite: {
-    plugins: [
-      {
-        name: 'import.meta.url-transformer',
-        transform: (code, id) => {
-          if (id.endsWith('.astro'))
-            return code.replace(/import.meta.url/g, `"${id}"`);
-        }
-      }
-    ],
-    ssr: {
-      external: ['svgo']
-    }
-  },
   integrations: [
-    prefetch(),
     solid(),
     sitemap(),
     tailwind({
@@ -44,5 +28,20 @@ export default defineConfig({
       theme: 'nord',
       wrap: true
     }
-  }
+  },
+  prefetch: true,
+  vite: {
+    plugins: [
+      {
+        name: 'import.meta.url-transformer',
+        transform: (code, id) => {
+          if (id.endsWith('.astro'))
+            return code.replace(/import.meta.url/g, `"${id}"`);
+        }
+      }
+    ],
+    ssr: {
+      external: ['svgo']
+    }
+  },
 });
